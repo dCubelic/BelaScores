@@ -12,6 +12,10 @@
 		B455234122F4F201008B6E4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B455233F22F4F201008B6E4A /* Main.storyboard */; };
 		B455234322F4F203008B6E4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B455234222F4F203008B6E4A /* Assets.xcassets */; };
 		B455234622F4F203008B6E4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B455234422F4F203008B6E4A /* LaunchScreen.storyboard */; };
+		B455234E22F4F227008B6E4A /* BelaDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B455234D22F4F227008B6E4A /* BelaDetector.mlmodel */; };
+		B4BB00F622F57D0F00034432 /* Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BB00F522F57D0F00034432 /* Bela.swift */; };
+		B4BB00F822F5800900034432 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BB00F722F5800900034432 /* HelperFunctions.swift */; };
+		B4BB00FA22F5870000034432 /* BelaPrediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BB00F922F5870000034432 /* BelaPrediction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		B455234222F4F203008B6E4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B455234522F4F203008B6E4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B455234722F4F203008B6E4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B455234D22F4F227008B6E4A /* BelaDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BelaDetector.mlmodel; sourceTree = "<group>"; };
+		B4BB00F522F57D0F00034432 /* Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bela.swift; sourceTree = "<group>"; };
+		B4BB00F722F5800900034432 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
+		B4BB00F922F5870000034432 /* BelaPrediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelaPrediction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +62,12 @@
 		B455233A22F4F201008B6E4A /* BelaDetector */ = {
 			isa = PBXGroup;
 			children = (
+				B455234D22F4F227008B6E4A /* BelaDetector.mlmodel */,
 				B455233B22F4F201008B6E4A /* AppDelegate.swift */,
 				B455233D22F4F201008B6E4A /* ViewController.swift */,
+				B4BB00F522F57D0F00034432 /* Bela.swift */,
+				B4BB00F922F5870000034432 /* BelaPrediction.swift */,
+				B4BB00F722F5800900034432 /* HelperFunctions.swift */,
 				B455233F22F4F201008B6E4A /* Main.storyboard */,
 				B455234222F4F203008B6E4A /* Assets.xcassets */,
 				B455234422F4F203008B6E4A /* LaunchScreen.storyboard */,
@@ -135,7 +147,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4BB00F822F5800900034432 /* HelperFunctions.swift in Sources */,
+				B455234E22F4F227008B6E4A /* BelaDetector.mlmodel in Sources */,
+				B4BB00F622F57D0F00034432 /* Bela.swift in Sources */,
 				B455233E22F4F201008B6E4A /* ViewController.swift in Sources */,
+				B4BB00FA22F5870000034432 /* BelaPrediction.swift in Sources */,
 				B455233C22F4F201008B6E4A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
