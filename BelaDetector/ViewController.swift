@@ -12,6 +12,8 @@ import CoreMedia
 class ViewController: UIViewController {
     
     @IBOutlet weak var videoPreview: UIView!
+    @IBOutlet weak var cardInfoView: CardInfoView!
+    
     var resPixBuf: CVPixelBuffer?
     var currentTrumpSuit: BelaSuit?
     
@@ -19,14 +21,12 @@ class ViewController: UIViewController {
     let semaphore = DispatchSemaphore(value: 2)
     let model = Bela()
     var cardSet: Set<BelaCard> = Set()
+    var resilienceArray = ResilienceArray(size: 10)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupCamera()
-        
-//        let image = UIImage(named: "bela")!
-//        let pixelBuffer = buffer(from: image)!
     }
     
     override func viewWillLayoutSubviews() {
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     }
     
     func predict(pixelBuffer: CVPixelBuffer) {
-        let startTime = CACurrentMediaTime()
+//        let startTime = CACurrentMediaTime()
         
         CVPixelBufferCreate(nil, Bela.width, Bela.height,
                             kCVPixelFormatType_32BGRA, nil,
@@ -52,16 +52,20 @@ class ViewController: UIViewController {
         
         let predictions = model.predict(image: resizedPixelBuffer)
         
+        resilienceArray.add(item: predictions)
+        
         for prediction in predictions {
-            let (inserted, _) = cardSet.insert(prediction.card)
-            if inserted {
-                print(prediction.card, prediction.card.points(trumpSuit: .hearts), prediction.confidence)
-                print(calculateScore(cards: cardSet, trumpSuit: .clubs))
+            if resilienceArray.numberOfOccurences(card: prediction.card) >= 5 { // ako je dobro prepoznata
+                DispatchQueue.main.async {
+                    self.cardInfoView.setup(for: prediction.card)
+                }
+                let (inserted, _) = cardSet.insert(prediction.card)
+                if inserted { // ako je prvi put videna
+                    print(prediction.card, prediction.confidence)
+                    print(calculateScore(cards: cardSet, trumpSuit: .clubs))
+                }
             }
         }
-        
-        let elapsed = CACurrentMediaTime() - startTime
-//        print(elapsed)
         
         semaphore.signal()
     }

@@ -17,6 +17,10 @@
 		B4BB00F622F57D0F00034432 /* Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BB00F522F57D0F00034432 /* Bela.swift */; };
 		B4BB00F822F5800900034432 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BB00F722F5800900034432 /* HelperFunctions.swift */; };
 		B4BB00FA22F5870000034432 /* BelaPrediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BB00F922F5870000034432 /* BelaPrediction.swift */; };
+		B4BB00FC22F62C3000034432 /* ResilienceArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BB00FB22F62C3000034432 /* ResilienceArray.swift */; };
+		B4BB00FE22F6338400034432 /* CardInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4BB00FD22F6338400034432 /* CardInfoView.xib */; };
+		B4BB010022F633F500034432 /* CardInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BB00FF22F633F500034432 /* CardInfoView.swift */; };
+		B4BB010222F63A9800034432 /* BelaDetector2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B4BB010122F63A9800034432 /* BelaDetector2.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		B4BB00F522F57D0F00034432 /* Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bela.swift; sourceTree = "<group>"; };
 		B4BB00F722F5800900034432 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		B4BB00F922F5870000034432 /* BelaPrediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelaPrediction.swift; sourceTree = "<group>"; };
+		B4BB00FB22F62C3000034432 /* ResilienceArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResilienceArray.swift; sourceTree = "<group>"; };
+		B4BB00FD22F6338400034432 /* CardInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardInfoView.xib; sourceTree = "<group>"; };
+		B4BB00FF22F633F500034432 /* CardInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoView.swift; sourceTree = "<group>"; };
+		B4BB010122F63A9800034432 /* BelaDetector2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BelaDetector2.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,12 +73,16 @@
 			isa = PBXGroup;
 			children = (
 				B455234D22F4F227008B6E4A /* BelaDetector.mlmodel */,
+				B4BB010122F63A9800034432 /* BelaDetector2.mlmodel */,
 				B455233B22F4F201008B6E4A /* AppDelegate.swift */,
 				B455233D22F4F201008B6E4A /* ViewController.swift */,
 				B451C3E722F5CFC4000B8302 /* VideoCapture.swift */,
 				B4BB00F522F57D0F00034432 /* Bela.swift */,
+				B4BB00FB22F62C3000034432 /* ResilienceArray.swift */,
 				B4BB00F922F5870000034432 /* BelaPrediction.swift */,
 				B4BB00F722F5800900034432 /* HelperFunctions.swift */,
+				B4BB00FF22F633F500034432 /* CardInfoView.swift */,
+				B4BB00FD22F6338400034432 /* CardInfoView.xib */,
 				B455233F22F4F201008B6E4A /* Main.storyboard */,
 				B455234222F4F203008B6E4A /* Assets.xcassets */,
 				B455234422F4F203008B6E4A /* LaunchScreen.storyboard */,
@@ -139,6 +151,7 @@
 			files = (
 				B455234622F4F203008B6E4A /* LaunchScreen.storyboard in Resources */,
 				B455234322F4F203008B6E4A /* Assets.xcassets in Resources */,
+				B4BB00FE22F6338400034432 /* CardInfoView.xib in Resources */,
 				B455234122F4F201008B6E4A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,11 +165,14 @@
 			files = (
 				B4BB00F822F5800900034432 /* HelperFunctions.swift in Sources */,
 				B451C3E822F5CFC4000B8302 /* VideoCapture.swift in Sources */,
+				B4BB00FC22F62C3000034432 /* ResilienceArray.swift in Sources */,
 				B455234E22F4F227008B6E4A /* BelaDetector.mlmodel in Sources */,
 				B4BB00F622F57D0F00034432 /* Bela.swift in Sources */,
 				B455233E22F4F201008B6E4A /* ViewController.swift in Sources */,
 				B4BB00FA22F5870000034432 /* BelaPrediction.swift in Sources */,
+				B4BB010222F63A9800034432 /* BelaDetector2.mlmodel in Sources */,
 				B455233C22F4F201008B6E4A /* AppDelegate.swift in Sources */,
+				B4BB010022F633F500034432 /* CardInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

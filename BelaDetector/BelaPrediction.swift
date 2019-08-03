@@ -54,6 +54,27 @@ enum BelaValue: String {
             return 11
         }
     }
+    
+    var string: String {
+        switch self {
+        case .seven:
+            return "7"
+        case .eight:
+            return "8"
+        case .nine:
+            return "9"
+        case .ten:
+            return "10"
+        case .jack:
+            return "J"
+        case .queen:
+            return "Q"
+        case .king:
+            return "K"
+        case .ace:
+            return "A"
+        }
+    }
 }
 
 enum BelaCard: String {
@@ -86,7 +107,7 @@ enum BelaCard: String {
     }
 }
 
-struct BelaPrediction {
+struct BelaPrediction: Hashable {
     let card: BelaCard
     let confidence: Float
     
