@@ -13,7 +13,7 @@ class Bela {
     static let width = 608
     static let height = 608
     
-    private let confidenceThreshold: Float = 0.6
+    private let confidenceThreshold: Float = 0.8
     
     private let model = BelaDetector()
     
@@ -77,7 +77,7 @@ class Bela {
                         
                         let confidenceInClass = bestClassScore * confidence
                         
-                        if confidence > confidenceThreshold {
+                        if confidenceInClass > confidenceThreshold {
 //                            let rect = CGRect(x: CGFloat(x - w/2), y: CGFloat(y - h/2), width: CGFloat(w), height: CGFloat(h))
                             
                             let prediction = BelaPrediction(classIndex: detectedClass, confidence: confidenceInClass)
