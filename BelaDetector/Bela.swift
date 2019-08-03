@@ -15,7 +15,7 @@ class Bela {
     
     private let confidenceThreshold: Float = 0.8
     
-    private let model = BelaDetector()
+    private let model = BelaDetector2 ()
     
     func predict(image: CVPixelBuffer) -> [BelaPrediction] {
         guard let prediction = try? model.prediction(input_1: image) else { return [] }
