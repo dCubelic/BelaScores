@@ -16,6 +16,11 @@ class DetectedCardsView: UIView {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private var belaCards: [BelaCard] = []
+    private var trumpSuit: BelaSuit? {
+        didSet {
+            updatePoints()
+        }
+    }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -42,18 +47,31 @@ class DetectedCardsView: UIView {
         collectionView.register(UINib(nibName: "DetectedCardCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DetectedCardCollectionViewCell")
     }
     
+    func updatePoints() {
+        guard let trumpSuit = trumpSuit else { return }
+        
+        var points = 0
+        for card in belaCards {
+            points += card.points(trumpSuit: trumpSuit)
+        }
+        
+        DispatchQueue.main.async {
+            self.pointsLabel.text = String(points)
+        }
+    }
+    
     func set(trumpSuit: BelaSuit) {
+        self.trumpSuit = trumpSuit
         trumpSuitButton.setImage(UIImage(named: trumpSuit.imageName), for: .normal)
     }
     
-    func set(points: Int) {
-        pointsLabel.text = String(points)
-    }
-    
     func add(card: BelaCard) {
-        belaCards.append(card)
-//        collectionView.insertItems(at: [IndexPath(row: 0, section: 0)])
-//        collectionView.reloadData()
+        belaCards.insert(card, at: 0)
+        updatePoints()
+        
+        DispatchQueue.main.async {
+            self.collectionView.insertItems(at: [IndexPath(row: 0, section: 0)])
+        }
     }
     
 }

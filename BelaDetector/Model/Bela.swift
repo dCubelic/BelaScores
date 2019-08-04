@@ -51,7 +51,7 @@ class Bela {
                 for cx in 0..<gridWidth[i] {
                     for b in 0..<boxesPerCell {
                         let channel = b * (numClasses + 5)
-                        
+// Bounding box stuff
 //                        let tx = Float(featurePointer[offset(channel, cx, cy)])
 //                        let ty = Float(featurePointer[offset(channel + 1, cx, cy)])
 //                        let tw = Float(featurePointer[offset(channel + 2, cx, cy)])
