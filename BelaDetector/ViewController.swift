@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     var resPixBuf: CVPixelBuffer?
     var currentTrumpSuit: BelaSuit?
     
+    let ciContext = CIContext()
     let videoCapture = VideoCapture()
     let semaphore = DispatchSemaphore(value: 2)
     let model = Bela()
@@ -25,6 +26,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        CVPixelBufferCreate(nil, Bela.width, Bela.height,
+                            kCVPixelFormatType_32BGRA, nil,
+                            &resPixBuf)
         
         setupCamera()
     }
@@ -37,23 +42,19 @@ class ViewController: UIViewController {
     
     func predict(pixelBuffer: CVPixelBuffer) {
 //        let startTime = CACurrentMediaTime()
-        
-        CVPixelBufferCreate(nil, Bela.width, Bela.height,
-                            kCVPixelFormatType_32BGRA, nil,
-                            &resPixBuf)
-        
+
         guard let resizedPixelBuffer = resPixBuf else { return }
         let ciImage = CIImage(cvPixelBuffer: pixelBuffer)
         let sx = CGFloat(Bela.width) / CGFloat(CVPixelBufferGetWidth(pixelBuffer))
         let sy = CGFloat(Bela.height) / CGFloat(CVPixelBufferGetHeight(pixelBuffer))
         let scaleTransform = CGAffineTransform(scaleX: sx, y: sy)
         let scaledImage = ciImage.transformed(by: scaleTransform)
-        CIContext().render(scaledImage, to: resizedPixelBuffer)
+        ciContext.render(scaledImage, to: resizedPixelBuffer)
         
         let predictions = model.predict(image: resizedPixelBuffer)
-        
+
         resilienceArray.add(item: predictions)
-        
+
         for prediction in predictions {
             if resilienceArray.numberOfOccurences(card: prediction.card) >= 5 { // ako je dobro prepoznata
                 DispatchQueue.main.async {
