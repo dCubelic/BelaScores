@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B40D1FDC22F787FF008E6C4C /* DetectedCardsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B40D1FDB22F787FF008E6C4C /* DetectedCardsView.xib */; };
+		B40D1FDE22F78835008E6C4C /* DetectedCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40D1FDD22F78835008E6C4C /* DetectedCardsView.swift */; };
+		B40D1FE122F78C15008E6C4C /* DetectedCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40D1FDF22F78C15008E6C4C /* DetectedCardCollectionViewCell.swift */; };
+		B40D1FE222F78C15008E6C4C /* DetectedCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B40D1FE022F78C15008E6C4C /* DetectedCardCollectionViewCell.xib */; };
 		B451C3E822F5CFC4000B8302 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B451C3E722F5CFC4000B8302 /* VideoCapture.swift */; };
 		B455233C22F4F201008B6E4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B455233B22F4F201008B6E4A /* AppDelegate.swift */; };
 		B455233E22F4F201008B6E4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B455233D22F4F201008B6E4A /* ViewController.swift */; };
@@ -24,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B40D1FDB22F787FF008E6C4C /* DetectedCardsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetectedCardsView.xib; sourceTree = "<group>"; };
+		B40D1FDD22F78835008E6C4C /* DetectedCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectedCardsView.swift; sourceTree = "<group>"; };
+		B40D1FDF22F78C15008E6C4C /* DetectedCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectedCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		B40D1FE022F78C15008E6C4C /* DetectedCardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetectedCardCollectionViewCell.xib; sourceTree = "<group>"; };
 		B451C3E722F5CFC4000B8302 /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
 		B455233822F4F201008B6E4A /* BelaDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BelaDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B455233B22F4F201008B6E4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +91,10 @@
 				B4BB00F722F5800900034432 /* HelperFunctions.swift */,
 				B4BB00FF22F633F500034432 /* CardInfoView.swift */,
 				B4BB00FD22F6338400034432 /* CardInfoView.xib */,
+				B40D1FDD22F78835008E6C4C /* DetectedCardsView.swift */,
+				B40D1FDB22F787FF008E6C4C /* DetectedCardsView.xib */,
+				B40D1FDF22F78C15008E6C4C /* DetectedCardCollectionViewCell.swift */,
+				B40D1FE022F78C15008E6C4C /* DetectedCardCollectionViewCell.xib */,
 				B455233F22F4F201008B6E4A /* Main.storyboard */,
 				B455234222F4F203008B6E4A /* Assets.xcassets */,
 				B455234422F4F203008B6E4A /* LaunchScreen.storyboard */,
@@ -149,9 +161,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B40D1FDC22F787FF008E6C4C /* DetectedCardsView.xib in Resources */,
 				B455234622F4F203008B6E4A /* LaunchScreen.storyboard in Resources */,
 				B455234322F4F203008B6E4A /* Assets.xcassets in Resources */,
 				B4BB00FE22F6338400034432 /* CardInfoView.xib in Resources */,
+				B40D1FE222F78C15008E6C4C /* DetectedCardCollectionViewCell.xib in Resources */,
 				B455234122F4F201008B6E4A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,6 +179,7 @@
 			files = (
 				B4BB00F822F5800900034432 /* HelperFunctions.swift in Sources */,
 				B451C3E822F5CFC4000B8302 /* VideoCapture.swift in Sources */,
+				B40D1FE122F78C15008E6C4C /* DetectedCardCollectionViewCell.swift in Sources */,
 				B4BB00FC22F62C3000034432 /* ResilienceArray.swift in Sources */,
 				B455234E22F4F227008B6E4A /* BelaDetector.mlmodel in Sources */,
 				B4BB00F622F57D0F00034432 /* Bela.swift in Sources */,
@@ -173,6 +188,7 @@
 				B4BB010222F63A9800034432 /* BelaDetector2.mlmodel in Sources */,
 				B455233C22F4F201008B6E4A /* AppDelegate.swift in Sources */,
 				B4BB010022F633F500034432 /* CardInfoView.swift in Sources */,
+				B40D1FDE22F78835008E6C4C /* DetectedCardsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

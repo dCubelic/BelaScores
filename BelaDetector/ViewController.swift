@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var videoPreview: UIView!
     @IBOutlet weak var cardInfoView: CardInfoView!
+    @IBOutlet weak var detectedCardsView: DetectedCardsView!
     
     var resPixBuf: CVPixelBuffer?
     var currentTrumpSuit: BelaSuit?
@@ -32,6 +33,14 @@ class ViewController: UIViewController {
                             &resPixBuf)
         
         setupCamera()
+        detectedCardsView.set(points: 123)
+        detectedCardsView.set(trumpSuit: .spades)
+        detectedCardsView.add(card: .aceOfClubs)
+        detectedCardsView.add(card: .eightOfClubs)
+        detectedCardsView.add(card: .sevenOfHearts)
+        detectedCardsView.add(card: .tenOfDiamonds)
+        detectedCardsView.add(card: .queenOfSpades)
+
     }
     
     override func viewWillLayoutSubviews() {

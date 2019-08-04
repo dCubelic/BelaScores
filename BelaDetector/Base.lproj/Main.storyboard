@@ -22,6 +22,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRI-oN-NUB" customClass="DetectedCardsView" customModule="BelaDetector" customModuleProvider="target">
+                                <rect key="frame" x="16" y="52" width="382" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="6F9-B9-jif"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qoc-WS-SPZ" customClass="CardInfoView" customModule="BelaDetector" customModuleProvider="target">
                                 <rect key="frame" x="248" y="812" width="150" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -36,14 +43,18 @@
                             <constraint firstItem="WL4-M6-mbO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0l7-bO-4Tm"/>
                             <constraint firstAttribute="bottom" secondItem="WL4-M6-mbO" secondAttribute="bottom" id="9fU-lc-OxS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qoc-WS-SPZ" secondAttribute="bottom" id="Bmo-zC-dMl"/>
+                            <constraint firstItem="fRI-oN-NUB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="Hcu-Vd-F3A"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qoc-WS-SPZ" secondAttribute="trailing" constant="16" id="Q3k-PW-Hby"/>
                             <constraint firstItem="WL4-M6-mbO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Qk7-fM-w30"/>
                             <constraint firstItem="WL4-M6-mbO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Vcg-Se-Z8u"/>
+                            <constraint firstItem="fRI-oN-NUB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="jwW-Wh-ebd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fRI-oN-NUB" secondAttribute="trailing" constant="16" id="vMz-JF-cyP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="cardInfoView" destination="qoc-WS-SPZ" id="cJ6-bu-uDU"/>
+                        <outlet property="detectedCardsView" destination="fRI-oN-NUB" id="GGR-IJ-Ilc"/>
                         <outlet property="videoPreview" destination="WL4-M6-mbO" id="blt-CW-Jcp"/>
                     </connections>
                 </viewController>
