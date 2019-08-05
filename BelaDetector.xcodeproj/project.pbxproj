@@ -15,18 +15,18 @@
 		B416E88622F86AC100919AD7 /* BelaValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B416E88522F86AC100919AD7 /* BelaValue.swift */; };
 		B416E88822F86ADB00919AD7 /* BelaPrediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B416E88722F86ADB00919AD7 /* BelaPrediction.swift */; };
 		B416E88A22F870B400919AD7 /* BelaDetectorV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B416E88922F870B400919AD7 /* BelaDetectorV3.mlmodel */; };
+		B416E88D22F877CB00919AD7 /* BelaDetectorV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B416E88B22F877CB00919AD7 /* BelaDetectorV2.mlmodel */; };
+		B416E88E22F877CB00919AD7 /* BelaDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B416E88C22F877CB00919AD7 /* BelaDetector.mlmodel */; };
 		B451C3E822F5CFC4000B8302 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B451C3E722F5CFC4000B8302 /* VideoCapture.swift */; };
 		B455233C22F4F201008B6E4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B455233B22F4F201008B6E4A /* AppDelegate.swift */; };
 		B455233E22F4F201008B6E4A /* BelaDetectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B455233D22F4F201008B6E4A /* BelaDetectorViewController.swift */; };
 		B455234122F4F201008B6E4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B455233F22F4F201008B6E4A /* Main.storyboard */; };
 		B455234322F4F203008B6E4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B455234222F4F203008B6E4A /* Assets.xcassets */; };
 		B455234622F4F203008B6E4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B455234422F4F203008B6E4A /* LaunchScreen.storyboard */; };
-		B455234E22F4F227008B6E4A /* BelaDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B455234D22F4F227008B6E4A /* BelaDetector.mlmodel */; };
 		B4BB00F622F57D0F00034432 /* BelaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BB00F522F57D0F00034432 /* BelaModel.swift */; };
 		B4BB00F822F5800900034432 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BB00F722F5800900034432 /* HelperFunctions.swift */; };
 		B4BB00FA22F5870000034432 /* BelaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BB00F922F5870000034432 /* BelaCard.swift */; };
 		B4BB00FC22F62C3000034432 /* ResilienceArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BB00FB22F62C3000034432 /* ResilienceArray.swift */; };
-		B4BB010222F63A9800034432 /* BelaDetector2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B4BB010122F63A9800034432 /* BelaDetector2.mlmodel */; };
 		B4C3034322F79A070018248C /* UIView+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C3034222F79A070018248C /* UIView+Bela.swift */; };
 		B4C3034722F82A1A0018248C /* TrumpSuitPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C3034622F82A1A0018248C /* TrumpSuitPickerViewController.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +40,8 @@
 		B416E88522F86AC100919AD7 /* BelaValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelaValue.swift; sourceTree = "<group>"; };
 		B416E88722F86ADB00919AD7 /* BelaPrediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelaPrediction.swift; sourceTree = "<group>"; };
 		B416E88922F870B400919AD7 /* BelaDetectorV3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BelaDetectorV3.mlmodel; sourceTree = "<group>"; };
+		B416E88B22F877CB00919AD7 /* BelaDetectorV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BelaDetectorV2.mlmodel; sourceTree = "<group>"; };
+		B416E88C22F877CB00919AD7 /* BelaDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BelaDetector.mlmodel; sourceTree = "<group>"; };
 		B451C3E722F5CFC4000B8302 /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
 		B455233822F4F201008B6E4A /* BelaDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BelaDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B455233B22F4F201008B6E4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,12 +50,10 @@
 		B455234222F4F203008B6E4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B455234522F4F203008B6E4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B455234722F4F203008B6E4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B455234D22F4F227008B6E4A /* BelaDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BelaDetector.mlmodel; sourceTree = "<group>"; };
 		B4BB00F522F57D0F00034432 /* BelaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelaModel.swift; sourceTree = "<group>"; };
 		B4BB00F722F5800900034432 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		B4BB00F922F5870000034432 /* BelaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelaCard.swift; sourceTree = "<group>"; };
 		B4BB00FB22F62C3000034432 /* ResilienceArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResilienceArray.swift; sourceTree = "<group>"; };
-		B4BB010122F63A9800034432 /* BelaDetector2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BelaDetector2.mlmodel; sourceTree = "<group>"; };
 		B4C3034222F79A070018248C /* UIView+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Bela.swift"; sourceTree = "<group>"; };
 		B4C3034622F82A1A0018248C /* TrumpSuitPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrumpSuitPickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,8 +113,8 @@
 		B4C3033E22F799710018248C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B455234D22F4F227008B6E4A /* BelaDetector.mlmodel */,
-				B4BB010122F63A9800034432 /* BelaDetector2.mlmodel */,
+				B416E88C22F877CB00919AD7 /* BelaDetector.mlmodel */,
+				B416E88B22F877CB00919AD7 /* BelaDetectorV2.mlmodel */,
 				B416E88922F870B400919AD7 /* BelaDetectorV3.mlmodel */,
 				B4BB00F522F57D0F00034432 /* BelaModel.swift */,
 			);
@@ -245,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4C3034322F79A070018248C /* UIView+Bela.swift in Sources */,
+				B416E88E22F877CB00919AD7 /* BelaDetector.mlmodel in Sources */,
 				B4BB00F822F5800900034432 /* HelperFunctions.swift in Sources */,
 				B416E88422F86AB800919AD7 /* BelaSuit.swift in Sources */,
 				B416E88622F86AC100919AD7 /* BelaValue.swift in Sources */,
@@ -254,11 +255,10 @@
 				B4BB00FC22F62C3000034432 /* ResilienceArray.swift in Sources */,
 				B4C3034722F82A1A0018248C /* TrumpSuitPickerViewController.swift in Sources */,
 				B416E88A22F870B400919AD7 /* BelaDetectorV3.mlmodel in Sources */,
-				B455234E22F4F227008B6E4A /* BelaDetector.mlmodel in Sources */,
 				B4BB00F622F57D0F00034432 /* BelaModel.swift in Sources */,
 				B455233E22F4F201008B6E4A /* BelaDetectorViewController.swift in Sources */,
 				B4BB00FA22F5870000034432 /* BelaCard.swift in Sources */,
-				B4BB010222F63A9800034432 /* BelaDetector2.mlmodel in Sources */,
+				B416E88D22F877CB00919AD7 /* BelaDetectorV2.mlmodel in Sources */,
 				B455233C22F4F201008B6E4A /* AppDelegate.swift in Sources */,
 				B40D1FDE22F78835008E6C4C /* DetectedCardsView.swift in Sources */,
 			);
