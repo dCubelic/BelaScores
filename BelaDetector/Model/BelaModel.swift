@@ -9,13 +9,13 @@
 import UIKit
 import CoreML
 
-class Bela {
+class BelaModel {
     static let width = 608
     static let height = 608
     
     private let confidenceThreshold: Float = 0.8
     
-    private let model = BelaDetector2 ()
+    private let model = BelaDetectorV3()
     
     func predict(image: CVPixelBuffer) -> [BelaPrediction] {
         guard let prediction = try? model.prediction(input_1: image) else { return [] }

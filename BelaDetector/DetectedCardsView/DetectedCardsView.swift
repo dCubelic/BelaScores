@@ -8,12 +8,18 @@
 
 import UIKit
 
+protocol DetectedCardsViewDelegate: class {
+    func detectedCardsViewDidRequestTrumpSuitChange(_ detectedCardsView: DetectedCardsView)
+}
+
 class DetectedCardsView: UIView {
 
-    @IBOutlet weak var trumpSuitButton: UIButton!
+    @IBOutlet weak var trumpSuitImageView: UIImageView!
     @IBOutlet weak var pointsLabel: UILabel!
     @IBOutlet weak var splitLineView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    weak var delegate: DetectedCardsViewDelegate?
     
     private var belaCards: [BelaCard] = []
     private var trumpSuit: BelaSuit? {
@@ -35,9 +41,13 @@ class DetectedCardsView: UIView {
     private func commonInit() {
         _ = loadViewFromNib()
         
-        layer.cornerRadius = 20
+        layer.cornerRadius = frame.height / 2
         layer.masksToBounds = true
         splitLineView.layer.cornerRadius = splitLineView.frame.width / 2
+        
+        let trumpSuitTapGesture = UITapGestureRecognizer(target: self, action: #selector(trumpSuitAction(_:)))
+        trumpSuitImageView.addGestureRecognizer(trumpSuitTapGesture)
+        trumpSuitImageView.isUserInteractionEnabled = true
         
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -62,24 +72,38 @@ class DetectedCardsView: UIView {
     
     func set(trumpSuit: BelaSuit) {
         self.trumpSuit = trumpSuit
-        trumpSuitButton.setImage(UIImage(named: trumpSuit.imageName), for: .normal)
+        trumpSuitImageView.image = UIImage(named: trumpSuit.imageName)
     }
     
     func add(card: BelaCard) {
-        belaCards.insert(card, at: 0)
-        updatePoints()
         
         DispatchQueue.main.async {
-            self.collectionView.insertItems(at: [IndexPath(row: 0, section: 0)])
+            self.belaCards.insert(card, at: 0)
+            self.updatePoints()
+            self.collectionView.performBatchUpdates({
+                self.collectionView.insertItems(at: [IndexPath(row: 0, section: 0)])
+            }, completion: { (_) in
+                self.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: false)
+            })
         }
     }
     
+    func reset() {
+        belaCards = []
+        updatePoints()
+        collectionView.reloadData()
+    }
+    
+    @IBAction func trumpSuitAction(_ sender: Any) {
+        delegate?.detectedCardsViewDidRequestTrumpSuitChange(self)
+    }
 }
 
 extension DetectedCardsView: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        
-//    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = NSString(string: belaCards[indexPath.row].value.string).size(withAttributes: nil).width + 60
+        return CGSize(width: width, height: collectionView.frame.height)
+    }
 }
 
 extension DetectedCardsView: UICollectionViewDataSource {

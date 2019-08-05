@@ -13,20 +13,36 @@ class BelaDetectorViewController: UIViewController {
     
     @IBOutlet private weak var videoPreview: UIView!
     @IBOutlet private weak var detectedCardsView: DetectedCardsView!
+    @IBOutlet private weak var closeButton: UIButton!
+    @IBOutlet private weak var resetButton: UIButton!
+    @IBOutlet private weak var doneButton: UIButton!
     
     private var resizedPixelBufffer: CVPixelBuffer?
     private let ciContext = CIContext()
     private let videoCapture = VideoCapture()
     private let semaphore = DispatchSemaphore(value: 2)
-    private let detectorModel = Bela()
+    private let detectorModel = BelaModel()
     private var cardSet: Set<BelaCard> = Set()
     private var resilienceArray = ResilienceArray<BelaCard>(size: 10)
+    private var trumpSuitPicker: TrumpSuitPickerViewController?
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        closeButton.layer.cornerRadius = closeButton.frame.height / 2
+        resetButton.layer.cornerRadius = resetButton.frame.height / 2
+        doneButton.layer.cornerRadius = doneButton.frame.height / 2
+        
         setupCamera()
+        
+        detectedCardsView.delegate = self
         detectedCardsView.set(trumpSuit: .spades)
+        
+        showTrumpSuitPicker()
     }
     
     override func viewWillLayoutSubviews() {
@@ -36,7 +52,7 @@ class BelaDetectorViewController: UIViewController {
     }
     
     private func setupCamera() {
-        CVPixelBufferCreate(nil, Bela.width, Bela.height, kCVPixelFormatType_32BGRA, nil, &resizedPixelBufffer)
+        CVPixelBufferCreate(nil, BelaModel.width, BelaModel.height, kCVPixelFormatType_32BGRA, nil, &resizedPixelBufffer)
         
         videoCapture.delegate = self
         videoCapture.fps = 50
@@ -60,8 +76,8 @@ class BelaDetectorViewController: UIViewController {
         guard let resizedPixelBuffer = resizedPixelBufffer else { return }
         
         let ciImage = CIImage(cvPixelBuffer: pixelBuffer)
-        let sx = CGFloat(Bela.width) / CGFloat(CVPixelBufferGetWidth(pixelBuffer))
-        let sy = CGFloat(Bela.height) / CGFloat(CVPixelBufferGetHeight(pixelBuffer))
+        let sx = CGFloat(BelaModel.width) / CGFloat(CVPixelBufferGetWidth(pixelBuffer))
+        let sy = CGFloat(BelaModel.height) / CGFloat(CVPixelBufferGetHeight(pixelBuffer))
         let scaleTransform = CGAffineTransform(scaleX: sx, y: sy)
         let scaledImage = ciImage.transformed(by: scaleTransform)
         
@@ -91,6 +107,19 @@ class BelaDetectorViewController: UIViewController {
         return score
     }
 
+    @IBAction func closeAction(_ sender: Any) {
+        
+    }
+    
+    @IBAction func resetAction(_ sender: Any) {
+        cardSet.removeAll(keepingCapacity: true)
+        detectedCardsView.reset()
+        showTrumpSuitPicker()
+    }
+    
+    @IBAction func doneAction(_ sender: Any) {
+        
+    }
 }
 
 extension BelaDetectorViewController: VideoCaptureDelegate {
@@ -105,3 +134,46 @@ extension BelaDetectorViewController: VideoCaptureDelegate {
     }
 }
 
+extension BelaDetectorViewController: DetectedCardsViewDelegate {
+    private func removeTrumpSuitPicker() {
+        trumpSuitPicker?.view.removeFromSuperview()
+        trumpSuitPicker?.removeFromParent()
+        trumpSuitPicker?.didMove(toParent: nil)
+        
+        trumpSuitPicker = nil
+    }
+    
+    private func showTrumpSuitPicker() {
+        guard trumpSuitPicker == nil else { return }
+        
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TrumpSuitPickerViewController") as! TrumpSuitPickerViewController
+        vc.delegate = self
+        trumpSuitPicker = vc
+        
+        addChild(vc)
+        view.addSubview(vc.view)
+        vc.didMove(toParent: self)
+        
+        vc.view.translatesAutoresizingMaskIntoConstraints = false
+        vc.view.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        vc.view.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
+        vc.view.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32).isActive = true
+    }
+    
+    func detectedCardsViewDidRequestTrumpSuitChange(_ detectedCardsView: DetectedCardsView) {
+        if trumpSuitPicker != nil {
+            removeTrumpSuitPicker()
+            return
+        }
+        
+        showTrumpSuitPicker()
+    }
+}
+
+extension BelaDetectorViewController: TrumpSuitPickerViewControllerDelegate {
+    func trumpSuitPickerViewControllerDidChoose(trumpSuitPickerViewController: TrumpSuitPickerViewController, trumpSuit: BelaSuit) {
+        detectedCardsView.set(trumpSuit: trumpSuit)
+
+        removeTrumpSuitPicker()
+    }
+}
