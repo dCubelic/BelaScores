@@ -1,0 +1,46 @@
+disabled_rules: # rule identifiers to exclude from running
+  - shorthand_operator
+  - line_length
+  - function_parameter_count
+  - function_body_length
+  - cyclomatic_complexity
+  - identifier_name
+  - trailing_whitespace
+
+opt_in_rules: # some rules are only opt-in
+  - empty_count
+  - unneeded_parentheses_in_closure_argument
+  - trailing_closure
+  - force_unwrapping
+  - contains_over_first_not_nil
+  - explicit_init
+  - fatal_error_message
+  - first_where
+  - implicit_return
+  - implicitly_unwrapped_optional
+  - multiline_parameters
+  - operator_usage_whitespace
+  - overridden_super_call
+  - pattern_matching_keywords
+  - prohibited_super_call
+  - redundant_nil_coalescing
+  - sorted_first_last
+  - sorted_imports
+  - switch_case_on_newline
+  - vertical_parameter_alignment_on_call
+  - array_init
+  - comma
+  - discouraged_object_literal
+  - empty_string
+  - force_cast
+  - force_try
+  - yoda_condition
+
+force_unwrapping: error
+
+file_length: 500
+
+excluded:
+  - fastlane
+  - Carthage
+  - Pods

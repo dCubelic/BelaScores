@@ -1,24 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="llb-4b-Sri">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Main Menu View Controller-->
+        <scene sceneID="h8h-gt-ZsV">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="llb-4b-Sri" customClass="MainMenuViewController" customModule="BlokZaBelu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="86w-U0-o9e">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blok za Belu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vs-RK-D65">
+                                <rect key="frame" x="44" y="260" width="232" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                <color key="textColor" name="lightGray"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HOD-PX-e7n">
+                                <rect key="frame" x="0.0" y="308" width="320" height="260"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1D5-Tt-bm5">
+                                        <rect key="frame" x="75" y="35" width="170" height="190"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZx-TO-SFY">
+                                                <rect key="frame" x="0.0" y="0.0" width="170" height="50"/>
+                                                <color key="backgroundColor" name="lightGray"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="A9R-zL-VTl"/>
+                                                    <constraint firstAttribute="width" constant="170" id="kn9-Cf-Fzy"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
+                                                <state key="normal" title="NASTAVI">
+                                                    <color key="titleColor" name="darkGray"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="continueAction:" destination="llb-4b-Sri" eventType="touchUpInside" id="aMe-vt-4oC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sS-l5-5qw">
+                                                <rect key="frame" x="0.0" y="70" width="170" height="50"/>
+                                                <color key="backgroundColor" name="lightGray"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="170" id="D0l-fM-GT3"/>
+                                                    <constraint firstAttribute="height" constant="50" id="x54-fc-jUL"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
+                                                <state key="normal" title="NOVA IGRA">
+                                                    <color key="titleColor" name="darkGray"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="newGameAction:" destination="llb-4b-Sri" eventType="touchUpInside" id="R4h-aM-2VO"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nof-Lr-sK2">
+                                                <rect key="frame" x="0.0" y="140" width="170" height="50"/>
+                                                <color key="backgroundColor" name="lightGray"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="gsP-m2-K50"/>
+                                                    <constraint firstAttribute="width" constant="170" id="zRJ-PA-WTN"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
+                                                <state key="normal" title="POSTAVKE">
+                                                    <color key="titleColor" name="darkGray"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="settingsAction:" destination="llb-4b-Sri" eventType="touchUpInside" id="2aK-1d-R28"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="nof-Lr-sK2" secondAttribute="bottom" id="3wx-pP-A9q"/>
+                                            <constraint firstAttribute="trailing" secondItem="3sS-l5-5qw" secondAttribute="trailing" id="7SO-zZ-aHb"/>
+                                            <constraint firstItem="nof-Lr-sK2" firstAttribute="top" secondItem="3sS-l5-5qw" secondAttribute="bottom" constant="20" id="9Bf-eb-hJr"/>
+                                            <constraint firstItem="nof-Lr-sK2" firstAttribute="leading" secondItem="1D5-Tt-bm5" secondAttribute="leading" id="BlW-uf-M2S"/>
+                                            <constraint firstItem="DZx-TO-SFY" firstAttribute="top" secondItem="1D5-Tt-bm5" secondAttribute="top" id="Zor-zE-fOr"/>
+                                            <constraint firstAttribute="trailing" secondItem="DZx-TO-SFY" secondAttribute="trailing" id="eUk-49-SUU"/>
+                                            <constraint firstItem="3sS-l5-5qw" firstAttribute="top" secondItem="DZx-TO-SFY" secondAttribute="bottom" constant="20" id="sgJ-we-mTb"/>
+                                            <constraint firstItem="DZx-TO-SFY" firstAttribute="leading" secondItem="1D5-Tt-bm5" secondAttribute="leading" id="uNN-4M-2Pp"/>
+                                            <constraint firstItem="3sS-l5-5qw" firstAttribute="leading" secondItem="1D5-Tt-bm5" secondAttribute="leading" id="wmy-jZ-ZiG"/>
+                                            <constraint firstAttribute="trailing" secondItem="nof-Lr-sK2" secondAttribute="trailing" id="zzC-pF-6gZ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="1D5-Tt-bm5" firstAttribute="centerY" secondItem="HOD-PX-e7n" secondAttribute="centerY" id="99a-nb-Z7j"/>
+                                    <constraint firstItem="1D5-Tt-bm5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="HOD-PX-e7n" secondAttribute="top" constant="20" id="K6G-01-xSK"/>
+                                    <constraint firstItem="1D5-Tt-bm5" firstAttribute="centerX" secondItem="HOD-PX-e7n" secondAttribute="centerX" id="NYO-gd-zDM"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="1D5-Tt-bm5" secondAttribute="bottom" constant="35" id="WeJ-2w-mqU"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="FX6-kp-fph">
+                                <rect key="frame" x="15" y="50" width="290" height="190"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="darkGray"/>
+                        <constraints>
+                            <constraint firstItem="0vs-RK-D65" firstAttribute="centerX" secondItem="86w-U0-o9e" secondAttribute="centerX" id="1M6-ZB-eoX"/>
+                            <constraint firstItem="HOD-PX-e7n" firstAttribute="top" secondItem="0vs-RK-D65" secondAttribute="bottom" id="CHg-3G-rTC"/>
+                            <constraint firstItem="khM-4z-UVl" firstAttribute="bottom" secondItem="HOD-PX-e7n" secondAttribute="bottom" id="OZd-R9-VkK"/>
+                            <constraint firstItem="FX6-kp-fph" firstAttribute="top" secondItem="khM-4z-UVl" secondAttribute="top" constant="30" id="TMj-t9-Feb"/>
+                            <constraint firstItem="HOD-PX-e7n" firstAttribute="leading" secondItem="khM-4z-UVl" secondAttribute="leading" id="Tve-gN-fhj"/>
+                            <constraint firstItem="FX6-kp-fph" firstAttribute="centerX" secondItem="86w-U0-o9e" secondAttribute="centerX" id="bcu-07-hcj"/>
+                            <constraint firstItem="khM-4z-UVl" firstAttribute="trailing" secondItem="HOD-PX-e7n" secondAttribute="trailing" id="bvQ-eG-OhH"/>
+                            <constraint firstItem="0vs-RK-D65" firstAttribute="top" secondItem="FX6-kp-fph" secondAttribute="bottom" constant="20" id="pJZ-ps-ejk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="khM-4z-UVl"/>
                     </view>
+                    <connections>
+                        <outlet property="continueButton" destination="DZx-TO-SFY" id="4KL-BB-YZv"/>
+                        <outlet property="newGameButton" destination="3sS-l5-5qw" id="5xi-Um-ljF"/>
+                        <outlet property="settingsButton" destination="nof-Lr-sK2" id="3yb-Wf-qEa"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dyB-ur-v74" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="21.739130434782609" y="13.392857142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="290" height="302"/>
+        <namedColor name="darkGray">
+            <color red="0.18431372549019609" green="0.18431372549019609" blue="0.18431372549019609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="lightGray">
+            <color red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
