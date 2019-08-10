@@ -28,7 +28,7 @@ class ScoreViewController: UIViewController {
         
         tableView.register(UINib(nibName: "ScoreTableViewCell", bundle: nil), forCellReuseIdentifier: "ScoreTableViewCell")
         
-        addCardViewController(ofType: AddScoreViewController.self)
+        addCardViewController(ofType: AddScoreCardViewController.self)
     }
 
     @IBAction func backAction(_ sender: Any) {

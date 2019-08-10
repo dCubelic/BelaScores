@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B449D2BA22FF151900EA22BB /* AddScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B449D2B922FF151900EA22BB /* AddScoreViewController.swift */; };
 		B4741EBD22FF05E30058BC00 /* UIStoryboard+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741EBC22FF05E30058BC00 /* UIStoryboard+Bela.swift */; };
 		B4741EC022FF06980058BC00 /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741EBE22FF06980058BC00 /* ScoreTableViewCell.swift */; };
 		B4741EC122FF06980058BC00 /* ScoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4741EBF22FF06980058BC00 /* ScoreTableViewCell.xib */; };
@@ -18,7 +19,7 @@
 		B4741ED022FF09F10058BC00 /* UITableView+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741ECF22FF09F10058BC00 /* UITableView+Bela.swift */; };
 		B4741ED222FF0D220058BC00 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741ED122FF0D210058BC00 /* CardViewController.swift */; };
 		B4741ED422FF0D6E0058BC00 /* InstantPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741ED322FF0D6E0058BC00 /* InstantPanGestureRecognizer.swift */; };
-		B4741ED722FF0DFC0058BC00 /* AddScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741ED622FF0DFC0058BC00 /* AddScoreViewController.swift */; };
+		B4741ED722FF0DFC0058BC00 /* AddScoreCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741ED622FF0DFC0058BC00 /* AddScoreCardViewController.swift */; };
 		B4741ED922FF0E820058BC00 /* UIViewController+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741ED822FF0E820058BC00 /* UIViewController+Bela.swift */; };
 		B4F30D0022FEFC46003F13C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F30CFF22FEFC46003F13C8 /* AppDelegate.swift */; };
 		B4F30D0522FEFC46003F13C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4F30D0322FEFC46003F13C8 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B449D2B922FF151900EA22BB /* AddScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScoreViewController.swift; sourceTree = "<group>"; };
 		B4741EBC22FF05E30058BC00 /* UIStoryboard+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Bela.swift"; sourceTree = "<group>"; };
 		B4741EBE22FF06980058BC00 /* ScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewCell.swift; sourceTree = "<group>"; };
 		B4741EBF22FF06980058BC00 /* ScoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreTableViewCell.xib; sourceTree = "<group>"; };
@@ -40,7 +42,7 @@
 		B4741ECF22FF09F10058BC00 /* UITableView+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Bela.swift"; sourceTree = "<group>"; };
 		B4741ED122FF0D210058BC00 /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		B4741ED322FF0D6E0058BC00 /* InstantPanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstantPanGestureRecognizer.swift; sourceTree = "<group>"; };
-		B4741ED622FF0DFC0058BC00 /* AddScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScoreViewController.swift; sourceTree = "<group>"; };
+		B4741ED622FF0DFC0058BC00 /* AddScoreCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScoreCardViewController.swift; sourceTree = "<group>"; };
 		B4741ED822FF0E820058BC00 /* UIViewController+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Bela.swift"; sourceTree = "<group>"; };
 		B4F30CFC22FEFC46003F13C8 /* BlokZaBelu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlokZaBelu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4F30CFF22FEFC46003F13C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,7 +132,8 @@
 				B4F30D1822FF051C003F13C8 /* Score */,
 				B4741EC222FF07B70058BC00 /* Extensions */,
 				B4F30D1422FF0226003F13C8 /* SupportingFiles */,
-				B4741ED622FF0DFC0058BC00 /* AddScoreViewController.swift */,
+				B4741ED622FF0DFC0058BC00 /* AddScoreCardViewController.swift */,
+				B449D2B922FF151900EA22BB /* AddScoreViewController.swift */,
 			);
 			path = BlokZaBelu;
 			sourceTree = "<group>";
@@ -266,9 +269,10 @@
 				B4F30D0022FEFC46003F13C8 /* AppDelegate.swift in Sources */,
 				B4741ED222FF0D220058BC00 /* CardViewController.swift in Sources */,
 				B4741ED022FF09F10058BC00 /* UITableView+Bela.swift in Sources */,
+				B449D2BA22FF151900EA22BB /* AddScoreViewController.swift in Sources */,
 				B4F30D1722FF04E9003F13C8 /* ScoreViewController.swift in Sources */,
 				B4741ECB22FF089C0058BC00 /* BelaCard.swift in Sources */,
-				B4741ED722FF0DFC0058BC00 /* AddScoreViewController.swift in Sources */,
+				B4741ED722FF0DFC0058BC00 /* AddScoreCardViewController.swift in Sources */,
 				B4741ED922FF0E820058BC00 /* UIViewController+Bela.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

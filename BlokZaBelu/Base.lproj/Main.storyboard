@@ -225,10 +225,10 @@
             </objects>
             <point key="canvasLocation" x="1652.1739130434785" y="12.723214285714285"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Score View Controller-->
         <scene sceneID="PxM-lA-LvR">
             <objects>
-                <viewController id="38T-9d-EPa" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddScoreViewController" id="38T-9d-EPa" customClass="AddScoreViewController" customModule="BlokZaBelu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sTi-sA-jOL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -291,10 +291,17 @@
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="eIW-NV-0S2"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8H-Ok-euS">
-                                <rect key="frame" x="171" y="600" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8H-Ok-euS">
+                                <rect key="frame" x="157" y="801" width="100" height="45"/>
+                                <color key="backgroundColor" name="transparentBlack"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="WCM-mn-ogV"/>
+                                    <constraint firstAttribute="width" constant="100" id="qr0-pL-bev"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
+                                <state key="normal" title="UNESI">
+                                    <color key="titleColor" name="lightGray"/>
+                                </state>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Emr-YB-wS9">
                                 <rect key="frame" x="70" y="268" width="97" height="30"/>
@@ -306,9 +313,11 @@
                         </subviews>
                         <color key="backgroundColor" name="darkGray2"/>
                         <constraints>
+                            <constraint firstItem="U8H-Ok-euS" firstAttribute="centerX" secondItem="sTi-sA-jOL" secondAttribute="centerX" id="Ika-iN-Wt5"/>
                             <constraint firstItem="2X7-2A-2ic" firstAttribute="trailing" secondItem="Vkx-i1-la9" secondAttribute="trailing" constant="50" id="LZe-0z-awg"/>
                             <constraint firstItem="Vkx-i1-la9" firstAttribute="leading" secondItem="2X7-2A-2ic" secondAttribute="leading" constant="50" id="Ptj-MX-9U3"/>
                             <constraint firstItem="Vkx-i1-la9" firstAttribute="top" secondItem="2X7-2A-2ic" secondAttribute="top" constant="30" id="cs2-In-wbt"/>
+                            <constraint firstItem="2X7-2A-2ic" firstAttribute="bottom" secondItem="U8H-Ok-euS" secondAttribute="bottom" constant="16" id="xed-h1-sFo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2X7-2A-2ic"/>
                     </view>
@@ -352,6 +361,9 @@
         </namedColor>
         <namedColor name="lightGray">
             <color red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="transparentBlack">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.69999998807907104" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
