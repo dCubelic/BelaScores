@@ -29,6 +29,8 @@
 		B4BB00FC22F62C3000034432 /* ResilienceArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BB00FB22F62C3000034432 /* ResilienceArray.swift */; };
 		B4C3034322F79A070018248C /* UIView+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C3034222F79A070018248C /* UIView+Bela.swift */; };
 		B4C3034722F82A1A0018248C /* TrumpSuitPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C3034622F82A1A0018248C /* TrumpSuitPickerViewController.swift */; };
+		B4F6484C22FEC61F008134DC /* Belaa.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B4F6484B22FEC61F008134DC /* Belaa.mlmodel */; };
+		B4F6485422FECF2C008134DC /* BelaSmallerTriangle.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B4F6485322FECF2C008134DC /* BelaSmallerTriangle.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		B4BB00FB22F62C3000034432 /* ResilienceArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResilienceArray.swift; sourceTree = "<group>"; };
 		B4C3034222F79A070018248C /* UIView+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Bela.swift"; sourceTree = "<group>"; };
 		B4C3034622F82A1A0018248C /* TrumpSuitPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrumpSuitPickerViewController.swift; sourceTree = "<group>"; };
+		B4F6484B22FEC61F008134DC /* Belaa.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Belaa.mlmodel; path = "../New Group/Belaa.mlmodel"; sourceTree = "<group>"; };
+		B4F6485322FECF2C008134DC /* BelaSmallerTriangle.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BelaSmallerTriangle.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,9 +117,9 @@
 		B4C3033E22F799710018248C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B416E88C22F877CB00919AD7 /* BelaDetector.mlmodel */,
-				B416E88B22F877CB00919AD7 /* BelaDetectorV2.mlmodel */,
+				B4F6485722FED29B008134DC /* Old */,
 				B416E88922F870B400919AD7 /* BelaDetectorV3.mlmodel */,
+				B4F6485322FECF2C008134DC /* BelaSmallerTriangle.mlmodel */,
 				B4BB00F522F57D0F00034432 /* BelaModel.swift */,
 			);
 			path = Model;
@@ -169,6 +173,16 @@
 				B455234722F4F203008B6E4A /* Info.plist */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		B4F6485722FED29B008134DC /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				B4F6484B22FEC61F008134DC /* Belaa.mlmodel */,
+				B416E88C22F877CB00919AD7 /* BelaDetector.mlmodel */,
+				B416E88B22F877CB00919AD7 /* BelaDetectorV2.mlmodel */,
+			);
+			path = Old;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,11 +270,13 @@
 				B4C3034722F82A1A0018248C /* TrumpSuitPickerViewController.swift in Sources */,
 				B416E88A22F870B400919AD7 /* BelaDetectorV3.mlmodel in Sources */,
 				B4BB00F622F57D0F00034432 /* BelaModel.swift in Sources */,
+				B4F6484C22FEC61F008134DC /* Belaa.mlmodel in Sources */,
 				B455233E22F4F201008B6E4A /* BelaDetectorViewController.swift in Sources */,
 				B4BB00FA22F5870000034432 /* BelaCard.swift in Sources */,
 				B416E88D22F877CB00919AD7 /* BelaDetectorV2.mlmodel in Sources */,
 				B455233C22F4F201008B6E4A /* AppDelegate.swift in Sources */,
 				B40D1FDE22F78835008E6C4C /* DetectedCardsView.swift in Sources */,
+				B4F6485422FECF2C008134DC /* BelaSmallerTriangle.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

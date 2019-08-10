@@ -20,7 +20,8 @@ class BelaModel {
     func predict(image: CVPixelBuffer) -> [BelaPrediction] {
         guard let prediction = try? model.prediction(input_1: image) else { return [] }
         
-        return computeBoundigBoxes(features: [prediction.conv2d_13, prediction.conv2d_10])
+        return computeBoundigBoxes(features: [prediction.conv2d_10, prediction.conv2d_13]) // za veci model
+//        return computeBoundigBoxes(features: [prediction.conv2d_11, prediction.conv2d_8]) // za manji model
     }
     
     private func computeBoundigBoxes(features: [MLMultiArray]) -> [BelaPrediction] {
@@ -57,7 +58,7 @@ class BelaModel {
 //                        let tw = Float(featurePointer[offset(channel + 2, cx, cy)])
 //                        let th = Float(featurePointer[offset(channel + 3, cx, cy)])
                         let tc = Float(featurePointer[offset(channel + 4, cx, cy)])
-                        
+
 //                        let scale = powf(2.0, Float(i))
 //                        let x = (Float(cx) * blockSize + sigmoid(tx))/scale
 //                        let y = (Float(cy) * blockSize + sigmoid(ty))/scale
@@ -79,7 +80,6 @@ class BelaModel {
                         
                         if confidenceInClass > confidenceThreshold {
 //                            let rect = CGRect(x: CGFloat(x - w/2), y: CGFloat(y - h/2), width: CGFloat(w), height: CGFloat(h))
-                            
                             let prediction = BelaPrediction(classIndex: detectedClass, confidence: confidenceInClass)
                             predictions.append(prediction)
                         }
