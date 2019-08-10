@@ -7,14 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4741EBD22FF05E30058BC00 /* UIStoryboard+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741EBC22FF05E30058BC00 /* UIStoryboard+Bela.swift */; };
+		B4741EC022FF06980058BC00 /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741EBE22FF06980058BC00 /* ScoreTableViewCell.swift */; };
+		B4741EC122FF06980058BC00 /* ScoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4741EBF22FF06980058BC00 /* ScoreTableViewCell.xib */; };
+		B4741EC422FF07C50058BC00 /* UIColor+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741EC322FF07C50058BC00 /* UIColor+Bela.swift */; };
+		B4741EC722FF08640058BC00 /* BelaScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741EC622FF08640058BC00 /* BelaScore.swift */; };
+		B4741ECB22FF089C0058BC00 /* BelaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741EC822FF089B0058BC00 /* BelaCard.swift */; };
+		B4741ECC22FF089C0058BC00 /* BelaSuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741EC922FF089C0058BC00 /* BelaSuit.swift */; };
+		B4741ECD22FF089C0058BC00 /* BelaValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741ECA22FF089C0058BC00 /* BelaValue.swift */; };
+		B4741ED022FF09F10058BC00 /* UITableView+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741ECF22FF09F10058BC00 /* UITableView+Bela.swift */; };
 		B4F30D0022FEFC46003F13C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F30CFF22FEFC46003F13C8 /* AppDelegate.swift */; };
 		B4F30D0522FEFC46003F13C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4F30D0322FEFC46003F13C8 /* Main.storyboard */; };
 		B4F30D0722FEFC47003F13C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4F30D0622FEFC47003F13C8 /* Assets.xcassets */; };
 		B4F30D0A22FEFC47003F13C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4F30D0822FEFC47003F13C8 /* LaunchScreen.storyboard */; };
 		B4F30D1222FEFFD3003F13C8 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F30D1122FEFFD3003F13C8 /* MainMenuViewController.swift */; };
+		B4F30D1722FF04E9003F13C8 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F30D1622FF04E9003F13C8 /* ScoreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B4741EBC22FF05E30058BC00 /* UIStoryboard+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Bela.swift"; sourceTree = "<group>"; };
+		B4741EBE22FF06980058BC00 /* ScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewCell.swift; sourceTree = "<group>"; };
+		B4741EBF22FF06980058BC00 /* ScoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreTableViewCell.xib; sourceTree = "<group>"; };
+		B4741EC322FF07C50058BC00 /* UIColor+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Bela.swift"; sourceTree = "<group>"; };
+		B4741EC622FF08640058BC00 /* BelaScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelaScore.swift; sourceTree = "<group>"; };
+		B4741EC822FF089B0058BC00 /* BelaCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BelaCard.swift; sourceTree = "<group>"; };
+		B4741EC922FF089C0058BC00 /* BelaSuit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BelaSuit.swift; sourceTree = "<group>"; };
+		B4741ECA22FF089C0058BC00 /* BelaValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BelaValue.swift; sourceTree = "<group>"; };
+		B4741ECF22FF09F10058BC00 /* UITableView+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Bela.swift"; sourceTree = "<group>"; };
 		B4F30CFC22FEFC46003F13C8 /* BlokZaBelu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlokZaBelu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4F30CFF22FEFC46003F13C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4F30D0422FEFC46003F13C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -22,6 +41,7 @@
 		B4F30D0922FEFC47003F13C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4F30D0B22FEFC47003F13C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4F30D1122FEFFD3003F13C8 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		B4F30D1622FF04E9003F13C8 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +55,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B4741EC222FF07B70058BC00 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B4741EC322FF07C50058BC00 /* UIColor+Bela.swift */,
+				B4741EBC22FF05E30058BC00 /* UIStoryboard+Bela.swift */,
+				B4741ECF22FF09F10058BC00 /* UITableView+Bela.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B4741EC522FF080E0058BC00 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B4741EBE22FF06980058BC00 /* ScoreTableViewCell.swift */,
+				B4741EBF22FF06980058BC00 /* ScoreTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B4741ECE22FF089E0058BC00 /* Bela */ = {
+			isa = PBXGroup;
+			children = (
+				B4741EC822FF089B0058BC00 /* BelaCard.swift */,
+				B4741EC922FF089C0058BC00 /* BelaSuit.swift */,
+				B4741ECA22FF089C0058BC00 /* BelaValue.swift */,
+				B4741EC622FF08640058BC00 /* BelaScore.swift */,
+			);
+			path = Bela;
+			sourceTree = "<group>";
+		};
 		B4F30CF322FEFC46003F13C8 = {
 			isa = PBXGroup;
 			children = (
@@ -55,13 +105,41 @@
 			isa = PBXGroup;
 			children = (
 				B4F30CFF22FEFC46003F13C8 /* AppDelegate.swift */,
-				B4F30D1122FEFFD3003F13C8 /* MainMenuViewController.swift */,
 				B4F30D0322FEFC46003F13C8 /* Main.storyboard */,
+				B4741ECE22FF089E0058BC00 /* Bela */,
+				B4F30D1522FF0254003F13C8 /* MainMenu */,
+				B4F30D1822FF051C003F13C8 /* Score */,
+				B4741EC222FF07B70058BC00 /* Extensions */,
+				B4F30D1422FF0226003F13C8 /* SupportingFiles */,
+			);
+			path = BlokZaBelu;
+			sourceTree = "<group>";
+		};
+		B4F30D1422FF0226003F13C8 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
 				B4F30D0622FEFC47003F13C8 /* Assets.xcassets */,
 				B4F30D0822FEFC47003F13C8 /* LaunchScreen.storyboard */,
 				B4F30D0B22FEFC47003F13C8 /* Info.plist */,
 			);
-			path = BlokZaBelu;
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		B4F30D1522FF0254003F13C8 /* MainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				B4F30D1122FEFFD3003F13C8 /* MainMenuViewController.swift */,
+			);
+			path = MainMenu;
+			sourceTree = "<group>";
+		};
+		B4F30D1822FF051C003F13C8 /* Score */ = {
+			isa = PBXGroup;
+			children = (
+				B4F30D1622FF04E9003F13C8 /* ScoreViewController.swift */,
+				B4741EC522FF080E0058BC00 /* Cells */,
+			);
+			path = Score;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +203,7 @@
 			files = (
 				B4F30D0A22FEFC47003F13C8 /* LaunchScreen.storyboard in Resources */,
 				B4F30D0722FEFC47003F13C8 /* Assets.xcassets in Resources */,
+				B4741EC122FF06980058BC00 /* ScoreTableViewCell.xib in Resources */,
 				B4F30D0522FEFC46003F13C8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,8 +235,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4741EC722FF08640058BC00 /* BelaScore.swift in Sources */,
+				B4741ECD22FF089C0058BC00 /* BelaValue.swift in Sources */,
+				B4741EC022FF06980058BC00 /* ScoreTableViewCell.swift in Sources */,
+				B4741ECC22FF089C0058BC00 /* BelaSuit.swift in Sources */,
+				B4741EC422FF07C50058BC00 /* UIColor+Bela.swift in Sources */,
+				B4741EBD22FF05E30058BC00 /* UIStoryboard+Bela.swift in Sources */,
 				B4F30D1222FEFFD3003F13C8 /* MainMenuViewController.swift in Sources */,
 				B4F30D0022FEFC46003F13C8 /* AppDelegate.swift in Sources */,
+				B4741ED022FF09F10058BC00 /* UITableView+Bela.swift in Sources */,
+				B4F30D1722FF04E9003F13C8 /* ScoreViewController.swift in Sources */,
+				B4741ECB22FF089C0058BC00 /* BelaCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,7 +393,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5J7U5C6D83;
-				INFOPLIST_FILE = BlokZaBelu/Info.plist;
+				INFOPLIST_FILE = BlokZaBelu/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -324,7 +412,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5J7U5C6D83;
-				INFOPLIST_FILE = BlokZaBelu/Info.plist;
+				INFOPLIST_FILE = BlokZaBelu/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

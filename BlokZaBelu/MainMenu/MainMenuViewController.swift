@@ -31,7 +31,8 @@ class MainMenuViewController: UIViewController {
     }
     
     @IBAction func newGameAction(_ sender: Any) {
-        
+        let scoreViewController = UIStoryboard.main.instantiateViewController(ofType: ScoreViewController.self)
+        navigationController?.pushViewController(scoreViewController, animated: true)
     }
     
     @IBAction func settingsAction(_ sender: Any) {
