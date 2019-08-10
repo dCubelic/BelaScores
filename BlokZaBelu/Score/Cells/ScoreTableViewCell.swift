@@ -23,13 +23,13 @@ class ScoreTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
-        contentView.backgroundColor = selected ? UIColor.highlightedDarkGray : UIColor.darkGray
+        contentView.backgroundColor = selected ? UIColor.darkGray2 : UIColor.darkGray
     }
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
         
-        contentView.backgroundColor = highlighted ? UIColor.highlightedDarkGray : UIColor.darkGray
+        contentView.backgroundColor = highlighted ? UIColor.darkGray2 : UIColor.darkGray
     }
     
     func setup(for score: BelaScore) {

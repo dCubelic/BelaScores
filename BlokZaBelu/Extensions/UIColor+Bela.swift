@@ -16,7 +16,7 @@ extension UIColor {
         return UIColor(white: 47.0 / 255.0, alpha: 1.0)
     }
     
-    public class var highlightedDarkGray: UIColor {
+    public class var darkGray2: UIColor {
         return UIColor(white: 60.0 / 255.0, alpha: 1.0)
     }
     

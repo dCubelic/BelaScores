@@ -27,6 +27,8 @@ class ScoreViewController: UIViewController {
         scores = [BelaScore(score1: 120, score2: 52, trumpSuit: .hearts), BelaScore(score1: 54, score2: 124, trumpSuit: .diamonds), BelaScore(score1: 0, score2: 162, trumpSuit: .clubs)]
         
         tableView.register(UINib(nibName: "ScoreTableViewCell", bundle: nil), forCellReuseIdentifier: "ScoreTableViewCell")
+        
+        addCardViewController(ofType: AddScoreViewController.self)
     }
 
     @IBAction func backAction(_ sender: Any) {
