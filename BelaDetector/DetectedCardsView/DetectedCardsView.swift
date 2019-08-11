@@ -10,6 +10,7 @@ import UIKit
 
 protocol DetectedCardsViewDelegate: class {
     func detectedCardsViewDidRequestTrumpSuitChange(_ detectedCardsView: DetectedCardsView)
+    func detectedCardsViewDidRemoveCard(_ card: BelaCard)
 }
 
 class DetectedCardsView: UIView {
@@ -119,6 +120,27 @@ extension DetectedCardsView: UICollectionViewDataSource {
         cell.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         
         return cell
+    }
+    
+}
+
+extension DetectedCardsView: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        guard let index = self.belaCards.firstIndex(of: belaCards[indexPath.row]) else { return }
+        
+        DispatchQueue.main.async {
+            
+            self.delegate?.detectedCardsViewDidRemoveCard(self.belaCards[indexPath.row])
+            self.belaCards.remove(at: index)
+            self.updatePoints()
+            
+            self.collectionView.performBatchUpdates({
+                self.collectionView.deleteItems(at: [indexPath])
+            })
+            
+        }
     }
     
 }

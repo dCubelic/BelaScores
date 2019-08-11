@@ -88,7 +88,7 @@ class BelaDetectorViewController: UIViewController {
         resilienceArray.add(items: predictions.map { $0.card })
 
         for prediction in predictions {
-            if resilienceArray.numberOfOccurences(item: prediction.card) >= 2 { // ako je dobro prepoznata
+            if resilienceArray.numberOfOccurences(item: prediction.card) >= 5   { // ako je dobro prepoznata
                 let (inserted, _) = cardSet.insert(prediction.card)
                 if inserted { // ako je prvi put videna
                     detectedCardsView.add(card: prediction.card)
@@ -167,6 +167,10 @@ extension BelaDetectorViewController: DetectedCardsViewDelegate {
         }
         
         showTrumpSuitPicker()
+    }
+    
+    func detectedCardsViewDidRemoveCard(_ card: BelaCard) {
+        cardSet.remove(card)
     }
 }
 
