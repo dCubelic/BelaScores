@@ -10,9 +10,9 @@ import UIKit
 
 class MainMenuViewController: UIViewController {
 
-    @IBOutlet weak var continueButton: UIButton!
-    @IBOutlet weak var newGameButton: UIButton!
-    @IBOutlet weak var settingsButton: UIButton!
+    @IBOutlet weak private var continueButton: UIButton!
+    @IBOutlet weak private var newGameButton: UIButton!
+    @IBOutlet weak private var settingsButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,16 +26,16 @@ class MainMenuViewController: UIViewController {
         settingsButton.layer.cornerRadius = settingsButton.frame.height / 2
     }
 
-    @IBAction func continueAction(_ sender: Any) {
+    @IBAction private func continueAction(_ sender: Any) {
         
     }
     
-    @IBAction func newGameAction(_ sender: Any) {
+    @IBAction private func newGameAction(_ sender: Any) {
         let scoreViewController = UIStoryboard.main.instantiateViewController(ofType: ScoreViewController.self)
         navigationController?.pushViewController(scoreViewController, animated: true)
     }
     
-    @IBAction func settingsAction(_ sender: Any) {
+    @IBAction private func settingsAction(_ sender: Any) {
         
     }
     

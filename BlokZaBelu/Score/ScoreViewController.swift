@@ -10,9 +10,18 @@ import UIKit
 
 class ScoreViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var score1Label: UILabel!
-    @IBOutlet weak var score2Label: UILabel!
+    @IBOutlet weak private var tableView: UITableView!
+    @IBOutlet weak private var score1Label: UILabel!
+    @IBOutlet weak private var score2Label: UILabel!
+    
+    private var keyboardObserver: NSObjectProtocol?
+    private var bottomConstraint: NSLayoutConstraint?
+    
+    deinit {
+        if let keyboardObserver = keyboardObserver {
+            NotificationCenter.default.removeObserver(keyboardObserver)
+        }
+    }
     
     var scores: [BelaScore] = [] {
         didSet {
@@ -28,7 +37,31 @@ class ScoreViewController: UIViewController {
         
         tableView.register(UINib(nibName: "ScoreTableViewCell", bundle: nil), forCellReuseIdentifier: "ScoreTableViewCell")
         
-        addCardViewController(ofType: AddScoreCardViewController.self)
+        let cardViewController = addCardViewController(ofType: AddScoreCardViewController.self)
+        
+        bottomConstraint = cardViewController.view.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
+        bottomConstraint?.isActive = true
+        
+        keyboardObserver = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillChangeFrameNotification, object: nil, queue: nil) { notification in
+            if let userInfo = notification.userInfo,
+                let durationValue = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber,
+                let endFrameValue = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue,
+                let curve = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber {
+                
+//                self.view.firstResponder?.convert(self.view.firstResponder?.frame.origin ?? .zero, to: self.scrollView) ?? CGPoint.zero
+                var responderBottomPoint = self.view.firstResponder?.convert(self.view.firstResponder?.frame.origin ?? .zero, to: self.view) ?? CGPoint.zero
+//                let responderHeight = self.view.firstResponder?.frame.height ?? 0
+//                responderBottomPoint.y += responderHeight
+                
+                print(responderBottomPoint)
+                
+                self.bottomConstraint?.constant = -max(0, responderBottomPoint.y - endFrameValue.cgRectValue.minY)
+                
+                UIView.animate(withDuration: durationValue.doubleValue, delay: 0, options: UIView.AnimationOptions(rawValue: UInt(curve.intValue << 16)), animations: {
+                    self.view.layoutIfNeeded()
+                }, completion: nil)
+            }
+        }
     }
 
     @IBAction func backAction(_ sender: Any) {

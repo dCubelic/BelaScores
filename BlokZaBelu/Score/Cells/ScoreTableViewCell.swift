@@ -10,9 +10,9 @@ import UIKit
 
 class ScoreTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var score1Label: UILabel!
-    @IBOutlet weak var score2Label: UILabel!
-    @IBOutlet weak var trumpSuitImageView: UIImageView!
+    @IBOutlet weak private var score1Label: UILabel!
+    @IBOutlet weak private var score2Label: UILabel!
+    @IBOutlet weak private var trumpSuitImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B439BE5723008BB3000C2CA8 /* UIView+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B439BE5623008BB3000C2CA8 /* UIView+Bela.swift */; };
+		B439BE592300A5AF000C2CA8 /* BiddingTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B439BE582300A5AF000C2CA8 /* BiddingTeamViewController.swift */; };
+		B439BE5B2300A6ED000C2CA8 /* BelaTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B439BE5A2300A6ED000C2CA8 /* BelaTeam.swift */; };
 		B449D2BA22FF151900EA22BB /* AddScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B449D2B922FF151900EA22BB /* AddScoreViewController.swift */; };
 		B4741EBD22FF05E30058BC00 /* UIStoryboard+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741EBC22FF05E30058BC00 /* UIStoryboard+Bela.swift */; };
 		B4741EC022FF06980058BC00 /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741EBE22FF06980058BC00 /* ScoreTableViewCell.swift */; };
@@ -30,6 +33,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B439BE5623008BB3000C2CA8 /* UIView+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Bela.swift"; sourceTree = "<group>"; };
+		B439BE582300A5AF000C2CA8 /* BiddingTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiddingTeamViewController.swift; sourceTree = "<group>"; };
+		B439BE5A2300A6ED000C2CA8 /* BelaTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelaTeam.swift; sourceTree = "<group>"; };
 		B449D2B922FF151900EA22BB /* AddScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScoreViewController.swift; sourceTree = "<group>"; };
 		B4741EBC22FF05E30058BC00 /* UIStoryboard+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Bela.swift"; sourceTree = "<group>"; };
 		B4741EBE22FF06980058BC00 /* ScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewCell.swift; sourceTree = "<group>"; };
@@ -65,12 +71,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B439BE5C2300A75B000C2CA8 /* BiddingTeamViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B439BE582300A5AF000C2CA8 /* BiddingTeamViewController.swift */,
+			);
+			path = BiddingTeamViewController;
+			sourceTree = "<group>";
+		};
 		B4741EC222FF07B70058BC00 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				B4741EC322FF07C50058BC00 /* UIColor+Bela.swift */,
 				B4741EBC22FF05E30058BC00 /* UIStoryboard+Bela.swift */,
 				B4741ECF22FF09F10058BC00 /* UITableView+Bela.swift */,
+				B439BE5623008BB3000C2CA8 /* UIView+Bela.swift */,
 				B4741ED822FF0E820058BC00 /* UIViewController+Bela.swift */,
 			);
 			path = Extensions;
@@ -92,6 +107,7 @@
 				B4741EC922FF089C0058BC00 /* BelaSuit.swift */,
 				B4741ECA22FF089C0058BC00 /* BelaValue.swift */,
 				B4741EC622FF08640058BC00 /* BelaScore.swift */,
+				B439BE5A2300A6ED000C2CA8 /* BelaTeam.swift */,
 			);
 			path = Bela;
 			sourceTree = "<group>";
@@ -126,6 +142,7 @@
 			children = (
 				B4F30CFF22FEFC46003F13C8 /* AppDelegate.swift */,
 				B4F30D0322FEFC46003F13C8 /* Main.storyboard */,
+				B439BE5C2300A75B000C2CA8 /* BiddingTeamViewController */,
 				B4741ED522FF0D710058BC00 /* CardViewController */,
 				B4741ECE22FF089E0058BC00 /* Bela */,
 				B4F30D1522FF0254003F13C8 /* MainMenu */,
@@ -266,9 +283,12 @@
 				B4741EC422FF07C50058BC00 /* UIColor+Bela.swift in Sources */,
 				B4741EBD22FF05E30058BC00 /* UIStoryboard+Bela.swift in Sources */,
 				B4F30D1222FEFFD3003F13C8 /* MainMenuViewController.swift in Sources */,
+				B439BE592300A5AF000C2CA8 /* BiddingTeamViewController.swift in Sources */,
 				B4F30D0022FEFC46003F13C8 /* AppDelegate.swift in Sources */,
 				B4741ED222FF0D220058BC00 /* CardViewController.swift in Sources */,
+				B439BE5B2300A6ED000C2CA8 /* BelaTeam.swift in Sources */,
 				B4741ED022FF09F10058BC00 /* UITableView+Bela.swift in Sources */,
+				B439BE5723008BB3000C2CA8 /* UIView+Bela.swift in Sources */,
 				B449D2BA22FF151900EA22BB /* AddScoreViewController.swift in Sources */,
 				B4F30D1722FF04E9003F13C8 /* ScoreViewController.swift in Sources */,
 				B4741ECB22FF089C0058BC00 /* BelaCard.swift in Sources */,

@@ -10,7 +10,7 @@ import UIKit
 
 extension UIViewController {
     
-    func addCardViewController<T: CardViewController>(ofType type: T.Type) {
+    func addCardViewController<T: CardViewController>(ofType type: T.Type) -> T {
         let cardViewController = T()
         
         addChild(cardViewController)
@@ -20,8 +20,10 @@ extension UIViewController {
         cardViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         cardViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         cardViewController.view.heightAnchor.constraint(equalToConstant: 400).isActive = true
-        cardViewController.view.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
+//        cardViewController.view.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
         
         cardViewController.didMove(toParent: self)
+        
+        return cardViewController
     }
 }

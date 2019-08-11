@@ -97,9 +97,7 @@ class CardViewController: UIViewController {
         layer.path = path.cgPath
         view.layer.mask = layer
         view.backgroundColor = UIColor.darkGray2
-//        view.layer.cornerRadius = 20
-//        view.layer.masksToBounds = true
-        
+
         view.addSubview(handleArea)
         handleArea.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         handleArea.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
