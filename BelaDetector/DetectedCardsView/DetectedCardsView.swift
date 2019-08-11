@@ -28,6 +28,11 @@ class DetectedCardsView: UIView {
             updatePoints()
         }
     }
+    var plusTen = false {
+        didSet {
+            updatePoints()
+        }
+    }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -66,6 +71,8 @@ class DetectedCardsView: UIView {
             points += card.points(trumpSuit: trumpSuit)
         }
         
+        points += plusTen ? 10 : 0
+        
         DispatchQueue.main.async {
             self.pointsLabel.text = String(points)
         }
@@ -90,6 +97,7 @@ class DetectedCardsView: UIView {
     }
     
     func reset() {
+        plusTen = false
         belaCards = []
         updatePoints()
         collectionView.reloadData()

@@ -16,6 +16,7 @@ class BelaDetectorViewController: UIViewController {
     @IBOutlet private weak var closeButton: UIButton!
     @IBOutlet private weak var resetButton: UIButton!
     @IBOutlet private weak var doneButton: UIButton!
+    @IBOutlet private weak var plusTenButton: UIButton!
     
     private var resizedPixelBufffer: CVPixelBuffer?
     private let ciContext = CIContext()
@@ -36,6 +37,7 @@ class BelaDetectorViewController: UIViewController {
         closeButton.layer.cornerRadius = closeButton.frame.height / 2
         resetButton.layer.cornerRadius = resetButton.frame.height / 2
         doneButton.layer.cornerRadius = doneButton.frame.height / 2
+        plusTenButton.layer.cornerRadius = plusTenButton.frame.height / 2
         
         setupCamera()
         
@@ -113,6 +115,7 @@ class BelaDetectorViewController: UIViewController {
     
     @IBAction func resetAction(_ sender: Any) {
         cardSet.removeAll(keepingCapacity: true)
+        plusTenButton.setTitle("+10", for: .normal)
         detectedCardsView.reset()
         showTrumpSuitPicker()
     }
@@ -120,6 +123,12 @@ class BelaDetectorViewController: UIViewController {
     @IBAction func doneAction(_ sender: Any) {
         
     }
+    
+    @IBAction func plusTenAction(_ sender: Any) {
+        detectedCardsView.plusTen.toggle()
+        plusTenButton.setTitle(detectedCardsView.plusTen ? "-10" : "+10", for: .normal)
+    }
+    
 }
 
 extension BelaDetectorViewController: VideoCaptureDelegate {
