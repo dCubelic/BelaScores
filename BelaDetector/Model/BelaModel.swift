@@ -15,13 +15,13 @@ class BelaModel {
     
     private let confidenceThreshold: Float = 0.8
     
-    private let model = BelaDetectorV3()
+    private let model = BelaSmallerTriangle()
     
     func predict(image: CVPixelBuffer) -> [BelaPrediction] {
         guard let prediction = try? model.prediction(input_1: image) else { return [] }
         
-        return computeBoundigBoxes(features: [prediction.conv2d_10, prediction.conv2d_13]) // za veci model
-//        return computeBoundigBoxes(features: [prediction.conv2d_11, prediction.conv2d_8]) // za manji model
+//        return computeBoundigBoxes(features: [prediction.conv2d_10, prediction.conv2d_13]) // za veci model
+        return computeBoundigBoxes(features:[prediction.conv2d_11, prediction.conv2d_8]) // za manji model
     }
     
     private func computeBoundigBoxes(features: [MLMultiArray]) -> [BelaPrediction] {
