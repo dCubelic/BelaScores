@@ -1,0 +1,3 @@
+[submodule "BelaDetector"]
+	path = BelaDetector
+	url = git@github.com:dCubelic/BelaDetector.git

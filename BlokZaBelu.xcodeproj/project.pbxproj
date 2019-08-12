@@ -25,6 +25,8 @@
 		B4741ED722FF0DFC0058BC00 /* AddScoreCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741ED622FF0DFC0058BC00 /* AddScoreCardViewController.swift */; };
 		B4741ED922FF0E820058BC00 /* UIViewController+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741ED822FF0E820058BC00 /* UIViewController+Bela.swift */; };
 		B4D5A7F32301B97C00396103 /* ScoreInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D5A7F22301B97C00396103 /* ScoreInputViewController.swift */; };
+		B4D5A83E2301CEE100396103 /* BelaDetectorFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D5A8262301CE0D00396103 /* BelaDetectorFramework.framework */; };
+		B4D5A83F2301CEE100396103 /* BelaDetectorFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4D5A8262301CE0D00396103 /* BelaDetectorFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B4F30D0022FEFC46003F13C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F30CFF22FEFC46003F13C8 /* AppDelegate.swift */; };
 		B4F30D0522FEFC46003F13C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4F30D0322FEFC46003F13C8 /* Main.storyboard */; };
 		B4F30D0722FEFC47003F13C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4F30D0622FEFC47003F13C8 /* Assets.xcassets */; };
@@ -32,6 +34,44 @@
 		B4F30D1222FEFFD3003F13C8 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F30D1122FEFFD3003F13C8 /* MainMenuViewController.swift */; };
 		B4F30D1722FF04E9003F13C8 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F30D1622FF04E9003F13C8 /* ScoreViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B4D5A8232301CE0D00396103 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4D5A81E2301CE0D00396103 /* BelaDetector.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B455233822F4F201008B6E4A;
+			remoteInfo = BelaDetector;
+		};
+		B4D5A8252301CE0D00396103 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4D5A81E2301CE0D00396103 /* BelaDetector.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B4D5A8002301CC9500396103;
+			remoteInfo = BelaDetectorFramework;
+		};
+		B4D5A8402301CEE100396103 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4D5A81E2301CE0D00396103 /* BelaDetector.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B4D5A7FF2301CC9500396103;
+			remoteInfo = BelaDetectorFramework;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B4D5A8422301CEE100396103 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B4D5A83F2301CEE100396103 /* BelaDetectorFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B439BE5623008BB3000C2CA8 /* UIView+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Bela.swift"; sourceTree = "<group>"; };
@@ -52,6 +92,7 @@
 		B4741ED622FF0DFC0058BC00 /* AddScoreCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScoreCardViewController.swift; sourceTree = "<group>"; };
 		B4741ED822FF0E820058BC00 /* UIViewController+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Bela.swift"; sourceTree = "<group>"; };
 		B4D5A7F22301B97C00396103 /* ScoreInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreInputViewController.swift; sourceTree = "<group>"; };
+		B4D5A81E2301CE0D00396103 /* BelaDetector.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BelaDetector.xcodeproj; path = BelaDetector/BelaDetector.xcodeproj; sourceTree = "<group>"; };
 		B4F30CFC22FEFC46003F13C8 /* BlokZaBelu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlokZaBelu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4F30CFF22FEFC46003F13C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4F30D0422FEFC46003F13C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -67,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4D5A83E2301CEE100396103 /* BelaDetectorFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,9 +173,19 @@
 			path = ScoreInput;
 			sourceTree = "<group>";
 		};
+		B4D5A81F2301CE0D00396103 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B4D5A8242301CE0D00396103 /* BelaDetector.app */,
+				B4D5A8262301CE0D00396103 /* BelaDetectorFramework.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		B4F30CF322FEFC46003F13C8 = {
 			isa = PBXGroup;
 			children = (
+				B4D5A81E2301CE0D00396103 /* BelaDetector.xcodeproj */,
 				B4F30CFE22FEFC46003F13C8 /* BlokZaBelu */,
 				B4F30CFD22FEFC46003F13C8 /* Products */,
 			);
@@ -204,10 +256,12 @@
 				B4F30CF922FEFC46003F13C8 /* Frameworks */,
 				B4F30CFA22FEFC46003F13C8 /* Resources */,
 				B4F30D1322FF0040003F13C8 /* ShellScript */,
+				B4D5A8422301CEE100396103 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B4D5A8412301CEE100396103 /* PBXTargetDependency */,
 			);
 			name = BlokZaBelu;
 			productName = BlokZaBelu;
@@ -240,12 +294,35 @@
 			mainGroup = B4F30CF322FEFC46003F13C8;
 			productRefGroup = B4F30CFD22FEFC46003F13C8 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B4D5A81F2301CE0D00396103 /* Products */;
+					ProjectRef = B4D5A81E2301CE0D00396103 /* BelaDetector.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				B4F30CFB22FEFC46003F13C8 /* BlokZaBelu */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B4D5A8242301CE0D00396103 /* BelaDetector.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = BelaDetector.app;
+			remoteRef = B4D5A8232301CE0D00396103 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B4D5A8262301CE0D00396103 /* BelaDetectorFramework.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BelaDetectorFramework.framework;
+			remoteRef = B4D5A8252301CE0D00396103 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B4F30CFA22FEFC46003F13C8 /* Resources */ = {
@@ -277,7 +354,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "#if which swiftlint >/dev/null; then\n#swiftlint\n#else\n#echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n#fi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -310,6 +387,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B4D5A8412301CEE100396103 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BelaDetectorFramework;
+			targetProxy = B4D5A8402301CEE100396103 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B4F30D0322FEFC46003F13C8 /* Main.storyboard */ = {
@@ -450,6 +535,7 @@
 		B4F30D0F22FEFC47003F13C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5J7U5C6D83;
@@ -462,13 +548,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cubelic.dominik.BlokZaBelu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		B4F30D1022FEFC47003F13C8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5J7U5C6D83;
@@ -481,7 +568,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cubelic.dominik.BlokZaBelu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

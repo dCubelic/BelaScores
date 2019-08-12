@@ -411,6 +411,9 @@
                                     <constraint firstAttribute="width" secondItem="024-nc-ctF" secondAttribute="height" multiplier="1:1" id="jNw-4v-XyC"/>
                                 </constraints>
                                 <state key="normal" image="camera"/>
+                                <connections>
+                                    <action selector="camera1Action:" destination="wtZ-Wr-mwl" eventType="touchUpInside" id="ear-g7-eNZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynz-he-Zjb">
                                 <rect key="frame" x="298" y="18" width="24" height="24"/>
@@ -418,6 +421,9 @@
                                     <constraint firstAttribute="width" constant="24" id="JoO-Da-srD"/>
                                 </constraints>
                                 <state key="normal" image="camera"/>
+                                <connections>
+                                    <action selector="camera2Action:" destination="wtZ-Wr-mwl" eventType="touchUpInside" id="V8i-Rh-5zA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BelaDetectorFramework
 
 struct Score {
     var score1: Int = 0
@@ -45,9 +46,19 @@ class ScoreInputViewController: UIViewController {
         points2UnderlineView.layer.cornerRadius = points2UnderlineView.frame.height / 2
     }
     
+    @IBAction func camera1Action(_ sender: Any) {
+        let vc = BelaDetectorViewController.instantiateFromStoryboard()
+        present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func camera2Action(_ sender: Any) {
+        
+    }
+    
 }
 
 extension ScoreInputViewController: UITextFieldDelegate {
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         
@@ -71,4 +82,5 @@ extension ScoreInputViewController: UITextFieldDelegate {
         
         return false
     }
+    
 }
