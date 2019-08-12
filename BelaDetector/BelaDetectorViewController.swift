@@ -9,7 +9,7 @@
 import UIKit
 import CoreMedia
 
-class BelaDetectorViewController: UIViewController {
+public class BelaDetectorViewController: UIViewController {
     
     @IBOutlet private weak var videoPreview: UIView!
     @IBOutlet private weak var detectedCardsView: DetectedCardsView!
@@ -27,11 +27,15 @@ class BelaDetectorViewController: UIViewController {
     private var resilienceArray = ResilienceArray<BelaCard>(size: 10)
     private var trumpSuitPicker: TrumpSuitPickerViewController?
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
+    override public var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
-    override func viewDidLoad() {
+    public static func instantiateFromStoryboard() -> BelaDetectorViewController {
+        return UIStoryboard(name: "Main", bundle: Bundle.frameworkBundle).instantiateInitialViewController() as! BelaDetectorViewController
+    }
+    
+    override public func viewDidLoad() {
         super.viewDidLoad()
         
         closeButton.layer.cornerRadius = closeButton.frame.height / 2
@@ -47,7 +51,7 @@ class BelaDetectorViewController: UIViewController {
         showTrumpSuitPicker()
     }
     
-    override func viewWillLayoutSubviews() {
+    override public func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
         resizePreviewLayer()
@@ -110,7 +114,7 @@ class BelaDetectorViewController: UIViewController {
     }
 
     @IBAction func closeAction(_ sender: Any) {
-        
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func resetAction(_ sender: Any) {
@@ -155,7 +159,7 @@ extension BelaDetectorViewController: DetectedCardsViewDelegate {
     private func showTrumpSuitPicker() {
         guard trumpSuitPicker == nil else { return }
         
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TrumpSuitPickerViewController") as! TrumpSuitPickerViewController
+        let vc = UIStoryboard(name: "Main", bundle: Bundle.frameworkBundle).instantiateViewController(withIdentifier: "TrumpSuitPickerViewController") as! TrumpSuitPickerViewController
         vc.delegate = self
         trumpSuitPicker = vc
         

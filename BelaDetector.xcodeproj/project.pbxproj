@@ -29,9 +29,57 @@
 		B4BB00FC22F62C3000034432 /* ResilienceArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BB00FB22F62C3000034432 /* ResilienceArray.swift */; };
 		B4C3034322F79A070018248C /* UIView+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C3034222F79A070018248C /* UIView+Bela.swift */; };
 		B4C3034722F82A1A0018248C /* TrumpSuitPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C3034622F82A1A0018248C /* TrumpSuitPickerViewController.swift */; };
+		B4D5A8042301CC9500396103 /* BelaDetectorFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = B4D5A8022301CC9500396103 /* BelaDetectorFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4D5A8072301CC9500396103 /* BelaDetectorFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D5A8002301CC9500396103 /* BelaDetectorFramework.framework */; };
+		B4D5A8082301CC9500396103 /* BelaDetectorFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4D5A8002301CC9500396103 /* BelaDetectorFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B4D5A82B2301CE7E00396103 /* BelaDetectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B455233D22F4F201008B6E4A /* BelaDetectorViewController.swift */; };
+		B4D5A82C2301CE8F00396103 /* DetectedCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40D1FDD22F78835008E6C4C /* DetectedCardsView.swift */; };
+		B4D5A82E2301CE9F00396103 /* BelaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BB00F922F5870000034432 /* BelaCard.swift */; };
+		B4D5A82F2301CEA100396103 /* BelaPrediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B416E88722F86ADB00919AD7 /* BelaPrediction.swift */; };
+		B4D5A8302301CEA200396103 /* BelaSuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B416E88322F86AB800919AD7 /* BelaSuit.swift */; };
+		B4D5A8312301CEA400396103 /* BelaValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B416E88522F86AC100919AD7 /* BelaValue.swift */; };
+		B4D5A8322301CEA700396103 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B451C3E722F5CFC4000B8302 /* VideoCapture.swift */; };
+		B4D5A8332301CEAD00396103 /* DetectedCardsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B40D1FDB22F787FF008E6C4C /* DetectedCardsView.xib */; };
+		B4D5A8342301CEAF00396103 /* DetectedCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40D1FDF22F78C15008E6C4C /* DetectedCardCollectionViewCell.swift */; };
+		B4D5A8352301CEB200396103 /* DetectedCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B40D1FE022F78C15008E6C4C /* DetectedCardCollectionViewCell.xib */; };
+		B4D5A8362301CEB600396103 /* BelaSmallerTriangle.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B4F6485322FECF2C008134DC /* BelaSmallerTriangle.mlmodel */; };
+		B4D5A8372301CEB800396103 /* BelaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BB00F522F57D0F00034432 /* BelaModel.swift */; };
+		B4D5A8382301CEBA00396103 /* BelaDetectorV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B416E88922F870B400919AD7 /* BelaDetectorV3.mlmodel */; };
+		B4D5A8392301CEBD00396103 /* TrumpSuitPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C3034622F82A1A0018248C /* TrumpSuitPickerViewController.swift */; };
+		B4D5A83A2301CEC100396103 /* ResilienceArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BB00FB22F62C3000034432 /* ResilienceArray.swift */; };
+		B4D5A83B2301CEC200396103 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BB00F722F5800900034432 /* HelperFunctions.swift */; };
+		B4D5A83C2301CEC500396103 /* UIView+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C3034222F79A070018248C /* UIView+Bela.swift */; };
+		B4D5A83D2301CECA00396103 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B455234222F4F203008B6E4A /* Assets.xcassets */; };
+		B4D5A8432301D09C00396103 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B455233F22F4F201008B6E4A /* Main.storyboard */; };
+		B4D5A8452301D17700396103 /* Bundle+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D5A8442301D17700396103 /* Bundle+Bela.swift */; };
+		B4D5A8462301D1A600396103 /* Bundle+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D5A8442301D17700396103 /* Bundle+Bela.swift */; };
 		B4F6484C22FEC61F008134DC /* Belaa.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B4F6484B22FEC61F008134DC /* Belaa.mlmodel */; };
 		B4F6485422FECF2C008134DC /* BelaSmallerTriangle.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B4F6485322FECF2C008134DC /* BelaSmallerTriangle.mlmodel */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B4D5A8052301CC9500396103 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B455233022F4F201008B6E4A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4D5A7FF2301CC9500396103;
+			remoteInfo = BelaDetectorFramework;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B4D5A80C2301CC9500396103 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B4D5A8082301CC9500396103 /* BelaDetectorFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B40D1FDB22F787FF008E6C4C /* DetectedCardsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetectedCardsView.xib; sourceTree = "<group>"; };
@@ -58,12 +106,24 @@
 		B4BB00FB22F62C3000034432 /* ResilienceArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResilienceArray.swift; sourceTree = "<group>"; };
 		B4C3034222F79A070018248C /* UIView+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Bela.swift"; sourceTree = "<group>"; };
 		B4C3034622F82A1A0018248C /* TrumpSuitPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrumpSuitPickerViewController.swift; sourceTree = "<group>"; };
+		B4D5A8002301CC9500396103 /* BelaDetectorFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BelaDetectorFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4D5A8022301CC9500396103 /* BelaDetectorFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BelaDetectorFramework.h; sourceTree = "<group>"; };
+		B4D5A8032301CC9500396103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4D5A8442301D17700396103 /* Bundle+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Bela.swift"; sourceTree = "<group>"; };
 		B4F6484B22FEC61F008134DC /* Belaa.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Belaa.mlmodel; path = "../New Group/Belaa.mlmodel"; sourceTree = "<group>"; };
 		B4F6485322FECF2C008134DC /* BelaSmallerTriangle.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BelaSmallerTriangle.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B455233522F4F201008B6E4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4D5A8072301CC9500396103 /* BelaDetectorFramework.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4D5A7FD2301CC9500396103 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -85,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				B455233A22F4F201008B6E4A /* BelaDetector */,
+				B4D5A8012301CC9500396103 /* BelaDetectorFramework */,
 				B455233922F4F201008B6E4A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				B455233822F4F201008B6E4A /* BelaDetector.app */,
+				B4D5A8002301CC9500396103 /* BelaDetectorFramework.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -150,6 +212,7 @@
 				B4BB00FB22F62C3000034432 /* ResilienceArray.swift */,
 				B4BB00F722F5800900034432 /* HelperFunctions.swift */,
 				B4C3034222F79A070018248C /* UIView+Bela.swift */,
+				B4D5A8442301D17700396103 /* Bundle+Bela.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -175,6 +238,15 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
+		B4D5A8012301CC9500396103 /* BelaDetectorFramework */ = {
+			isa = PBXGroup;
+			children = (
+				B4D5A8022301CC9500396103 /* BelaDetectorFramework.h */,
+				B4D5A8032301CC9500396103 /* Info.plist */,
+			);
+			path = BelaDetectorFramework;
+			sourceTree = "<group>";
+		};
 		B4F6485722FED29B008134DC /* Old */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +259,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		B4D5A7FB2301CC9500396103 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4D5A8042301CC9500396103 /* BelaDetectorFramework.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		B455233722F4F201008B6E4A /* BelaDetector */ = {
 			isa = PBXNativeTarget;
@@ -195,15 +278,35 @@
 				B455233422F4F201008B6E4A /* Sources */,
 				B455233522F4F201008B6E4A /* Frameworks */,
 				B455233622F4F201008B6E4A /* Resources */,
+				B4D5A80C2301CC9500396103 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B4D5A8062301CC9500396103 /* PBXTargetDependency */,
 			);
 			name = BelaDetector;
 			productName = BelaDetector;
 			productReference = B455233822F4F201008B6E4A /* BelaDetector.app */;
 			productType = "com.apple.product-type.application";
+		};
+		B4D5A7FF2301CC9500396103 /* BelaDetectorFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4D5A80B2301CC9500396103 /* Build configuration list for PBXNativeTarget "BelaDetectorFramework" */;
+			buildPhases = (
+				B4D5A7FB2301CC9500396103 /* Headers */,
+				B4D5A7FC2301CC9500396103 /* Sources */,
+				B4D5A7FD2301CC9500396103 /* Frameworks */,
+				B4D5A7FE2301CC9500396103 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BelaDetectorFramework;
+			productName = BelaDetectorFramework;
+			productReference = B4D5A8002301CC9500396103 /* BelaDetectorFramework.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -216,6 +319,9 @@
 				ORGANIZATIONNAME = "Dominik Cubelic";
 				TargetAttributes = {
 					B455233722F4F201008B6E4A = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					B4D5A7FF2301CC9500396103 = {
 						CreatedOnToolsVersion = 10.2;
 					};
 				};
@@ -234,6 +340,7 @@
 			projectRoot = "";
 			targets = (
 				B455233722F4F201008B6E4A /* BelaDetector */,
+				B4D5A7FF2301CC9500396103 /* BelaDetectorFramework */,
 			);
 		};
 /* End PBXProject section */
@@ -251,6 +358,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B4D5A7FE2301CC9500396103 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4D5A8352301CEB200396103 /* DetectedCardCollectionViewCell.xib in Resources */,
+				B4D5A83D2301CECA00396103 /* Assets.xcassets in Resources */,
+				B4D5A8332301CEAD00396103 /* DetectedCardsView.xib in Resources */,
+				B4D5A8432301D09C00396103 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -259,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4C3034322F79A070018248C /* UIView+Bela.swift in Sources */,
+				B4D5A8452301D17700396103 /* Bundle+Bela.swift in Sources */,
 				B416E88E22F877CB00919AD7 /* BelaDetector.mlmodel in Sources */,
 				B4BB00F822F5800900034432 /* HelperFunctions.swift in Sources */,
 				B416E88422F86AB800919AD7 /* BelaSuit.swift in Sources */,
@@ -280,7 +399,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B4D5A7FC2301CC9500396103 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4D5A82F2301CEA100396103 /* BelaPrediction.swift in Sources */,
+				B4D5A8322301CEA700396103 /* VideoCapture.swift in Sources */,
+				B4D5A83A2301CEC100396103 /* ResilienceArray.swift in Sources */,
+				B4D5A8362301CEB600396103 /* BelaSmallerTriangle.mlmodel in Sources */,
+				B4D5A8382301CEBA00396103 /* BelaDetectorV3.mlmodel in Sources */,
+				B4D5A8462301D1A600396103 /* Bundle+Bela.swift in Sources */,
+				B4D5A8342301CEAF00396103 /* DetectedCardCollectionViewCell.swift in Sources */,
+				B4D5A82C2301CE8F00396103 /* DetectedCardsView.swift in Sources */,
+				B4D5A83B2301CEC200396103 /* HelperFunctions.swift in Sources */,
+				B4D5A82B2301CE7E00396103 /* BelaDetectorViewController.swift in Sources */,
+				B4D5A8302301CEA200396103 /* BelaSuit.swift in Sources */,
+				B4D5A8392301CEBD00396103 /* TrumpSuitPickerViewController.swift in Sources */,
+				B4D5A8372301CEB800396103 /* BelaModel.swift in Sources */,
+				B4D5A83C2301CEC500396103 /* UIView+Bela.swift in Sources */,
+				B4D5A82E2301CE9F00396103 /* BelaCard.swift in Sources */,
+				B4D5A8312301CEA400396103 /* BelaValue.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B4D5A8062301CC9500396103 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4D5A7FF2301CC9500396103 /* BelaDetectorFramework */;
+			targetProxy = B4D5A8052301CC9500396103 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B455233F22F4F201008B6E4A /* Main.storyboard */ = {
@@ -421,6 +571,7 @@
 		B455234B22F4F203008B6E4A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5J7U5C6D83;
@@ -439,6 +590,7 @@
 		B455234C22F4F203008B6E4A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5J7U5C6D83;
@@ -451,6 +603,64 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B4D5A8092301CC9500396103 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5J7U5C6D83;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = BelaDetectorFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cubelic.dominik.BelaDetectorFramework;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B4D5A80A2301CC9500396103 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5J7U5C6D83;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = BelaDetectorFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cubelic.dominik.BelaDetectorFramework;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -471,6 +681,15 @@
 			buildConfigurations = (
 				B455234B22F4F203008B6E4A /* Debug */,
 				B455234C22F4F203008B6E4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B4D5A80B2301CC9500396103 /* Build configuration list for PBXNativeTarget "BelaDetectorFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4D5A8092301CC9500396103 /* Debug */,
+				B4D5A80A2301CC9500396103 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

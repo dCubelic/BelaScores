@@ -60,7 +60,7 @@ class DetectedCardsView: UIView {
         
         collectionView.backgroundColor = .clear
         
-        collectionView.register(UINib(nibName: "DetectedCardCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DetectedCardCollectionViewCell")
+        collectionView.register(UINib(nibName: "DetectedCardCollectionViewCell", bundle: Bundle.frameworkBundle), forCellWithReuseIdentifier: "DetectedCardCollectionViewCell")
     }
     
     func updatePoints() {
