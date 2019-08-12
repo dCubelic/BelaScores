@@ -6,6 +6,7 @@
 //  Copyright © 2019 Dominik Cubelic. All rights reserved.
 //
 
+import BelaDetectorFramework
 import Foundation
 
 struct BelaScore {

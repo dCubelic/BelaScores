@@ -22,7 +22,6 @@ class AddScoreCardViewController: CardViewController {
         addChild(vc)
         contentView = vc.view
         vc.didMove(toParent: self)
-        
     }
     
     required init?(coder aDecoder: NSCoder) {

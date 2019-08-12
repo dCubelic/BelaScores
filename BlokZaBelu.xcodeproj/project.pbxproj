@@ -16,9 +16,6 @@
 		B4741EC122FF06980058BC00 /* ScoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4741EBF22FF06980058BC00 /* ScoreTableViewCell.xib */; };
 		B4741EC422FF07C50058BC00 /* UIColor+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741EC322FF07C50058BC00 /* UIColor+Bela.swift */; };
 		B4741EC722FF08640058BC00 /* BelaScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741EC622FF08640058BC00 /* BelaScore.swift */; };
-		B4741ECB22FF089C0058BC00 /* BelaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741EC822FF089B0058BC00 /* BelaCard.swift */; };
-		B4741ECC22FF089C0058BC00 /* BelaSuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741EC922FF089C0058BC00 /* BelaSuit.swift */; };
-		B4741ECD22FF089C0058BC00 /* BelaValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741ECA22FF089C0058BC00 /* BelaValue.swift */; };
 		B4741ED022FF09F10058BC00 /* UITableView+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741ECF22FF09F10058BC00 /* UITableView+Bela.swift */; };
 		B4741ED222FF0D220058BC00 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741ED122FF0D210058BC00 /* CardViewController.swift */; };
 		B4741ED422FF0D6E0058BC00 /* InstantPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741ED322FF0D6E0058BC00 /* InstantPanGestureRecognizer.swift */; };
@@ -83,9 +80,6 @@
 		B4741EBF22FF06980058BC00 /* ScoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreTableViewCell.xib; sourceTree = "<group>"; };
 		B4741EC322FF07C50058BC00 /* UIColor+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Bela.swift"; sourceTree = "<group>"; };
 		B4741EC622FF08640058BC00 /* BelaScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelaScore.swift; sourceTree = "<group>"; };
-		B4741EC822FF089B0058BC00 /* BelaCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BelaCard.swift; sourceTree = "<group>"; };
-		B4741EC922FF089C0058BC00 /* BelaSuit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BelaSuit.swift; sourceTree = "<group>"; };
-		B4741ECA22FF089C0058BC00 /* BelaValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BelaValue.swift; sourceTree = "<group>"; };
 		B4741ECF22FF09F10058BC00 /* UITableView+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Bela.swift"; sourceTree = "<group>"; };
 		B4741ED122FF0D210058BC00 /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		B4741ED322FF0D6E0058BC00 /* InstantPanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstantPanGestureRecognizer.swift; sourceTree = "<group>"; };
@@ -147,9 +141,6 @@
 		B4741ECE22FF089E0058BC00 /* Bela */ = {
 			isa = PBXGroup;
 			children = (
-				B4741EC822FF089B0058BC00 /* BelaCard.swift */,
-				B4741EC922FF089C0058BC00 /* BelaSuit.swift */,
-				B4741ECA22FF089C0058BC00 /* BelaValue.swift */,
 				B4741EC622FF08640058BC00 /* BelaScore.swift */,
 				B439BE5A2300A6ED000C2CA8 /* BelaTeam.swift */,
 			);
@@ -182,6 +173,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		B4D5A8512301DF0B00396103 /* AddScore */ = {
+			isa = PBXGroup;
+			children = (
+				B4741ED522FF0D710058BC00 /* CardViewController */,
+				B4741ED622FF0DFC0058BC00 /* AddScoreCardViewController.swift */,
+				B449D2B922FF151900EA22BB /* AddScoreViewController.swift */,
+				B439BE5C2300A75B000C2CA8 /* BiddingTeam */,
+				B4D5A7F42301B97F00396103 /* ScoreInput */,
+			);
+			path = AddScore;
+			sourceTree = "<group>";
+		};
 		B4F30CF322FEFC46003F13C8 = {
 			isa = PBXGroup;
 			children = (
@@ -204,16 +207,12 @@
 			children = (
 				B4F30CFF22FEFC46003F13C8 /* AppDelegate.swift */,
 				B4F30D0322FEFC46003F13C8 /* Main.storyboard */,
-				B4D5A7F42301B97F00396103 /* ScoreInput */,
-				B439BE5C2300A75B000C2CA8 /* BiddingTeam */,
-				B4741ED522FF0D710058BC00 /* CardViewController */,
+				B4D5A8512301DF0B00396103 /* AddScore */,
 				B4741ECE22FF089E0058BC00 /* Bela */,
 				B4F30D1522FF0254003F13C8 /* MainMenu */,
 				B4F30D1822FF051C003F13C8 /* Score */,
 				B4741EC222FF07B70058BC00 /* Extensions */,
 				B4F30D1422FF0226003F13C8 /* SupportingFiles */,
-				B4741ED622FF0DFC0058BC00 /* AddScoreCardViewController.swift */,
-				B449D2B922FF151900EA22BB /* AddScoreViewController.swift */,
 			);
 			path = BlokZaBelu;
 			sourceTree = "<group>";
@@ -365,9 +364,7 @@
 			files = (
 				B4741ED422FF0D6E0058BC00 /* InstantPanGestureRecognizer.swift in Sources */,
 				B4741EC722FF08640058BC00 /* BelaScore.swift in Sources */,
-				B4741ECD22FF089C0058BC00 /* BelaValue.swift in Sources */,
 				B4741EC022FF06980058BC00 /* ScoreTableViewCell.swift in Sources */,
-				B4741ECC22FF089C0058BC00 /* BelaSuit.swift in Sources */,
 				B4741EC422FF07C50058BC00 /* UIColor+Bela.swift in Sources */,
 				B4741EBD22FF05E30058BC00 /* UIStoryboard+Bela.swift in Sources */,
 				B4F30D1222FEFFD3003F13C8 /* MainMenuViewController.swift in Sources */,
@@ -380,7 +377,6 @@
 				B439BE5723008BB3000C2CA8 /* UIView+Bela.swift in Sources */,
 				B449D2BA22FF151900EA22BB /* AddScoreViewController.swift in Sources */,
 				B4F30D1722FF04E9003F13C8 /* ScoreViewController.swift in Sources */,
-				B4741ECB22FF089C0058BC00 /* BelaCard.swift in Sources */,
 				B4741ED722FF0DFC0058BC00 /* AddScoreCardViewController.swift in Sources */,
 				B4741ED922FF0E820058BC00 /* UIViewController+Bela.swift in Sources */,
 			);
