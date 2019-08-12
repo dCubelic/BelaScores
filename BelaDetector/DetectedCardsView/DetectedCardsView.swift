@@ -20,6 +20,14 @@ class DetectedCardsView: UIView {
     @IBOutlet weak var splitLineView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    public var points: Int = 0 {
+        didSet {
+            DispatchQueue.main.async {
+                self.pointsLabel.text = String(self.points)
+            }
+        }
+    }
+    
     weak var delegate: DetectedCardsViewDelegate?
     
     private var belaCards: [BelaCard] = []
@@ -73,9 +81,7 @@ class DetectedCardsView: UIView {
         
         points += plusTen ? 10 : 0
         
-        DispatchQueue.main.async {
-            self.pointsLabel.text = String(points)
-        }
+        self.points = points
     }
     
     func set(trumpSuit: BelaSuit) {

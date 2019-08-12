@@ -9,6 +9,10 @@
 import CoreMedia
 import UIKit
 
+public protocol BelaDetectorViewControllerDelegate: class {
+    func belaDetectorViewControllerDidFinishScanning(_ belaDetectorViewController: BelaDetectorViewController, points: Int)
+}
+
 public class BelaDetectorViewController: UIViewController {
     
     @IBOutlet private weak var videoPreview: UIView!
@@ -26,6 +30,8 @@ public class BelaDetectorViewController: UIViewController {
     private var cardSet: Set<BelaCard> = Set()
     private var resilienceArray = ResilienceArray<BelaCard>(size: 10)
     private var trumpSuitPicker: TrumpSuitPickerViewController?
+    
+    public weak var delegate: BelaDetectorViewControllerDelegate?
     
     override public var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -49,6 +55,12 @@ public class BelaDetectorViewController: UIViewController {
         detectedCardsView.set(trumpSuit: .spades)
         
         showTrumpSuitPicker()
+    }
+    
+    public override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        videoCapture.stop()
     }
     
     override public func viewWillLayoutSubviews() {
@@ -125,7 +137,8 @@ public class BelaDetectorViewController: UIViewController {
     }
     
     @IBAction func doneAction(_ sender: Any) {
-        
+        delegate?.belaDetectorViewControllerDidFinishScanning(self, points: detectedCardsView.points)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func plusTenAction(_ sender: Any) {
