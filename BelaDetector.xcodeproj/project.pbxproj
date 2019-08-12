@@ -425,10 +425,10 @@
 				B4D5A83B2301CEC200396103 /* HelperFunctions.swift in Sources */,
 				B4D5A82B2301CE7E00396103 /* BelaDetectorViewController.swift in Sources */,
 				B4D5A8502301D5C000396103 /* UITableView+Bela.swift in Sources */,
-				B4D5A8302301CEA200396103 /* BelaSuit.swift in Sources */,
 				B4D5A8392301CEBD00396103 /* TrumpSuitPickerViewController.swift in Sources */,
 				B4D5A8372301CEB800396103 /* BelaModel.swift in Sources */,
 				B4D5A83C2301CEC500396103 /* UIView+Bela.swift in Sources */,
+				B4D5A8302301CEA200396103 /* BelaSuit.swift in Sources */,
 				B4D5A82E2301CE9F00396103 /* BelaCard.swift in Sources */,
 				B4D5A8312301CEA400396103 /* BelaValue.swift in Sources */,
 			);

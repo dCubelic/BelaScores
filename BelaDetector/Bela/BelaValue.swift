@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum BelaValue: String {
+public enum BelaValue: String {
     case ace, king, queen, jack, ten, nine, eight, seven
     
     var pointValue: Int {

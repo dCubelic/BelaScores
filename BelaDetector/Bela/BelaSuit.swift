@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum BelaSuit: String {
+public enum BelaSuit: String {
     case hearts, diamonds, spades, clubs
     
     var imageName: String {
