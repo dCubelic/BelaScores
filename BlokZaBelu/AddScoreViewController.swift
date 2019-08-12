@@ -10,7 +10,6 @@ import UIKit
 
 class AddScoreViewController: UIViewController {
 
-    
     @IBOutlet weak private var addButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     

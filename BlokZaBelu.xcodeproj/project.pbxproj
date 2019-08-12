@@ -185,8 +185,8 @@
 		B4F30CF322FEFC46003F13C8 = {
 			isa = PBXGroup;
 			children = (
-				B4D5A81E2301CE0D00396103 /* BelaDetector.xcodeproj */,
 				B4F30CFE22FEFC46003F13C8 /* BlokZaBelu */,
+				B4D5A81E2301CE0D00396103 /* BelaDetector.xcodeproj */,
 				B4F30CFD22FEFC46003F13C8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -354,7 +354,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#if which swiftlint >/dev/null; then\n#swiftlint\n#else\n#echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n#fi\n";
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
