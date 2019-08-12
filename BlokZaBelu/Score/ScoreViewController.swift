@@ -50,7 +50,7 @@ class ScoreViewController: UIViewController {
                 
                 var responderBottomPoint = self.view.firstResponder?.convert(self.view.firstResponder?.frame.origin ?? .zero, to: self.view) ?? CGPoint.zero
                 let responderHeight = self.view.firstResponder?.frame.height ?? 0
-                responderBottomPoint.y += responderHeight
+                responderBottomPoint.y += responderHeight + 15
                 
                 self.bottomConstraint?.constant = -max(0, responderBottomPoint.y - endFrameValue.cgRectValue.minY - (self.bottomConstraint?.constant ?? 0))
                 

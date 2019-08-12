@@ -24,6 +24,7 @@
 		B4741ED422FF0D6E0058BC00 /* InstantPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741ED322FF0D6E0058BC00 /* InstantPanGestureRecognizer.swift */; };
 		B4741ED722FF0DFC0058BC00 /* AddScoreCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741ED622FF0DFC0058BC00 /* AddScoreCardViewController.swift */; };
 		B4741ED922FF0E820058BC00 /* UIViewController+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741ED822FF0E820058BC00 /* UIViewController+Bela.swift */; };
+		B4D5A7F32301B97C00396103 /* ScoreInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D5A7F22301B97C00396103 /* ScoreInputViewController.swift */; };
 		B4F30D0022FEFC46003F13C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F30CFF22FEFC46003F13C8 /* AppDelegate.swift */; };
 		B4F30D0522FEFC46003F13C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4F30D0322FEFC46003F13C8 /* Main.storyboard */; };
 		B4F30D0722FEFC47003F13C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4F30D0622FEFC47003F13C8 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		B4741ED322FF0D6E0058BC00 /* InstantPanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstantPanGestureRecognizer.swift; sourceTree = "<group>"; };
 		B4741ED622FF0DFC0058BC00 /* AddScoreCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScoreCardViewController.swift; sourceTree = "<group>"; };
 		B4741ED822FF0E820058BC00 /* UIViewController+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Bela.swift"; sourceTree = "<group>"; };
+		B4D5A7F22301B97C00396103 /* ScoreInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreInputViewController.swift; sourceTree = "<group>"; };
 		B4F30CFC22FEFC46003F13C8 /* BlokZaBelu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlokZaBelu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4F30CFF22FEFC46003F13C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4F30D0422FEFC46003F13C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,12 +73,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B439BE5C2300A75B000C2CA8 /* BiddingTeamViewController */ = {
+		B439BE5C2300A75B000C2CA8 /* BiddingTeam */ = {
 			isa = PBXGroup;
 			children = (
 				B439BE582300A5AF000C2CA8 /* BiddingTeamViewController.swift */,
 			);
-			path = BiddingTeamViewController;
+			path = BiddingTeam;
 			sourceTree = "<group>";
 		};
 		B4741EC222FF07B70058BC00 /* Extensions */ = {
@@ -121,6 +123,14 @@
 			path = CardViewController;
 			sourceTree = "<group>";
 		};
+		B4D5A7F42301B97F00396103 /* ScoreInput */ = {
+			isa = PBXGroup;
+			children = (
+				B4D5A7F22301B97C00396103 /* ScoreInputViewController.swift */,
+			);
+			path = ScoreInput;
+			sourceTree = "<group>";
+		};
 		B4F30CF322FEFC46003F13C8 = {
 			isa = PBXGroup;
 			children = (
@@ -142,7 +152,8 @@
 			children = (
 				B4F30CFF22FEFC46003F13C8 /* AppDelegate.swift */,
 				B4F30D0322FEFC46003F13C8 /* Main.storyboard */,
-				B439BE5C2300A75B000C2CA8 /* BiddingTeamViewController */,
+				B4D5A7F42301B97F00396103 /* ScoreInput */,
+				B439BE5C2300A75B000C2CA8 /* BiddingTeam */,
 				B4741ED522FF0D710058BC00 /* CardViewController */,
 				B4741ECE22FF089E0058BC00 /* Bela */,
 				B4F30D1522FF0254003F13C8 /* MainMenu */,
@@ -283,6 +294,7 @@
 				B4741EC422FF07C50058BC00 /* UIColor+Bela.swift in Sources */,
 				B4741EBD22FF05E30058BC00 /* UIStoryboard+Bela.swift in Sources */,
 				B4F30D1222FEFFD3003F13C8 /* MainMenuViewController.swift in Sources */,
+				B4D5A7F32301B97C00396103 /* ScoreInputViewController.swift in Sources */,
 				B439BE592300A5AF000C2CA8 /* BiddingTeamViewController.swift in Sources */,
 				B4F30D0022FEFC46003F13C8 /* AppDelegate.swift in Sources */,
 				B4741ED222FF0D220058BC00 /* CardViewController.swift in Sources */,
