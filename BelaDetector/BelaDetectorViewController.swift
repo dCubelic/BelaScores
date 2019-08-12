@@ -6,8 +6,8 @@
 //  Copyright © 2019 Dominik Cubelic. All rights reserved.
 //
 
-import UIKit
 import CoreMedia
+import UIKit
 
 public class BelaDetectorViewController: UIViewController {
     
@@ -32,7 +32,7 @@ public class BelaDetectorViewController: UIViewController {
     }
     
     public static func instantiateFromStoryboard() -> BelaDetectorViewController {
-        return UIStoryboard(name: "Main", bundle: Bundle.frameworkBundle).instantiateInitialViewController() as! BelaDetectorViewController
+        return UIStoryboard.main.instantiateViewController(ofType: BelaDetectorViewController.self)
     }
     
     override public func viewDidLoad() {
@@ -62,7 +62,7 @@ public class BelaDetectorViewController: UIViewController {
         
         videoCapture.delegate = self
         videoCapture.fps = 50
-        videoCapture.setup(sessionPreset: .hd1280x720) { (success) in
+        videoCapture.setup(sessionPreset: .hd1280x720) { success in
             if success {
                 if let previewLayer = self.videoCapture.previewLayer {
                     self.videoPreview.layer.addSublayer(previewLayer)
@@ -94,7 +94,7 @@ public class BelaDetectorViewController: UIViewController {
         resilienceArray.add(items: predictions.map { $0.card })
 
         for prediction in predictions {
-            if resilienceArray.numberOfOccurences(item: prediction.card) >= 5   { // ako je dobro prepoznata
+            if resilienceArray.numberOfOccurences(item: prediction.card) >= 5 { // ako je dobro prepoznata
                 let (inserted, _) = cardSet.insert(prediction.card)
                 if inserted { // ako je prvi put videna
                     detectedCardsView.add(card: prediction.card)
@@ -159,7 +159,7 @@ extension BelaDetectorViewController: DetectedCardsViewDelegate {
     private func showTrumpSuitPicker() {
         guard trumpSuitPicker == nil else { return }
         
-        let vc = UIStoryboard(name: "Main", bundle: Bundle.frameworkBundle).instantiateViewController(withIdentifier: "TrumpSuitPickerViewController") as! TrumpSuitPickerViewController
+        let vc = UIStoryboard.main.instantiateViewController(ofType: TrumpSuitPickerViewController.self)
         vc.delegate = self
         trumpSuitPicker = vc
         

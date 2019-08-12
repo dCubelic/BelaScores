@@ -6,9 +6,9 @@
 //  Copyright © 2019 Dominik Cubelic. All rights reserved.
 //
 
-import UIKit
 import AVFoundation
 import CoreVideo
+import UIKit
 
 protocol VideoCaptureDelegate: class {
     func videoCapture(_ capture: VideoCapture, didCaptureVideoFrame pixelBuffer: CVPixelBuffer?, timestamp: CMTime)

@@ -53,6 +53,10 @@
 		B4D5A8432301D09C00396103 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B455233F22F4F201008B6E4A /* Main.storyboard */; };
 		B4D5A8452301D17700396103 /* Bundle+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D5A8442301D17700396103 /* Bundle+Bela.swift */; };
 		B4D5A8462301D1A600396103 /* Bundle+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D5A8442301D17700396103 /* Bundle+Bela.swift */; };
+		B4D5A84C2301D49300396103 /* UIStoryboard+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D5A84B2301D49300396103 /* UIStoryboard+Bela.swift */; };
+		B4D5A84D2301D49300396103 /* UIStoryboard+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D5A84B2301D49300396103 /* UIStoryboard+Bela.swift */; };
+		B4D5A84F2301D5C000396103 /* UITableView+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D5A84E2301D5C000396103 /* UITableView+Bela.swift */; };
+		B4D5A8502301D5C000396103 /* UITableView+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D5A84E2301D5C000396103 /* UITableView+Bela.swift */; };
 		B4F6484C22FEC61F008134DC /* Belaa.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B4F6484B22FEC61F008134DC /* Belaa.mlmodel */; };
 		B4F6485422FECF2C008134DC /* BelaSmallerTriangle.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B4F6485322FECF2C008134DC /* BelaSmallerTriangle.mlmodel */; };
 /* End PBXBuildFile section */
@@ -110,6 +114,8 @@
 		B4D5A8022301CC9500396103 /* BelaDetectorFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BelaDetectorFramework.h; sourceTree = "<group>"; };
 		B4D5A8032301CC9500396103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4D5A8442301D17700396103 /* Bundle+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Bela.swift"; sourceTree = "<group>"; };
+		B4D5A84B2301D49300396103 /* UIStoryboard+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Bela.swift"; sourceTree = "<group>"; };
+		B4D5A84E2301D5C000396103 /* UITableView+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Bela.swift"; sourceTree = "<group>"; };
 		B4F6484B22FEC61F008134DC /* Belaa.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Belaa.mlmodel; path = "../New Group/Belaa.mlmodel"; sourceTree = "<group>"; };
 		B4F6485322FECF2C008134DC /* BelaSmallerTriangle.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BelaSmallerTriangle.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -209,10 +215,12 @@
 		B4C3034122F799AE0018248C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				B4D5A8442301D17700396103 /* Bundle+Bela.swift */,
 				B4BB00FB22F62C3000034432 /* ResilienceArray.swift */,
 				B4BB00F722F5800900034432 /* HelperFunctions.swift */,
+				B4D5A84B2301D49300396103 /* UIStoryboard+Bela.swift */,
+				B4D5A84E2301D5C000396103 /* UITableView+Bela.swift */,
 				B4C3034222F79A070018248C /* UIView+Bela.swift */,
-				B4D5A8442301D17700396103 /* Bundle+Bela.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -393,7 +401,9 @@
 				B455233E22F4F201008B6E4A /* BelaDetectorViewController.swift in Sources */,
 				B4BB00FA22F5870000034432 /* BelaCard.swift in Sources */,
 				B416E88D22F877CB00919AD7 /* BelaDetectorV2.mlmodel in Sources */,
+				B4D5A84C2301D49300396103 /* UIStoryboard+Bela.swift in Sources */,
 				B455233C22F4F201008B6E4A /* AppDelegate.swift in Sources */,
+				B4D5A84F2301D5C000396103 /* UITableView+Bela.swift in Sources */,
 				B40D1FDE22F78835008E6C4C /* DetectedCardsView.swift in Sources */,
 				B4F6485422FECF2C008134DC /* BelaSmallerTriangle.mlmodel in Sources */,
 			);
@@ -409,10 +419,12 @@
 				B4D5A8362301CEB600396103 /* BelaSmallerTriangle.mlmodel in Sources */,
 				B4D5A8382301CEBA00396103 /* BelaDetectorV3.mlmodel in Sources */,
 				B4D5A8462301D1A600396103 /* Bundle+Bela.swift in Sources */,
+				B4D5A84D2301D49300396103 /* UIStoryboard+Bela.swift in Sources */,
 				B4D5A8342301CEAF00396103 /* DetectedCardCollectionViewCell.swift in Sources */,
 				B4D5A82C2301CE8F00396103 /* DetectedCardsView.swift in Sources */,
 				B4D5A83B2301CEC200396103 /* HelperFunctions.swift in Sources */,
 				B4D5A82B2301CE7E00396103 /* BelaDetectorViewController.swift in Sources */,
+				B4D5A8502301D5C000396103 /* UITableView+Bela.swift in Sources */,
 				B4D5A8302301CEA200396103 /* BelaSuit.swift in Sources */,
 				B4D5A8392301CEBD00396103 /* TrumpSuitPickerViewController.swift in Sources */,
 				B4D5A8372301CEB800396103 /* BelaModel.swift in Sources */,

@@ -90,7 +90,7 @@ class DetectedCardsView: UIView {
             self.updatePoints()
             self.collectionView.performBatchUpdates({
                 self.collectionView.insertItems(at: [IndexPath(row: 0, section: 0)])
-            }, completion: { (_) in
+            }, completion: { _ in
                 self.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: false)
             })
         }
@@ -122,7 +122,7 @@ extension DetectedCardsView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetectedCardCollectionViewCell", for: indexPath) as! DetectedCardCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(ofType: DetectedCardCollectionViewCell.self, for: indexPath)
         
         cell.setup(for: belaCards[indexPath.row])
         cell.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
@@ -146,7 +146,7 @@ extension DetectedCardsView: UICollectionViewDelegate {
             
             self.collectionView.performBatchUpdates({
                 self.collectionView.deleteItems(at: [indexPath])
-            })
+            }, completion: nil)
             
         }
     }

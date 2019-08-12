@@ -6,8 +6,8 @@
 //  Copyright © 2019 Dominik Cubelic. All rights reserved.
 //
 
-import UIKit
 import CoreML
+import UIKit
 
 class BelaModel {
     static let width = 608
@@ -21,7 +21,7 @@ class BelaModel {
         guard let prediction = try? model.prediction(input_1: image) else { return [] }
         
 //        return computeBoundigBoxes(features: [prediction.conv2d_10, prediction.conv2d_13]) // za veci model
-        return computeBoundigBoxes(features:[prediction.conv2d_11, prediction.conv2d_8]) // za manji model
+        return computeBoundigBoxes(features: [prediction.conv2d_11, prediction.conv2d_8]) // za manji model
     }
     
     private func computeBoundigBoxes(features: [MLMultiArray]) -> [BelaPrediction] {
@@ -40,7 +40,7 @@ class BelaModel {
         var xStride = features[0].strides[2].intValue
         
         func offset(_ channel: Int, _ x: Int, _ y: Int) -> Int {
-            return channel*channelStride + y*yStride + x*xStride
+            return channel * channelStride + y * yStride + x * xStride
         }
         
         for i in 0..<2 {

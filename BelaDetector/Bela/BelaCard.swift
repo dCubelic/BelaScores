@@ -22,11 +22,17 @@ enum BelaCard: String {
                                     ]
     
     var value: BelaValue {
-        return BelaValue(rawValue: self.rawValue.components(separatedBy: "Of")[0].lowercased())!
+        guard let belaValue = BelaValue(rawValue: self.rawValue.components(separatedBy: "Of")[0].lowercased()) else {
+            fatalError("Invalid bela card name!")
+        }
+        return belaValue
     }
     
     var suit: BelaSuit {
-        return BelaSuit(rawValue: self.rawValue.components(separatedBy: "Of")[1].lowercased())!
+        guard let belaSuit = BelaSuit(rawValue: self.rawValue.components(separatedBy: "Of")[1].lowercased()) else {
+            fatalError("Inavlid bela card name!")
+        }
+        return belaSuit
     }
     
     func points(trumpSuit: BelaSuit) -> Int {
