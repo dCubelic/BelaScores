@@ -26,4 +26,17 @@ extension UIViewController {
         
         return cardViewController
     }
+    
+    func addCardViewController<T: CardViewController>(_ cardViewController: T) {
+        addChild(cardViewController)
+        view.addSubview(cardViewController.view)
+        
+        cardViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        cardViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+        cardViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+        cardViewController.view.heightAnchor.constraint(equalToConstant: 400).isActive = true
+        //        cardViewController.view.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
+        
+        cardViewController.didMove(toParent: self)
+    }
 }

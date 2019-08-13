@@ -31,6 +31,10 @@ class BiddingTeamViewController: UIViewController {
 
     }
     
+    func reset() {
+        biddingTeam = .team1
+    }
+    
     @IBAction private func team1Action(_ sender: Any) {
         team1Button.setTitleColor(UIColor.blue, for: .normal)
         team2Button.setTitleColor(UIColor.darkGray, for: .normal)

@@ -24,6 +24,11 @@ class DeclarationsViewController: UIViewController {
         tableView.register(UINib(nibName: "DeclaredValueTableViewCell", bundle: nil), forCellReuseIdentifier: "DeclaredValueTableViewCell")
     }
     
+    func reset() {
+        declarationPoints = []
+        tableView.reloadData()
+    }
+    
 }
 
 extension DeclarationsViewController: UITableViewDataSource, UITableViewDelegate {

@@ -79,6 +79,17 @@ class CardViewController: UIViewController {
         setupClosedTransform()
     }
     
+    public func closeCard() {
+        isOpen = true
+        animator.stopAnimation(false)
+        startAnimationIfNeeded()
+    }
+    
+    public func openCard() {
+        isOpen = false
+        startAnimationIfNeeded()
+    }
+    
     private func setupClosedTransform() {
         let visibleHeight = view.frame.size.height - 0
         

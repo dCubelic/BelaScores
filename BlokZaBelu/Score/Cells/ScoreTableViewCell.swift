@@ -36,11 +36,11 @@ class ScoreTableViewCell: UITableViewCell {
         contentView.backgroundColor = highlighted ? UIColor.darkGray2 : UIColor.darkGray
     }
     
-    func setup(for score: BelaGameScore) {
-        score1Label.text = String(score.score1)
-        score2Label.text = String(score.score2)
-        team1BidView.isHidden = false
-        team2BidView.isHidden = true
+    func setup(for score: BelaScore) {
+        score1Label.text = String(score.totalScore)
+        score2Label.text = String(score.totalScore2)
+        team1BidView.isHidden = !(score.biddingTeam == .team1)
+        team2BidView.isHidden = !(score.biddingTeam == .team2)
     }
     
 }

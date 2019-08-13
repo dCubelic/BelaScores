@@ -23,27 +23,25 @@ class ScoreViewController: UIViewController {
         }
     }
     
-    var scores: [BelaGameScore] = [] {
+    var scores: [BelaScore] = [] {
         didSet {
-            score1Label.text = String(scores.reduce(0) { $0 + $1.score1 })
-            score2Label.text = String(scores.reduce(0) { $0 + $1.score2 })
+            score1Label.text = String(scores.reduce(0) { $0 + $1.totalScore })
+            score2Label.text = String(scores.reduce(0) { $0 + $1.totalScore2 })
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        scores = [BelaGameScore(score1: 120, score2: 52), BelaGameScore(score1: 54, score2: 124), BelaGameScore(score1: 0, score2: 162)]
+//        scores = [BelaGameScore(score1: 120, score2: 52), BelaGameScore(score1: 54, score2: 124), BelaGameScore(score1: 0, score2: 162)]
         
         tableView.register(UINib(nibName: "ScoreTableViewCell", bundle: nil), forCellReuseIdentifier: "ScoreTableViewCell")
         
-//        let vc = UIStoryboard.main.instantiateViewController(ofType: AddScoreViewController.self)
-//        addChild(vc)
-//        view.addSubview(vc.view)
-//        vc.didMove(toParent: self)
-        let cardViewController = addCardViewController(ofType: AddScoreCardViewController.self)
-  
-        bottomConstraint = cardViewController.view.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
+        let vc = UIStoryboard.main.instantiateViewController(ofType: AddScoreViewController.self)
+        vc.delegate = self
+        addCardViewController(vc)
+        
+        bottomConstraint = vc.view.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         bottomConstraint?.isActive = true
         
         keyboardObserver = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillChangeFrameNotification, object: nil, queue: nil) { notification in
@@ -82,6 +80,15 @@ extension ScoreViewController: UITableViewDataSource {
         cell.setup(for: scores[indexPath.row])
         
         return cell
+    }
+    
+}
+
+extension ScoreViewController: AddScoreViewControllerDelegate {
+    
+    func addScoreViewControllerDidAdd(addScoreViewController: AddScoreViewController, score: BelaScore) {
+        scores.insert(score, at: 0)
+        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .top)
     }
     
 }

@@ -12,7 +12,7 @@ protocol AddScoreViewControllerDelegate: class {
     func addScoreViewControllerDidAdd(addScoreViewController: AddScoreViewController, score: BelaScore)
 }
 
-class AddScoreViewController: UIViewController {
+class AddScoreViewController: CardViewController {
 
     @IBOutlet weak private var addButton: UIButton!
     @IBOutlet weak var touchView: UIView!
@@ -56,6 +56,13 @@ class AddScoreViewController: UIViewController {
         view.endEditing(true)
     }
     
+    private func reset() {
+        biddingTeamViewController?.reset()
+        scoreInputViewController?.reset()
+        declarationViewController?.reset()
+        declarationsViewController2?.reset()
+    }
+    
     @IBAction private func addAction(_ sender: Any) {
         guard let biddingTeam = biddingTeamViewController?.biddingTeam,
             let gameScore = scoreInputViewController?.score,
@@ -64,8 +71,10 @@ class AddScoreViewController: UIViewController {
             else { return }
         
         let belaScore = BelaScore(biddingTeam: biddingTeam, gameScore: gameScore, declarationsTeam1: declarationsTeam1, declarationsTeam2: declarationsTeam2)
-        print(belaScore)
         delegate?.addScoreViewControllerDidAdd(addScoreViewController: self, score: belaScore)
+        
+        reset()
+        closeCard()
     }
     
 }

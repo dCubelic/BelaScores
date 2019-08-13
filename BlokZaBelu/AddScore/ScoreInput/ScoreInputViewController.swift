@@ -20,7 +20,11 @@ class ScoreInputViewController: UIViewController {
     
     private(set) var score: BelaGameScore? {
         didSet {
-            guard let score = score else { return }
+            guard let score = score else {
+                points1TextField.text = ""
+                points2TextField.text = ""
+                return
+            }
             points1TextField.text = String(score.score1)
             points2TextField.text = String(score.score2)
         }
@@ -30,6 +34,10 @@ class ScoreInputViewController: UIViewController {
         super.viewDidLoad()
         
         setupViews()
+    }
+    
+    func reset() {
+        score = nil
     }
     
     private func setupViews() {
