@@ -9,7 +9,7 @@
 import BelaDetectorFramework
 import Foundation
 
-struct BelaScore {
+struct BelaGameScore {
     var score1: Int
     var score2: Int
     var trumpSuit: BelaSuit

@@ -36,7 +36,7 @@ class ScoreTableViewCell: UITableViewCell {
         contentView.backgroundColor = highlighted ? UIColor.darkGray2 : UIColor.darkGray
     }
     
-    func setup(for score: BelaScore) {
+    func setup(for score: BelaGameScore) {
         score1Label.text = String(score.score1)
         score2Label.text = String(score.score2)
         team1BidView.isHidden = false

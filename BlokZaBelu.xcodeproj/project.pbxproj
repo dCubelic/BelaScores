@@ -10,12 +10,20 @@
 		B439BE5723008BB3000C2CA8 /* UIView+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B439BE5623008BB3000C2CA8 /* UIView+Bela.swift */; };
 		B439BE592300A5AF000C2CA8 /* BiddingTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B439BE582300A5AF000C2CA8 /* BiddingTeamViewController.swift */; };
 		B439BE5B2300A6ED000C2CA8 /* BelaTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B439BE5A2300A6ED000C2CA8 /* BelaTeam.swift */; };
+		B445AA512301F81800A097B7 /* UICollectionView+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B445AA502301F81800A097B7 /* UICollectionView+Bela.swift */; };
 		B449D2BA22FF151900EA22BB /* AddScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B449D2B922FF151900EA22BB /* AddScoreViewController.swift */; };
+		B461A8772301E93100DF5DE0 /* DeclarationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461A8762301E93100DF5DE0 /* DeclarationsViewController.swift */; };
+		B461A87B2301E96100DF5DE0 /* NewDeclarationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461A8792301E96100DF5DE0 /* NewDeclarationTableViewCell.swift */; };
+		B461A87C2301E96100DF5DE0 /* NewDeclarationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B461A87A2301E96100DF5DE0 /* NewDeclarationTableViewCell.xib */; };
+		B461A8832301E99300DF5DE0 /* DeclaredValueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461A8812301E99300DF5DE0 /* DeclaredValueTableViewCell.swift */; };
+		B461A8842301E99300DF5DE0 /* DeclaredValueTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B461A8822301E99300DF5DE0 /* DeclaredValueTableViewCell.xib */; };
+		B461A8872301F0B500DF5DE0 /* ValueCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461A8852301F0B500DF5DE0 /* ValueCollectionViewCell.swift */; };
+		B461A8882301F0B500DF5DE0 /* ValueCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B461A8862301F0B500DF5DE0 /* ValueCollectionViewCell.xib */; };
 		B4741EBD22FF05E30058BC00 /* UIStoryboard+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741EBC22FF05E30058BC00 /* UIStoryboard+Bela.swift */; };
 		B4741EC022FF06980058BC00 /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741EBE22FF06980058BC00 /* ScoreTableViewCell.swift */; };
 		B4741EC122FF06980058BC00 /* ScoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4741EBF22FF06980058BC00 /* ScoreTableViewCell.xib */; };
 		B4741EC422FF07C50058BC00 /* UIColor+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741EC322FF07C50058BC00 /* UIColor+Bela.swift */; };
-		B4741EC722FF08640058BC00 /* BelaScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741EC622FF08640058BC00 /* BelaScore.swift */; };
+		B4741EC722FF08640058BC00 /* BelaGameScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741EC622FF08640058BC00 /* BelaGameScore.swift */; };
 		B4741ED022FF09F10058BC00 /* UITableView+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741ECF22FF09F10058BC00 /* UITableView+Bela.swift */; };
 		B4741ED222FF0D220058BC00 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741ED122FF0D210058BC00 /* CardViewController.swift */; };
 		B4741ED422FF0D6E0058BC00 /* InstantPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741ED322FF0D6E0058BC00 /* InstantPanGestureRecognizer.swift */; };
@@ -74,12 +82,20 @@
 		B439BE5623008BB3000C2CA8 /* UIView+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Bela.swift"; sourceTree = "<group>"; };
 		B439BE582300A5AF000C2CA8 /* BiddingTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiddingTeamViewController.swift; sourceTree = "<group>"; };
 		B439BE5A2300A6ED000C2CA8 /* BelaTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelaTeam.swift; sourceTree = "<group>"; };
+		B445AA502301F81800A097B7 /* UICollectionView+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Bela.swift"; sourceTree = "<group>"; };
 		B449D2B922FF151900EA22BB /* AddScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScoreViewController.swift; sourceTree = "<group>"; };
+		B461A8762301E93100DF5DE0 /* DeclarationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclarationsViewController.swift; sourceTree = "<group>"; };
+		B461A8792301E96100DF5DE0 /* NewDeclarationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeclarationTableViewCell.swift; sourceTree = "<group>"; };
+		B461A87A2301E96100DF5DE0 /* NewDeclarationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewDeclarationTableViewCell.xib; sourceTree = "<group>"; };
+		B461A8812301E99300DF5DE0 /* DeclaredValueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclaredValueTableViewCell.swift; sourceTree = "<group>"; };
+		B461A8822301E99300DF5DE0 /* DeclaredValueTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeclaredValueTableViewCell.xib; sourceTree = "<group>"; };
+		B461A8852301F0B500DF5DE0 /* ValueCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueCollectionViewCell.swift; sourceTree = "<group>"; };
+		B461A8862301F0B500DF5DE0 /* ValueCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValueCollectionViewCell.xib; sourceTree = "<group>"; };
 		B4741EBC22FF05E30058BC00 /* UIStoryboard+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Bela.swift"; sourceTree = "<group>"; };
 		B4741EBE22FF06980058BC00 /* ScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewCell.swift; sourceTree = "<group>"; };
 		B4741EBF22FF06980058BC00 /* ScoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreTableViewCell.xib; sourceTree = "<group>"; };
 		B4741EC322FF07C50058BC00 /* UIColor+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Bela.swift"; sourceTree = "<group>"; };
-		B4741EC622FF08640058BC00 /* BelaScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelaScore.swift; sourceTree = "<group>"; };
+		B4741EC622FF08640058BC00 /* BelaGameScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelaGameScore.swift; sourceTree = "<group>"; };
 		B4741ECF22FF09F10058BC00 /* UITableView+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Bela.swift"; sourceTree = "<group>"; };
 		B4741ED122FF0D210058BC00 /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		B4741ED322FF0D6E0058BC00 /* InstantPanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstantPanGestureRecognizer.swift; sourceTree = "<group>"; };
@@ -117,6 +133,20 @@
 			path = BiddingTeam;
 			sourceTree = "<group>";
 		};
+		B461A8782301E93500DF5DE0 /* Declarations */ = {
+			isa = PBXGroup;
+			children = (
+				B461A8762301E93100DF5DE0 /* DeclarationsViewController.swift */,
+				B461A8792301E96100DF5DE0 /* NewDeclarationTableViewCell.swift */,
+				B461A87A2301E96100DF5DE0 /* NewDeclarationTableViewCell.xib */,
+				B461A8812301E99300DF5DE0 /* DeclaredValueTableViewCell.swift */,
+				B461A8822301E99300DF5DE0 /* DeclaredValueTableViewCell.xib */,
+				B461A8852301F0B500DF5DE0 /* ValueCollectionViewCell.swift */,
+				B461A8862301F0B500DF5DE0 /* ValueCollectionViewCell.xib */,
+			);
+			path = Declarations;
+			sourceTree = "<group>";
+		};
 		B4741EC222FF07B70058BC00 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +155,7 @@
 				B4741ECF22FF09F10058BC00 /* UITableView+Bela.swift */,
 				B439BE5623008BB3000C2CA8 /* UIView+Bela.swift */,
 				B4741ED822FF0E820058BC00 /* UIViewController+Bela.swift */,
+				B445AA502301F81800A097B7 /* UICollectionView+Bela.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -141,7 +172,7 @@
 		B4741ECE22FF089E0058BC00 /* Bela */ = {
 			isa = PBXGroup;
 			children = (
-				B4741EC622FF08640058BC00 /* BelaScore.swift */,
+				B4741EC622FF08640058BC00 /* BelaGameScore.swift */,
 				B439BE5A2300A6ED000C2CA8 /* BelaTeam.swift */,
 			);
 			path = Bela;
@@ -176,10 +207,11 @@
 		B4D5A8512301DF0B00396103 /* AddScore */ = {
 			isa = PBXGroup;
 			children = (
-				B4741ED522FF0D710058BC00 /* CardViewController */,
 				B4741ED622FF0DFC0058BC00 /* AddScoreCardViewController.swift */,
 				B449D2B922FF151900EA22BB /* AddScoreViewController.swift */,
+				B4741ED522FF0D710058BC00 /* CardViewController */,
 				B439BE5C2300A75B000C2CA8 /* BiddingTeam */,
+				B461A8782301E93500DF5DE0 /* Declarations */,
 				B4D5A7F42301B97F00396103 /* ScoreInput */,
 			);
 			path = AddScore;
@@ -328,8 +360,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B461A8882301F0B500DF5DE0 /* ValueCollectionViewCell.xib in Resources */,
 				B4F30D0A22FEFC47003F13C8 /* LaunchScreen.storyboard in Resources */,
+				B461A8842301E99300DF5DE0 /* DeclaredValueTableViewCell.xib in Resources */,
 				B4F30D0722FEFC47003F13C8 /* Assets.xcassets in Resources */,
+				B461A87C2301E96100DF5DE0 /* NewDeclarationTableViewCell.xib in Resources */,
 				B4741EC122FF06980058BC00 /* ScoreTableViewCell.xib in Resources */,
 				B4F30D0522FEFC46003F13C8 /* Main.storyboard in Resources */,
 			);
@@ -363,19 +398,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4741ED422FF0D6E0058BC00 /* InstantPanGestureRecognizer.swift in Sources */,
-				B4741EC722FF08640058BC00 /* BelaScore.swift in Sources */,
+				B4741EC722FF08640058BC00 /* BelaGameScore.swift in Sources */,
+				B461A8772301E93100DF5DE0 /* DeclarationsViewController.swift in Sources */,
 				B4741EC022FF06980058BC00 /* ScoreTableViewCell.swift in Sources */,
 				B4741EC422FF07C50058BC00 /* UIColor+Bela.swift in Sources */,
 				B4741EBD22FF05E30058BC00 /* UIStoryboard+Bela.swift in Sources */,
 				B4F30D1222FEFFD3003F13C8 /* MainMenuViewController.swift in Sources */,
 				B4D5A7F32301B97C00396103 /* ScoreInputViewController.swift in Sources */,
 				B439BE592300A5AF000C2CA8 /* BiddingTeamViewController.swift in Sources */,
+				B445AA512301F81800A097B7 /* UICollectionView+Bela.swift in Sources */,
 				B4F30D0022FEFC46003F13C8 /* AppDelegate.swift in Sources */,
 				B4741ED222FF0D220058BC00 /* CardViewController.swift in Sources */,
 				B439BE5B2300A6ED000C2CA8 /* BelaTeam.swift in Sources */,
 				B4741ED022FF09F10058BC00 /* UITableView+Bela.swift in Sources */,
 				B439BE5723008BB3000C2CA8 /* UIView+Bela.swift in Sources */,
+				B461A8832301E99300DF5DE0 /* DeclaredValueTableViewCell.swift in Sources */,
+				B461A8872301F0B500DF5DE0 /* ValueCollectionViewCell.swift in Sources */,
 				B449D2BA22FF151900EA22BB /* AddScoreViewController.swift in Sources */,
+				B461A87B2301E96100DF5DE0 /* NewDeclarationTableViewCell.swift in Sources */,
 				B4F30D1722FF04E9003F13C8 /* ScoreViewController.swift in Sources */,
 				B4741ED722FF0DFC0058BC00 /* AddScoreCardViewController.swift in Sources */,
 				B4741ED922FF0E820058BC00 /* UIViewController+Bela.swift in Sources */,
