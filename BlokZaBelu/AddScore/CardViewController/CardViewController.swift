@@ -204,6 +204,8 @@ class CardViewController: UIViewController {
     private func startAnimationIfNeeded() {
         if animator.isRunning { return }
         
+        view.endEditing(true)
+        
         animationComplete = false
         animator = UIViewPropertyAnimator(duration: 0.65, dampingRatio: 1) {
             if self.isOpen {

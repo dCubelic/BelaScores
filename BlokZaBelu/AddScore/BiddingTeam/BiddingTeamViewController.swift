@@ -32,7 +32,7 @@ class BiddingTeamViewController: UIViewController {
     }
     
     func reset() {
-        biddingTeam = .team1
+        team1Action(self)
     }
     
     @IBAction private func team1Action(_ sender: Any) {

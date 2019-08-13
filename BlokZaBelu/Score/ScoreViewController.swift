@@ -69,7 +69,7 @@ class ScoreViewController: UIViewController {
     
 }
 
-extension ScoreViewController: UITableViewDataSource {
+extension ScoreViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return scores.count

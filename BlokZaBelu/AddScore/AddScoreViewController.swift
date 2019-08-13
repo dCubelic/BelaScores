@@ -22,6 +22,16 @@ class AddScoreViewController: CardViewController {
     var declarationViewController: DeclarationsViewController?
     var declarationsViewController2: DeclarationsViewController?
     
+    var belaScore: BelaScore? {
+        guard let biddingTeam = biddingTeamViewController?.biddingTeam,
+            let gameScore = scoreInputViewController?.score,
+            let declarationsTeam1 = declarationViewController?.declarationPoints,
+            let declarationsTeam2 = declarationsViewController2?.declarationPoints
+            else { return nil }
+        
+        return BelaScore(biddingTeam: biddingTeam, gameScore: gameScore, declarationsTeam1: declarationsTeam1, declarationsTeam2: declarationsTeam2)
+    }
+    
     weak var delegate: AddScoreViewControllerDelegate?
     
     override func viewDidLoad() {
@@ -63,14 +73,13 @@ class AddScoreViewController: CardViewController {
         declarationsViewController2?.reset()
     }
     
-    @IBAction private func addAction(_ sender: Any) {
-        guard let biddingTeam = biddingTeamViewController?.biddingTeam,
-            let gameScore = scoreInputViewController?.score,
-            let declarationsTeam1 = declarationViewController?.declarationPoints,
-            let declarationsTeam2 = declarationsViewController2?.declarationPoints
-            else { return }
+    private func check() {
         
-        let belaScore = BelaScore(biddingTeam: biddingTeam, gameScore: gameScore, declarationsTeam1: declarationsTeam1, declarationsTeam2: declarationsTeam2)
+    }
+    
+    @IBAction private func addAction(_ sender: Any) {
+        guard let belaScore = belaScore else { return }
+        
         delegate?.addScoreViewControllerDidAdd(addScoreViewController: self, score: belaScore)
         
         reset()

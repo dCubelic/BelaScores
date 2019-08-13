@@ -28,6 +28,10 @@ extension UIColor {
         return UIColor(red: 70.0 / 255.0, green: 162.0 / 255.0, blue: 197.0 / 255.0, alpha: 1.0)
     }
     
+    public class var red: UIColor {
+        return UIColor(red: 148.0 / 255.0, green: 7.0 / 255.0, blue: 7.0 / 255.0, alpha: 1.0)
+    }
+    
     public class var transparentBlack: UIColor {
         return UIColor(white: 0.0 / 255.0, alpha: 0.7)
     }

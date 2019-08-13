@@ -32,22 +32,12 @@
                                 <color key="textColor" name="lightGray"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3R5-Iw-yAv">
-                                <rect key="frame" x="28" y="32.5" width="8" height="8"/>
-                                <color key="backgroundColor" name="blue"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="8" id="05d-TS-9fn"/>
-                                    <constraint firstAttribute="height" constant="8" id="Ykc-Ic-rEJ"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="3R5-Iw-yAv" firstAttribute="centerY" secondItem="oE2-7x-yZS" secondAttribute="centerY" id="3Y1-w4-xfj"/>
                             <constraint firstItem="oE2-7x-yZS" firstAttribute="top" relation="greaterThanOrEqual" secondItem="14l-uC-yOg" secondAttribute="top" constant="4" id="4TL-7e-lMR"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="oE2-7x-yZS" secondAttribute="bottom" constant="4" id="6xI-NT-GnX"/>
                             <constraint firstItem="oE2-7x-yZS" firstAttribute="centerX" secondItem="14l-uC-yOg" secondAttribute="centerX" id="hhD-2N-oyh"/>
-                            <constraint firstItem="oE2-7x-yZS" firstAttribute="leading" secondItem="3R5-Iw-yAv" secondAttribute="trailing" constant="4" id="qcy-OA-rR3"/>
                             <constraint firstItem="oE2-7x-yZS" firstAttribute="centerY" secondItem="14l-uC-yOg" secondAttribute="centerY" id="wAe-aZ-rrs"/>
                         </constraints>
                     </view>
@@ -63,20 +53,10 @@
                                 <color key="textColor" name="lightGray"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qig-nV-Jzj">
-                                <rect key="frame" x="124" y="32.5" width="8" height="8"/>
-                                <color key="backgroundColor" name="blue"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="8" id="FZl-tf-BD0"/>
-                                    <constraint firstAttribute="height" constant="8" id="rMr-WX-LOF"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Pmu-Y9-kUw" firstAttribute="centerY" secondItem="ar6-Gp-Tmx" secondAttribute="centerY" id="GD9-w1-roB"/>
-                            <constraint firstItem="qig-nV-Jzj" firstAttribute="centerY" secondItem="Pmu-Y9-kUw" secondAttribute="centerY" id="UpH-lv-Pud"/>
-                            <constraint firstItem="qig-nV-Jzj" firstAttribute="leading" secondItem="Pmu-Y9-kUw" secondAttribute="trailing" constant="4" id="dYx-ap-PrC"/>
                             <constraint firstItem="Pmu-Y9-kUw" firstAttribute="centerX" secondItem="ar6-Gp-Tmx" secondAttribute="centerX" id="hwz-p9-Dei"/>
                         </constraints>
                     </view>
@@ -97,16 +77,11 @@
             <connections>
                 <outlet property="score1Label" destination="oE2-7x-yZS" id="Eg4-kW-E1t"/>
                 <outlet property="score2Label" destination="Pmu-Y9-kUw" id="EAh-sV-tNA"/>
-                <outlet property="team1BidView" destination="3R5-Iw-yAv" id="2nS-7o-wYI"/>
-                <outlet property="team2BidView" destination="qig-nV-Jzj" id="pBj-o0-wSM"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="151.67410714285714"/>
         </tableViewCell>
     </objects>
     <resources>
-        <namedColor name="blue">
-            <color red="0.27450980392156865" green="0.63529411764705879" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="darkGray">
             <color red="0.18431372549019609" green="0.18431372549019609" blue="0.18431372549019609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
