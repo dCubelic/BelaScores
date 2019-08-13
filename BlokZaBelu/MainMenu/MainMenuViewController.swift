@@ -27,7 +27,14 @@ class MainMenuViewController: UIViewController {
     }
 
     @IBAction private func continueAction(_ sender: Any) {
-        
+        if let encodedScores = UserDefaults.standard.data(forKey: "scores"),
+            let scores = try? JSONDecoder().decode([BelaScore].self, from: encodedScores) {
+            
+            let scoreViewController = UIStoryboard.main.instantiateViewController(ofType: ScoreViewController.self)
+            scoreViewController.previousScores = scores
+            navigationController?.pushViewController(scoreViewController, animated: true)
+            
+        }
     }
     
     @IBAction private func newGameAction(_ sender: Any) {

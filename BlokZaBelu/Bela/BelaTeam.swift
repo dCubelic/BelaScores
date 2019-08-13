@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum BelaTeam {
+enum BelaTeam: String, Codable {
     case team1
     case team2
 }

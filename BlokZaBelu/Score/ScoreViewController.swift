@@ -25,15 +25,23 @@ class ScoreViewController: UIViewController {
         }
     }
     
-    var scores: [BelaScore] = [] {
+    private var scores: [BelaScore] = [] {
         didSet {
             score1Label.text = String(scores.reduce(0) { $0 + $1.totalScore })
             score2Label.text = String(scores.reduce(0) { $0 + $1.totalScore2 })
+            
+            saveScores()
         }
     }
     
+    var previousScores: [BelaScore]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let previousScores = previousScores {
+            scores = previousScores
+        }
         
         tableView.register(UINib(nibName: "ScoreTableViewCell", bundle: nil), forCellReuseIdentifier: "ScoreTableViewCell")
         
@@ -61,6 +69,12 @@ class ScoreViewController: UIViewController {
                     self.view.layoutIfNeeded()
                 }, completion: nil)
             }
+        }
+    }
+    
+    private func saveScores() {
+        if let encodedScores = try? JSONEncoder().encode(scores) {
+            UserDefaults.standard.set(encodedScores, forKey: "scores")
         }
     }
 

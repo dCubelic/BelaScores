@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct BelaScore {
+struct BelaScore: Codable {
     var biddingTeam: BelaTeam
     var gameScore: BelaGameScore
     var declarationsTeam1: [Int]
