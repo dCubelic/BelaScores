@@ -11,7 +11,7 @@ import UIKit
 class AddScoreViewController: UIViewController {
 
     @IBOutlet weak private var addButton: UIButton!
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var touchView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ class AddScoreViewController: UIViewController {
     
     private func setupViews() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapAction))
-//        view.addGestureRecognizer(tapGesture)
+        touchView.addGestureRecognizer(tapGesture)
         
         addButton.layer.cornerRadius = addButton.frame.height / 2
     }

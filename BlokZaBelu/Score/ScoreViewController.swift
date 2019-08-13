@@ -37,13 +37,13 @@ class ScoreViewController: UIViewController {
         
         tableView.register(UINib(nibName: "ScoreTableViewCell", bundle: nil), forCellReuseIdentifier: "ScoreTableViewCell")
         
-        let vc = UIStoryboard.main.instantiateViewController(ofType: AddScoreViewController.self)
-        addChild(vc)
-        view.addSubview(vc.view)
-        vc.didMove(toParent: self)
-//        let cardViewController = addCardViewController(ofType: AddScoreCardViewController.self)
+//        let vc = UIStoryboard.main.instantiateViewController(ofType: AddScoreViewController.self)
+//        addChild(vc)
+//        view.addSubview(vc.view)
+//        vc.didMove(toParent: self)
+        let cardViewController = addCardViewController(ofType: AddScoreCardViewController.self)
         
-        bottomConstraint = vc.view.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
+        bottomConstraint = cardViewController.view.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
         bottomConstraint?.isActive = true
         
         keyboardObserver = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillChangeFrameNotification, object: nil, queue: nil) { notification in

@@ -12,7 +12,7 @@ class DeclarationsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var declarationPoints: [Int] = []
+    private(set) var declarationPoints: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,6 @@ class DeclarationsViewController: UIViewController {
         
         tableView.register(UINib(nibName: "NewDeclarationTableViewCell", bundle: nil), forCellReuseIdentifier: "NewDeclarationTableViewCell")
         tableView.register(UINib(nibName: "DeclaredValueTableViewCell", bundle: nil), forCellReuseIdentifier: "DeclaredValueTableViewCell")
-
     }
     
 }
@@ -46,6 +45,7 @@ extension DeclarationsViewController: UITableViewDataSource, UITableViewDelegate
         }
         
         let cell = tableView.dequeueReusableCell(ofType: DeclaredValueTableViewCell.self, for: indexPath)
+        cell.delegate = self
         cell.setup(for: declarationPoints[indexPath.row])
         
         return cell
@@ -60,7 +60,20 @@ extension DeclarationsViewController: NewDeclarationTableViewCellDelegate {
         
         self.declarationPoints.append(declarationPoints)
         
-        tableView.insertRows(at: [indexPath], with: .automatic)
+        tableView.insertRows(at: [indexPath], with: .fade)
+        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+    }
+    
+}
+
+extension DeclarationsViewController: DeclaredValueTableViewCellDelegate {
+    
+    func declaredValueTableViewCellDidPressRemove(_ declaredValueTableViewCell: DeclaredValueTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: declaredValueTableViewCell) else { return }
+        
+        declarationPoints.remove(at: indexPath.row)
+        
+        tableView.deleteRows(at: [indexPath], with: .bottom)
     }
     
 }

@@ -8,10 +8,16 @@
 
 import UIKit
 
+protocol DeclaredValueTableViewCellDelegate: class {
+    func declaredValueTableViewCellDidPressRemove(_ declaredValueTableViewCell: DeclaredValueTableViewCell)
+}
+
 class DeclaredValueTableViewCell: UITableViewCell {
 
     @IBOutlet weak var pointsLabel: UILabel!
     @IBOutlet weak var removeButton: UIButton!
+    
+    weak var delegate: DeclaredValueTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,6 +33,6 @@ class DeclaredValueTableViewCell: UITableViewCell {
     }
     
     @IBAction func removeAction(_ sender: Any) {
-        print("remove")
+        delegate?.declaredValueTableViewCellDidPressRemove(self)
     }
 }
