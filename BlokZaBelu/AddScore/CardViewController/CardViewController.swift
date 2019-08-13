@@ -26,8 +26,8 @@ class CardViewController: UIViewController {
     
     let closedImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "Drawer-Closed-Indicator")?.withRenderingMode(.alwaysTemplate)
-        imageView.tintColor = .white
+        imageView.image = UIImage(named: "add")?.withRenderingMode(.alwaysTemplate)
+        imageView.tintColor = .blue
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.isUserInteractionEnabled = false
         imageView.contentMode = UIView.ContentMode.scaleAspectFit
@@ -95,7 +95,7 @@ class CardViewController: UIViewController {
         
         var offset = visibleHeight - handleArea.frame.size.height
         if headerView == nil {
-            offset -= 30
+//            offset -= 30
         }
         
         closedTransform = CGAffineTransform(translationX: 0, y: offset)
@@ -115,16 +115,16 @@ class CardViewController: UIViewController {
         handleArea.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
         handleArea.addSubview(closedImageView)
-        closedImageView.topAnchor.constraint(equalTo: handleArea.topAnchor, constant: 15).isActive = true
+        closedImageView.topAnchor.constraint(equalTo: handleArea.topAnchor, constant: 4).isActive = true
         closedImageView.leadingAnchor.constraint(equalTo: handleArea.leadingAnchor).isActive = true
         closedImageView.trailingAnchor.constraint(equalTo: handleArea.trailingAnchor).isActive = true
-        closedImageView.heightAnchor.constraint(equalToConstant: 10).isActive = true
+        closedImageView.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         handleArea.addSubview(openedImageView)
         openedImageView.leadingAnchor.constraint(equalTo: handleArea.leadingAnchor).isActive = true
         openedImageView.trailingAnchor.constraint(equalTo: handleArea.trailingAnchor).isActive = true
         openedImageView.heightAnchor.constraint(equalToConstant: 3).isActive = true
-        openedImageView.bottomAnchor.constraint(equalTo: closedImageView.bottomAnchor).isActive = true
+        openedImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 16).isActive = true
         
         if let headerView = headerView {
             handleArea.addSubview(headerView)

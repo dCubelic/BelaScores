@@ -179,7 +179,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="E1a-OS-xRc">
-                                <rect key="frame" x="0.0" y="226" width="414" height="636"/>
+                                <rect key="frame" x="0.0" y="226" width="414" height="606"/>
                                 <color key="backgroundColor" name="darkGray"/>
                                 <connections>
                                     <outlet property="dataSource" destination="S6v-q4-dWT" id="3nd-7m-J9J"/>
@@ -196,7 +196,7 @@
                             <constraint firstItem="E1a-OS-xRc" firstAttribute="top" secondItem="Yjb-Qj-SUs" secondAttribute="bottom" id="8GC-jn-XOh"/>
                             <constraint firstItem="onD-bn-VIl" firstAttribute="leading" secondItem="kfT-So-tMe" secondAttribute="trailing" id="9KD-CJ-dts"/>
                             <constraint firstItem="e2T-bv-E6O" firstAttribute="top" secondItem="c60-HG-NUL" secondAttribute="top" constant="40" id="A5c-iS-drz"/>
-                            <constraint firstItem="c60-HG-NUL" firstAttribute="bottom" secondItem="E1a-OS-xRc" secondAttribute="bottom" id="CBC-9z-Z6N"/>
+                            <constraint firstItem="c60-HG-NUL" firstAttribute="bottom" secondItem="E1a-OS-xRc" secondAttribute="bottom" constant="30" id="CBC-9z-Z6N"/>
                             <constraint firstItem="c60-HG-NUL" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="S5L-aP-yMj" secondAttribute="trailing" constant="8" id="JWV-Rp-aUF"/>
                             <constraint firstItem="c60-HG-NUL" firstAttribute="trailing" secondItem="Yjb-Qj-SUs" secondAttribute="trailing" id="JeP-KI-CZs"/>
                             <constraint firstItem="c60-HG-NUL" firstAttribute="trailing" secondItem="onD-bn-VIl" secondAttribute="trailing" id="NHM-GA-Exh"/>

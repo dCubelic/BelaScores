@@ -89,6 +89,7 @@ extension ScoreViewController: AddScoreViewControllerDelegate {
     func addScoreViewControllerDidAdd(addScoreViewController: AddScoreViewController, score: BelaScore) {
         scores.insert(score, at: 0)
         tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .top)
+        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
     }
     
 }
