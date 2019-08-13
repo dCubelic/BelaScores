@@ -17,6 +17,8 @@ class ScoreViewController: UIViewController {
     private var keyboardObserver: NSObjectProtocol?
     private var bottomConstraint: NSLayoutConstraint?
     
+    private var addScoreViewController: AddScoreViewController?
+    
     deinit {
         if let keyboardObserver = keyboardObserver {
             NotificationCenter.default.removeObserver(keyboardObserver)
@@ -32,16 +34,15 @@ class ScoreViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        scores = [BelaGameScore(score1: 120, score2: 52), BelaGameScore(score1: 54, score2: 124), BelaGameScore(score1: 0, score2: 162)]
         
         tableView.register(UINib(nibName: "ScoreTableViewCell", bundle: nil), forCellReuseIdentifier: "ScoreTableViewCell")
         
-        let vc = UIStoryboard.main.instantiateViewController(ofType: AddScoreViewController.self)
-        vc.delegate = self
-        addCardViewController(vc)
+        let addScoreViewController = UIStoryboard.main.instantiateViewController(ofType: AddScoreViewController.self)
+        addScoreViewController.delegate = self
+        addCardViewController(addScoreViewController)
+        self.addScoreViewController = addScoreViewController
         
-        bottomConstraint = vc.view.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
+        bottomConstraint = addScoreViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         bottomConstraint?.isActive = true
         
         keyboardObserver = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillChangeFrameNotification, object: nil, queue: nil) { notification in
@@ -80,6 +81,14 @@ extension ScoreViewController: UITableViewDataSource, UITableViewDelegate {
         cell.setup(for: scores[indexPath.row])
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let score = scores[indexPath.row]
+        
+        addScoreViewController?.reset()
+        addScoreViewController?.setup(for: score)
+        addScoreViewController?.openCard()
     }
     
 }

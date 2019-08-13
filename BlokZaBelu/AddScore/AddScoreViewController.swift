@@ -19,13 +19,13 @@ class AddScoreViewController: CardViewController {
     
     var biddingTeamViewController: BiddingTeamViewController?
     var scoreInputViewController: ScoreInputViewController?
-    var declarationViewController: DeclarationsViewController?
+    var declarationsViewController: DeclarationsViewController?
     var declarationsViewController2: DeclarationsViewController?
     
     var belaScore: BelaScore? {
         guard let biddingTeam = biddingTeamViewController?.biddingTeam,
             let gameScore = scoreInputViewController?.score,
-            let declarationsTeam1 = declarationViewController?.declarationPoints,
+            let declarationsTeam1 = declarationsViewController?.declarationPoints,
             let declarationsTeam2 = declarationsViewController2?.declarationPoints
             else { return nil }
         
@@ -47,12 +47,26 @@ class AddScoreViewController: CardViewController {
         case "ScoreInputViewController":
             scoreInputViewController = segue.destination as? ScoreInputViewController
         case "DeclarationsViewController":
-            declarationViewController = segue.destination as? DeclarationsViewController
+            declarationsViewController = segue.destination as? DeclarationsViewController
         case "Declarations2ViewController":
             declarationsViewController2 = segue.destination as? DeclarationsViewController
         default:
             break
         }
+    }
+    
+    public func reset() {
+        biddingTeamViewController?.reset()
+        scoreInputViewController?.reset()
+        declarationsViewController?.reset()
+        declarationsViewController2?.reset()
+    }
+    
+    public func setup(for score: BelaScore) {
+        biddingTeamViewController?.biddingTeam = score.biddingTeam
+        scoreInputViewController?.score = score.gameScore
+        declarationsViewController?.declarationPoints = score.declarationsTeam1
+        declarationsViewController2?.declarationPoints = score.declarationsTeam2
     }
     
     private func setupViews() {
@@ -64,13 +78,6 @@ class AddScoreViewController: CardViewController {
     
     @objc private func tapAction() {
         view.endEditing(true)
-    }
-    
-    private func reset() {
-        biddingTeamViewController?.reset()
-        scoreInputViewController?.reset()
-        declarationViewController?.reset()
-        declarationsViewController2?.reset()
     }
     
     private func check() {

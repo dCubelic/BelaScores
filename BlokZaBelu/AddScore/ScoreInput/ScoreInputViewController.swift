@@ -18,7 +18,7 @@ class ScoreInputViewController: UIViewController {
     
     private var activeDetectorTeam: BelaTeam?
     
-    private(set) var score: BelaGameScore? {
+    var score: BelaGameScore? {
         didSet {
             guard let score = score else {
                 points1TextField.text = ""

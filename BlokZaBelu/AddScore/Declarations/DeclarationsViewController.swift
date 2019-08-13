@@ -12,7 +12,7 @@ class DeclarationsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    private(set) var declarationPoints: [Int] = []
+    var declarationPoints: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()

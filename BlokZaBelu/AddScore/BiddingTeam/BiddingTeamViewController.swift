@@ -19,7 +19,7 @@ class BiddingTeamViewController: UIViewController {
     
     weak var delegate: BiddingTeamViewControllerDelegate?
     
-    private(set) var biddingTeam: BelaTeam? = .team1 {
+    var biddingTeam: BelaTeam? = .team1 {
         didSet {
             guard let biddingTeam = biddingTeam else { return }
             delegate?.biddingTeamViewControllerDidChangeBidder(self, bidder: biddingTeam)
