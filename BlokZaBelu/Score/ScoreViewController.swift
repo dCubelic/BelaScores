@@ -33,7 +33,7 @@ class ScoreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        scores = [BelaGameScore(score1: 120, score2: 52, trumpSuit: .hearts), BelaGameScore(score1: 54, score2: 124, trumpSuit: .diamonds), BelaGameScore(score1: 0, score2: 162, trumpSuit: .clubs)]
+        scores = [BelaGameScore(score1: 120, score2: 52), BelaGameScore(score1: 54, score2: 124), BelaGameScore(score1: 0, score2: 162)]
         
         tableView.register(UINib(nibName: "ScoreTableViewCell", bundle: nil), forCellReuseIdentifier: "ScoreTableViewCell")
         
@@ -42,7 +42,7 @@ class ScoreViewController: UIViewController {
 //        view.addSubview(vc.view)
 //        vc.didMove(toParent: self)
         let cardViewController = addCardViewController(ofType: AddScoreCardViewController.self)
-        
+  
         bottomConstraint = cardViewController.view.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
         bottomConstraint?.isActive = true
         

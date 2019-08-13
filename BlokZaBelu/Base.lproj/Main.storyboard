@@ -258,7 +258,7 @@
                                     <constraint firstAttribute="height" constant="60" id="fSC-rW-Xda"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="uyB-uC-MJp" kind="embed" id="DBC-ln-3QH"/>
+                                    <segue destination="uyB-uC-MJp" kind="embed" identifier="BiddingTeamViewController" id="DBC-ln-3QH"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zCF-fI-R3P">
@@ -267,19 +267,19 @@
                                     <constraint firstAttribute="height" constant="60" id="7mu-gy-why"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="wtZ-Wr-mwl" kind="embed" id="ZGq-09-8mM"/>
+                                    <segue destination="wtZ-Wr-mwl" kind="embed" identifier="ScoreInputViewController" id="ZGq-09-8mM"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nfq-Zq-0mz">
                                 <rect key="frame" x="16" y="213" width="191" height="588"/>
                                 <connections>
-                                    <segue destination="sjj-2h-8r2" kind="embed" id="KL2-1s-L5x"/>
+                                    <segue destination="sjj-2h-8r2" kind="embed" identifier="DeclarationsViewController" id="KL2-1s-L5x"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ouy-gc-Jur">
                                 <rect key="frame" x="207" y="213" width="191" height="588"/>
                                 <connections>
-                                    <segue destination="sjj-2h-8r2" kind="embed" id="bf1-Xq-Bsd"/>
+                                    <segue destination="sjj-2h-8r2" kind="embed" identifier="Declarations2ViewController" id="bf1-Xq-Bsd"/>
                                 </connections>
                             </containerView>
                         </subviews>

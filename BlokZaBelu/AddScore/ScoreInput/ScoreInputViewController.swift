@@ -9,13 +9,6 @@
 import BelaDetectorFramework
 import UIKit
 
-struct Score {
-    var score1: Int = 0
-    var score2: Int = 0
-    
-    static let total = 162
-}
-
 class ScoreInputViewController: UIViewController {
     
     @IBOutlet weak private var points1TextField: UITextField!
@@ -25,8 +18,9 @@ class ScoreInputViewController: UIViewController {
     
     private var activeDetectorTeam: BelaTeam?
     
-    var score = Score() {
+    private(set) var score: BelaGameScore? {
         didSet {
+            guard let score = score else { return }
             points1TextField.text = String(score.score1)
             points2TextField.text = String(score.score2)
         }
@@ -48,11 +42,11 @@ class ScoreInputViewController: UIViewController {
         points2UnderlineView.layer.cornerRadius = points2UnderlineView.frame.height / 2
     }
     
-    @IBAction func camera1Action(_ sender: Any) {
+    @IBAction private func camera1Action(_ sender: Any) {
         runDetector(for: .team1)
     }
     
-    @IBAction func camera2Action(_ sender: Any) {
+    @IBAction private func camera2Action(_ sender: Any) {
         runDetector(for: .team2)
     }
     
@@ -66,13 +60,17 @@ class ScoreInputViewController: UIViewController {
     }
     
     private func setScore(points: Int, for team: BelaTeam) {
+        if score == nil {
+            score = BelaGameScore()
+        }
+        
         switch team {
         case .team1:
-            score.score1 = points
-            score.score2 = max(0, Score.total - points)
+            score?.score1 = points
+            score?.score2 = max(0, BelaGameScore.total - points)
         case .team2:
-            score.score2 = points
-            score.score1 = max(0, Score.total - points)
+            score?.score2 = points
+            score?.score1 = max(0, BelaGameScore.total - points)
         }
     }
 }

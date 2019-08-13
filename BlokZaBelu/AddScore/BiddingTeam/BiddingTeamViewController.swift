@@ -14,12 +14,12 @@ protocol BiddingTeamViewControllerDelegate: class {
 
 class BiddingTeamViewController: UIViewController {
     
-    @IBOutlet weak var team1Button: UIButton!
-    @IBOutlet weak var team2Button: UIButton!
+    @IBOutlet weak private var team1Button: UIButton!
+    @IBOutlet weak private var team2Button: UIButton!
     
     weak var delegate: BiddingTeamViewControllerDelegate?
     
-    var biddingTeam: BelaTeam? {
+    private(set) var biddingTeam: BelaTeam? = .team1 {
         didSet {
             guard let biddingTeam = biddingTeam else { return }
             delegate?.biddingTeamViewControllerDidChangeBidder(self, bidder: biddingTeam)
@@ -31,13 +31,13 @@ class BiddingTeamViewController: UIViewController {
 
     }
     
-    @IBAction func team1Action(_ sender: Any) {
+    @IBAction private func team1Action(_ sender: Any) {
         team1Button.setTitleColor(UIColor.blue, for: .normal)
         team2Button.setTitleColor(UIColor.darkGray, for: .normal)
         biddingTeam = .team1
     }
     
-    @IBAction func team2Action(_ sender: Any) {
+    @IBAction private func team2Action(_ sender: Any) {
         team1Button.setTitleColor(UIColor.darkGray, for: .normal)
         team2Button.setTitleColor(UIColor.blue, for: .normal)
         biddingTeam = .team2

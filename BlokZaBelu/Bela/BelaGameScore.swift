@@ -10,7 +10,8 @@ import BelaDetectorFramework
 import Foundation
 
 struct BelaGameScore {
-    var score1: Int
-    var score2: Int
-    var trumpSuit: BelaSuit
+    var score1: Int = 0
+    var score2: Int = 0
+    
+    static let total = 162
 }
