@@ -39,6 +39,8 @@ class ScoreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavigationBar()
+        
         if let previousScores = previousScores {
             scores = previousScores
         }
@@ -70,6 +72,11 @@ class ScoreViewController: UIViewController {
                 }, completion: nil)
             }
         }
+    }
+    
+    private func setupNavigationBar() {
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     private func saveScores() {

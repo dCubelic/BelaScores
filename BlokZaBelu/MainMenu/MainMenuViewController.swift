@@ -20,6 +20,12 @@ class MainMenuViewController: UIViewController {
         setupViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
     private func setupViews() {
         continueButton.layer.cornerRadius = continueButton.frame.height / 2
         newGameButton.layer.cornerRadius = newGameButton.frame.height / 2
