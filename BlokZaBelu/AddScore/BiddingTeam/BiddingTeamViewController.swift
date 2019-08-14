@@ -22,6 +22,8 @@ class BiddingTeamViewController: UIViewController {
     var biddingTeam: BelaTeam? = .team1 {
         didSet {
             guard let biddingTeam = biddingTeam else { return }
+            
+            updateColors()
             delegate?.biddingTeamViewControllerDidChangeBidder(self, bidder: biddingTeam)
         }
     }
@@ -35,15 +37,24 @@ class BiddingTeamViewController: UIViewController {
         team1Action(self)
     }
     
+    private func updateColors() {
+        guard let biddingTeam = biddingTeam else { return }
+        
+        switch biddingTeam {
+        case .team1:
+            team1Button.setTitleColor(UIColor.blue, for: .normal)
+            team2Button.setTitleColor(UIColor.darkGray, for: .normal)
+        case .team2:
+            team1Button.setTitleColor(UIColor.darkGray, for: .normal)
+            team2Button.setTitleColor(UIColor.blue, for: .normal)
+        }
+    }
+    
     @IBAction private func team1Action(_ sender: Any) {
-        team1Button.setTitleColor(UIColor.blue, for: .normal)
-        team2Button.setTitleColor(UIColor.darkGray, for: .normal)
         biddingTeam = .team1
     }
     
     @IBAction private func team2Action(_ sender: Any) {
-        team1Button.setTitleColor(UIColor.darkGray, for: .normal)
-        team2Button.setTitleColor(UIColor.blue, for: .normal)
         biddingTeam = .team2
     }
     

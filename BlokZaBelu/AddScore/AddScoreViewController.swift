@@ -10,17 +10,26 @@ import UIKit
 
 protocol AddScoreViewControllerDelegate: class {
     func addScoreViewControllerDidAdd(addScoreViewController: AddScoreViewController, score: BelaScore)
+    func addScoreViewControllerDidUpdate(addScoreViewController: AddScoreViewController, score: BelaScore, for scoreTableViewCell: UITableViewCell)
+
 }
 
 class AddScoreViewController: CardViewController {
+    
+    enum AddScoreViewControllerMode {
+        case new
+        case update
+    }
 
     @IBOutlet weak private var addButton: UIButton!
-    @IBOutlet weak var touchView: UIView!
+    @IBOutlet weak private var touchView: UIView!
     
     var biddingTeamViewController: BiddingTeamViewController?
     var scoreInputViewController: ScoreInputViewController?
     var declarationsViewController: DeclarationsViewController?
     var declarationsViewController2: DeclarationsViewController?
+    
+    var scoreTableViewCell: UITableViewCell?
     
     var belaScore: BelaScore? {
         guard let biddingTeam = biddingTeamViewController?.biddingTeam,
@@ -33,6 +42,17 @@ class AddScoreViewController: CardViewController {
     }
     
     weak var delegate: AddScoreViewControllerDelegate?
+    
+    private var mode: AddScoreViewControllerMode = .new {
+        didSet {
+            switch mode {
+            case .new:
+                addButton.setTitle("Unesi", for: .normal)
+            case .update:
+                addButton.setTitle("Ažuriraj", for: .normal)
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,17 +76,27 @@ class AddScoreViewController: CardViewController {
     }
     
     public func reset() {
+        scoreTableViewCell = nil
+        
         biddingTeamViewController?.reset()
         scoreInputViewController?.reset()
         declarationsViewController?.reset()
         declarationsViewController2?.reset()
+        
+        mode = .new
     }
     
-    public func setup(for score: BelaScore) {
+    public func setup(for score: BelaScore, scoreTableViewCell: UITableViewCell?) {
+        reset()
+        
+        self.scoreTableViewCell = scoreTableViewCell
+        
         biddingTeamViewController?.biddingTeam = score.biddingTeam
         scoreInputViewController?.score = score.gameScore
-        declarationsViewController?.declarationPoints = score.declarationsTeam1
-        declarationsViewController2?.declarationPoints = score.declarationsTeam2
+        declarationsViewController?.setup(for: score.declarationsTeam1)
+        declarationsViewController2?.setup(for: score.declarationsTeam2)
+        
+        mode = .update
     }
     
     private func setupViews() {
@@ -80,14 +110,22 @@ class AddScoreViewController: CardViewController {
         view.endEditing(true)
     }
     
-    private func check() {
-        
-    }
-    
     @IBAction private func addAction(_ sender: Any) {
         guard let belaScore = belaScore else { return }
         
-        delegate?.addScoreViewControllerDidAdd(addScoreViewController: self, score: belaScore)
+        // TODO: - ne dopustit ilegalne rezultate?
+//        if belaScore.gameScore.score1 == 1 {
+//            
+//        }
+        
+        switch mode {
+        case .new:
+            delegate?.addScoreViewControllerDidAdd(addScoreViewController: self, score: belaScore)
+        case .update:
+            if let scoreTableViewCell = scoreTableViewCell {
+                delegate?.addScoreViewControllerDidUpdate(addScoreViewController: self, score: belaScore, for: scoreTableViewCell)
+            }
+        }
         
         reset()
         closeCard()

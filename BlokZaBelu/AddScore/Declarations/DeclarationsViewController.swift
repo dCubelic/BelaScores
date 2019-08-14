@@ -12,7 +12,7 @@ class DeclarationsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var declarationPoints: [Int] = []
+    private(set) var declarationPoints: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +26,11 @@ class DeclarationsViewController: UIViewController {
     
     func reset() {
         declarationPoints = []
+        tableView.reloadData()
+    }
+    
+    func setup(for declarationPoints: [Int]) {
+        self.declarationPoints = declarationPoints
         tableView.reloadData()
     }
     

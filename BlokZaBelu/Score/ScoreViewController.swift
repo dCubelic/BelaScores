@@ -98,10 +98,12 @@ extension ScoreViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let score = scores[indexPath.row]
+        tableView.deselectRow(at: indexPath, animated: true)
         
-        addScoreViewController?.reset()
-        addScoreViewController?.setup(for: score)
+        let score = scores[indexPath.row]
+        let cell = tableView.cellForRow(at: indexPath)
+        
+        addScoreViewController?.setup(for: score, scoreTableViewCell: cell)
         addScoreViewController?.openCard()
     }
     
@@ -113,6 +115,13 @@ extension ScoreViewController: AddScoreViewControllerDelegate {
         scores.insert(score, at: 0)
         tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .top)
         tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+    }
+    
+    func addScoreViewControllerDidUpdate(addScoreViewController: AddScoreViewController, score: BelaScore, for scoreTableViewCell: UITableViewCell) {
+        guard let indexPath = tableView.indexPath(for: scoreTableViewCell) else { return }
+        
+        scores[indexPath.row] = score
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
     
 }

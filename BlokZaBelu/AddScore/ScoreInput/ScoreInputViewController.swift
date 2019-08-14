@@ -96,7 +96,7 @@ extension ScoreInputViewController: UITextFieldDelegate {
         
         let newText = text.replacingCharacters(in: range, with: string)
         
-        let intValue = Int(newText) ?? 0
+        let intValue = max(0, Int(newText) ?? 0)
         
         if textField == points1TextField {
             setScore(points: intValue, for: .team1)
