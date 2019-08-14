@@ -113,7 +113,22 @@ extension ScoreViewController: UITableViewDataSource, UITableViewDelegate {
         addScoreViewController?.setup(for: score, scoreTableViewCell: cell)
         addScoreViewController?.openCard()
     }
-    
+
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let delete = UIContextualAction(style: .destructive, title: "Obriši") { _, _, completionHandler in
+            self.scores.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            completionHandler(true)
+        }
+        delete.backgroundColor = .red
+        
+        let config = UISwipeActionsConfiguration(actions: [delete])
+        config.performsFirstActionWithFullSwipe = false
+        
+        return config
+    }
 }
 
 extension ScoreViewController: AddScoreViewControllerDelegate {
