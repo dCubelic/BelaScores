@@ -24,6 +24,7 @@ extension UIView {
     
     func shake() {
         let animation = CABasicAnimation(keyPath: "position")
+        
         animation.duration = 0.07
         animation.repeatCount = 2
         animation.autoreverses = true
@@ -32,4 +33,5 @@ extension UIView {
         
         self.layer.add(animation, forKey: "position")
     }
+    
 }

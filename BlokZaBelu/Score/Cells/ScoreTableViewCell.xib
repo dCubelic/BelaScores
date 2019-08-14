@@ -23,7 +23,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="14l-uC-yOg">
                         <rect key="frame" x="0.0" y="0.0" width="160" height="72.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="112" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oE2-7x-yZS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="112" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oE2-7x-yZS">
                                 <rect key="frame" x="40" y="12.5" width="80" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="dDX-ts-Cfh"/>
@@ -37,14 +37,16 @@
                         <constraints>
                             <constraint firstItem="oE2-7x-yZS" firstAttribute="top" relation="greaterThanOrEqual" secondItem="14l-uC-yOg" secondAttribute="top" constant="4" id="4TL-7e-lMR"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="oE2-7x-yZS" secondAttribute="bottom" constant="4" id="6xI-NT-GnX"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oE2-7x-yZS" secondAttribute="trailing" constant="4" id="Hfm-qa-Tju"/>
                             <constraint firstItem="oE2-7x-yZS" firstAttribute="centerX" secondItem="14l-uC-yOg" secondAttribute="centerX" id="hhD-2N-oyh"/>
+                            <constraint firstItem="oE2-7x-yZS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="14l-uC-yOg" secondAttribute="leading" constant="4" id="i26-bf-Cvp"/>
                             <constraint firstItem="oE2-7x-yZS" firstAttribute="centerY" secondItem="14l-uC-yOg" secondAttribute="centerY" id="wAe-aZ-rrs"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ar6-Gp-Tmx">
                         <rect key="frame" x="160" y="0.0" width="160" height="72.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="112" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pmu-Y9-kUw">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="112" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Pmu-Y9-kUw">
                                 <rect key="frame" x="40" y="12.5" width="80" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="B8h-XS-vjn"/>
@@ -56,8 +58,12 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Pmu-Y9-kUw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ar6-Gp-Tmx" secondAttribute="top" constant="4" id="2dC-XV-ZHC"/>
                             <constraint firstItem="Pmu-Y9-kUw" firstAttribute="centerY" secondItem="ar6-Gp-Tmx" secondAttribute="centerY" id="GD9-w1-roB"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Pmu-Y9-kUw" secondAttribute="bottom" constant="4" id="Zdz-95-GBQ"/>
                             <constraint firstItem="Pmu-Y9-kUw" firstAttribute="centerX" secondItem="ar6-Gp-Tmx" secondAttribute="centerX" id="hwz-p9-Dei"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Pmu-Y9-kUw" secondAttribute="trailing" constant="4" id="wX5-Tl-dG3"/>
+                            <constraint firstItem="Pmu-Y9-kUw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ar6-Gp-Tmx" secondAttribute="leading" constant="4" id="z3U-kZ-XZe"/>
                         </constraints>
                     </view>
                 </subviews>

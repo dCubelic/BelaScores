@@ -14,6 +14,11 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak private var newGameButton: UIButton!
     @IBOutlet weak private var settingsButton: UIButton!
     
+    private var continueScores: [BelaScore]? {
+        guard let encodedScores = UserDefaults.standard.data(forKey: "scores") else { return nil }
+        return try? JSONDecoder().decode([BelaScore].self, from: encodedScores)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,6 +31,24 @@ class MainMenuViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        setupButtons()
+    }
+    
+    private func setupButtons() {
+        settingsButton.isHidden = true
+        
+        if continueScores == nil {
+            continueButton.isEnabled = false
+            continueButton.backgroundColor = .darkGray2
+        } else {
+            continueButton.isEnabled = true
+            continueButton.backgroundColor = .lightGray
+        }
+    }
+    
     private func setupViews() {
         continueButton.layer.cornerRadius = continueButton.frame.height / 2
         newGameButton.layer.cornerRadius = newGameButton.frame.height / 2
@@ -33,13 +56,12 @@ class MainMenuViewController: UIViewController {
     }
 
     @IBAction private func continueAction(_ sender: Any) {
-        if let encodedScores = UserDefaults.standard.data(forKey: "scores"),
-            let scores = try? JSONDecoder().decode([BelaScore].self, from: encodedScores) {
+        if let scores = continueScores {
             
             let scoreViewController = UIStoryboard.main.instantiateViewController(ofType: ScoreViewController.self)
             scoreViewController.previousScores = scores
-            navigationController?.pushViewController(scoreViewController, animated: true)
             
+            navigationController?.pushViewController(scoreViewController, animated: true)
         }
     }
     

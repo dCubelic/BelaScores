@@ -19,6 +19,8 @@ class ScoreViewController: UIViewController {
     
     private var addScoreViewController: AddScoreViewController?
     
+    private let maxGameScore = 1001
+    
     deinit {
         if let keyboardObserver = keyboardObserver {
             NotificationCenter.default.removeObserver(keyboardObserver)
@@ -27,10 +29,11 @@ class ScoreViewController: UIViewController {
     
     private var scores: [BelaScore] = [] {
         didSet {
-            score1Label.text = String(scores.reduce(0) { $0 + $1.totalScore })
-            score2Label.text = String(scores.reduce(0) { $0 + $1.totalScore2 })
+            score1Label.text = String(scores.reduce(0) { $0 + $1.totalScoreTeam1 })
+            score2Label.text = String(scores.reduce(0) { $0 + $1.totalScoreTeam2 })
             
-            saveScores()
+            save(scores: scores)
+            checkForEnd()
         }
     }
     
@@ -79,10 +82,17 @@ class ScoreViewController: UIViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
     }
     
-    private func saveScores() {
-        if let encodedScores = try? JSONEncoder().encode(scores) {
-            UserDefaults.standard.set(encodedScores, forKey: "scores")
+    private func checkForEnd() {
+        if (scores.reduce(0) { $0 + $1.totalScoreTeam1 }) >= maxGameScore || // swiftlint:disable:this control_statement
+            (scores.reduce(0) { $0 + $1.totalScoreTeam2 }) >= maxGameScore {
+            save(scores: nil)
+            addScoreViewController?.view.isHidden = true
         }
+    }
+    
+    private func save(scores: [BelaScore]?) {
+        let encodedScores = try? JSONEncoder().encode(scores)
+        UserDefaults.standard.set(encodedScores, forKey: "scores")
     }
 
     @IBAction func backAction(_ sender: Any) {

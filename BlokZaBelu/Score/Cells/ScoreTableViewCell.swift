@@ -54,8 +54,8 @@ class ScoreTableViewCell: UITableViewCell {
     }
     
     func setup(for score: BelaScore) {
-        score1Label.text = String(score.totalScore)
-        score2Label.text = String(score.totalScore2)
+        score1Label.text = String(score.totalScoreTeam1)
+        score2Label.text = String(score.totalScoreTeam2)
         team1BidView.isHidden = !(score.biddingTeam == .team1)
         team2BidView.isHidden = !(score.biddingTeam == .team2)
         
