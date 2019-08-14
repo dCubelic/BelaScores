@@ -8,11 +8,21 @@
 
 import UIKit
 
+protocol DeclarationsViewControllerDelegate: class {
+    func declarationsViewControllerDidUpdateDeclarationPoints(_ declarationsViewController: DeclarationsViewController, declarationPoints: [Int])
+}
+
 class DeclarationsViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak private var tableView: UITableView!
     
-    private(set) var declarationPoints: [Int] = []
+    private(set) var declarationPoints: [Int] = [] {
+        didSet {
+            delegate?.declarationsViewControllerDidUpdateDeclarationPoints(self, declarationPoints: declarationPoints)
+        }
+    }
+    
+    weak var delegate: DeclarationsViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()

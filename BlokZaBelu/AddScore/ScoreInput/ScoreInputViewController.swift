@@ -9,12 +9,18 @@
 import BelaDetectorFramework
 import UIKit
 
+protocol ScoreInputViewControllerDelegate: class {
+    func ScoreInputViewControllerDidUpdateScore(_ scoreInputViewController: ScoreInputViewController, score: BelaGameScore)
+}
+
 class ScoreInputViewController: UIViewController {
     
     @IBOutlet weak private var points1TextField: UITextField!
     @IBOutlet weak private var points2TextField: UITextField!
     @IBOutlet weak private var points1UnderlineView: UIView!
     @IBOutlet weak private var points2UnderlineView: UIView!
+    
+    weak var delegate: ScoreInputViewControllerDelegate?
     
     private var activeDetectorTeam: BelaTeam?
     
@@ -25,8 +31,11 @@ class ScoreInputViewController: UIViewController {
                 points2TextField.text = ""
                 return
             }
+            
             points1TextField.text = String(score.score1)
             points2TextField.text = String(score.score2)
+            
+            delegate?.ScoreInputViewControllerDidUpdateScore(self, score: score)
         }
     }
     

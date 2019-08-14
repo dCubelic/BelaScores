@@ -9,13 +9,15 @@
 import UIKit
 
 protocol BiddingTeamViewControllerDelegate: class {
-    func biddingTeamViewControllerDidChangeBidder(_ biddingViewController: BiddingTeamViewController, bidder: BelaTeam)
+    func biddingTeamViewControllerDidChangeBidder(_ biddingTeamViewController: BiddingTeamViewController, bidder: BelaTeam)
 }
 
 class BiddingTeamViewController: UIViewController {
     
     @IBOutlet weak private var team1Button: UIButton!
     @IBOutlet weak private var team2Button: UIButton!
+    @IBOutlet weak private var team1DidntPassView: UIView!
+    @IBOutlet weak private var team2DidntPassView: UIView!
     
     weak var delegate: BiddingTeamViewControllerDelegate?
     
@@ -31,10 +33,35 @@ class BiddingTeamViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupViews()
+    }
+    
+    func setDidntPass(team: BelaTeam?) {
+        guard let team = team else {
+            team1DidntPassView.isHidden = true
+            team2DidntPassView.isHidden = true
+            return
+        }
+        
+        switch team {
+        case .team1:
+            team1DidntPassView.isHidden = false
+            team2DidntPassView.isHidden = true
+        default:
+            team1DidntPassView.isHidden = true
+            team2DidntPassView.isHidden = false
+        }
     }
     
     func reset() {
+        setDidntPass(team: nil)
         team1Action(self)
+    }
+    
+    private func setupViews() {
+        setDidntPass(team: nil)
+        team1DidntPassView.layer.cornerRadius = team1DidntPassView.frame.height / 2
+        team2DidntPassView.layer.cornerRadius = team2DidntPassView.frame.height / 2
     }
     
     private func updateColors() {

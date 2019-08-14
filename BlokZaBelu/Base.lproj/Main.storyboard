@@ -332,7 +332,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bW9-Sd-ifd">
-                                <rect key="frame" x="0.0" y="0.0" width="80" height="60"/>
+                                <rect key="frame" x="12" y="0.0" width="80" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="Fqk-pM-lac"/>
                                 </constraints>
@@ -345,7 +345,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHB-5L-k0s">
-                                <rect key="frame" x="170" y="0.0" width="80" height="60"/>
+                                <rect key="frame" x="158" y="0.0" width="80" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="Kl5-9i-nee"/>
                                 </constraints>
@@ -357,14 +357,34 @@
                                     <action selector="team2Action:" destination="uyB-uC-MJp" eventType="touchUpInside" id="6nC-s7-Y1T"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oXJ-UL-mKG">
+                                <rect key="frame" x="0.0" y="26" width="8" height="8"/>
+                                <color key="backgroundColor" name="red"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="8" id="DDY-uY-V5g"/>
+                                    <constraint firstAttribute="width" constant="8" id="tF1-0W-CdA"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROl-7p-BiR">
+                                <rect key="frame" x="242" y="26" width="8" height="8"/>
+                                <color key="backgroundColor" name="red"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="8" id="SWx-2I-ajg"/>
+                                    <constraint firstAttribute="width" constant="8" id="q6B-49-xi0"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="aHB-5L-k0s" secondAttribute="trailing" id="3w3-a1-4Nr"/>
+                            <constraint firstAttribute="trailing" secondItem="ROl-7p-BiR" secondAttribute="trailing" id="331-BT-9qD"/>
+                            <constraint firstItem="oXJ-UL-mKG" firstAttribute="centerY" secondItem="nMn-3F-bix" secondAttribute="centerY" id="53J-bO-0Bt"/>
+                            <constraint firstItem="bW9-Sd-ifd" firstAttribute="leading" secondItem="oXJ-UL-mKG" secondAttribute="trailing" constant="4" id="A9x-as-4Io"/>
+                            <constraint firstItem="ROl-7p-BiR" firstAttribute="leading" secondItem="aHB-5L-k0s" secondAttribute="trailing" constant="4" id="HV4-eM-KNn"/>
                             <constraint firstAttribute="bottom" secondItem="bW9-Sd-ifd" secondAttribute="bottom" id="Kq4-lx-Gi4"/>
                             <constraint firstItem="bW9-Sd-ifd" firstAttribute="top" secondItem="nMn-3F-bix" secondAttribute="top" id="MQB-Z4-ERQ"/>
-                            <constraint firstItem="bW9-Sd-ifd" firstAttribute="leading" secondItem="nMn-3F-bix" secondAttribute="leading" id="Nwk-SO-f8D"/>
+                            <constraint firstItem="oXJ-UL-mKG" firstAttribute="leading" secondItem="WFc-2p-ocj" secondAttribute="leading" id="Pmp-8t-yQ1"/>
                             <constraint firstAttribute="bottom" secondItem="aHB-5L-k0s" secondAttribute="bottom" id="aai-Bt-Kde"/>
+                            <constraint firstItem="ROl-7p-BiR" firstAttribute="centerY" secondItem="nMn-3F-bix" secondAttribute="centerY" id="oDQ-si-Uz7"/>
                             <constraint firstItem="aHB-5L-k0s" firstAttribute="top" secondItem="nMn-3F-bix" secondAttribute="top" id="tbs-ye-kcu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WFc-2p-ocj"/>
@@ -375,12 +395,14 @@
                     <size key="freeformSize" width="250" height="60"/>
                     <connections>
                         <outlet property="team1Button" destination="bW9-Sd-ifd" id="LQR-49-nnj"/>
+                        <outlet property="team1DidntPassView" destination="oXJ-UL-mKG" id="T8S-yP-OGr"/>
                         <outlet property="team2Button" destination="aHB-5L-k0s" id="mZJ-3W-PNi"/>
+                        <outlet property="team2DidntPassView" destination="ROl-7p-BiR" id="mnN-gn-gKz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W9s-cg-ORX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3081" y="-220"/>
+            <point key="canvasLocation" x="3079.7101449275365" y="-220.3125"/>
         </scene>
         <!--Score Input View Controller-->
         <scene sceneID="seU-Pc-yRm">
@@ -526,6 +548,9 @@
         </namedColor>
         <namedColor name="lightGray">
             <color red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="red">
+            <color red="0.58039215686274515" green="0.027450980392156862" blue="0.027450980392156862" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="transparentBlack">
             <color red="0.0" green="0.0" blue="0.0" alpha="0.69999998807907104" colorSpace="custom" customColorSpace="sRGB"/>

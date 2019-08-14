@@ -64,12 +64,16 @@ class AddScoreViewController: CardViewController {
         switch segue.identifier {
         case "BiddingTeamViewController":
             biddingTeamViewController = segue.destination as? BiddingTeamViewController
+            biddingTeamViewController?.delegate = self
         case "ScoreInputViewController":
             scoreInputViewController = segue.destination as? ScoreInputViewController
+            scoreInputViewController?.delegate = self
         case "DeclarationsViewController":
             declarationsViewController = segue.destination as? DeclarationsViewController
+            declarationsViewController?.delegate = self
         case "Declarations2ViewController":
             declarationsViewController2 = segue.destination as? DeclarationsViewController
+            declarationsViewController2?.delegate = self
         default:
             break
         }
@@ -110,6 +114,16 @@ class AddScoreViewController: CardViewController {
         view.endEditing(true)
     }
     
+    private func updateDidntPassViews() {
+        if belaScore?.team1Passed == false {
+            biddingTeamViewController?.setDidntPass(team: .team1)
+        } else if belaScore?.team2Passed == false {
+            biddingTeamViewController?.setDidntPass(team: .team2)
+        } else {
+            biddingTeamViewController?.setDidntPass(team: nil)
+        }
+    }
+    
     @IBAction private func addAction(_ sender: Any) {
         guard let belaScore = belaScore else { return }
         
@@ -129,6 +143,30 @@ class AddScoreViewController: CardViewController {
         
         reset()
         closeCard()
+    }
+    
+}
+
+extension AddScoreViewController: BiddingTeamViewControllerDelegate {
+    
+    func biddingTeamViewControllerDidChangeBidder(_ biddingTeamViewController: BiddingTeamViewController, bidder: BelaTeam) {
+        updateDidntPassViews()
+    }
+
+}
+
+extension AddScoreViewController: ScoreInputViewControllerDelegate {
+    
+    func ScoreInputViewControllerDidUpdateScore(_ scoreInputViewController: ScoreInputViewController, score: BelaGameScore) {
+        updateDidntPassViews()
+    }
+    
+}
+
+extension AddScoreViewController: DeclarationsViewControllerDelegate {
+    
+    func declarationsViewControllerDidUpdateDeclarationPoints(_ declarationsViewController: DeclarationsViewController, declarationPoints: [Int]) {
+        updateDidntPassViews()
     }
     
 }
