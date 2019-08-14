@@ -45,6 +45,11 @@ class ScoreInputViewController: UIViewController {
         setupViews()
     }
     
+    func shakeInputs() {
+        points1TextField.shake()
+        points2TextField.shake()
+    }
+    
     func reset() {
         score = nil
     }

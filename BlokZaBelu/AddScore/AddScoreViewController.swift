@@ -125,12 +125,10 @@ class AddScoreViewController: CardViewController {
     }
     
     @IBAction private func addAction(_ sender: Any) {
-        guard let belaScore = belaScore else { return }
-        
-        // TODO: - ne dopustit ilegalne rezultate?
-//        if belaScore.gameScore.score1 == 1 {
-//            
-//        }
+        guard let belaScore = belaScore, belaScore.isValidScore else {
+            scoreInputViewController?.shakeInputs()
+            return
+        }
         
         switch mode {
         case .new:

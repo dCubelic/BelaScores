@@ -37,4 +37,11 @@ struct BelaScore: Codable {
     var totalScore2: Int {
         return !team2Passed ? 0 : (!team1Passed ? _totalScore + _totalScore2 : _totalScore2)
     }
+    
+    var isValidScore: Bool {
+        if gameScore.score1 < 0 || gameScore.score2 < 0 { return false }
+        if gameScore.score1 == 1 || gameScore.score2 == 1 { return false }
+        
+        return true
+    }
 }
