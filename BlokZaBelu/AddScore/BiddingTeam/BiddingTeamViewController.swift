@@ -36,6 +36,12 @@ class BiddingTeamViewController: UIViewController {
         setupViews()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        updateColors()
+    }
+    
     func setDidntPass(team: BelaTeam?) {
         guard let team = team else {
             team1DidntPassView.isHidden = true

@@ -22,7 +22,6 @@ class MainMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupViews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,6 +33,7 @@ class MainMenuViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
+        setupViews()
         setupButtons()
     }
     
