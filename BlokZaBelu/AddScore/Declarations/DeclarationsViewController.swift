@@ -27,6 +27,10 @@ class DeclarationsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapAction))
+        tableView.backgroundView = UIView()
+        tableView.backgroundView?.addGestureRecognizer(tapGesture)
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -44,6 +48,12 @@ class DeclarationsViewController: UIViewController {
         tableView.reloadData()
     }
     
+    @objc private func tapAction() {
+        let lastIndexPath = IndexPath(row: declarationPoints.count, section: 0)
+        if let cell = tableView.cellForRow(at: lastIndexPath) as? NewDeclarationTableViewCell {
+            cell.reset()
+        }
+    }
 }
 
 extension DeclarationsViewController: UITableViewDataSource, UITableViewDelegate {

@@ -32,6 +32,11 @@ class NewDeclarationTableViewCell: UITableViewCell {
         collectionView?.isHidden = true
     }
     
+    public func reset() {
+        plusButton?.isHidden = false
+        collectionView?.isHidden = true
+    }
+    
     private func setupPlusButton() {
         let button = UIButton()
         button.setTitle("+", for: .normal)
