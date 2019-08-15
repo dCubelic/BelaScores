@@ -28,8 +28,6 @@ class NewDeclarationTableViewCell: UITableViewCell {
         contentView.backgroundColor = .clear
         
         setupPlusButton()
-        setupCollectionView()
-        collectionView?.isHidden = true
     }
     
     public func reset() {
@@ -62,6 +60,10 @@ class NewDeclarationTableViewCell: UITableViewCell {
     
     @objc private func plusAction() {
         plusButton?.isHidden = true
+        
+        if collectionView == nil {
+            setupCollectionView()
+        }
         collectionView?.isHidden = false
     }
     
