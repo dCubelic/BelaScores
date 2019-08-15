@@ -257,13 +257,13 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nfq-Zq-0mz">
-                                <rect key="frame" x="16" y="184" width="191" height="529"/>
+                                <rect key="frame" x="28" y="184" width="179" height="529"/>
                                 <connections>
                                     <segue destination="sjj-2h-8r2" kind="embed" identifier="DeclarationsViewController" id="KL2-1s-L5x"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ouy-gc-Jur">
-                                <rect key="frame" x="207" y="184" width="191" height="529"/>
+                                <rect key="frame" x="207" y="184" width="179" height="529"/>
                                 <connections>
                                     <segue destination="sjj-2h-8r2" kind="embed" identifier="Declarations2ViewController" id="bf1-Xq-Bsd"/>
                                 </connections>
@@ -279,9 +279,9 @@
                             <constraint firstItem="U8H-Ok-euS" firstAttribute="centerX" secondItem="sTi-sA-jOL" secondAttribute="centerX" id="Ika-iN-Wt5"/>
                             <constraint firstItem="k4T-Kb-pde" firstAttribute="trailing" secondItem="2X7-2A-2ic" secondAttribute="trailing" id="KDD-gN-rcV"/>
                             <constraint firstItem="zCF-fI-R3P" firstAttribute="leading" secondItem="A93-rU-r2i" secondAttribute="leading" constant="12" id="QQ5-PV-ebf"/>
-                            <constraint firstItem="2X7-2A-2ic" firstAttribute="trailing" secondItem="Ouy-gc-Jur" secondAttribute="trailing" constant="16" id="UMt-dK-lGg"/>
+                            <constraint firstItem="2X7-2A-2ic" firstAttribute="trailing" secondItem="Ouy-gc-Jur" secondAttribute="trailing" constant="28" id="UMt-dK-lGg"/>
                             <constraint firstItem="k4T-Kb-pde" firstAttribute="bottom" secondItem="zCF-fI-R3P" secondAttribute="bottom" id="Z0e-Rk-N6u"/>
-                            <constraint firstItem="nfq-Zq-0mz" firstAttribute="leading" secondItem="2X7-2A-2ic" secondAttribute="leading" constant="16" id="dMV-8p-Q7A"/>
+                            <constraint firstItem="nfq-Zq-0mz" firstAttribute="leading" secondItem="2X7-2A-2ic" secondAttribute="leading" constant="28" id="dMV-8p-Q7A"/>
                             <constraint firstItem="nfq-Zq-0mz" firstAttribute="top" secondItem="zCF-fI-R3P" secondAttribute="bottom" constant="4" id="djW-33-l1d"/>
                             <constraint firstItem="Ouy-gc-Jur" firstAttribute="width" secondItem="nfq-Zq-0mz" secondAttribute="width" id="eg8-0h-UIq"/>
                             <constraint firstItem="k4T-Kb-pde" firstAttribute="leading" secondItem="2X7-2A-2ic" secondAttribute="leading" id="hgI-2n-eut"/>
@@ -512,11 +512,11 @@
             <objects>
                 <viewController storyboardIdentifier="DeclarationsViewController" id="sjj-2h-8r2" customClass="DeclarationsViewController" customModule="BlokZaBelu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HGL-bg-Tfv">
-                        <rect key="frame" x="0.0" y="0.0" width="191" height="529"/>
+                        <rect key="frame" x="0.0" y="0.0" width="179" height="529"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cDv-bN-uIh">
-                                <rect key="frame" x="0.0" y="0.0" width="191" height="529"/>
+                                <rect key="frame" x="0.0" y="0.0" width="179" height="529"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="sjj-2h-8r2" id="yNa-BX-yHY"/>
