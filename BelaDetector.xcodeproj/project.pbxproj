@@ -104,6 +104,9 @@
 		B455234222F4F203008B6E4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B455234522F4F203008B6E4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B455234722F4F203008B6E4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4A80DB32305F3FD00F53884 /* hr-HR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "hr-HR"; path = "hr-HR.lproj/Main.strings"; sourceTree = "<group>"; };
+		B4A80DB42305F3FD00F53884 /* hr-HR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "hr-HR"; path = "hr-HR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		B4A80DC02305F7A300F53884 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		B4BB00F522F57D0F00034432 /* BelaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelaModel.swift; sourceTree = "<group>"; };
 		B4BB00F722F5800900034432 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		B4BB00F922F5870000034432 /* BelaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelaCard.swift; sourceTree = "<group>"; };
@@ -341,6 +344,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"hr-HR",
 			);
 			mainGroup = B455232F22F4F201008B6E4A;
 			productRefGroup = B455233922F4F201008B6E4A /* Products */;
@@ -449,6 +453,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				B455234022F4F201008B6E4A /* Base */,
+				B4A80DB32305F3FD00F53884 /* hr-HR */,
+				B4A80DC02305F7A300F53884 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -457,6 +463,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B455234522F4F203008B6E4A /* Base */,
+				B4A80DB42305F3FD00F53884 /* hr-HR */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

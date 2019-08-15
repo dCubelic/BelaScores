@@ -1,0 +1,12 @@
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "2PL-a6-W6C"; */
+"2PL-a6-W6C.normalTitle" = "Unesi";
+
+/* Class = "UILabel"; text = "Choose a trump suit"; ObjectID = "Dpi-aP-dS7"; */
+"Dpi-aP-dS7.text" = "Odaberi aduta";
+
+/* Class = "UIButton"; normalTitle = "Reset"; ObjectID = "Gje-ED-L5q"; */
+"Gje-ED-L5q.normalTitle" = "Reset";
+
+/* Class = "UIButton"; normalTitle = "+10"; ObjectID = "Kdh-wk-Yjr"; */
+"Kdh-wk-Yjr.normalTitle" = "+10";
