@@ -58,6 +58,10 @@ class ScoreViewController: UIViewController {
         bottomConstraint = addScoreViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         bottomConstraint?.isActive = true
         
+        setupKeyboardObserver()
+    }
+    
+    private func setupKeyboardObserver() {
         keyboardObserver = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillChangeFrameNotification, object: nil, queue: nil) { notification in
             if let userInfo = notification.userInfo,
                 let durationValue = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber,
@@ -66,7 +70,7 @@ class ScoreViewController: UIViewController {
                 
                 var responderBottomPoint = self.view.firstResponder?.convert(self.view.firstResponder?.frame.origin ?? .zero, to: self.view) ?? CGPoint.zero
                 let responderHeight = self.view.firstResponder?.frame.height ?? 0
-                responderBottomPoint.y += responderHeight + 15
+                responderBottomPoint.y += responderHeight + 75
                 
                 self.bottomConstraint?.constant = -max(0, responderBottomPoint.y - endFrameValue.cgRectValue.minY - (self.bottomConstraint?.constant ?? 0))
                 
@@ -86,7 +90,7 @@ class ScoreViewController: UIViewController {
         if (scores.reduce(0) { $0 + $1.totalScoreTeam1 }) >= maxGameScore || // swiftlint:disable:this control_statement
             (scores.reduce(0) { $0 + $1.totalScoreTeam2 }) >= maxGameScore {
             save(scores: nil)
-            addScoreViewController?.view.isHidden = true
+//            addScoreViewController?.view.isHidden = true
         }
     }
     

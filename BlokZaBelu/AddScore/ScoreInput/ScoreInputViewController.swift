@@ -60,6 +60,12 @@ class ScoreInputViewController: UIViewController {
         points1TextField.attributedPlaceholder = NSAttributedString(string: "0", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
         points2TextField.attributedPlaceholder = NSAttributedString(string: "0", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
         
+        let toolbar = KeyboardToolbar()
+        toolbar.toolBarDelegate = self
+        toolbar.setup(leftButtons: [], rightButtons: [.done])
+        points1TextField.inputAccessoryView = toolbar
+        points2TextField.inputAccessoryView = toolbar
+        
         points1UnderlineView.layer.cornerRadius = points1UnderlineView.frame.height / 2
         points2UnderlineView.layer.cornerRadius = points2UnderlineView.frame.height / 2
     }
@@ -131,4 +137,17 @@ extension ScoreInputViewController: BelaDetectorViewControllerDelegate {
         setScore(points: points, for: team)
     }
 
+}
+
+extension ScoreInputViewController: KeyboardToolbarDelegate {
+    
+    func keyboardToolbar(button: UIBarButtonItem, type: KeyboardToolbarButton, tappedIn toolbar: KeyboardToolbar) {
+        switch type {
+        case .done:
+            view.endEditing(true)
+        case .cancel:
+            break
+        }
+    }
+    
 }

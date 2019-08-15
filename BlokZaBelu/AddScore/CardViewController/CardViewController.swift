@@ -95,7 +95,7 @@ class CardViewController: UIViewController {
         
         var offset = visibleHeight - handleArea.frame.size.height
         if headerView == nil {
-//            offset -= 30
+            offset -= UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0
         }
         
         closedTransform = CGAffineTransform(translationX: 0, y: offset)

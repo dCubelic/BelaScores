@@ -29,6 +29,8 @@
 		B4741ED222FF0D220058BC00 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741ED122FF0D210058BC00 /* CardViewController.swift */; };
 		B4741ED422FF0D6E0058BC00 /* InstantPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741ED322FF0D6E0058BC00 /* InstantPanGestureRecognizer.swift */; };
 		B4741ED922FF0E820058BC00 /* UIViewController+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741ED822FF0E820058BC00 /* UIViewController+Bela.swift */; };
+		B4A80DA52305563400F53884 /* KeyboardToolbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A80DA42305563400F53884 /* KeyboardToolbarButton.swift */; };
+		B4A80DA82305565B00F53884 /* KeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A80DA72305565B00F53884 /* KeyboardToolbar.swift */; };
 		B4D5A7F32301B97C00396103 /* ScoreInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D5A7F22301B97C00396103 /* ScoreInputViewController.swift */; };
 		B4D5A83E2301CEE100396103 /* BelaDetectorFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D5A8262301CE0D00396103 /* BelaDetectorFramework.framework */; };
 		B4D5A83F2301CEE100396103 /* BelaDetectorFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4D5A8262301CE0D00396103 /* BelaDetectorFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -101,6 +103,8 @@
 		B4741ED122FF0D210058BC00 /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		B4741ED322FF0D6E0058BC00 /* InstantPanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstantPanGestureRecognizer.swift; sourceTree = "<group>"; };
 		B4741ED822FF0E820058BC00 /* UIViewController+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Bela.swift"; sourceTree = "<group>"; };
+		B4A80DA42305563400F53884 /* KeyboardToolbarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolbarButton.swift; sourceTree = "<group>"; };
+		B4A80DA72305565B00F53884 /* KeyboardToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolbar.swift; sourceTree = "<group>"; };
 		B4D5A7F22301B97C00396103 /* ScoreInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreInputViewController.swift; sourceTree = "<group>"; };
 		B4D5A81E2301CE0D00396103 /* BelaDetector.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BelaDetector.xcodeproj; path = BelaDetector/BelaDetector.xcodeproj; sourceTree = "<group>"; };
 		B4F30CFC22FEFC46003F13C8 /* BlokZaBelu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlokZaBelu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,10 +224,20 @@
 			path = CardViewController;
 			sourceTree = "<group>";
 		};
+		B4A80DA92305571E00F53884 /* KeyboardToolbar */ = {
+			isa = PBXGroup;
+			children = (
+				B4A80DA72305565B00F53884 /* KeyboardToolbar.swift */,
+				B4A80DA42305563400F53884 /* KeyboardToolbarButton.swift */,
+			);
+			path = KeyboardToolbar;
+			sourceTree = "<group>";
+		};
 		B4D5A7F42301B97F00396103 /* ScoreInput */ = {
 			isa = PBXGroup;
 			children = (
 				B4D5A7F22301B97C00396103 /* ScoreInputViewController.swift */,
+				B4A80DA92305571E00F53884 /* KeyboardToolbar */,
 			);
 			path = ScoreInput;
 			sourceTree = "<group>";
@@ -433,6 +447,7 @@
 				B4741EC722FF08640058BC00 /* BelaGameScore.swift in Sources */,
 				B461A8772301E93100DF5DE0 /* DeclarationsViewController.swift in Sources */,
 				B4741EC022FF06980058BC00 /* ScoreTableViewCell.swift in Sources */,
+				B4A80DA82305565B00F53884 /* KeyboardToolbar.swift in Sources */,
 				B4741EC422FF07C50058BC00 /* UIColor+Bela.swift in Sources */,
 				B4741EBD22FF05E30058BC00 /* UIStoryboard+Bela.swift in Sources */,
 				B4F30D1222FEFFD3003F13C8 /* MainMenuViewController.swift in Sources */,
@@ -443,6 +458,7 @@
 				B4741ED222FF0D220058BC00 /* CardViewController.swift in Sources */,
 				B439BE5B2300A6ED000C2CA8 /* BelaTeam.swift in Sources */,
 				B4741ED022FF09F10058BC00 /* UITableView+Bela.swift in Sources */,
+				B4A80DA52305563400F53884 /* KeyboardToolbarButton.swift in Sources */,
 				B439BE5723008BB3000C2CA8 /* UIView+Bela.swift in Sources */,
 				B461A8832301E99300DF5DE0 /* DeclaredValueTableViewCell.swift in Sources */,
 				B461A8872301F0B500DF5DE0 /* ValueCollectionViewCell.swift in Sources */,

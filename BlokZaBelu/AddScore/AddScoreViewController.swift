@@ -11,7 +11,6 @@ import UIKit
 protocol AddScoreViewControllerDelegate: class {
     func addScoreViewControllerDidAdd(addScoreViewController: AddScoreViewController, score: BelaScore)
     func addScoreViewControllerDidUpdate(addScoreViewController: AddScoreViewController, score: BelaScore, for scoreTableViewCell: UITableViewCell)
-
 }
 
 class AddScoreViewController: CardViewController {
