@@ -26,11 +26,10 @@
 		B4741EC422FF07C50058BC00 /* UIColor+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741EC322FF07C50058BC00 /* UIColor+Bela.swift */; };
 		B4741EC722FF08640058BC00 /* BelaGameScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741EC622FF08640058BC00 /* BelaGameScore.swift */; };
 		B4741ED022FF09F10058BC00 /* UITableView+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741ECF22FF09F10058BC00 /* UITableView+Bela.swift */; };
-		B4741ED222FF0D220058BC00 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741ED122FF0D210058BC00 /* CardViewController.swift */; };
-		B4741ED422FF0D6E0058BC00 /* InstantPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741ED322FF0D6E0058BC00 /* InstantPanGestureRecognizer.swift */; };
-		B4741ED922FF0E820058BC00 /* UIViewController+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741ED822FF0E820058BC00 /* UIViewController+Bela.swift */; };
 		B4A80DA52305563400F53884 /* KeyboardToolbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A80DA42305563400F53884 /* KeyboardToolbarButton.swift */; };
 		B4A80DA82305565B00F53884 /* KeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A80DA72305565B00F53884 /* KeyboardToolbar.swift */; };
+		B4A80DAD230583B900F53884 /* CardPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A80DAC230583B900F53884 /* CardPresentationController.swift */; };
+		B4A80DAF2305841800F53884 /* DimmingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A80DAE2305841800F53884 /* DimmingView.swift */; };
 		B4D5A7F32301B97C00396103 /* ScoreInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D5A7F22301B97C00396103 /* ScoreInputViewController.swift */; };
 		B4D5A83E2301CEE100396103 /* BelaDetectorFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D5A8262301CE0D00396103 /* BelaDetectorFramework.framework */; };
 		B4D5A83F2301CEE100396103 /* BelaDetectorFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4D5A8262301CE0D00396103 /* BelaDetectorFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -100,11 +99,10 @@
 		B4741EC322FF07C50058BC00 /* UIColor+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Bela.swift"; sourceTree = "<group>"; };
 		B4741EC622FF08640058BC00 /* BelaGameScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelaGameScore.swift; sourceTree = "<group>"; };
 		B4741ECF22FF09F10058BC00 /* UITableView+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Bela.swift"; sourceTree = "<group>"; };
-		B4741ED122FF0D210058BC00 /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
-		B4741ED322FF0D6E0058BC00 /* InstantPanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstantPanGestureRecognizer.swift; sourceTree = "<group>"; };
-		B4741ED822FF0E820058BC00 /* UIViewController+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Bela.swift"; sourceTree = "<group>"; };
 		B4A80DA42305563400F53884 /* KeyboardToolbarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolbarButton.swift; sourceTree = "<group>"; };
 		B4A80DA72305565B00F53884 /* KeyboardToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolbar.swift; sourceTree = "<group>"; };
+		B4A80DAC230583B900F53884 /* CardPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPresentationController.swift; sourceTree = "<group>"; };
+		B4A80DAE2305841800F53884 /* DimmingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimmingView.swift; sourceTree = "<group>"; };
 		B4D5A7F22301B97C00396103 /* ScoreInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreInputViewController.swift; sourceTree = "<group>"; };
 		B4D5A81E2301CE0D00396103 /* BelaDetector.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BelaDetector.xcodeproj; path = BelaDetector/BelaDetector.xcodeproj; sourceTree = "<group>"; };
 		B4F30CFC22FEFC46003F13C8 /* BlokZaBelu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlokZaBelu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,7 +188,6 @@
 				B4741EBC22FF05E30058BC00 /* UIStoryboard+Bela.swift */,
 				B4741ECF22FF09F10058BC00 /* UITableView+Bela.swift */,
 				B439BE5623008BB3000C2CA8 /* UIView+Bela.swift */,
-				B4741ED822FF0E820058BC00 /* UIViewController+Bela.swift */,
 				B445AA502301F81800A097B7 /* UICollectionView+Bela.swift */,
 			);
 			path = Extensions;
@@ -215,15 +212,6 @@
 			path = Bela;
 			sourceTree = "<group>";
 		};
-		B4741ED522FF0D710058BC00 /* CardViewController */ = {
-			isa = PBXGroup;
-			children = (
-				B4741ED122FF0D210058BC00 /* CardViewController.swift */,
-				B4741ED322FF0D6E0058BC00 /* InstantPanGestureRecognizer.swift */,
-			);
-			path = CardViewController;
-			sourceTree = "<group>";
-		};
 		B4A80DA92305571E00F53884 /* KeyboardToolbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +219,14 @@
 				B4A80DA42305563400F53884 /* KeyboardToolbarButton.swift */,
 			);
 			path = KeyboardToolbar;
+			sourceTree = "<group>";
+		};
+		B4A80DB023058A6C00F53884 /* CardPresentation */ = {
+			isa = PBXGroup;
+			children = (
+				B4A80DAC230583B900F53884 /* CardPresentationController.swift */,
+			);
+			path = CardPresentation;
 			sourceTree = "<group>";
 		};
 		B4D5A7F42301B97F00396103 /* ScoreInput */ = {
@@ -255,7 +251,6 @@
 			isa = PBXGroup;
 			children = (
 				B449D2B922FF151900EA22BB /* AddScoreViewController.swift */,
-				B4741ED522FF0D710058BC00 /* CardViewController */,
 				B439BE5C2300A75B000C2CA8 /* BiddingTeam */,
 				B461A8782301E93500DF5DE0 /* Declarations */,
 				B4D5A7F42301B97F00396103 /* ScoreInput */,
@@ -283,12 +278,14 @@
 		B4F30CFE22FEFC46003F13C8 /* BlokZaBelu */ = {
 			isa = PBXGroup;
 			children = (
+				B4A80DAE2305841800F53884 /* DimmingView.swift */,
 				B4F30CFF22FEFC46003F13C8 /* AppDelegate.swift */,
 				B4F30D0322FEFC46003F13C8 /* Main.storyboard */,
 				B4D5A8512301DF0B00396103 /* AddScore */,
 				B4741ECE22FF089E0058BC00 /* Bela */,
 				B4F30D1522FF0254003F13C8 /* MainMenu */,
 				B4F30D1822FF051C003F13C8 /* Score */,
+				B4A80DB023058A6C00F53884 /* CardPresentation */,
 				B4741EC222FF07B70058BC00 /* Extensions */,
 				B4F30D1422FF0226003F13C8 /* SupportingFiles */,
 			);
@@ -443,19 +440,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4741ED422FF0D6E0058BC00 /* InstantPanGestureRecognizer.swift in Sources */,
 				B4741EC722FF08640058BC00 /* BelaGameScore.swift in Sources */,
 				B461A8772301E93100DF5DE0 /* DeclarationsViewController.swift in Sources */,
 				B4741EC022FF06980058BC00 /* ScoreTableViewCell.swift in Sources */,
 				B4A80DA82305565B00F53884 /* KeyboardToolbar.swift in Sources */,
 				B4741EC422FF07C50058BC00 /* UIColor+Bela.swift in Sources */,
 				B4741EBD22FF05E30058BC00 /* UIStoryboard+Bela.swift in Sources */,
+				B4A80DAF2305841800F53884 /* DimmingView.swift in Sources */,
 				B4F30D1222FEFFD3003F13C8 /* MainMenuViewController.swift in Sources */,
 				B4D5A7F32301B97C00396103 /* ScoreInputViewController.swift in Sources */,
 				B439BE592300A5AF000C2CA8 /* BiddingTeamViewController.swift in Sources */,
+				B4A80DAD230583B900F53884 /* CardPresentationController.swift in Sources */,
 				B445AA512301F81800A097B7 /* UICollectionView+Bela.swift in Sources */,
 				B4F30D0022FEFC46003F13C8 /* AppDelegate.swift in Sources */,
-				B4741ED222FF0D220058BC00 /* CardViewController.swift in Sources */,
 				B439BE5B2300A6ED000C2CA8 /* BelaTeam.swift in Sources */,
 				B4741ED022FF09F10058BC00 /* UITableView+Bela.swift in Sources */,
 				B4A80DA52305563400F53884 /* KeyboardToolbarButton.swift in Sources */,
@@ -466,7 +463,6 @@
 				B449D2BA22FF151900EA22BB /* AddScoreViewController.swift in Sources */,
 				B461A87B2301E96100DF5DE0 /* NewDeclarationTableViewCell.swift in Sources */,
 				B4F30D1722FF04E9003F13C8 /* ScoreViewController.swift in Sources */,
-				B4741ED922FF0E820058BC00 /* UIViewController+Bela.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

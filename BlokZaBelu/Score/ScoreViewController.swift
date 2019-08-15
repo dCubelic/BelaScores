@@ -13,19 +13,9 @@ class ScoreViewController: UIViewController {
     @IBOutlet weak private var tableView: UITableView!
     @IBOutlet weak private var score1Label: UILabel!
     @IBOutlet weak private var score2Label: UILabel!
-    
-    private var keyboardObserver: NSObjectProtocol?
-    private var bottomConstraint: NSLayoutConstraint?
-    
-    private var addScoreViewController: AddScoreViewController?
+    @IBOutlet weak private var addButton: UIBarButtonItem!
     
     private let maxGameScore = 1001
-    
-    deinit {
-        if let keyboardObserver = keyboardObserver {
-            NotificationCenter.default.removeObserver(keyboardObserver)
-        }
-    }
     
     private var scores: [BelaScore] = [] {
         didSet {
@@ -49,36 +39,6 @@ class ScoreViewController: UIViewController {
         }
         
         tableView.register(UINib(nibName: "ScoreTableViewCell", bundle: nil), forCellReuseIdentifier: "ScoreTableViewCell")
-        
-        let addScoreViewController = UIStoryboard.main.instantiateViewController(ofType: AddScoreViewController.self)
-        addScoreViewController.delegate = self
-        addCardViewController(addScoreViewController)
-        self.addScoreViewController = addScoreViewController
-        
-        bottomConstraint = addScoreViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
-        bottomConstraint?.isActive = true
-        
-        setupKeyboardObserver()
-    }
-    
-    private func setupKeyboardObserver() {
-        keyboardObserver = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillChangeFrameNotification, object: nil, queue: nil) { notification in
-            if let userInfo = notification.userInfo,
-                let durationValue = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber,
-                let endFrameValue = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue,
-                let curve = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber {
-                
-                var responderBottomPoint = self.view.firstResponder?.convert(self.view.firstResponder?.frame.origin ?? .zero, to: self.view) ?? CGPoint.zero
-                let responderHeight = self.view.firstResponder?.frame.height ?? 0
-                responderBottomPoint.y += responderHeight + 75
-                
-                self.bottomConstraint?.constant = -max(0, responderBottomPoint.y - endFrameValue.cgRectValue.minY - (self.bottomConstraint?.constant ?? 0))
-                
-                UIView.animate(withDuration: durationValue.doubleValue, delay: 0, options: UIView.AnimationOptions(rawValue: UInt(curve.intValue << 16)), animations: {
-                    self.view.layoutIfNeeded()
-                }, completion: nil)
-            }
-        }
     }
     
     private func setupNavigationBar() {
@@ -90,7 +50,9 @@ class ScoreViewController: UIViewController {
         if (scores.reduce(0) { $0 + $1.totalScoreTeam1 }) >= maxGameScore || // swiftlint:disable:this control_statement
             (scores.reduce(0) { $0 + $1.totalScoreTeam2 }) >= maxGameScore {
             save(scores: nil)
-//            addScoreViewController?.view.isHidden = true
+            addButton.isEnabled = false
+        } else {
+            addButton.isEnabled = true
         }
     }
     
@@ -98,9 +60,26 @@ class ScoreViewController: UIViewController {
         let encodedScores = try? JSONEncoder().encode(scores)
         UserDefaults.standard.set(encodedScores, forKey: "scores")
     }
+    
+    private func presentAddScoreViewController(score: BelaScore? = nil, scoreTableViewCell: UITableViewCell? = nil) {
+        let addScoreViewController = UIStoryboard.main.instantiateViewController(ofType: AddScoreViewController.self)
+        addScoreViewController.delegate = self
+        
+        if let score = score, let scoreTableViewCell = scoreTableViewCell {
+            addScoreViewController.updateBelaScore = score
+            addScoreViewController.scoreTableViewCell = scoreTableViewCell
+        }
+        
+        let presentationController = CardPresentationController(presentedViewController: addScoreViewController, presenting: self)
+        presentationController.presentationDelegate = self
+        addScoreViewController.modalPresentationStyle = .custom
+        addScoreViewController.transitioningDelegate = presentationController
+        
+        present(addScoreViewController, animated: true, completion: nil)
+    }
 
-    @IBAction func backAction(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+    @IBAction private func addAction(_ sender: Any) {
+        presentAddScoreViewController()
     }
     
 }
@@ -124,8 +103,7 @@ extension ScoreViewController: UITableViewDataSource, UITableViewDelegate {
         let score = scores[indexPath.row]
         let cell = tableView.cellForRow(at: indexPath)
         
-        addScoreViewController?.setup(for: score, scoreTableViewCell: cell)
-        addScoreViewController?.openCard()
+        presentAddScoreViewController(score: score, scoreTableViewCell: cell)
     }
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -158,6 +136,14 @@ extension ScoreViewController: AddScoreViewControllerDelegate {
         
         scores[indexPath.row] = score
         tableView.reloadRows(at: [indexPath], with: .none)
+    }
+    
+}
+
+extension ScoreViewController: CardPresentationControllerDelegate {
+    
+    func cardPresentationControllerDidReceiveTapOnDimmingView(_ cardPresentationController: CardPresentationController, dimmingView: DimmingView) {
+        dismiss(animated: true, completion: nil)
     }
     
 }

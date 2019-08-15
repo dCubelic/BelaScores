@@ -13,7 +13,7 @@ protocol AddScoreViewControllerDelegate: class {
     func addScoreViewControllerDidUpdate(addScoreViewController: AddScoreViewController, score: BelaScore, for scoreTableViewCell: UITableViewCell)
 }
 
-class AddScoreViewController: CardViewController {
+class AddScoreViewController: UIViewController {
     
     enum AddScoreViewControllerMode {
         case new
@@ -23,14 +23,9 @@ class AddScoreViewController: CardViewController {
     @IBOutlet weak private var addButton: UIButton!
     @IBOutlet weak private var touchView: UIView!
     
-    var biddingTeamViewController: BiddingTeamViewController?
-    var scoreInputViewController: ScoreInputViewController?
-    var declarationsViewController: DeclarationsViewController?
-    var declarationsViewController2: DeclarationsViewController?
+    private var keyboardObserver: NSObjectProtocol?
     
-    var scoreTableViewCell: UITableViewCell?
-    
-    var belaScore: BelaScore? {
+    private var belaScore: BelaScore? {
         guard let biddingTeam = biddingTeamViewController?.biddingTeam,
             let gameScore = scoreInputViewController?.score,
             let declarationsTeam1 = declarationsViewController?.declarationPoints,
@@ -39,8 +34,6 @@ class AddScoreViewController: CardViewController {
         
         return BelaScore(biddingTeam: biddingTeam, gameScore: gameScore, declarationsTeam1: declarationsTeam1, declarationsTeam2: declarationsTeam2)
     }
-    
-    weak var delegate: AddScoreViewControllerDelegate?
     
     private var mode: AddScoreViewControllerMode = .new {
         didSet {
@@ -53,10 +46,31 @@ class AddScoreViewController: CardViewController {
         }
     }
     
+    var biddingTeamViewController: BiddingTeamViewController?
+    var scoreInputViewController: ScoreInputViewController?
+    var declarationsViewController: DeclarationsViewController?
+    var declarationsViewController2: DeclarationsViewController?
+    
+    var scoreTableViewCell: UITableViewCell?
+    var updateBelaScore: BelaScore?
+    
+    weak var delegate: AddScoreViewControllerDelegate?
+    
+    deinit {
+        if let keyboardObserver = keyboardObserver {
+            NotificationCenter.default.removeObserver(keyboardObserver)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
+        if let updateBelaScore = updateBelaScore {
+            setup(for: updateBelaScore, scoreTableViewCell: scoreTableViewCell)
+        }
+        
+        setupKeyboardObserver()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -78,20 +92,30 @@ class AddScoreViewController: CardViewController {
         }
     }
     
-    public func reset() {
-        scoreTableViewCell = nil
-        
-        biddingTeamViewController?.reset()
-        scoreInputViewController?.reset()
-        declarationsViewController?.reset()
-        declarationsViewController2?.reset()
-        
-        mode = .new
+    private func setupKeyboardObserver() {
+        keyboardObserver = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillChangeFrameNotification, object: nil, queue: nil) { notification in
+            if let userInfo = notification.userInfo,
+                let durationValue = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber,
+                let endFrameValue = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue,
+                let curve = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber {
+                
+                guard let presentingView = self.presentingViewController?.view else { return }
+                
+                var responderBottomPoint = self.view.firstResponder?.convert(self.view.firstResponder?.frame.origin ?? .zero, to: presentingView) ?? CGPoint.zero
+                let responderHeight = self.view.firstResponder?.frame.height ?? 0
+                responderBottomPoint.y += responderHeight + 75
+                
+                let originalOriginY = UIScreen.main.bounds.height - self.view.frame.height
+                self.view.frame.origin.y = min(originalOriginY, originalOriginY - (responderBottomPoint.y - endFrameValue.cgRectValue.minY))
+                
+                UIView.animate(withDuration: durationValue.doubleValue, delay: 0, options: UIView.AnimationOptions(rawValue: UInt(curve.intValue << 16)), animations: {
+                    self.view.layoutIfNeeded()
+                }, completion: nil)
+            }
+        }
     }
     
-    public func setup(for score: BelaScore, scoreTableViewCell: UITableViewCell?) {
-        reset()
-        
+    private func setup(for score: BelaScore, scoreTableViewCell: UITableViewCell?) {
         self.scoreTableViewCell = scoreTableViewCell
         
         biddingTeamViewController?.biddingTeam = score.biddingTeam
@@ -107,6 +131,16 @@ class AddScoreViewController: CardViewController {
         touchView.addGestureRecognizer(tapGesture)
         
         addButton.layer.cornerRadius = addButton.frame.height / 2
+        
+        roundCorners()
+    }
+    
+    private func roundCorners() {
+        let layer = CAShapeLayer()
+        let path = UIBezierPath(roundedRect: view.bounds, byRoundingCorners: [UIRectCorner.topLeft, UIRectCorner.topRight], cornerRadii: CGSize(width: 10, height: 10))
+        
+        layer.path = path.cgPath
+        view.layer.mask = layer
     }
     
     @objc private func tapAction() {
@@ -138,8 +172,11 @@ class AddScoreViewController: CardViewController {
             }
         }
         
-        reset()
-        closeCard()
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction private func cancelAction(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
 }
