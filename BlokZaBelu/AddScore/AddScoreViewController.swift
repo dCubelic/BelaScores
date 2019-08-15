@@ -106,7 +106,8 @@ class AddScoreViewController: UIViewController {
                 responderBottomPoint.y += responderHeight + 75
                 
                 let originalOriginY = UIScreen.main.bounds.height - self.view.frame.height
-                self.view.frame.origin.y = min(originalOriginY, originalOriginY - (responderBottomPoint.y - endFrameValue.cgRectValue.minY))
+                let currentOffset = originalOriginY - self.view.frame.origin.y
+                self.view.frame.origin.y = min(originalOriginY, originalOriginY - (responderBottomPoint.y - endFrameValue.cgRectValue.minY) - currentOffset)
                 
                 UIView.animate(withDuration: durationValue.doubleValue, delay: 0, options: UIView.AnimationOptions(rawValue: UInt(curve.intValue << 16)), animations: {
                     self.view.layoutIfNeeded()
