@@ -47,11 +47,20 @@ class ScoreViewController: UIViewController {
     }
     
     private func checkForEnd() {
-        if (scores.reduce(0) { $0 + $1.totalScoreTeam1 }) >= maxGameScore || // swiftlint:disable:this control_statement
-            (scores.reduce(0) { $0 + $1.totalScoreTeam2 }) >= maxGameScore {
-            save(scores: nil)
+        let team1Score = scores.reduce(0) { $0 + $1.totalScoreTeam1 }
+        let team2Score = scores.reduce(0) { $0 + $1.totalScoreTeam2 }
+        
+        if team1Score >= maxGameScore && team1Score > team2Score {
+            score1Label.flash()
+            score2Label.stopFlash()
+            addButton.isEnabled = false
+        } else if team2Score >= maxGameScore && team2Score > team1Score {
+            score1Label.stopFlash()
+            score2Label.flash()
             addButton.isEnabled = false
         } else {
+            score1Label.stopFlash()
+            score2Label.stopFlash()
             addButton.isEnabled = true
         }
     }

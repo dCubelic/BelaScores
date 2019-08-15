@@ -34,4 +34,21 @@ extension UIView {
         self.layer.add(animation, forKey: "position")
     }
     
+    func flash() {
+        let flash = CABasicAnimation(keyPath: "opacity")
+        
+        flash.duration = 0.65
+        flash.fromValue = 1
+        flash.toValue = 0
+        flash.autoreverses = true
+        flash.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        flash.repeatCount = .greatestFiniteMagnitude
+        
+        layer.add(flash, forKey: "opacity")
+    }
+    
+    func stopFlash() {
+        layer.removeAnimation(forKey: "opacity")
+    }
+    
 }
