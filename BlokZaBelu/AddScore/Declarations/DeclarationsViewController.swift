@@ -48,6 +48,29 @@ class DeclarationsViewController: UIViewController {
         tableView.reloadData()
     }
     
+    func addAllPointsBonus() {
+        if !declarationPoints.contains(90) {
+            insertDeclarationPoints(90)
+        }
+    }
+    
+    func removeAllPointsBonus() {
+        guard let index = declarationPoints.firstIndex(of: 90) else { return }
+        
+        declarationPoints.remove(at: index)
+        
+        tableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: .bottom)
+    }
+    
+    private func insertDeclarationPoints(_ declarationPoints: Int) {
+        let indexPath = IndexPath(row: self.declarationPoints.count, section: 0)
+        
+        self.declarationPoints.append(declarationPoints)
+        
+        tableView.insertRows(at: [indexPath], with: .fade)
+        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+    }
+    
     @objc private func tapAction() {
         let lastIndexPath = IndexPath(row: declarationPoints.count, section: 0)
         if let cell = tableView.cellForRow(at: lastIndexPath) as? NewDeclarationTableViewCell {
@@ -86,12 +109,7 @@ extension DeclarationsViewController: UITableViewDataSource, UITableViewDelegate
 extension DeclarationsViewController: NewDeclarationTableViewCellDelegate {
     
     func newDeclarationTableViewCellDidAddNewDeclarationPoints(newDeclarationTableViewCell: NewDeclarationTableViewCell, declarationPoints: Int) {
-        guard let indexPath = tableView.indexPath(for: newDeclarationTableViewCell) else { return }
-        
-        self.declarationPoints.append(declarationPoints)
-        
-        tableView.insertRows(at: [indexPath], with: .fade)
-        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+        insertDeclarationPoints(declarationPoints)
     }
     
 }

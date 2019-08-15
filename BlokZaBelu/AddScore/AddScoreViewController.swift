@@ -194,8 +194,20 @@ extension AddScoreViewController: BiddingTeamViewControllerDelegate {
 
 extension AddScoreViewController: ScoreInputViewControllerDelegate {
     
-    func ScoreInputViewControllerDidUpdateScore(_ scoreInputViewController: ScoreInputViewController, score: BelaGameScore) {
+    func scoreInputViewControllerDidUpdateScore(_ scoreInputViewController: ScoreInputViewController, score: BelaGameScore) {
         updateDidntPassViews()
+        
+        if score.score1 == 162 {
+            declarationsViewController?.addAllPointsBonus()
+        } else {
+            declarationsViewController?.removeAllPointsBonus()
+        }
+        
+        if score.score2 == 162 {
+            declarationsViewController2?.addAllPointsBonus()
+        } else {
+            declarationsViewController2?.removeAllPointsBonus()
+        }
     }
     
 }

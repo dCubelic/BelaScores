@@ -10,7 +10,7 @@ import BelaDetectorFramework
 import UIKit
 
 protocol ScoreInputViewControllerDelegate: class {
-    func ScoreInputViewControllerDidUpdateScore(_ scoreInputViewController: ScoreInputViewController, score: BelaGameScore)
+    func scoreInputViewControllerDidUpdateScore(_ scoreInputViewController: ScoreInputViewController, score: BelaGameScore)
 }
 
 class ScoreInputViewController: UIViewController {
@@ -34,8 +34,6 @@ class ScoreInputViewController: UIViewController {
             
             points1TextField.text = String(score.score1)
             points2TextField.text = String(score.score2)
-            
-            delegate?.ScoreInputViewControllerDidUpdateScore(self, score: score)
         }
     }
     
@@ -99,6 +97,10 @@ class ScoreInputViewController: UIViewController {
         case .team2:
             score?.score2 = points
             score?.score1 = max(0, BelaGameScore.total - points)
+        }
+        
+        if let score = score {
+            delegate?.scoreInputViewControllerDidUpdateScore(self, score: score)
         }
     }
 }

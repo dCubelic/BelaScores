@@ -23,19 +23,29 @@ struct BelaScore: Codable {
     }
     
     var team1Passed: Bool {
-        return biddingTeam == .team1 ? _totalScoreTeam1 > _totalScoreTeam2 : true
+        if biddingTeam == .team2 { return true }
+        if gameScore.score1 == 0 { return false }
+        return _totalScoreTeam1 > _totalScoreTeam2
     }
     
     var team2Passed: Bool {
-        return biddingTeam == .team2 ? _totalScoreTeam2 > _totalScoreTeam1 : true
+        if biddingTeam == .team1 { return true }
+        if gameScore.score2 == 0 { return false }
+        return _totalScoreTeam2 > _totalScoreTeam1
     }
     
     var totalScoreTeam1: Int {
-        return !team1Passed ? 0 : (!team2Passed ? _totalScoreTeam1 + _totalScoreTeam2 : _totalScoreTeam1)
+        if gameScore.score1 == 0 { return 0 }
+        if !team1Passed { return 0 }
+        
+        return team2Passed && gameScore.score2 != 0 ? _totalScoreTeam1 : _totalScoreTeam1 + _totalScoreTeam2
     }
     
     var totalScoreTeam2: Int {
-        return !team2Passed ? 0 : (!team1Passed ? _totalScoreTeam1 + _totalScoreTeam2 : _totalScoreTeam2)
+        if gameScore.score2 == 0 { return 0 }
+        if !team2Passed { return 0 }
+        
+        return team1Passed && gameScore.score1 != 0 ? _totalScoreTeam2 : _totalScoreTeam1 + _totalScoreTeam2
     }
     
     var isValidScore: Bool {

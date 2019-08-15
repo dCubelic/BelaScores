@@ -14,7 +14,7 @@ protocol NewDeclarationTableViewCellDelegate: class {
 
 class NewDeclarationTableViewCell: UITableViewCell {
 
-    static var declarationValues = [20, 50, 90, 100, 150, 200]
+    static var declarationValues = [20, 50, 100, 150, 200]
     private var plusButton: UIButton?
     private var collectionView: UICollectionView?
     
