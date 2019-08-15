@@ -117,7 +117,7 @@ extension ScoreViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let delete = UIContextualAction(style: .destructive, title: "Obriši") { _, _, completionHandler in
+        let delete = UIContextualAction(style: .destructive, title: "delete".localized) { _, _, completionHandler in
             self.scores.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .fade)
             

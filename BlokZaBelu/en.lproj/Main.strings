@@ -1,0 +1,42 @@
+
+/* Class = "UILabel"; text = "Blok za Belu"; ObjectID = "0vs-RK-D65"; */
+"0vs-RK-D65.text" = "Bela Scores";
+
+/* Class = "UIButton"; normalTitle = "NOVA IGRA"; ObjectID = "3sS-l5-5qw"; */
+"3sS-l5-5qw.normalTitle" = "NEW GAME";
+
+/* Class = "UINavigationItem"; title = "Menu"; ObjectID = "CbA-up-jLl"; */
+"CbA-up-jLl.title" = "Menu";
+
+/* Class = "UIButton"; normalTitle = "NASTAVI"; ObjectID = "DZx-TO-SFY"; */
+"DZx-TO-SFY.normalTitle" = "CONTINUE";
+
+/* Class = "UITextField"; placeholder = "0"; ObjectID = "ESZ-xF-5d3"; */
+"ESZ-xF-5d3.placeholder" = "0";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "OA3-fD-dGY"; */
+"OA3-fD-dGY.text" = "0";
+
+/* Class = "UIButton"; normalTitle = "UNESI"; ObjectID = "U8H-Ok-euS"; */
+"U8H-Ok-euS.normalTitle" = "ADD";
+
+/* Class = "UIButton"; normalTitle = "VI"; ObjectID = "aHB-5L-k0s"; */
+"aHB-5L-k0s.normalTitle" = "THY";
+
+/* Class = "UIButton"; normalTitle = "MI"; ObjectID = "bW9-Sd-ifd"; */
+"bW9-Sd-ifd.normalTitle" = "WE";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "e2T-bv-E6O"; */
+"e2T-bv-E6O.text" = "0";
+
+/* Class = "UILabel"; text = "MI"; ObjectID = "kfT-So-tMe"; */
+"kfT-So-tMe.text" = "WE";
+
+/* Class = "UITextField"; placeholder = "0"; ObjectID = "lZf-Hp-eAa"; */
+"lZf-Hp-eAa.placeholder" = "0";
+
+/* Class = "UIButton"; normalTitle = "POSTAVKE"; ObjectID = "nof-Lr-sK2"; */
+"nof-Lr-sK2.normalTitle" = "SETTINGS";
+
+/* Class = "UILabel"; text = "VI"; ObjectID = "onD-bn-VIl"; */
+"onD-bn-VIl.text" = "THY";

@@ -18,9 +18,9 @@ enum KeyboardToolbarButton: Int {
         
         switch self {
         case .done:
-            button = UIBarButtonItem(title: "Done", style: .plain, target: target, action: action)
+            button = UIBarButtonItem(title: "done".localized, style: .plain, target: target, action: action)
         case .cancel:
-            button = UIBarButtonItem(title: "Cancel", style: .plain, target: target, action: action)
+            button = UIBarButtonItem(title: "Cancel".localized, style: .plain, target: target, action: action)
         }
         button.tag = rawValue
         button.tintColor = .blue

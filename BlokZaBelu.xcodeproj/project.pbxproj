@@ -30,6 +30,9 @@
 		B4A80DA82305565B00F53884 /* KeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A80DA72305565B00F53884 /* KeyboardToolbar.swift */; };
 		B4A80DAD230583B900F53884 /* CardPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A80DAC230583B900F53884 /* CardPresentationController.swift */; };
 		B4A80DAF2305841800F53884 /* DimmingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A80DAE2305841800F53884 /* DimmingView.swift */; };
+		B4A80DB72305F43A00F53884 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B4A80DB92305F43A00F53884 /* Localizable.strings */; };
+		B4A80DBC2305F50900F53884 /* String+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A80DBB2305F50900F53884 /* String+Bela.swift */; };
+		B4A80DC32305F91B00F53884 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B4A80DC52305F91B00F53884 /* InfoPlist.strings */; };
 		B4D5A7F32301B97C00396103 /* ScoreInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D5A7F22301B97C00396103 /* ScoreInputViewController.swift */; };
 		B4D5A83E2301CEE100396103 /* BelaDetectorFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D5A8262301CE0D00396103 /* BelaDetectorFramework.framework */; };
 		B4D5A83F2301CEE100396103 /* BelaDetectorFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4D5A8262301CE0D00396103 /* BelaDetectorFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -103,6 +106,14 @@
 		B4A80DA72305565B00F53884 /* KeyboardToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolbar.swift; sourceTree = "<group>"; };
 		B4A80DAC230583B900F53884 /* CardPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPresentationController.swift; sourceTree = "<group>"; };
 		B4A80DAE2305841800F53884 /* DimmingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimmingView.swift; sourceTree = "<group>"; };
+		B4A80DB22305F3FD00F53884 /* hr-HR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "hr-HR"; path = "hr-HR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		B4A80DB82305F43A00F53884 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B4A80DBA2305F44500F53884 /* hr-HR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "hr-HR"; path = "hr-HR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		B4A80DBB2305F50900F53884 /* String+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Bela.swift"; sourceTree = "<group>"; };
+		B4A80DC42305F91B00F53884 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B4A80DC62305F91F00F53884 /* hr-HR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "hr-HR"; path = "hr-HR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		B4A80DCA2305FA6400F53884 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		B4A80DCC2305FA6A00F53884 /* hr-HR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "hr-HR"; path = "hr-HR.lproj/Main.strings"; sourceTree = "<group>"; };
 		B4D5A7F22301B97C00396103 /* ScoreInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreInputViewController.swift; sourceTree = "<group>"; };
 		B4D5A81E2301CE0D00396103 /* BelaDetector.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BelaDetector.xcodeproj; path = BelaDetector/BelaDetector.xcodeproj; sourceTree = "<group>"; };
 		B4F30CFC22FEFC46003F13C8 /* BlokZaBelu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlokZaBelu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +195,7 @@
 		B4741EC222FF07B70058BC00 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B4A80DBB2305F50900F53884 /* String+Bela.swift */,
 				B4741EC322FF07C50058BC00 /* UIColor+Bela.swift */,
 				B4741EBC22FF05E30058BC00 /* UIStoryboard+Bela.swift */,
 				B4741ECF22FF09F10058BC00 /* UITableView+Bela.swift */,
@@ -295,6 +307,8 @@
 		B4F30D1422FF0226003F13C8 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				B4A80DC52305F91B00F53884 /* InfoPlist.strings */,
+				B4A80DB92305F43A00F53884 /* Localizable.strings */,
 				B4F30D0622FEFC47003F13C8 /* Assets.xcassets */,
 				B4F30D0822FEFC47003F13C8 /* LaunchScreen.storyboard */,
 				B4F30D0B22FEFC47003F13C8 /* Info.plist */,
@@ -364,6 +378,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"hr-HR",
 			);
 			mainGroup = B4F30CF322FEFC46003F13C8;
 			productRefGroup = B4F30CFD22FEFC46003F13C8 /* Products */;
@@ -408,7 +423,9 @@
 				B461A8842301E99300DF5DE0 /* DeclaredValueTableViewCell.xib in Resources */,
 				B4F30D0722FEFC47003F13C8 /* Assets.xcassets in Resources */,
 				B461A87C2301E96100DF5DE0 /* NewDeclarationTableViewCell.xib in Resources */,
+				B4A80DB72305F43A00F53884 /* Localizable.strings in Resources */,
 				B4741EC122FF06980058BC00 /* ScoreTableViewCell.xib in Resources */,
+				B4A80DC32305F91B00F53884 /* InfoPlist.strings in Resources */,
 				B4F30D0522FEFC46003F13C8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,6 +459,7 @@
 			files = (
 				B4741EC722FF08640058BC00 /* BelaGameScore.swift in Sources */,
 				B461A8772301E93100DF5DE0 /* DeclarationsViewController.swift in Sources */,
+				B4A80DBC2305F50900F53884 /* String+Bela.swift in Sources */,
 				B4741EC022FF06980058BC00 /* ScoreTableViewCell.swift in Sources */,
 				B4A80DA82305565B00F53884 /* KeyboardToolbar.swift in Sources */,
 				B4741EC422FF07C50058BC00 /* UIColor+Bela.swift in Sources */,
@@ -477,10 +495,30 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		B4A80DB92305F43A00F53884 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B4A80DB82305F43A00F53884 /* en */,
+				B4A80DBA2305F44500F53884 /* hr-HR */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		B4A80DC52305F91B00F53884 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B4A80DC42305F91B00F53884 /* en */,
+				B4A80DC62305F91F00F53884 /* hr-HR */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		B4F30D0322FEFC46003F13C8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B4F30D0422FEFC46003F13C8 /* Base */,
+				B4A80DCA2305FA6400F53884 /* en */,
+				B4A80DCC2305FA6A00F53884 /* hr-HR */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -489,6 +527,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B4F30D0922FEFC47003F13C8 /* Base */,
+				B4A80DB22305F3FD00F53884 /* hr-HR */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -500,6 +539,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -547,7 +587,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -561,6 +601,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -602,7 +643,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blok za Belu" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vs-RK-D65">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bela Scores" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vs-RK-D65">
                                 <rect key="frame" x="30" y="526" width="354" height="54"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="45"/>
                                 <color key="textColor" name="lightGray"/>
@@ -39,7 +39,7 @@
                                                     <constraint firstAttribute="width" constant="200" id="kn9-Cf-Fzy"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
-                                                <state key="normal" title="NASTAVI">
+                                                <state key="normal" title="CONTINUE">
                                                     <color key="titleColor" name="darkGray"/>
                                                 </state>
                                                 <connections>
@@ -54,7 +54,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="x54-fc-jUL"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
-                                                <state key="normal" title="NOVA IGRA">
+                                                <state key="normal" title="NEW GAME">
                                                     <color key="titleColor" name="darkGray"/>
                                                 </state>
                                                 <connections>
@@ -69,7 +69,7 @@
                                                     <constraint firstAttribute="width" constant="200" id="zRJ-PA-WTN"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
-                                                <state key="normal" title="POSTAVKE">
+                                                <state key="normal" title="SETTINGS">
                                                     <color key="titleColor" name="darkGray"/>
                                                 </state>
                                                 <connections>
@@ -145,13 +145,13 @@
                                 <color key="textColor" name="blue"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfT-So-tMe">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfT-So-tMe">
                                 <rect key="frame" x="0.0" y="173" width="207" height="47"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="39"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onD-bn-VIl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onD-bn-VIl">
                                 <rect key="frame" x="207" y="173" width="207" height="47"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="39"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -340,12 +340,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bW9-Sd-ifd">
-                                <rect key="frame" x="12" y="0.0" width="80" height="60"/>
+                                <rect key="frame" x="12" y="0.0" width="90" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="Fqk-pM-lac"/>
+                                    <constraint firstAttribute="width" constant="90" id="Fqk-pM-lac"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="40"/>
-                                <state key="normal" title="MI">
+                                <state key="normal" title="WE">
                                     <color key="titleColor" name="blue"/>
                                 </state>
                                 <connections>
@@ -353,12 +353,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHB-5L-k0s">
-                                <rect key="frame" x="158" y="0.0" width="80" height="60"/>
+                                <rect key="frame" x="148" y="0.0" width="90" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="Kl5-9i-nee"/>
+                                    <constraint firstAttribute="width" constant="90" id="Kl5-9i-nee"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="40"/>
-                                <state key="normal" title="VI">
+                                <state key="normal" title="THY">
                                     <color key="titleColor" name="darkGray"/>
                                 </state>
                                 <connections>
@@ -421,39 +421,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ESZ-xF-5d3">
-                                <rect key="frame" x="0.0" y="0.0" width="80" height="53"/>
+                                <rect key="frame" x="0.0" y="0.0" width="90" height="53"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="z5H-v5-WP7"/>
+                                    <constraint firstAttribute="width" constant="90" id="z5H-v5-WP7"/>
                                 </constraints>
                                 <color key="textColor" name="lightGray"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NG8-fn-GQb">
-                                <rect key="frame" x="0.0" y="55" width="80" height="5"/>
+                                <rect key="frame" x="0.0" y="55" width="90" height="5"/>
                                 <color key="backgroundColor" name="lightGray"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="5" id="9Mw-aa-cC4"/>
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lZf-Hp-eAa">
-                                <rect key="frame" x="210" y="0.0" width="80" height="53"/>
+                                <rect key="frame" x="200" y="0.0" width="90" height="53"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="DOB-Pa-72S"/>
+                                    <constraint firstAttribute="width" constant="90" id="DOB-Pa-72S"/>
                                 </constraints>
                                 <color key="textColor" name="lightGray"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IxJ-Ih-kXN">
-                                <rect key="frame" x="210" y="55" width="80" height="5"/>
+                                <rect key="frame" x="200" y="55" width="90" height="5"/>
                                 <color key="backgroundColor" name="lightGray"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="5" id="yZ5-xs-NJj"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="024-nc-ctF">
-                                <rect key="frame" x="88" y="18" width="24" height="24"/>
+                                <rect key="frame" x="98" y="18" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="I8L-b4-cTX"/>
                                     <constraint firstAttribute="width" secondItem="024-nc-ctF" secondAttribute="height" multiplier="1:1" id="jNw-4v-XyC"/>

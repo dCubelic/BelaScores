@@ -39,9 +39,9 @@ class AddScoreViewController: UIViewController {
         didSet {
             switch mode {
             case .new:
-                addButton.setTitle("Unesi", for: .normal)
+                addButton.setTitle("add".localized.uppercased(), for: .normal)
             case .update:
-                addButton.setTitle("Ažuriraj", for: .normal)
+                addButton.setTitle("update".localized.uppercased(), for: .normal)
             }
         }
     }
@@ -64,6 +64,8 @@ class AddScoreViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mode = .new
         
         setupViews()
         if let updateBelaScore = updateBelaScore {
