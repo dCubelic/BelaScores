@@ -79,6 +79,7 @@ class ScoreInputViewController: UIViewController {
     private func runDetector(for team: BelaTeam) {
         let detector = BelaDetectorViewController.instantiateFromStoryboard()
         detector.delegate = self
+        detector.modalPresentationStyle = .overFullScreen
         
         activeDetectorTeam = team
         
