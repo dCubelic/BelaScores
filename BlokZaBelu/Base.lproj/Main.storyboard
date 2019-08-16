@@ -257,38 +257,60 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nfq-Zq-0mz">
-                                <rect key="frame" x="28" y="184" width="179" height="529"/>
+                                <rect key="frame" x="28" y="184" width="158.33333333333334" height="529"/>
                                 <connections>
                                     <segue destination="sjj-2h-8r2" kind="embed" identifier="DeclarationsViewController" id="KL2-1s-L5x"/>
                                 </connections>
                             </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ver-dU-8hE">
+                                <rect key="frame" x="46" y="180" width="122" height="5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="aAQ-Wu-lof"/>
+                                    <constraint firstAttribute="width" constant="122" id="gd4-8t-Kyq"/>
+                                </constraints>
+                            </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ouy-gc-Jur">
-                                <rect key="frame" x="207" y="184" width="179" height="529"/>
+                                <rect key="frame" x="227.66666666666663" y="184" width="158.33333333333337" height="529"/>
                                 <connections>
                                     <segue destination="sjj-2h-8r2" kind="embed" identifier="Declarations2ViewController" id="bf1-Xq-Bsd"/>
                                 </connections>
                             </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRp-C6-9me">
+                                <rect key="frame" x="246" y="180" width="122" height="5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="122" id="QFx-Kf-Ue7"/>
+                                    <constraint firstAttribute="height" constant="5" id="TLC-F2-bJH"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" name="darkGray2"/>
                         <constraints>
                             <constraint firstItem="zCF-fI-R3P" firstAttribute="top" secondItem="A93-rU-r2i" secondAttribute="bottom" constant="30" id="0sF-AG-Til"/>
                             <constraint firstItem="U8H-Ok-euS" firstAttribute="top" secondItem="nfq-Zq-0mz" secondAttribute="bottom" id="2AV-BD-rfQ"/>
+                            <constraint firstItem="Ouy-gc-Jur" firstAttribute="centerX" secondItem="ZRp-C6-9me" secondAttribute="centerX" id="2uy-S1-hLT"/>
+                            <constraint firstItem="ZRp-C6-9me" firstAttribute="top" secondItem="k4T-Kb-pde" secondAttribute="bottom" id="55E-fj-0n1"/>
                             <constraint firstItem="k4T-Kb-pde" firstAttribute="top" secondItem="sTi-sA-jOL" secondAttribute="top" id="EXF-tX-mEm"/>
                             <constraint firstItem="Ouy-gc-Jur" firstAttribute="top" secondItem="zCF-fI-R3P" secondAttribute="bottom" constant="4" id="FGa-yG-5V8"/>
                             <constraint firstItem="A93-rU-r2i" firstAttribute="width" secondItem="sTi-sA-jOL" secondAttribute="width" multiplier="0.7" constant="24" id="H4i-q4-lsa"/>
                             <constraint firstItem="U8H-Ok-euS" firstAttribute="centerX" secondItem="sTi-sA-jOL" secondAttribute="centerX" id="Ika-iN-Wt5"/>
                             <constraint firstItem="k4T-Kb-pde" firstAttribute="trailing" secondItem="2X7-2A-2ic" secondAttribute="trailing" id="KDD-gN-rcV"/>
                             <constraint firstItem="zCF-fI-R3P" firstAttribute="leading" secondItem="A93-rU-r2i" secondAttribute="leading" constant="12" id="QQ5-PV-ebf"/>
-                            <constraint firstItem="2X7-2A-2ic" firstAttribute="trailing" secondItem="Ouy-gc-Jur" secondAttribute="trailing" constant="28" id="UMt-dK-lGg"/>
+                            <constraint firstItem="ZRp-C6-9me" firstAttribute="trailing" secondItem="zCF-fI-R3P" secondAttribute="trailing" constant="-16" id="W8P-Iu-Vbq"/>
                             <constraint firstItem="k4T-Kb-pde" firstAttribute="bottom" secondItem="zCF-fI-R3P" secondAttribute="bottom" id="Z0e-Rk-N6u"/>
-                            <constraint firstItem="nfq-Zq-0mz" firstAttribute="leading" secondItem="2X7-2A-2ic" secondAttribute="leading" constant="28" id="dMV-8p-Q7A"/>
+                            <constraint firstItem="nfq-Zq-0mz" firstAttribute="centerX" secondItem="Ver-dU-8hE" secondAttribute="centerX" id="cSm-Ig-iHh"/>
+                            <constraint firstItem="Ver-dU-8hE" firstAttribute="leading" secondItem="zCF-fI-R3P" secondAttribute="leading" constant="-16" id="d21-nw-a86"/>
                             <constraint firstItem="nfq-Zq-0mz" firstAttribute="top" secondItem="zCF-fI-R3P" secondAttribute="bottom" constant="4" id="djW-33-l1d"/>
-                            <constraint firstItem="Ouy-gc-Jur" firstAttribute="width" secondItem="nfq-Zq-0mz" secondAttribute="width" id="eg8-0h-UIq"/>
                             <constraint firstItem="k4T-Kb-pde" firstAttribute="leading" secondItem="2X7-2A-2ic" secondAttribute="leading" id="hgI-2n-eut"/>
-                            <constraint firstItem="Ouy-gc-Jur" firstAttribute="leading" secondItem="nfq-Zq-0mz" secondAttribute="trailing" id="jv5-BW-3si"/>
+                            <constraint firstItem="2X7-2A-2ic" firstAttribute="trailing" secondItem="Ouy-gc-Jur" secondAttribute="trailing" constant="28" id="jp9-fN-a2u"/>
+                            <constraint firstItem="nfq-Zq-0mz" firstAttribute="width" secondItem="Ouy-gc-Jur" secondAttribute="width" id="lDr-u9-7MA"/>
+                            <constraint firstItem="Ver-dU-8hE" firstAttribute="top" secondItem="k4T-Kb-pde" secondAttribute="bottom" id="le4-ya-qzz"/>
                             <constraint firstItem="zCF-fI-R3P" firstAttribute="trailing" secondItem="A93-rU-r2i" secondAttribute="trailing" constant="20" id="mb7-zT-Qoy"/>
                             <constraint firstItem="A93-rU-r2i" firstAttribute="top" secondItem="2X7-2A-2ic" secondAttribute="top" constant="30" id="ozN-16-EtN"/>
+                            <constraint firstItem="nfq-Zq-0mz" firstAttribute="leading" secondItem="2X7-2A-2ic" secondAttribute="leading" constant="28" id="pbs-KP-EMn"/>
                             <constraint firstItem="A93-rU-r2i" firstAttribute="centerX" secondItem="sTi-sA-jOL" secondAttribute="centerX" id="qjC-8B-0I9"/>
+                            <constraint firstItem="Ouy-gc-Jur" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="nfq-Zq-0mz" secondAttribute="trailing" id="tEn-41-PUi"/>
                             <constraint firstItem="U8H-Ok-euS" firstAttribute="top" secondItem="Ouy-gc-Jur" secondAttribute="bottom" id="uor-9B-JMf"/>
                             <constraint firstItem="2X7-2A-2ic" firstAttribute="bottom" secondItem="U8H-Ok-euS" secondAttribute="bottom" constant="16" id="xed-h1-sFo"/>
                         </constraints>
@@ -310,7 +332,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iad-nT-eBn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2804" y="13"/>
+            <point key="canvasLocation" x="2802.898550724638" y="12.723214285714285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tCw-f2-wkI">
@@ -512,11 +534,11 @@
             <objects>
                 <viewController storyboardIdentifier="DeclarationsViewController" id="sjj-2h-8r2" customClass="DeclarationsViewController" customModule="BlokZaBelu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HGL-bg-Tfv">
-                        <rect key="frame" x="0.0" y="0.0" width="179" height="529"/>
+                        <rect key="frame" x="0.0" y="0.0" width="158.33333333333337" height="529"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cDv-bN-uIh">
-                                <rect key="frame" x="0.0" y="0.0" width="179" height="529"/>
+                                <rect key="frame" x="0.0" y="0.0" width="158.33333333333334" height="529"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="sjj-2h-8r2" id="yNa-BX-yHY"/>
