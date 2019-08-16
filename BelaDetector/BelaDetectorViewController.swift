@@ -28,7 +28,7 @@ public class BelaDetectorViewController: UIViewController {
     private let semaphore = DispatchSemaphore(value: 2)
     private let detectorModel = BelaModel()
     private var cardSet: Set<BelaCard> = Set()
-    private var resilienceArray = ResilienceArray<BelaCard>(size: 10)
+    private var resilienceArray = ResilienceArray<BelaCard>(size: 7 )
     private var trumpSuitPicker: TrumpSuitPickerViewController?
     
     public weak var delegate: BelaDetectorViewControllerDelegate?

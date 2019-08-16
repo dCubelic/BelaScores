@@ -261,12 +261,13 @@ def _main(args):
         print('Saved model plot to {}.png'.format(output_root + '.h5'))
 
 def convert_coreml():
-    #za manji model stavit output names=['conv2d_8', 'conv2d_11'] il obrnuto?
-    coreml_model = coremltools.converters.keras.convert(output_path + '.h5', input_names='input_1', image_input_names='input_1', output_names=['conv2d_10', 'conv2d_13'], image_scale=1/255.)
+    #za manji model stavit output names=['conv2d_11', 'conv2d_8'] il obrnuto?
+    #za manji model stavit output names=['conv2d_10', 'conv2d_13'] il obrnuto?
+    coreml_model = coremltools.converters.keras.convert(output_path + '.h5', input_names='input_1', image_input_names='input_1', output_names=['conv2d_11', 'conv2d_8'], image_scale=1/255.)
 
     coreml_model.input_description['input_1'] = 'Input image'
-    coreml_model.output_description['conv2d_10'] = 'The 38x38 grid (Scale2)'
-    coreml_model.output_description['conv2d_13'] = 'The 19x18 grid (Scale1)'
+    coreml_model.output_description['conv2d_11'] = 'The 38x38 grid (Scale2)'
+    coreml_model.output_description['conv2d_8'] = 'The 19x18 grid (Scale1)'
 
     coreml_model.author = 'Original paper: Joseph Redmon, Ali Farhadi'
     coreml_model.license = 'Public Domain'
