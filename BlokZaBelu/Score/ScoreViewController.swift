@@ -112,7 +112,10 @@ extension ScoreViewController: UITableViewDataSource, UITableViewDelegate {
         let score = scores[indexPath.row]
         let cell = tableView.cellForRow(at: indexPath)
         
-        presentAddScoreViewController(score: score, scoreTableViewCell: cell)
+        //There's sometimes a delay if I don't to this. http://openradar.appspot.com/19563577
+        DispatchQueue.main.async {
+            self.presentAddScoreViewController(score: score, scoreTableViewCell: cell)
+        }
     }
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
