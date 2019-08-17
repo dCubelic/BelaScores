@@ -9,14 +9,14 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B4F30CFB22FEFC46003F13C8"
-               BuildableName = "BlokZaBelu.app"
-               BlueprintName = "BlokZaBelu"
+               BlueprintIdentifier = "B478C5FF230897C800CA553A"
+               BuildableName = "BlokZaBeluUITests.xctest"
+               BlueprintName = "BlokZaBeluUITests"
                ReferencedContainer = "container:BlokZaBelu.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B4F30CFB22FEFC46003F13C8"
-            BuildableName = "BlokZaBelu.app"
-            BlueprintName = "BlokZaBelu"
+            BlueprintIdentifier = "B478C5FF230897C800CA553A"
+            BuildableName = "BlokZaBeluUITests.xctest"
+            BlueprintName = "BlokZaBeluUITests"
             ReferencedContainer = "container:BlokZaBelu.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -61,16 +61,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B4F30CFB22FEFC46003F13C8"
-            BuildableName = "BlokZaBelu.app"
-            BlueprintName = "BlokZaBelu"
+            BlueprintIdentifier = "B478C5FF230897C800CA553A"
+            BuildableName = "BlokZaBeluUITests.xctest"
+            BlueprintName = "BlokZaBeluUITests"
             ReferencedContainer = "container:BlokZaBelu.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -80,16 +79,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B4F30CFB22FEFC46003F13C8"
-            BuildableName = "BlokZaBelu.app"
-            BlueprintName = "BlokZaBelu"
+            BlueprintIdentifier = "B478C5FF230897C800CA553A"
+            BuildableName = "BlokZaBeluUITests.xctest"
+            BlueprintName = "BlokZaBeluUITests"
             ReferencedContainer = "container:BlokZaBelu.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

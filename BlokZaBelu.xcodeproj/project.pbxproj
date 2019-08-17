@@ -26,6 +26,8 @@
 		B4741EC422FF07C50058BC00 /* UIColor+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741EC322FF07C50058BC00 /* UIColor+Bela.swift */; };
 		B4741EC722FF08640058BC00 /* BelaGameScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741EC622FF08640058BC00 /* BelaGameScore.swift */; };
 		B4741ED022FF09F10058BC00 /* UITableView+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741ECF22FF09F10058BC00 /* UITableView+Bela.swift */; };
+		B478C603230897C900CA553A /* BlokZaBeluUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B478C602230897C900CA553A /* BlokZaBeluUITests.swift */; };
+		B478C60D2308981500CA553A /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B478C60B2308981200CA553A /* SnapshotHelper.swift */; };
 		B4A80DA52305563400F53884 /* KeyboardToolbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A80DA42305563400F53884 /* KeyboardToolbarButton.swift */; };
 		B4A80DA82305565B00F53884 /* KeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A80DA72305565B00F53884 /* KeyboardToolbar.swift */; };
 		B4A80DAD230583B900F53884 /* CardPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A80DAC230583B900F53884 /* CardPresentationController.swift */; };
@@ -45,6 +47,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B478C605230897C900CA553A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4F30CF422FEFC46003F13C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4F30CFB22FEFC46003F13C8;
+			remoteInfo = BlokZaBelu;
+		};
 		B4D5A8232301CE0D00396103 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B4D5A81E2301CE0D00396103 /* BelaDetector.xcodeproj */;
@@ -102,6 +111,10 @@
 		B4741EC322FF07C50058BC00 /* UIColor+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Bela.swift"; sourceTree = "<group>"; };
 		B4741EC622FF08640058BC00 /* BelaGameScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelaGameScore.swift; sourceTree = "<group>"; };
 		B4741ECF22FF09F10058BC00 /* UITableView+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Bela.swift"; sourceTree = "<group>"; };
+		B478C600230897C800CA553A /* BlokZaBeluUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlokZaBeluUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B478C602230897C900CA553A /* BlokZaBeluUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlokZaBeluUITests.swift; sourceTree = "<group>"; };
+		B478C604230897C900CA553A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B478C60B2308981200CA553A /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		B4A80DA42305563400F53884 /* KeyboardToolbarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolbarButton.swift; sourceTree = "<group>"; };
 		B4A80DA72305565B00F53884 /* KeyboardToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolbar.swift; sourceTree = "<group>"; };
 		B4A80DAC230583B900F53884 /* CardPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPresentationController.swift; sourceTree = "<group>"; };
@@ -127,6 +140,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B478C5FD230897C800CA553A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B4F30CF922FEFC46003F13C8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -224,6 +244,15 @@
 			path = Bela;
 			sourceTree = "<group>";
 		};
+		B478C601230897C900CA553A /* BlokZaBeluUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B478C602230897C900CA553A /* BlokZaBeluUITests.swift */,
+				B478C604230897C900CA553A /* Info.plist */,
+			);
+			path = BlokZaBeluUITests;
+			sourceTree = "<group>";
+		};
 		B4A80DA92305571E00F53884 /* KeyboardToolbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +304,7 @@
 			children = (
 				B4F30CFE22FEFC46003F13C8 /* BlokZaBelu */,
 				B4D5A81E2301CE0D00396103 /* BelaDetector.xcodeproj */,
+				B478C601230897C900CA553A /* BlokZaBeluUITests */,
 				B4F30CFD22FEFC46003F13C8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -283,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				B4F30CFC22FEFC46003F13C8 /* BlokZaBelu.app */,
+				B478C600230897C800CA553A /* BlokZaBeluUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -307,6 +338,7 @@
 		B4F30D1422FF0226003F13C8 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				B478C60B2308981200CA553A /* SnapshotHelper.swift */,
 				B4A80DC52305F91B00F53884 /* InfoPlist.strings */,
 				B4A80DB92305F43A00F53884 /* Localizable.strings */,
 				B4F30D0622FEFC47003F13C8 /* Assets.xcassets */,
@@ -336,6 +368,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B478C5FF230897C800CA553A /* BlokZaBeluUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B478C60A230897C900CA553A /* Build configuration list for PBXNativeTarget "BlokZaBeluUITests" */;
+			buildPhases = (
+				B478C5FC230897C800CA553A /* Sources */,
+				B478C5FD230897C800CA553A /* Frameworks */,
+				B478C5FE230897C800CA553A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B478C606230897C900CA553A /* PBXTargetDependency */,
+			);
+			name = BlokZaBeluUITests;
+			productName = BlokZaBeluUITests;
+			productReference = B478C600230897C800CA553A /* BlokZaBeluUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		B4F30CFB22FEFC46003F13C8 /* BlokZaBelu */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B4F30D0E22FEFC47003F13C8 /* Build configuration list for PBXNativeTarget "BlokZaBelu" */;
@@ -366,6 +416,10 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Dominik Cubelic";
 				TargetAttributes = {
+					B478C5FF230897C800CA553A = {
+						CreatedOnToolsVersion = 10.2;
+						TestTargetID = B4F30CFB22FEFC46003F13C8;
+					};
 					B4F30CFB22FEFC46003F13C8 = {
 						CreatedOnToolsVersion = 10.2;
 					};
@@ -392,6 +446,7 @@
 			projectRoot = "";
 			targets = (
 				B4F30CFB22FEFC46003F13C8 /* BlokZaBelu */,
+				B478C5FF230897C800CA553A /* BlokZaBeluUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -414,6 +469,13 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B478C5FE230897C800CA553A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B4F30CFA22FEFC46003F13C8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -453,6 +515,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B478C5FC230897C800CA553A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B478C603230897C900CA553A /* BlokZaBeluUITests.swift in Sources */,
+				B478C60D2308981500CA553A /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B4F30CF822FEFC46003F13C8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -487,6 +558,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B478C606230897C900CA553A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4F30CFB22FEFC46003F13C8 /* BlokZaBelu */;
+			targetProxy = B478C605230897C900CA553A /* PBXContainerItemProxy */;
+		};
 		B4D5A8412301CEE100396103 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = BelaDetectorFramework;
@@ -535,6 +611,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B478C607230897C900CA553A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5J7U5C6D83;
+				INFOPLIST_FILE = BlokZaBeluUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cubelic.dominik.BlokZaBeluUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BlokZaBelu;
+			};
+			name = Debug;
+		};
+		B478C608230897C900CA553A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5J7U5C6D83;
+				INFOPLIST_FILE = BlokZaBeluUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cubelic.dominik.BlokZaBeluUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BlokZaBelu;
+			};
+			name = Release;
+		};
 		B4F30D0C22FEFC47003F13C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -696,6 +812,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B478C60A230897C900CA553A /* Build configuration list for PBXNativeTarget "BlokZaBeluUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B478C607230897C900CA553A /* Debug */,
+				B478C608230897C900CA553A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B4F30CF722FEFC46003F13C8 /* Build configuration list for PBXProject "BlokZaBelu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
