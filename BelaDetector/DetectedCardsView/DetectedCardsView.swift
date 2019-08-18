@@ -92,9 +92,9 @@ class DetectedCardsView: UIView {
     func add(card: BelaCard) {
         
         DispatchQueue.main.async {
-            self.belaCards.insert(card, at: 0)
-            self.updatePoints()
             self.collectionView.performBatchUpdates({
+                self.belaCards.insert(card, at: 0)
+                self.updatePoints()
                 self.collectionView.insertItems(at: [IndexPath(row: 0, section: 0)])
             }, completion: { _ in
                 self.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: false)

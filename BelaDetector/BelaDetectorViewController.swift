@@ -49,12 +49,25 @@ public class BelaDetectorViewController: UIViewController {
         doneButton.layer.cornerRadius = doneButton.frame.height / 2
         plusTenButton.layer.cornerRadius = plusTenButton.frame.height / 2
         
-        setupCamera()
-        
         detectedCardsView.delegate = self
-        detectedCardsView.set(trumpSuit: .spades)
+        detectedCardsView.set(trumpSuit: .hearts)
         
+        #if targetEnvironment(simulator)
+        print("simulator")
+        let imageView = UIImageView(frame: view.bounds)
+        imageView.image = UIImage(named: "mock", in: Bundle.frameworkBundle, compatibleWith: nil)
+        imageView.contentMode = .scaleAspectFill
+        videoPreview.addSubview(imageView)
+        detectedCardsView.reset()
+        for card in [BelaCard.queenOfClubs, .nineOfSpades, .aceOfClubs, .kingOfHearts, .sevenOfClubs, .queenOfHearts, .nineOfDiamonds, .eightOfDiamonds] {
+            detectedCardsView.add(card: card)
+        }
+        detectedCardsView.set(trumpSuit: .spades)
+        #else
+        setupCamera()
         showTrumpSuitPicker()
+        #endif
+        
     }
     
     public override func viewDidDisappear(_ animated: Bool) {
