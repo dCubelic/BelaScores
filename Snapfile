@@ -2,15 +2,15 @@
 
 # A list of devices you want to take the screenshots from
 devices([
-  "iPhone Xs Max",
-  "iPhone 8",
-  "iPhone 8 Plus",
-  "iPhone SE",
-  "iPhone X"
+ "iPhone Xs Max",
+ "iPhone 8",
+ "iPhone 8 Plus",
+ "iPhone SE",
+ "iPhone Xs"
 ])
 
 languages([
-  "en-US",
+  "en",
   "hr-HR"
 ])
 
@@ -21,7 +21,7 @@ languages([
 # output_directory("./screenshots")
 
 # remove the '#' to clear all previously generated screenshots before creating new ones
-clear_previous_screenshots(true)
+# clear_previous_screenshots(true)
 
 # Arguments to pass to the app on launch. See https://docs.fastlane.tools/actions/snapshot/#launch-arguments
 # launch_arguments(["-favColor red"])

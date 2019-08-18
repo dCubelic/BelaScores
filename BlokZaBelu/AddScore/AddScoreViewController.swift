@@ -39,7 +39,7 @@ class AddScoreViewController: UIViewController {
         didSet {
             switch mode {
             case .new:
-                addButton.setTitle("add".localized.uppercased(), for: .normal)
+                addButton.setTitle("button.add".localized.uppercased(), for: .normal)
             case .update:
                 addButton.setTitle("update".localized.uppercased(), for: .normal)
             }

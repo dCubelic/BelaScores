@@ -88,7 +88,7 @@ class ScoreInputViewController: UIViewController {
     
     private func setScore(points: Int, for team: BelaTeam) {
         if score == nil {
-            score = BelaGameScore()
+            score = BelaGameScore(score1: 0)
         }
         
         switch team {

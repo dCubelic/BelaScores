@@ -40,3 +40,6 @@
 
 /* Class = "UILabel"; text = "VI"; ObjectID = "onD-bn-VIl"; */
 "onD-bn-VIl.text" = "VI";
+
+/* UI Tests hack */
+"2PL-a6-W6C.normalTitle" = "Unesi";

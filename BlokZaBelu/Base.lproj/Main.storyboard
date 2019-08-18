@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -366,8 +365,8 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="Fqk-pM-lac"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="40"/>
-                                <state key="normal" title="WE">
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
+                                <state key="normal" title="US">
                                     <color key="titleColor" name="blue"/>
                                 </state>
                                 <connections>
@@ -379,8 +378,8 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="Kl5-9i-nee"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="40"/>
-                                <state key="normal" title="THY">
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
+                                <state key="normal" title="THEM">
                                     <color key="titleColor" name="darkGray"/>
                                 </state>
                                 <connections>

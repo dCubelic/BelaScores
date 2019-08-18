@@ -7,7 +7,8 @@
 */
 
 "delete" = "Obriši";
-"add" = "Unesi";
+"button.add" = "Unesi";
 "update" = "Unesi";
 "done" = "Završi";
 "cancel" = "Odustani";
+"add" = "Dodaj";

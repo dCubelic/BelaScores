@@ -21,16 +21,16 @@
 "U8H-Ok-euS.normalTitle" = "ADD";
 
 /* Class = "UIButton"; normalTitle = "VI"; ObjectID = "aHB-5L-k0s"; */
-"aHB-5L-k0s.normalTitle" = "THY";
+"aHB-5L-k0s.normalTitle" = "THEM";
 
 /* Class = "UIButton"; normalTitle = "MI"; ObjectID = "bW9-Sd-ifd"; */
-"bW9-Sd-ifd.normalTitle" = "WE";
+"bW9-Sd-ifd.normalTitle" = "US";
 
 /* Class = "UILabel"; text = "0"; ObjectID = "e2T-bv-E6O"; */
 "e2T-bv-E6O.text" = "0";
 
 /* Class = "UILabel"; text = "MI"; ObjectID = "kfT-So-tMe"; */
-"kfT-So-tMe.text" = "WE";
+"kfT-So-tMe.text" = "US";
 
 /* Class = "UITextField"; placeholder = "0"; ObjectID = "lZf-Hp-eAa"; */
 "lZf-Hp-eAa.placeholder" = "0";
@@ -39,4 +39,7 @@
 "nof-Lr-sK2.normalTitle" = "SETTINGS";
 
 /* Class = "UILabel"; text = "VI"; ObjectID = "onD-bn-VIl"; */
-"onD-bn-VIl.text" = "THY";
+"onD-bn-VIl.text" = "THEM";
+
+/* UI Tests hack */
+"2PL-a6-W6C.normalTitle" = "Done";
