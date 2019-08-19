@@ -37,8 +37,8 @@ class NewDeclarationTableViewCell: UITableViewCell {
     
     private func setupPlusButton() {
         let button = UIButton()
-        button.setTitle("+", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: .black)
+        button.setImage(UIImage(named: "plus"), for: .normal)
+        button.tintColor = .white
         button.backgroundColor = .transparentBlack
         button.addTarget(self, action: #selector(plusAction), for: .touchUpInside)
         

@@ -26,14 +26,15 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJz-Fm-ROy">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJz-Fm-ROy">
                         <rect key="frame" x="181.5" y="14" width="16" height="16"/>
                         <color key="backgroundColor" name="transparentBlack"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="fdD-Rz-Mnh"/>
                             <constraint firstAttribute="width" constant="16" id="g2P-ie-Oan"/>
                         </constraints>
-                        <state key="normal" title="-">
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" image="minus">
                             <color key="titleColor" name="lightGray"/>
                         </state>
                         <connections>
@@ -57,6 +58,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="minus" width="10" height="10"/>
         <namedColor name="lightGray">
             <color red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
