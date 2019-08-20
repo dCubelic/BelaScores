@@ -9,6 +9,7 @@
 import Foundation
 
 struct BelaScore: Codable {
+    
     var biddingTeam: BelaTeam
     var gameScore: BelaGameScore
     var declarationsTeam1: [Int]
@@ -54,4 +55,5 @@ struct BelaScore: Codable {
         
         return true
     }
+    
 }

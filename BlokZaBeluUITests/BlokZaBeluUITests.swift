@@ -8,6 +8,8 @@
 
 import XCTest
 
+//swiftlint:disable all
+
 class BlokZaBeluUITests: XCTestCase {
 
     override func setUp() {

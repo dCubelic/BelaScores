@@ -14,8 +14,8 @@ protocol DeclaredValueTableViewCellDelegate: class {
 
 class DeclaredValueTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var pointsLabel: UILabel!
-    @IBOutlet weak var removeButton: UIButton!
+    @IBOutlet weak private var pointsLabel: UILabel!
+    @IBOutlet weak private var removeButton: UIButton!
     
     weak var delegate: DeclaredValueTableViewCellDelegate?
     
@@ -32,7 +32,7 @@ class DeclaredValueTableViewCell: UITableViewCell {
         pointsLabel.text = "+\(points)"
     }
     
-    @IBAction func removeAction(_ sender: Any) {
+    @IBAction private func removeAction(_ sender: Any) {
         delegate?.declaredValueTableViewCellDidPressRemove(self)
     }
 }

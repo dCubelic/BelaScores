@@ -10,7 +10,7 @@ import UIKit
 
 class ValueCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet weak private var valueLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

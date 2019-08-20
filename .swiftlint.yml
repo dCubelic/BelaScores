@@ -35,6 +35,8 @@ opt_in_rules: # some rules are only opt-in
   - force_cast
   - force_try
   - yoda_condition
+  - private_action
+  - private_outlet
 
 force_unwrapping: error
 

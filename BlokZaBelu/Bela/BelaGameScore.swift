@@ -10,6 +10,7 @@ import BelaDetectorFramework
 import Foundation
 
 struct BelaGameScore: Codable {
+    
     var score1: Int = 0
     var score2: Int = 0
     
@@ -24,4 +25,5 @@ struct BelaGameScore: Codable {
     }
     
     static let total = 162
+    
 }

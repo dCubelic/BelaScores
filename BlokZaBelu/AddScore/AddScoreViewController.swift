@@ -46,10 +46,10 @@ class AddScoreViewController: UIViewController {
         }
     }
     
-    var biddingTeamViewController: BiddingTeamViewController?
-    var scoreInputViewController: ScoreInputViewController?
-    var declarationsViewController: DeclarationsViewController?
-    var declarationsViewController2: DeclarationsViewController?
+    private var biddingTeamViewController: BiddingTeamViewController?
+    private var scoreInputViewController: ScoreInputViewController?
+    private var declarationsViewController: DeclarationsViewController?
+    private var declarationsViewController2: DeclarationsViewController?
     
     var scoreTableViewCell: UITableViewCell?
     var updateBelaScore: BelaScore?
