@@ -51,12 +51,12 @@ class BlokZaBeluUITests: XCTestCase {
         snapshot("02Detector")
         app.buttons[localizedString(key: "2PL-a6-W6C.normalTitle", tableName: "Main")].tap()
         let app2 = app
-        app2.children(matching: .window).element(boundBy: 0).children(matching: .other).element(boundBy: 1).children(matching: .other).element(boundBy: 1).children(matching: .other).element(boundBy: 3).tables/*@START_MENU_TOKEN@*/.buttons["+"]/*[[".cells.buttons[\"+\"]",".buttons[\"+\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app2.children(matching: .window).element(boundBy: 0).children(matching: .other).element(boundBy: 1).children(matching: .other).element(boundBy: 1).children(matching: .other).element(boundBy: 3).tables/*@START_MENU_TOKEN@*/.buttons["plus"]/*[[".cells.buttons[\"plus\"]",".buttons[\"plus\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         app2.tables/*@START_MENU_TOKEN@*/.staticTexts["20"]/*[[".cells.staticTexts[\"20\"]",".staticTexts[\"20\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         snapshot("03AddScore")
         app.buttons[localizedString(key: "button.add").uppercased()].tap()
         snapshot("04Scores")
-        
+
     }
 
 }
