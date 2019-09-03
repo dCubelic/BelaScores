@@ -4,6 +4,15 @@
 
 Uses [BelaDetector](https://github.com/dCubelic/BelaDetector) for counting won points.
 
+## Building
+
+- Clone this repo: `git clone git@github.com:dCubelic/BelaScores.git`
+- Navigate to project directory: `cd BelaScores`
+- Initialize submodule: `git submodule init` followed by `git submodule update`
+- Open the project file in Xcode : `open BlokZaBelu.xcodeproj` or just `xed .`
+- Build the project `CMD + B`
+  
+
 ## Screenshots
 
 <img src="images/MainMenu.png" width="300"> <img src="images/Detector.png" width="300">
