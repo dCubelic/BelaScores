@@ -38,8 +38,6 @@ class MainMenuViewController: UIViewController {
     }
     
     private func setupButtons() {
-        settingsButton.isHidden = true
-        
         if continueScores == nil {
             continueButton.isEnabled = false
             continueButton.backgroundColor = .darkGray2
@@ -71,7 +69,8 @@ class MainMenuViewController: UIViewController {
     }
     
     @IBAction private func settingsAction(_ sender: Any) {
-        
+        let settingsViewControler = UIStoryboard.main.instantiateViewController(ofType: SettingsViewController.self)
+        navigationController?.pushViewController(settingsViewControler, animated: true)
     }
     
 }

@@ -117,6 +117,41 @@
             </objects>
             <point key="canvasLocation" x="937.68115942028987" y="12.723214285714285"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="cha-Mv-5pw">
+            <objects>
+                <viewController storyboardIdentifier="SettingsViewController" id="fe9-JX-75V" customClass="SettingsViewController" customModule="BlokZaBelu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rkc-nF-5dS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rTw-v4-xVE">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" name="darkGray"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="fe9-JX-75V" id="ppr-rA-mME"/>
+                                    <outlet property="delegate" destination="fe9-JX-75V" id="qjz-ee-Rxw"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rTw-v4-xVE" firstAttribute="leading" secondItem="vdz-px-MVb" secondAttribute="leading" id="K8I-kR-DQQ"/>
+                            <constraint firstAttribute="bottom" secondItem="rTw-v4-xVE" secondAttribute="bottom" id="eSZ-hI-Ghc"/>
+                            <constraint firstItem="vdz-px-MVb" firstAttribute="trailing" secondItem="rTw-v4-xVE" secondAttribute="trailing" id="s6K-GY-hx7"/>
+                            <constraint firstItem="rTw-v4-xVE" firstAttribute="top" secondItem="vdz-px-MVb" secondAttribute="top" id="xWs-0G-WqJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vdz-px-MVb"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="rTw-v4-xVE" id="dK2-q0-vM3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qhY-Xp-6H0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="937.68115942028987" y="707.8125"/>
+        </scene>
         <!--Score View Controller-->
         <scene sceneID="2ft-Qa-69V">
             <objects>

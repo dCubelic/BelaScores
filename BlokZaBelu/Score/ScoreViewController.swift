@@ -97,6 +97,10 @@ class ScoreViewController: UIViewController {
         
         present(addScoreViewController, animated: true, completion: nil)
     }
+    
+    private func scoresIndexFor(_ indexPath: IndexPath) -> Int {
+        return BelaSettings.shared.invertScores ? scores.count - indexPath.row - 1 : indexPath.row
+    }
 
     @IBAction private func addAction(_ sender: Any) {
         presentAddScoreViewController()
@@ -112,7 +116,7 @@ extension ScoreViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(ofType: ScoreTableViewCell.self, for: indexPath)
-        cell.setup(for: scores[indexPath.row])
+        cell.setup(for: scores[scoresIndexFor(indexPath)])
         
         return cell
     }
@@ -120,7 +124,7 @@ extension ScoreViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let score = scores[indexPath.row]
+        let score = scores[scoresIndexFor(indexPath)]
         let cell = tableView.cellForRow(at: indexPath)
         
         //There's sometimes a delay if I don't to this. http://openradar.appspot.com/19563577
@@ -132,7 +136,7 @@ extension ScoreViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let delete = UIContextualAction(style: .destructive, title: "delete".localized) { _, _, completionHandler in
-            self.scores.remove(at: indexPath.row)
+            self.scores.remove(at: self.scoresIndexFor(indexPath))
             self.tableView.deleteRows(at: [indexPath], with: .fade)
             
             completionHandler(true)
@@ -150,14 +154,20 @@ extension ScoreViewController: AddScoreViewControllerDelegate {
     
     func addScoreViewControllerDidAdd(addScoreViewController: AddScoreViewController, score: BelaScore) {
         scores.insert(score, at: 0)
-        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .top)
-        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+        var indexPath: IndexPath
+        if BelaSettings.shared.invertScores {
+            indexPath = IndexPath(row: scores.count - 1, section: 0)
+        } else {
+            indexPath = IndexPath(row: 0, section: 0)
+        }
+        tableView.insertRows(at: [indexPath], with: .top)
+        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
     }
     
     func addScoreViewControllerDidUpdate(addScoreViewController: AddScoreViewController, score: BelaScore, for scoreTableViewCell: UITableViewCell) {
         guard let indexPath = tableView.indexPath(for: scoreTableViewCell) else { return }
         
-        scores[indexPath.row] = score
+        scores[scoresIndexFor(indexPath)] = score
         tableView.reloadRows(at: [indexPath], with: .none)
     }
     
