@@ -14,6 +14,9 @@ class ScoreViewController: UIViewController {
     @IBOutlet weak private var score1Label: UILabel!
     @IBOutlet weak private var score2Label: UILabel!
     @IBOutlet weak private var addButton: UIBarButtonItem!
+    @IBOutlet weak private var weLabel: UILabel!
+    @IBOutlet weak private var theyLabel: UILabel!
+    @IBOutlet weak private var separatorView: UIView!
     
     private let maxGameScore = 1001
     
@@ -52,9 +55,26 @@ class ScoreViewController: UIViewController {
         tableView.register(UINib(nibName: "ScoreTableViewCell", bundle: nil), forCellReuseIdentifier: "ScoreTableViewCell")
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        setupColors()
+    }
+    
     private func setupNavigationBar() {
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.navigationBar.shadowImage = UIImage()
+    }
+    
+    private func setupColors() {
+        view.backgroundColor = BelaTheme.shared.backgroundColor
+        tableView.backgroundColor = BelaTheme.shared.backgroundColor
+        addButton.tintColor = BelaTheme.shared.textColor
+        score1Label.textColor = BelaTheme.shared.themeColor
+        score2Label.textColor = BelaTheme.shared.themeColor
+        weLabel.textColor = BelaTheme.shared.textColor
+        theyLabel.textColor = BelaTheme.shared.textColor
+        separatorView.backgroundColor = BelaTheme.shared.themeColor
     }
     
     private func checkForEnd() {

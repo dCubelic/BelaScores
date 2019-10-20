@@ -25,7 +25,7 @@ class BiddingTeamViewController: UIViewController {
         didSet {
             guard let biddingTeam = biddingTeam else { return }
             
-            updateColors()
+            setupColors()
             delegate?.biddingTeamViewControllerDidChangeBidder(self, bidder: biddingTeam)
         }
     }
@@ -39,7 +39,7 @@ class BiddingTeamViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        updateColors()
+        setupColors()
     }
     
     func setDidntPass(team: BelaTeam?) {
@@ -70,16 +70,19 @@ class BiddingTeamViewController: UIViewController {
         team2DidntPassView.layer.cornerRadius = team2DidntPassView.frame.height / 2
     }
     
-    private func updateColors() {
+    private func setupColors() {
+        team1DidntPassView.backgroundColor = BelaTheme.shared.themeContrastColor
+        team2DidntPassView.backgroundColor = BelaTheme.shared.themeContrastColor
+
         guard let biddingTeam = biddingTeam else { return }
         
         switch biddingTeam {
         case .team1:
-            team1Button.setTitleColor(UIColor.blue, for: .normal)
-            team2Button.setTitleColor(UIColor.darkGray, for: .normal)
+            team1Button.setTitleColor(BelaTheme.shared.themeColor, for: .normal)
+            team2Button.setTitleColor(BelaTheme.shared.backgroundColor, for: .normal)
         case .team2:
-            team1Button.setTitleColor(UIColor.darkGray, for: .normal)
-            team2Button.setTitleColor(UIColor.blue, for: .normal)
+            team1Button.setTitleColor(BelaTheme.shared.backgroundColor, for: .normal)
+            team2Button.setTitleColor(BelaTheme.shared.themeColor, for: .normal)
         }
     }
     

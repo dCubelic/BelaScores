@@ -10,6 +10,7 @@ import UIKit
 
 class MainMenuViewController: UIViewController {
 
+    @IBOutlet weak var appTitleLabel: UILabel!
     @IBOutlet weak private var continueButton: UIButton!
     @IBOutlet weak private var newGameButton: UIButton!
     @IBOutlet weak private var settingsButton: UIButton!
@@ -34,16 +35,23 @@ class MainMenuViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         setupViews()
+        setupColors()
+    }
+    
+    private func setupColors() {
+        view.backgroundColor = BelaTheme.shared.backgroundColor
+        appTitleLabel.textColor = BelaTheme.shared.textColor
+        
         setupButtons()
     }
     
     private func setupButtons() {
         if continueScores == nil {
             continueButton.isEnabled = false
-            continueButton.backgroundColor = .darkGray2
+            continueButton.backgroundColor = BelaTheme.shared.backgroundColor2
         } else {
             continueButton.isEnabled = true
-            continueButton.backgroundColor = .lightGray
+            continueButton.backgroundColor = BelaTheme.shared.backgroundColor3
         }
     }
     

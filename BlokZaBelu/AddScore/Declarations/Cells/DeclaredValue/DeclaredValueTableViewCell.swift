@@ -26,6 +26,8 @@ class DeclaredValueTableViewCell: UITableViewCell {
         
         removeButton.layer.cornerRadius = removeButton.frame.height / 2
         removeButton.layer.masksToBounds = true
+        
+        pointsLabel.textColor = BelaTheme.shared.textColor
     }
     
     func setup(for points: Int) {

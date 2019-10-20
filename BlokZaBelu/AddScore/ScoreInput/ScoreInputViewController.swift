@@ -43,6 +43,12 @@ class ScoreInputViewController: UIViewController {
         setupViews()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        setupColors()
+    }
+    
     func shakeInputs() {
         points1TextField.shake()
         points2TextField.shake()
@@ -52,11 +58,18 @@ class ScoreInputViewController: UIViewController {
         score = nil
     }
     
+    private func setupColors() {
+        points1TextField.textColor = BelaTheme.shared.textColor
+        points2TextField.textColor = BelaTheme.shared.textColor
+        points1UnderlineView.backgroundColor = BelaTheme.shared.textColor
+        points2UnderlineView.backgroundColor = BelaTheme.shared.textColor
+    }
+    
     private func setupViews() {
         points1TextField.delegate = self
         points2TextField.delegate = self
-        points1TextField.attributedPlaceholder = NSAttributedString(string: "0", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
-        points2TextField.attributedPlaceholder = NSAttributedString(string: "0", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
+        points1TextField.attributedPlaceholder = NSAttributedString(string: "0", attributes: [NSAttributedString.Key.foregroundColor: BelaTheme.shared.backgroundColor])
+        points2TextField.attributedPlaceholder = NSAttributedString(string: "0", attributes: [NSAttributedString.Key.foregroundColor: BelaTheme.shared.backgroundColor])
         
         let toolbar = KeyboardToolbar()
         toolbar.toolBarDelegate = self

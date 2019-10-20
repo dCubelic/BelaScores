@@ -23,6 +23,11 @@ class ScoreTableViewCell: UITableViewCell {
         contentView.addSubview(team1BidView)
         contentView.addSubview(team2BidView)
         
+        contentView.backgroundColor = BelaTheme.shared.backgroundColor
+        score1Label.textColor = BelaTheme.shared.textColor
+        score2Label.textColor = BelaTheme.shared.textColor
+        
+        
         //Xib is drunk
         team1BidView.translatesAutoresizingMaskIntoConstraints = false
         team1BidView.widthAnchor.constraint(equalToConstant: 8).isActive = true
@@ -44,13 +49,13 @@ class ScoreTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
-        contentView.backgroundColor = selected ? UIColor.darkGray2 : UIColor.darkGray
+        contentView.backgroundColor = selected ? BelaTheme.shared.backgroundColor2 : BelaTheme.shared.backgroundColor
     }
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
         
-        contentView.backgroundColor = highlighted ? UIColor.darkGray2 : UIColor.darkGray
+        contentView.backgroundColor = highlighted ? BelaTheme.shared.backgroundColor2 : BelaTheme.shared.backgroundColor
     }
     
     func setup(for score: BelaScore) {
@@ -59,8 +64,8 @@ class ScoreTableViewCell: UITableViewCell {
         team1BidView.isHidden = !(score.biddingTeam == .team1)
         team2BidView.isHidden = !(score.biddingTeam == .team2)
         
-        team1BidView.backgroundColor = score.team1Passed ? UIColor.blue : UIColor.red
-        team2BidView.backgroundColor = score.team2Passed ? UIColor.blue : UIColor.red
+        team1BidView.backgroundColor = score.team1Passed ? BelaTheme.shared.themeColor : BelaTheme.shared.themeContrastColor
+        team2BidView.backgroundColor = score.team2Passed ? BelaTheme.shared.themeColor : BelaTheme.shared.themeContrastColor
         
     }
     

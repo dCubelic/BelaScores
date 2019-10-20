@@ -28,6 +28,9 @@ class SettingsToggleTableViewCell: UITableViewCell {
     public func setup(title: String, isOn: Bool) {
         titleLabel.text = title
         `switch`.isOn = isOn
+        
+        titleLabel.textColor = BelaTheme.shared.textColor
+        contentView.backgroundColor = BelaTheme.shared.backgroundColor2
     }
     
     @IBAction private func switchAction(_ sender: Any) {

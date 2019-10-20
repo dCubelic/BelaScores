@@ -94,6 +94,13 @@ class AddScoreViewController: UIViewController {
         }
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        setupColors()
+    }
+    
+    
     private func setupKeyboardObserver() {
         keyboardObserver = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillChangeFrameNotification, object: nil, queue: nil) { [weak self] notification in
             guard let `self` = self else { return }
@@ -118,6 +125,12 @@ class AddScoreViewController: UIViewController {
                 }, completion: nil)
             }
         }
+    }
+    
+    private func setupColors() {
+        view.backgroundColor = BelaTheme.shared.backgroundColor2
+        addButton.setTitleColor(BelaTheme.shared.textColor, for: .normal)
+        addButton.backgroundColor = BelaTheme.shared.transparentBackgroundColor
     }
     
     private func setup(for score: BelaScore, scoreTableViewCell: UITableViewCell?) {

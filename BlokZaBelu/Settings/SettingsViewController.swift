@@ -12,9 +12,11 @@ class SettingsViewController: UIViewController {
 
     @IBOutlet private weak var tableView: UITableView!
     
+    private var updatingColors = false
+    
     private let settings: [SettingSection] = [
         SettingSection(description: "Change direction", settings: [.invertScores("invertScores".localized)]),
-//        SettingSection(description: "Themes", settings: [.themes])
+        SettingSection(description: "Themes", settings: [.themes])
     ]
     
     override func viewDidLoad() {
@@ -23,12 +25,33 @@ class SettingsViewController: UIViewController {
         setupNavigationBar()
         
         tableView.register(UINib(nibName: "SettingsToggleTableViewCell", bundle: nil), forCellReuseIdentifier: "SettingsToggleTableViewCell")
-        tableView.sectionFooterHeight = UITableView.automaticDimension
+    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        // hack++
+        DispatchQueue.main.async {
+            if !self.updatingColors {
+                self.setupColors()
+                self.updatingColors = false
+            }
+        }
     }
 
     private func setupNavigationBar() {
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.navigationBar.shadowImage = UIImage()
+    }
+    
+    private func setupColors() {
+        UIApplication.shared.statusBarStyle = BelaTheme.shared.statusBarStyle
+        navigationController?.navigationBar.barTintColor = BelaTheme.shared.backgroundColor
+        navigationController?.navigationBar.tintColor = BelaTheme.shared.textColor
+        
+        tableView.backgroundColor = BelaTheme.shared.backgroundColor
+        
+        updatingColors = true
+        tableView.reloadData()
     }
     
 }
@@ -51,7 +74,10 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
             cell.setup(title: title, isOn: BelaSettings.shared.invertScores)
             return cell
         case .themes:
-            return UITableViewCell()
+            let cell = tableView.dequeueReusableCell(ofType: SettingsToggleTableViewCell.self, for: indexPath)
+            cell.delegate = self
+            cell.setup(title: "Theme action", isOn: false)
+            return cell
         }
     }
     
@@ -66,7 +92,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         let label = UILabel()
         label.text = settings[section].description
         label.font = UIFont.systemFont(ofSize: 12.0, weight: .regular)
-        label.textColor = .white
+        label.textColor = BelaTheme.shared.textColor
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
 
@@ -91,7 +117,8 @@ extension SettingsViewController: SettingsToggleTableViewCellDelegate {
         case .invertScores:
             BelaSettings.shared.invertScores = isOn
         case .themes:
-            break
+            BelaTheme.shared.theme = BelaTheme.shared.theme == .white ? .default : .white
+            setupColors()
         }
     }
 

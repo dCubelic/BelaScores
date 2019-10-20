@@ -108,6 +108,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Menu" id="CbA-up-jLl"/>
                     <connections>
+                        <outlet property="appTitleLabel" destination="0vs-RK-D65" id="eOZ-nd-nP0"/>
                         <outlet property="continueButton" destination="DZx-TO-SFY" id="4KL-BB-YZv"/>
                         <outlet property="newGameButton" destination="3sS-l5-5qw" id="5xi-Um-ljF"/>
                         <outlet property="settingsButton" destination="nof-Lr-sK2" id="3yb-Wf-qEa"/>
@@ -238,7 +239,10 @@
                         <outlet property="addButton" destination="E13-WW-RmY" id="suJ-VB-ayh"/>
                         <outlet property="score1Label" destination="OA3-fD-dGY" id="KnO-m4-MdG"/>
                         <outlet property="score2Label" destination="e2T-bv-E6O" id="nYU-bv-1HU"/>
+                        <outlet property="separatorView" destination="Yjb-Qj-SUs" id="W2v-Co-N6j"/>
                         <outlet property="tableView" destination="E1a-OS-xRc" id="SYP-0L-fLp"/>
+                        <outlet property="theyLabel" destination="onD-bn-VIl" id="TbP-Wz-4dA"/>
+                        <outlet property="weLabel" destination="kfT-So-tMe" id="YDw-t6-DuN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n21-ld-pbu" userLabel="First Responder" sceneMemberID="firstResponder"/>
