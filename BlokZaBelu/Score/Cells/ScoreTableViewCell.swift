@@ -27,7 +27,6 @@ class ScoreTableViewCell: UITableViewCell {
         score1Label.textColor = BelaTheme.shared.textColor
         score2Label.textColor = BelaTheme.shared.textColor
         
-        
         //Xib is drunk
         team1BidView.translatesAutoresizingMaskIntoConstraints = false
         team1BidView.widthAnchor.constraint(equalToConstant: 8).isActive = true

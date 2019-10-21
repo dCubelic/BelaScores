@@ -10,7 +10,7 @@ import UIKit
 
 class MainMenuViewController: UIViewController {
 
-    @IBOutlet weak var appTitleLabel: UILabel!
+    @IBOutlet weak private var appTitleLabel: UILabel!
     @IBOutlet weak private var continueButton: UIButton!
     @IBOutlet weak private var newGameButton: UIButton!
     @IBOutlet weak private var settingsButton: UIButton!

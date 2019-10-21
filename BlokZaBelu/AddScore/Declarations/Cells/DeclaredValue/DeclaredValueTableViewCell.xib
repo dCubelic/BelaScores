@@ -28,7 +28,6 @@
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJz-Fm-ROy">
                         <rect key="frame" x="181.5" y="14" width="16" height="16"/>
-                        <color key="backgroundColor" name="transparentBlack"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="fdD-Rz-Mnh"/>
                             <constraint firstAttribute="width" constant="16" id="g2P-ie-Oan"/>
@@ -58,12 +57,9 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="minus" width="10" height="10"/>
+        <image name="minus" width="7.5" height="7.5"/>
         <namedColor name="lightGray">
             <color red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="transparentBlack">
-            <color red="0.0" green="0.0" blue="0.0" alpha="0.69999998807907104" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

@@ -25,6 +25,7 @@ class SettingsViewController: UIViewController {
         setupNavigationBar()
         
         tableView.register(UINib(nibName: "SettingsToggleTableViewCell", bundle: nil), forCellReuseIdentifier: "SettingsToggleTableViewCell")
+        tableView.register(UINib(nibName: "ThemePickerTableViewCell", bundle: nil), forCellReuseIdentifier: "ThemePickerTableViewCell")
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -74,9 +75,13 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
             cell.setup(title: title, isOn: BelaSettings.shared.invertScores)
             return cell
         case .themes:
-            let cell = tableView.dequeueReusableCell(ofType: SettingsToggleTableViewCell.self, for: indexPath)
+            let cell = tableView.dequeueReusableCell(ofType: ThemePickerTableViewCell.self, for: indexPath)
             cell.delegate = self
-            cell.setup(title: "Theme action", isOn: false)
+            
+            cell.frame = tableView.bounds
+            cell.layoutIfNeeded()
+            cell.setupHeight()
+            
             return cell
         }
     }
@@ -117,9 +122,17 @@ extension SettingsViewController: SettingsToggleTableViewCellDelegate {
         case .invertScores:
             BelaSettings.shared.invertScores = isOn
         case .themes:
-            BelaTheme.shared.theme = BelaTheme.shared.theme == .white ? .default : .white
-            setupColors()
+            break
         }
     }
 
+}
+
+extension SettingsViewController: ThemePickerDelegate {
+    
+    func themePickerDidPick(theme: Theme) {
+        BelaTheme.shared.theme = theme
+        setupColors()
+    }
+    
 }

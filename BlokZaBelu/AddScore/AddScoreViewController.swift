@@ -100,7 +100,6 @@ class AddScoreViewController: UIViewController {
         setupColors()
     }
     
-    
     private func setupKeyboardObserver() {
         keyboardObserver = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillChangeFrameNotification, object: nil, queue: nil) { [weak self] notification in
             guard let `self` = self else { return }

@@ -39,7 +39,7 @@ class NewDeclarationTableViewCell: UITableViewCell {
         let button = UIButton()
         button.setImage(UIImage(named: "plus"), for: .normal)
         button.tintColor = .white
-        button.backgroundColor = .transparentBlack
+        button.backgroundColor = BelaTheme.shared.transparentBackgroundColor
         button.addTarget(self, action: #selector(plusAction), for: .touchUpInside)
         
         contentView.addSubview(button)
@@ -75,7 +75,7 @@ class NewDeclarationTableViewCell: UITableViewCell {
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.backgroundColor = .transparentBlack
+        collectionView.backgroundColor = BelaTheme.shared.transparentBackgroundColor
         
         collectionView.register(UINib(nibName: "ValueCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ValueCollectionViewCell")
         

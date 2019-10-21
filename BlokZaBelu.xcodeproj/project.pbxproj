@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B40DD00F235E28E900B39BA1 /* ThemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40DD00D235E28E900B39BA1 /* ThemeCollectionViewCell.swift */; };
+		B40DD010235E28E900B39BA1 /* ThemeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B40DD00E235E28E900B39BA1 /* ThemeCollectionViewCell.xib */; };
 		B439BE5723008BB3000C2CA8 /* UIView+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B439BE5623008BB3000C2CA8 /* UIView+Bela.swift */; };
 		B439BE592300A5AF000C2CA8 /* BiddingTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B439BE582300A5AF000C2CA8 /* BiddingTeamViewController.swift */; };
 		B439BE5B2300A6ED000C2CA8 /* BelaTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B439BE5A2300A6ED000C2CA8 /* BelaTeam.swift */; };
@@ -16,9 +18,12 @@
 		B43EFC0E235A586E005DB07F /* SettingsToggleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B43EFC0C235A586E005DB07F /* SettingsToggleTableViewCell.xib */; };
 		B43EFC11235CF0CA005DB07F /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43EFC10235CF0CA005DB07F /* SettingsViewModel.swift */; };
 		B43EFC16235CFC98005DB07F /* BelaTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43EFC15235CFC98005DB07F /* BelaTheme.swift */; };
+		B43EFC19235E27DF005DB07F /* ThemePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43EFC17235E27DF005DB07F /* ThemePickerTableViewCell.swift */; };
+		B43EFC1A235E27DF005DB07F /* ThemePickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B43EFC18235E27DF005DB07F /* ThemePickerTableViewCell.xib */; };
 		B445AA512301F81800A097B7 /* UICollectionView+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B445AA502301F81800A097B7 /* UICollectionView+Bela.swift */; };
 		B448B4BB2302E67C00288BF1 /* BelaScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B448B4BA2302E67C00288BF1 /* BelaScore.swift */; };
 		B449D2BA22FF151900EA22BB /* AddScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B449D2B922FF151900EA22BB /* AddScoreViewController.swift */; };
+		B44F56D6235E41A400FC4FCC /* UserDefaults+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F56D5235E41A400FC4FCC /* UserDefaults+Bela.swift */; };
 		B461A8772301E93100DF5DE0 /* DeclarationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461A8762301E93100DF5DE0 /* DeclarationsViewController.swift */; };
 		B461A87B2301E96100DF5DE0 /* NewDeclarationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461A8792301E96100DF5DE0 /* NewDeclarationTableViewCell.swift */; };
 		B461A87C2301E96100DF5DE0 /* NewDeclarationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B461A87A2301E96100DF5DE0 /* NewDeclarationTableViewCell.xib */; };
@@ -100,6 +105,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B40DD00D235E28E900B39BA1 /* ThemeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCollectionViewCell.swift; sourceTree = "<group>"; };
+		B40DD00E235E28E900B39BA1 /* ThemeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeCollectionViewCell.xib; sourceTree = "<group>"; };
 		B439BE5623008BB3000C2CA8 /* UIView+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Bela.swift"; sourceTree = "<group>"; };
 		B439BE582300A5AF000C2CA8 /* BiddingTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiddingTeamViewController.swift; sourceTree = "<group>"; };
 		B439BE5A2300A6ED000C2CA8 /* BelaTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelaTeam.swift; sourceTree = "<group>"; };
@@ -109,9 +116,12 @@
 		B43EFC0C235A586E005DB07F /* SettingsToggleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsToggleTableViewCell.xib; sourceTree = "<group>"; };
 		B43EFC10235CF0CA005DB07F /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		B43EFC15235CFC98005DB07F /* BelaTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelaTheme.swift; sourceTree = "<group>"; };
+		B43EFC17235E27DF005DB07F /* ThemePickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePickerTableViewCell.swift; sourceTree = "<group>"; };
+		B43EFC18235E27DF005DB07F /* ThemePickerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemePickerTableViewCell.xib; sourceTree = "<group>"; };
 		B445AA502301F81800A097B7 /* UICollectionView+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Bela.swift"; sourceTree = "<group>"; };
 		B448B4BA2302E67C00288BF1 /* BelaScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelaScore.swift; sourceTree = "<group>"; };
 		B449D2B922FF151900EA22BB /* AddScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScoreViewController.swift; sourceTree = "<group>"; };
+		B44F56D5235E41A400FC4FCC /* UserDefaults+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Bela.swift"; sourceTree = "<group>"; };
 		B461A8762301E93100DF5DE0 /* DeclarationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclarationsViewController.swift; sourceTree = "<group>"; };
 		B461A8792301E96100DF5DE0 /* NewDeclarationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeclarationTableViewCell.swift; sourceTree = "<group>"; };
 		B461A87A2301E96100DF5DE0 /* NewDeclarationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewDeclarationTableViewCell.xib; sourceTree = "<group>"; };
@@ -194,10 +204,30 @@
 		B43EFC0F235A59AB005DB07F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				B43EFC1B235E2820005DB07F /* Toggle */,
+				B43EFC1C235E2827005DB07F /* ThemePicker */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B43EFC1B235E2820005DB07F /* Toggle */ = {
+			isa = PBXGroup;
+			children = (
 				B43EFC0B235A586E005DB07F /* SettingsToggleTableViewCell.swift */,
 				B43EFC0C235A586E005DB07F /* SettingsToggleTableViewCell.xib */,
 			);
-			path = Cells;
+			path = Toggle;
+			sourceTree = "<group>";
+		};
+		B43EFC1C235E2827005DB07F /* ThemePicker */ = {
+			isa = PBXGroup;
+			children = (
+				B43EFC17235E27DF005DB07F /* ThemePickerTableViewCell.swift */,
+				B43EFC18235E27DF005DB07F /* ThemePickerTableViewCell.xib */,
+				B40DD00D235E28E900B39BA1 /* ThemeCollectionViewCell.swift */,
+				B40DD00E235E28E900B39BA1 /* ThemeCollectionViewCell.xib */,
+			);
+			path = ThemePicker;
 			sourceTree = "<group>";
 		};
 		B448B4B52302E18F00288BF1 /* NewDeclaration */ = {
@@ -255,6 +285,7 @@
 				B4741ECF22FF09F10058BC00 /* UITableView+Bela.swift */,
 				B439BE5623008BB3000C2CA8 /* UIView+Bela.swift */,
 				B445AA502301F81800A097B7 /* UICollectionView+Bela.swift */,
+				B44F56D5235E41A400FC4FCC /* UserDefaults+Bela.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -520,10 +551,12 @@
 			files = (
 				B43EFC0E235A586E005DB07F /* SettingsToggleTableViewCell.xib in Resources */,
 				B461A8882301F0B500DF5DE0 /* ValueCollectionViewCell.xib in Resources */,
+				B40DD010235E28E900B39BA1 /* ThemeCollectionViewCell.xib in Resources */,
 				B4F30D0A22FEFC47003F13C8 /* LaunchScreen.storyboard in Resources */,
 				B461A8842301E99300DF5DE0 /* DeclaredValueTableViewCell.xib in Resources */,
 				B4F30D0722FEFC47003F13C8 /* Assets.xcassets in Resources */,
 				B461A87C2301E96100DF5DE0 /* NewDeclarationTableViewCell.xib in Resources */,
+				B43EFC1A235E27DF005DB07F /* ThemePickerTableViewCell.xib in Resources */,
 				B4A80DB72305F43A00F53884 /* Localizable.strings in Resources */,
 				B4741EC122FF06980058BC00 /* ScoreTableViewCell.xib in Resources */,
 				B4A80DC32305F91B00F53884 /* InfoPlist.strings in Resources */,
@@ -575,6 +608,7 @@
 				B4A80DA82305565B00F53884 /* KeyboardToolbar.swift in Sources */,
 				B4741EC422FF07C50058BC00 /* UIColor+Bela.swift in Sources */,
 				B4741EBD22FF05E30058BC00 /* UIStoryboard+Bela.swift in Sources */,
+				B44F56D6235E41A400FC4FCC /* UserDefaults+Bela.swift in Sources */,
 				B4A80DAF2305841800F53884 /* DimmingView.swift in Sources */,
 				B4F30D1222FEFFD3003F13C8 /* MainMenuViewController.swift in Sources */,
 				B4D5A7F32301B97C00396103 /* ScoreInputViewController.swift in Sources */,
@@ -583,6 +617,7 @@
 				B4A80DAD230583B900F53884 /* CardPresentationController.swift in Sources */,
 				B445AA512301F81800A097B7 /* UICollectionView+Bela.swift in Sources */,
 				B4F30D0022FEFC46003F13C8 /* AppDelegate.swift in Sources */,
+				B40DD00F235E28E900B39BA1 /* ThemeCollectionViewCell.swift in Sources */,
 				B439BE5B2300A6ED000C2CA8 /* BelaTeam.swift in Sources */,
 				B4741ED022FF09F10058BC00 /* UITableView+Bela.swift in Sources */,
 				B43EFC0D235A586E005DB07F /* SettingsToggleTableViewCell.swift in Sources */,
@@ -592,6 +627,7 @@
 				B461A8872301F0B500DF5DE0 /* ValueCollectionViewCell.swift in Sources */,
 				B448B4BB2302E67C00288BF1 /* BelaScore.swift in Sources */,
 				B449D2BA22FF151900EA22BB /* AddScoreViewController.swift in Sources */,
+				B43EFC19235E27DF005DB07F /* ThemePickerTableViewCell.swift in Sources */,
 				B461A87B2301E96100DF5DE0 /* NewDeclarationTableViewCell.swift in Sources */,
 				B4F30D1722FF04E9003F13C8 /* ScoreViewController.swift in Sources */,
 				B43EFC16235CFC98005DB07F /* BelaTheme.swift in Sources */,
