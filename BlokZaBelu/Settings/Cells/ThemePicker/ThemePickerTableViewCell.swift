@@ -15,9 +15,8 @@ protocol ThemePickerDelegate: class {
 class ThemePickerTableViewCell: UITableViewCell {
 
     @IBOutlet weak private var collectionView: UICollectionView!
-    @IBOutlet weak private var collectionViewHeightConstraint: NSLayoutConstraint!
     
-    private var themes: [Theme] = [.default, .green, .red]
+    private var themes: [Theme] = [.default, .green, .red, .default, .green, .red, .default, .green, .red]
     
     weak var delegate: ThemePickerDelegate?
     
@@ -26,17 +25,13 @@ class ThemePickerTableViewCell: UITableViewCell {
 
         selectionStyle = .none
         backgroundColor = .clear
+        contentView.backgroundColor = BelaTheme.shared.backgroundColor2
         
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.backgroundColor = .clear
         
         collectionView.register(UINib(nibName: "ThemeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ThemeCollectionViewCell")
-    }
-    
-    func setupHeight() {
-        collectionView.reloadData()
-        collectionViewHeightConstraint.constant = collectionView.collectionViewLayout.collectionViewContentSize.height
     }
     
 }
@@ -55,5 +50,6 @@ extension ThemePickerTableViewCell: UICollectionViewDataSource, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         delegate?.themePickerDidPick(theme: themes[indexPath.row])
+        collectionView.reloadData()
     }
 }

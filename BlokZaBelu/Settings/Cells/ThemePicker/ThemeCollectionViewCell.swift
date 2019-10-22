@@ -29,9 +29,9 @@ class ThemeCollectionViewCell: UICollectionViewCell {
         innerView.backgroundColor = theme.backgroundColor
         
         if theme == BelaTheme.shared.theme {
-            alpha = 1
+            contentView.alpha = 1
         } else {
-            alpha = 0.3
+            contentView.alpha = 0.3
         }
     }
 

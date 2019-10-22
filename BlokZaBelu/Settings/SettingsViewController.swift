@@ -15,28 +15,18 @@ class SettingsViewController: UIViewController {
     private var updatingColors = false
     
     private let settings: [SettingSection] = [
-        SettingSection(description: "Change direction", settings: [.invertScores("invertScores".localized)]),
-        SettingSection(description: "Themes", settings: [.themes])
+        SettingSection(description: "Invert the direction of scores.", settings: [.invertScores("invertScores".localized)]),
+        SettingSection(description: "Change a color theme.", settings: [.themes])
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupNavigationBar()
+        setupColors()
         
         tableView.register(UINib(nibName: "SettingsToggleTableViewCell", bundle: nil), forCellReuseIdentifier: "SettingsToggleTableViewCell")
         tableView.register(UINib(nibName: "ThemePickerTableViewCell", bundle: nil), forCellReuseIdentifier: "ThemePickerTableViewCell")
-    }
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        // hack++
-        DispatchQueue.main.async {
-            if !self.updatingColors {
-                self.setupColors()
-                self.updatingColors = false
-            }
-        }
     }
 
     private func setupNavigationBar() {
@@ -51,7 +41,6 @@ class SettingsViewController: UIViewController {
         
         tableView.backgroundColor = BelaTheme.shared.backgroundColor
         
-        updatingColors = true
         tableView.reloadData()
     }
     
@@ -67,6 +56,15 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         return settings[section].settings.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch settings[indexPath.section].settings[indexPath.row] {
+        case .invertScores:
+            return 44
+        case .themes:
+            return 66
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch settings[indexPath.section].settings[indexPath.row] {
         case .invertScores(let title):
@@ -77,17 +75,8 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         case .themes:
             let cell = tableView.dequeueReusableCell(ofType: ThemePickerTableViewCell.self, for: indexPath)
             cell.delegate = self
-            
-            cell.frame = tableView.bounds
-            cell.layoutIfNeeded()
-            cell.setupHeight()
-            
             return cell
         }
-    }
-    
-    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return settings[section].description
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -104,10 +93,14 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         view.addSubview(label)
 
         label.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
+        label.topAnchor.constraint(equalTo: view.topAnchor, constant: 8).isActive = true
         label.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16).isActive = true
-        label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-
+        
         return view
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 60
     }
     
 }

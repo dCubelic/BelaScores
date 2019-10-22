@@ -58,7 +58,7 @@ struct GreenTheme: ThemeProtocol {
 struct RedTheme: ThemeProtocol {
     var backgroundColor: UIColor { return .black }
     
-    var backgroundColor2: UIColor { return .darkGray2 }
+    var backgroundColor2: UIColor { return .darkGray }
     
     var backgroundColor3: UIColor { return .lightGray }
     
