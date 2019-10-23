@@ -16,7 +16,7 @@ class ThemePickerTableViewCell: UITableViewCell {
 
     @IBOutlet weak private var collectionView: UICollectionView!
     
-    private var themes: [Theme] = [.default, .green, .red, .default, .green, .red, .default, .green, .red]
+    private var themes: [Theme] = [.default, .green, .red, .light, .green, .red, .default, .green, .red]
     
     weak var delegate: ThemePickerDelegate?
     

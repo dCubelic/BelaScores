@@ -37,6 +37,12 @@
 		B4741EC422FF07C50058BC00 /* UIColor+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741EC322FF07C50058BC00 /* UIColor+Bela.swift */; };
 		B4741EC722FF08640058BC00 /* BelaGameScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741EC622FF08640058BC00 /* BelaGameScore.swift */; };
 		B4741ED022FF09F10058BC00 /* UITableView+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4741ECF22FF09F10058BC00 /* UITableView+Bela.swift */; };
+		B4759E792360D2E300A8A5C1 /* BlueTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4759E782360D2E300A8A5C1 /* BlueTheme.swift */; };
+		B4759E7B2360D31D00A8A5C1 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4759E7A2360D31D00A8A5C1 /* Theme.swift */; };
+		B4759E7D2360D32C00A8A5C1 /* ThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4759E7C2360D32C00A8A5C1 /* ThemeProtocol.swift */; };
+		B4759E802360D37B00A8A5C1 /* GreenTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4759E7F2360D37B00A8A5C1 /* GreenTheme.swift */; };
+		B4759E822360D38200A8A5C1 /* RedTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4759E812360D38200A8A5C1 /* RedTheme.swift */; };
+		B4759E842360D53700A8A5C1 /* LightTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4759E832360D53700A8A5C1 /* LightTheme.swift */; };
 		B478C603230897C900CA553A /* BlokZaBeluUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B478C602230897C900CA553A /* BlokZaBeluUITests.swift */; };
 		B478C60D2308981500CA553A /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B478C60B2308981200CA553A /* SnapshotHelper.swift */; };
 		B49945892309583D00DBA743 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B4A80DB92305F43A00F53884 /* Localizable.strings */; };
@@ -135,6 +141,12 @@
 		B4741EC322FF07C50058BC00 /* UIColor+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Bela.swift"; sourceTree = "<group>"; };
 		B4741EC622FF08640058BC00 /* BelaGameScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelaGameScore.swift; sourceTree = "<group>"; };
 		B4741ECF22FF09F10058BC00 /* UITableView+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Bela.swift"; sourceTree = "<group>"; };
+		B4759E782360D2E300A8A5C1 /* BlueTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueTheme.swift; sourceTree = "<group>"; };
+		B4759E7A2360D31D00A8A5C1 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		B4759E7C2360D32C00A8A5C1 /* ThemeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeProtocol.swift; sourceTree = "<group>"; };
+		B4759E7F2360D37B00A8A5C1 /* GreenTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenTheme.swift; sourceTree = "<group>"; };
+		B4759E812360D38200A8A5C1 /* RedTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedTheme.swift; sourceTree = "<group>"; };
+		B4759E832360D53700A8A5C1 /* LightTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightTheme.swift; sourceTree = "<group>"; };
 		B478C600230897C800CA553A /* BlokZaBeluUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlokZaBeluUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B478C602230897C900CA553A /* BlokZaBeluUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlokZaBeluUITests.swift; sourceTree = "<group>"; };
 		B478C604230897C900CA553A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -309,6 +321,28 @@
 			path = Bela;
 			sourceTree = "<group>";
 		};
+		B4759E762360D2C800A8A5C1 /* Theming */ = {
+			isa = PBXGroup;
+			children = (
+				B43EFC15235CFC98005DB07F /* BelaTheme.swift */,
+				B4759E7C2360D32C00A8A5C1 /* ThemeProtocol.swift */,
+				B4759E7A2360D31D00A8A5C1 /* Theme.swift */,
+				B4759E7E2360D37000A8A5C1 /* Themes */,
+			);
+			path = Theming;
+			sourceTree = "<group>";
+		};
+		B4759E7E2360D37000A8A5C1 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				B4759E782360D2E300A8A5C1 /* BlueTheme.swift */,
+				B4759E7F2360D37B00A8A5C1 /* GreenTheme.swift */,
+				B4759E812360D38200A8A5C1 /* RedTheme.swift */,
+				B4759E832360D53700A8A5C1 /* LightTheme.swift */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
 		B478C601230897C900CA553A /* BlokZaBeluUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -397,7 +431,7 @@
 				B4A80DB023058A6C00F53884 /* CardPresentation */,
 				B4741EC222FF07B70058BC00 /* Extensions */,
 				B4F30D1422FF0226003F13C8 /* SupportingFiles */,
-				B43EFC15235CFC98005DB07F /* BelaTheme.swift */,
+				B4759E762360D2C800A8A5C1 /* Theming */,
 			);
 			path = BlokZaBelu;
 			sourceTree = "<group>";
@@ -608,15 +642,19 @@
 				B4A80DA82305565B00F53884 /* KeyboardToolbar.swift in Sources */,
 				B4741EC422FF07C50058BC00 /* UIColor+Bela.swift in Sources */,
 				B4741EBD22FF05E30058BC00 /* UIStoryboard+Bela.swift in Sources */,
+				B4759E842360D53700A8A5C1 /* LightTheme.swift in Sources */,
 				B44F56D6235E41A400FC4FCC /* UserDefaults+Bela.swift in Sources */,
 				B4A80DAF2305841800F53884 /* DimmingView.swift in Sources */,
+				B4759E7D2360D32C00A8A5C1 /* ThemeProtocol.swift in Sources */,
 				B4F30D1222FEFFD3003F13C8 /* MainMenuViewController.swift in Sources */,
 				B4D5A7F32301B97C00396103 /* ScoreInputViewController.swift in Sources */,
 				B439BE592300A5AF000C2CA8 /* BiddingTeamViewController.swift in Sources */,
 				B43EFC05235A54D6005DB07F /* SettingsViewController.swift in Sources */,
 				B4A80DAD230583B900F53884 /* CardPresentationController.swift in Sources */,
 				B445AA512301F81800A097B7 /* UICollectionView+Bela.swift in Sources */,
+				B4759E792360D2E300A8A5C1 /* BlueTheme.swift in Sources */,
 				B4F30D0022FEFC46003F13C8 /* AppDelegate.swift in Sources */,
+				B4759E802360D37B00A8A5C1 /* GreenTheme.swift in Sources */,
 				B40DD00F235E28E900B39BA1 /* ThemeCollectionViewCell.swift in Sources */,
 				B439BE5B2300A6ED000C2CA8 /* BelaTeam.swift in Sources */,
 				B4741ED022FF09F10058BC00 /* UITableView+Bela.swift in Sources */,
@@ -626,12 +664,14 @@
 				B461A8832301E99300DF5DE0 /* DeclaredValueTableViewCell.swift in Sources */,
 				B461A8872301F0B500DF5DE0 /* ValueCollectionViewCell.swift in Sources */,
 				B448B4BB2302E67C00288BF1 /* BelaScore.swift in Sources */,
+				B4759E822360D38200A8A5C1 /* RedTheme.swift in Sources */,
 				B449D2BA22FF151900EA22BB /* AddScoreViewController.swift in Sources */,
 				B43EFC19235E27DF005DB07F /* ThemePickerTableViewCell.swift in Sources */,
 				B461A87B2301E96100DF5DE0 /* NewDeclarationTableViewCell.swift in Sources */,
 				B4F30D1722FF04E9003F13C8 /* ScoreViewController.swift in Sources */,
 				B43EFC16235CFC98005DB07F /* BelaTheme.swift in Sources */,
 				B43EFC11235CF0CA005DB07F /* SettingsViewModel.swift in Sources */,
+				B4759E7B2360D31D00A8A5C1 /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,6 +19,10 @@ class SettingsViewController: UIViewController {
         SettingSection(description: "Change a color theme.", settings: [.themes])
     ]
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return BelaTheme.shared.statusBarStyle
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,7 +39,8 @@ class SettingsViewController: UIViewController {
     }
     
     private func setupColors() {
-        UIApplication.shared.statusBarStyle = BelaTheme.shared.statusBarStyle
+        self.setNeedsStatusBarAppearanceUpdate()
+        
         navigationController?.navigationBar.barTintColor = BelaTheme.shared.backgroundColor
         navigationController?.navigationBar.tintColor = BelaTheme.shared.textColor
         

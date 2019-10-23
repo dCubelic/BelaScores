@@ -20,6 +20,10 @@ class MainMenuViewController: UIViewController {
         return try? JSONDecoder().decode([BelaScore].self, from: encodedScores)
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return BelaTheme.shared.statusBarStyle
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +33,8 @@ class MainMenuViewController: UIViewController {
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController?.navigationBar.barTintColor = BelaTheme.shared.backgroundColor
+        navigationController?.navigationBar.tintColor = BelaTheme.shared.textColor
     }
     
     override func viewDidLayoutSubviews() {
@@ -81,4 +87,10 @@ class MainMenuViewController: UIViewController {
         navigationController?.pushViewController(settingsViewControler, animated: true)
     }
     
+}
+
+extension UINavigationController {
+    open override var preferredStatusBarStyle: UIStatusBarStyle {
+        return topViewController?.preferredStatusBarStyle ?? .default
+    }
 }

@@ -32,6 +32,10 @@ class ScoreViewController: UIViewController {
     
     var previousScores: [BelaScore]?
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return BelaTheme.shared.statusBarStyle
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
