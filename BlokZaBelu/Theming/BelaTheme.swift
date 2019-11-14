@@ -52,5 +52,9 @@ class BelaTheme: ThemeProtocol {
         return theme.statusBarStyle
     }
     
+    var logoName: String {
+        return theme.logoName
+    }
+    
     private init() { }
 }

@@ -16,7 +16,7 @@ class ThemePickerTableViewCell: UITableViewCell {
 
     @IBOutlet weak private var collectionView: UICollectionView!
     
-    private var themes: [Theme] = [.default, .green, .red, .light, .green, .red, .default, .green, .red]
+    private var themes: [Theme] = [.default, .green, .red, .light, .white, .red, .default, .green, .red]
     
     weak var delegate: ThemePickerDelegate?
     
@@ -50,6 +50,7 @@ extension ThemePickerTableViewCell: UICollectionViewDataSource, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         delegate?.themePickerDidPick(theme: themes[indexPath.row])
+        contentView.backgroundColor = BelaTheme.shared.backgroundColor2
         collectionView.reloadData()
     }
 }

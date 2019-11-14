@@ -13,6 +13,7 @@ enum Theme: String {
     case green
     case red
     case light
+    case white
     
     private var themeImplementation: ThemeProtocol {
         switch self {
@@ -24,6 +25,8 @@ enum Theme: String {
             return RedTheme()
         case .light:
             return LightTheme()
+        case .white:
+            return WhiteTheme()
         }
     }
     
@@ -35,4 +38,5 @@ enum Theme: String {
     var themeContrastColor: UIColor { return themeImplementation.themeContrastColor }
     var textColor: UIColor { return themeImplementation.textColor }
     var statusBarStyle: UIStatusBarStyle { return themeImplementation.statusBarStyle }
+    var logoName: String { return themeImplementation.logoName }
 }

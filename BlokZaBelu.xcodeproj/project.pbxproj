@@ -63,6 +63,7 @@
 		B4F30D0A22FEFC47003F13C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4F30D0822FEFC47003F13C8 /* LaunchScreen.storyboard */; };
 		B4F30D1222FEFFD3003F13C8 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F30D1122FEFFD3003F13C8 /* MainMenuViewController.swift */; };
 		B4F30D1722FF04E9003F13C8 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F30D1622FF04E9003F13C8 /* ScoreViewController.swift */; };
+		B4FF9ADB237DEC2800C4970B /* WhiteTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF9ADA237DEC2800C4970B /* WhiteTheme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,6 +174,7 @@
 		B4F30D0B22FEFC47003F13C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4F30D1122FEFFD3003F13C8 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		B4F30D1622FF04E9003F13C8 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
+		B4FF9ADA237DEC2800C4970B /* WhiteTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteTheme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,6 +340,7 @@
 				B4759E782360D2E300A8A5C1 /* BlueTheme.swift */,
 				B4759E7F2360D37B00A8A5C1 /* GreenTheme.swift */,
 				B4759E812360D38200A8A5C1 /* RedTheme.swift */,
+				B4FF9ADA237DEC2800C4970B /* WhiteTheme.swift */,
 				B4759E832360D53700A8A5C1 /* LightTheme.swift */,
 			);
 			path = Themes;
@@ -641,6 +644,7 @@
 				B4741EC022FF06980058BC00 /* ScoreTableViewCell.swift in Sources */,
 				B4A80DA82305565B00F53884 /* KeyboardToolbar.swift in Sources */,
 				B4741EC422FF07C50058BC00 /* UIColor+Bela.swift in Sources */,
+				B4FF9ADB237DEC2800C4970B /* WhiteTheme.swift in Sources */,
 				B4741EBD22FF05E30058BC00 /* UIStoryboard+Bela.swift in Sources */,
 				B4759E842360D53700A8A5C1 /* LightTheme.swift in Sources */,
 				B44F56D6235E41A400FC4FCC /* UserDefaults+Bela.swift in Sources */,

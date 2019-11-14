@@ -1,14 +1,16 @@
 //
-//  RedTheme.swift
+//  WhiteTheme.swift
 //  BlokZaBelu
 //
-//  Created by dominik on 23/10/2019.
+//  Created by dominik on 14/11/2019.
 //  Copyright © 2019 Dominik Cubelic. All rights reserved.
 //
 
+import Foundation
+
 import UIKit
 
-struct RedTheme: ThemeProtocol {
+struct WhiteTheme: ThemeProtocol {
     var backgroundColor: UIColor { return .black }
     
     var backgroundColor2: UIColor { return UIColor(white: 35.0 / 255.0, alpha: 1.0) }
@@ -17,13 +19,13 @@ struct RedTheme: ThemeProtocol {
     
     var transparentBackgroundColor: UIColor { return .transparentBlack }
     
-    var themeColor: UIColor { return .red }
+    var themeColor: UIColor { return .white }
     
-    var themeContrastColor: UIColor { return UIColor(white: 170.0 / 255.0, alpha: 1.0) }
+    var themeContrastColor: UIColor { return .red }
     
-    var textColor: UIColor { return UIColor(white: 170.0 / 255.0, alpha: 1.0) }
+    var textColor: UIColor { return .white }
     
     var statusBarStyle: UIStatusBarStyle { return .lightContent }
     
-    var logoName: String { return "logo_red" }
+    var logoName: String { return "logo_white" }
 }

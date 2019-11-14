@@ -14,6 +14,7 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak private var continueButton: UIButton!
     @IBOutlet weak private var newGameButton: UIButton!
     @IBOutlet weak private var settingsButton: UIButton!
+    @IBOutlet weak private var logoImageView: UIImageView!
     
     private var continueScores: [BelaScore]? {
         guard let encodedScores = UserDefaults.standard.data(forKey: "scores") else { return nil }
@@ -47,17 +48,26 @@ class MainMenuViewController: UIViewController {
     private func setupColors() {
         view.backgroundColor = BelaTheme.shared.backgroundColor
         appTitleLabel.textColor = BelaTheme.shared.textColor
+        logoImageView.image = UIImage(named: BelaTheme.shared.logoName)
         
         setupButtons()
     }
     
     private func setupButtons() {
+        continueButton.setTitleColor(BelaTheme.shared.backgroundColor, for: .normal)
+        newGameButton.setTitleColor(BelaTheme.shared.backgroundColor, for: .normal)
+        settingsButton.setTitleColor(BelaTheme.shared.backgroundColor, for: .normal)
+        
+        continueButton.backgroundColor = BelaTheme.shared.textColor
+        newGameButton.backgroundColor = BelaTheme.shared.textColor
+        settingsButton.backgroundColor = BelaTheme.shared.textColor
+        
         if continueScores == nil {
             continueButton.isEnabled = false
             continueButton.backgroundColor = BelaTheme.shared.backgroundColor2
         } else {
             continueButton.isEnabled = true
-            continueButton.backgroundColor = BelaTheme.shared.backgroundColor3
+            continueButton.backgroundColor = BelaTheme.shared.textColor
         }
     }
     

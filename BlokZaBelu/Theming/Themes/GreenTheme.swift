@@ -24,4 +24,6 @@ struct GreenTheme: ThemeProtocol {
     var textColor: UIColor { return .white }
     
     var statusBarStyle: UIStatusBarStyle { return .lightContent }
+    
+    var logoName: String { return "logo_green" }
 }

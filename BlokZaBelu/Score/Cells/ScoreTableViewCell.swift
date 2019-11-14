@@ -45,6 +45,13 @@ class ScoreTableViewCell: UITableViewCell {
         team2BidView.layer.cornerRadius = 4
     }
     
+    override func layoutSubviews() {
+        backgroundColor = BelaTheme.shared.backgroundColor
+        contentView.backgroundColor = BelaTheme.shared.backgroundColor
+        score1Label.textColor = BelaTheme.shared.textColor
+        score2Label.textColor = BelaTheme.shared.textColor
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
