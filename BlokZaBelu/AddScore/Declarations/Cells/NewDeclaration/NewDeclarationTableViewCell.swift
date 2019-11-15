@@ -75,6 +75,7 @@ class NewDeclarationTableViewCell: UITableViewCell {
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.showsHorizontalScrollIndicator = false
         collectionView.backgroundColor = BelaTheme.shared.transparentBackgroundColor
         
         collectionView.register(UINib(nibName: "ValueCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ValueCollectionViewCell")

@@ -12,6 +12,7 @@ protocol ThemeProtocol {
     var backgroundColor: UIColor { get }
     var backgroundColor2: UIColor { get }
     var backgroundColor3: UIColor { get }
+    var placeholderColor: UIColor { get }
     var transparentBackgroundColor: UIColor { get }
     var themeColor: UIColor { get }
     var themeContrastColor: UIColor { get }

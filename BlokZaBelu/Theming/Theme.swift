@@ -33,6 +33,7 @@ enum Theme: String {
     var backgroundColor: UIColor { return themeImplementation.backgroundColor }
     var backgroundColor2: UIColor { return themeImplementation.backgroundColor2 }
     var backgroundColor3: UIColor { return themeImplementation.backgroundColor3 }
+    var placeholderColor: UIColor { return themeImplementation.placeholderColor }
     var transparentBackgroundColor: UIColor { return themeImplementation.transparentBackgroundColor }
     var themeColor: UIColor { return themeImplementation.themeColor }
     var themeContrastColor: UIColor { return themeImplementation.themeContrastColor }

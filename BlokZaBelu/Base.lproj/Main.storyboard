@@ -556,6 +556,8 @@
                         <viewLayoutGuide key="safeArea" id="fpK-a7-RQH"/>
                     </view>
                     <connections>
+                        <outlet property="camera1Button" destination="024-nc-ctF" id="K0A-Ir-JqT"/>
+                        <outlet property="camera2Button" destination="ynz-he-Zjb" id="YGK-bP-3d6"/>
                         <outlet property="points1TextField" destination="ESZ-xF-5d3" id="OVm-tI-hh2"/>
                         <outlet property="points1UnderlineView" destination="NG8-fn-GQb" id="d4f-gO-P4M"/>
                         <outlet property="points2TextField" destination="lZf-Hp-eAa" id="5va-Fe-Svr"/>

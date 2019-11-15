@@ -32,6 +32,10 @@ class BelaTheme: ThemeProtocol {
         return theme.backgroundColor3
     }
     
+    var placeholderColor: UIColor {
+        return theme.placeholderColor
+    }
+    
     var transparentBackgroundColor: UIColor {
         return theme.transparentBackgroundColor
     }

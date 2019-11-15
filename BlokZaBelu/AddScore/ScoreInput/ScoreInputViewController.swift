@@ -19,6 +19,8 @@ class ScoreInputViewController: UIViewController {
     @IBOutlet weak private var points2TextField: UITextField!
     @IBOutlet weak private var points1UnderlineView: UIView!
     @IBOutlet weak private var points2UnderlineView: UIView!
+    @IBOutlet weak private var camera1Button: UIButton!
+    @IBOutlet weak private var camera2Button: UIButton!
     
     weak var delegate: ScoreInputViewControllerDelegate?
     
@@ -68,8 +70,11 @@ class ScoreInputViewController: UIViewController {
     private func setupViews() {
         points1TextField.delegate = self
         points2TextField.delegate = self
-        points1TextField.attributedPlaceholder = NSAttributedString(string: "0", attributes: [NSAttributedString.Key.foregroundColor: BelaTheme.shared.backgroundColor])
-        points2TextField.attributedPlaceholder = NSAttributedString(string: "0", attributes: [NSAttributedString.Key.foregroundColor: BelaTheme.shared.backgroundColor])
+        points1TextField.attributedPlaceholder = NSAttributedString(string: "0", attributes: [NSAttributedString.Key.foregroundColor: BelaTheme.shared.placeholderColor])
+        points2TextField.attributedPlaceholder = NSAttributedString(string: "0", attributes: [NSAttributedString.Key.foregroundColor: BelaTheme.shared.placeholderColor])
+        
+        camera1Button.setImage(UIImage(named: "camera"), for: .normal)
+        camera2Button.setImage(UIImage(named: "camera"), for: .normal)
         
         let toolbar = KeyboardToolbar()
         toolbar.toolBarDelegate = self

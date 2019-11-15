@@ -15,6 +15,8 @@ struct BlueTheme: ThemeProtocol {
     
     var backgroundColor3: UIColor { return .lightGray }
     
+    var placeholderColor: UIColor { return .darkGray }
+    
     var transparentBackgroundColor: UIColor { return .transparentBlack }
     
     var themeColor: UIColor { return .blue }

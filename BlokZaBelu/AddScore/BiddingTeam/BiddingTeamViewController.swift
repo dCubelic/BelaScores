@@ -79,9 +79,9 @@ class BiddingTeamViewController: UIViewController {
         switch biddingTeam {
         case .team1:
             team1Button.setTitleColor(BelaTheme.shared.themeColor, for: .normal)
-            team2Button.setTitleColor(BelaTheme.shared.backgroundColor, for: .normal)
+            team2Button.setTitleColor(BelaTheme.shared.placeholderColor, for: .normal)
         case .team2:
-            team1Button.setTitleColor(BelaTheme.shared.backgroundColor, for: .normal)
+            team1Button.setTitleColor(BelaTheme.shared.placeholderColor, for: .normal)
             team2Button.setTitleColor(BelaTheme.shared.themeColor, for: .normal)
         }
     }
