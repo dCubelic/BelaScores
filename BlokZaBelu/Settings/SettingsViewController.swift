@@ -15,8 +15,8 @@ class SettingsViewController: UIViewController {
     private var updatingColors = false
     
     private let settings: [SettingSection] = [
-        SettingSection(description: "Invert the direction of scores.", settings: [.invertScores("invertScores".localized)]),
-        SettingSection(description: "Change a color theme.", settings: [.themes])
+        SettingSection(description: "invert.description".localized, settings: [.invertScores("invert.title".localized)]),
+        SettingSection(description: "change_theme.description".localized, settings: [.themes])
     ]
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

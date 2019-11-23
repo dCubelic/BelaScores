@@ -25,5 +25,7 @@ struct BlueTheme: ThemeProtocol {
     
     var textColor: UIColor { return .white }
     
+    var textColor2: UIColor { return .white }
+    
     var statusBarStyle: UIStatusBarStyle { return .lightContent }
 }

@@ -23,7 +23,7 @@ enum KeyboardToolbarButton: Int {
             button = UIBarButtonItem(title: "Cancel".localized, style: .plain, target: target, action: action)
         }
         button.tag = rawValue
-        button.tintColor = BelaTheme.shared.textColor
+        button.tintColor = BelaTheme.shared.textColor2
         
         return button
     }

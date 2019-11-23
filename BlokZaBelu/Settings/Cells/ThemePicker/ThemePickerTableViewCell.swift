@@ -16,7 +16,7 @@ class ThemePickerTableViewCell: UITableViewCell {
 
     @IBOutlet weak private var collectionView: UICollectionView!
     
-    private var themes: [Theme] = [.default, .green, .red, .light, .white, .red, .default, .green, .red]
+    private var themes = Theme.allCases
     
     weak var delegate: ThemePickerDelegate?
     
@@ -32,6 +32,9 @@ class ThemePickerTableViewCell: UITableViewCell {
         collectionView.backgroundColor = .clear
         
         collectionView.register(UINib(nibName: "ThemeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ThemeCollectionViewCell")
+        
+        let index = themes.firstIndex(of: BelaTheme.shared.theme) ?? 0
+        collectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: .centeredHorizontally, animated: false)
     }
     
 }
@@ -52,5 +55,6 @@ extension ThemePickerTableViewCell: UICollectionViewDataSource, UICollectionView
         delegate?.themePickerDidPick(theme: themes[indexPath.row])
         contentView.backgroundColor = BelaTheme.shared.backgroundColor2
         collectionView.reloadData()
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
 }

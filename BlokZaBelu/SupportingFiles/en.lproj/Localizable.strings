@@ -12,4 +12,6 @@
 "done" = "Done";
 "cancel" = "Cancel";
 "add" = "Add";
-"invertScores" = "Invert Scores";
+"invert.title" = "Invert Scores";
+"invert.description" = "Invert the direction of scores.";
+"change_theme.description" = "Change a color theme.";

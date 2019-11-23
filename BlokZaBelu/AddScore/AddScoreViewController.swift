@@ -128,7 +128,7 @@ class AddScoreViewController: UIViewController {
     
     private func setupColors() {
         view.backgroundColor = BelaTheme.shared.backgroundColor2
-        addButton.setTitleColor(BelaTheme.shared.textColor, for: .normal)
+        addButton.setTitleColor(BelaTheme.shared.textColor2, for: .normal)
         addButton.backgroundColor = BelaTheme.shared.transparentBackgroundColor
     }
     

@@ -15,7 +15,7 @@ class ValueCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        valueLabel.textColor = BelaTheme.shared.textColor
+        valueLabel.textColor = BelaTheme.shared.textColor2
     }
     
     func setup(for value: String) {

@@ -1,32 +1,32 @@
 //
-//  GreenTheme.swift
+//  DarkGreenTheme.swift
 //  BlokZaBelu
 //
-//  Created by dominik on 23/10/2019.
+//  Created by dominik on 23/11/2019.
 //  Copyright © 2019 Dominik Cubelic. All rights reserved.
 //
 
 import UIKit
 
-struct GreenTheme: ThemeProtocol {
-    var backgroundColor: UIColor { return .darkGray }
+struct DarkGreenTheme: ThemeProtocol {
+    var backgroundColor: UIColor { return .black }
     
-    var backgroundColor2: UIColor { return .darkGray2 }
+    var backgroundColor2: UIColor { return UIColor(white: 35.0 / 255.0, alpha: 1.0) }
     
-    var backgroundColor3: UIColor { return .lightGray }
+    var backgroundColor3: UIColor { .lightGray }
     
-    var placeholderColor: UIColor { return .darkGray }
+    var placeholderColor: UIColor { return .black }
     
     var transparentBackgroundColor: UIColor { return .transparentBlack }
     
     var themeColor: UIColor { return .green }
-    
-    var themeContrastColor: UIColor { return .red }
+        
+    var themeContrastColor: UIColor { .red }
     
     var textColor: UIColor { return .white }
     
     var textColor2: UIColor { return .white }
-    
+
     var statusBarStyle: UIStatusBarStyle { return .lightContent }
     
     var logoName: String { return "logo_green" }

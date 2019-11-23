@@ -25,6 +25,8 @@ struct LightTheme: ThemeProtocol {
     
     var textColor: UIColor { return .black }
     
+    var textColor2: UIColor { return .white }
+    
     var statusBarStyle: UIStatusBarStyle {
         if #available(iOS 13.0, *) {
             return .darkContent

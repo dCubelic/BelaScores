@@ -12,4 +12,6 @@
 "done" = "Završi";
 "cancel" = "Odustani";
 "add" = "Dodaj";
-"invertScores" = "obrnii";
+"invert.title" = "Obrni rezultate";
+"invert.description" = "Zamijeni smjer rezultata.";
+"change_theme.description" = "Promijeni paletu boja.";

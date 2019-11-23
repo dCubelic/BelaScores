@@ -52,6 +52,10 @@ class BelaTheme: ThemeProtocol {
         return theme.textColor
     }
     
+    var textColor2: UIColor {
+        return theme.textColor2
+    }
+    
     var statusBarStyle: UIStatusBarStyle {
         return theme.statusBarStyle
     }

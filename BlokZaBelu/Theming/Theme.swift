@@ -8,25 +8,55 @@
 
 import UIKit
 
-enum Theme: String {
+enum Theme: String, CaseIterable {
     case `default`
     case green
+    case yellow
+    case orange
     case red
-    case light
+    case pink
     case white
+    case darkBlue
+    case darkGreen
+    case darkYellow
+    case darkOrange
+    case darkRed
+    case darkPink
+    case darkWhite
+    case light
     
     private var themeImplementation: ThemeProtocol {
         switch self {
         case .default:
             return BlueTheme()
+        case .darkBlue:
+            return DarkBlueTheme()
         case .green:
             return GreenTheme()
+        case .darkGreen:
+            return DarkGreenTheme()
         case .red:
             return RedTheme()
+        case .darkRed:
+            return DarkRedTheme()
         case .light:
             return LightTheme()
         case .white:
             return WhiteTheme()
+        case .darkWhite:
+            return DarkWhiteTheme()
+        case .orange:
+            return OrangeTheme()
+        case .darkOrange:
+            return DarkOrangeTheme()
+        case .yellow:
+            return YellowTheme()
+        case .darkYellow:
+            return DarkYellowTheme()
+        case .pink:
+            return PinkTheme()
+        case .darkPink:
+            return DarkPinkTheme()
         }
     }
     
@@ -38,6 +68,7 @@ enum Theme: String {
     var themeColor: UIColor { return themeImplementation.themeColor }
     var themeContrastColor: UIColor { return themeImplementation.themeContrastColor }
     var textColor: UIColor { return themeImplementation.textColor }
+    var textColor2: UIColor { return themeImplementation.textColor2 }
     var statusBarStyle: UIStatusBarStyle { return themeImplementation.statusBarStyle }
     var logoName: String { return themeImplementation.logoName }
 }

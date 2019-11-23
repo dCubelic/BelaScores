@@ -1,5 +1,5 @@
 //
-//  RedTheme.swift
+//  YellowTheme.swift
 //  BlokZaBelu
 //
 //  Created by dominik on 23/11/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct RedTheme: ThemeProtocol {
+struct YellowTheme: ThemeProtocol {
     var backgroundColor: UIColor { return .darkGray }
     
     var backgroundColor2: UIColor { return .darkGray2 }
@@ -19,9 +19,9 @@ struct RedTheme: ThemeProtocol {
     
     var transparentBackgroundColor: UIColor { return .transparentBlack }
     
-    var themeColor: UIColor { return UIColor(red: 128.0 / 255.0, green: 7.0 / 255.0, blue: 7.0 / 255.0, alpha: 1.0) }
+    var themeColor: UIColor { return UIColor(red: 244.0 / 255.0, green: 241.0 / 255.0, blue: 29.0 / 255.0, alpha: 1.0) }
     
-    var themeContrastColor: UIColor { .black }
+    var themeContrastColor: UIColor { return .red }
     
     var textColor: UIColor { return .white }
     
@@ -29,5 +29,5 @@ struct RedTheme: ThemeProtocol {
     
     var statusBarStyle: UIStatusBarStyle { return .lightContent }
     
-    var logoName: String { return "logo_red" }
+    var logoName: String { return "logo_yellow" }
 }
