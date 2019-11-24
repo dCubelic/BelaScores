@@ -26,6 +26,7 @@
 		B43EFC16235CFC98005DB07F /* BelaTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43EFC15235CFC98005DB07F /* BelaTheme.swift */; };
 		B43EFC19235E27DF005DB07F /* ThemePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43EFC17235E27DF005DB07F /* ThemePickerTableViewCell.swift */; };
 		B43EFC1A235E27DF005DB07F /* ThemePickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B43EFC18235E27DF005DB07F /* ThemePickerTableViewCell.xib */; };
+		B4444C89238ACA0900CE9FE1 /* BelaMatchScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4444C88238ACA0900CE9FE1 /* BelaMatchScore.swift */; };
 		B445AA512301F81800A097B7 /* UICollectionView+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B445AA502301F81800A097B7 /* UICollectionView+Bela.swift */; };
 		B448B4BB2302E67C00288BF1 /* BelaScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B448B4BA2302E67C00288BF1 /* BelaScore.swift */; };
 		B449D2BA22FF151900EA22BB /* AddScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B449D2B922FF151900EA22BB /* AddScoreViewController.swift */; };
@@ -141,6 +142,7 @@
 		B43EFC15235CFC98005DB07F /* BelaTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelaTheme.swift; sourceTree = "<group>"; };
 		B43EFC17235E27DF005DB07F /* ThemePickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePickerTableViewCell.swift; sourceTree = "<group>"; };
 		B43EFC18235E27DF005DB07F /* ThemePickerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemePickerTableViewCell.xib; sourceTree = "<group>"; };
+		B4444C88238ACA0900CE9FE1 /* BelaMatchScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelaMatchScore.swift; sourceTree = "<group>"; };
 		B445AA502301F81800A097B7 /* UICollectionView+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Bela.swift"; sourceTree = "<group>"; };
 		B448B4BA2302E67C00288BF1 /* BelaScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelaScore.swift; sourceTree = "<group>"; };
 		B449D2B922FF151900EA22BB /* AddScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScoreViewController.swift; sourceTree = "<group>"; };
@@ -338,6 +340,7 @@
 			children = (
 				B4741EC622FF08640058BC00 /* BelaGameScore.swift */,
 				B448B4BA2302E67C00288BF1 /* BelaScore.swift */,
+				B4444C88238ACA0900CE9FE1 /* BelaMatchScore.swift */,
 				B439BE5A2300A6ED000C2CA8 /* BelaTeam.swift */,
 			);
 			path = Bela;
@@ -673,6 +676,7 @@
 				B40BB7872389DD3E001A478B /* OrangeTheme.swift in Sources */,
 				B4F4D9D82389D30A00B310F0 /* WhiteTheme.swift in Sources */,
 				B4A80DBC2305F50900F53884 /* String+Bela.swift in Sources */,
+				B4444C89238ACA0900CE9FE1 /* BelaMatchScore.swift in Sources */,
 				B43EFC02235A51D6005DB07F /* BelaSettings.swift in Sources */,
 				B4F4D9D42389D0D400B310F0 /* DarkGreenTheme.swift in Sources */,
 				B4741EC022FF06980058BC00 /* ScoreTableViewCell.swift in Sources */,

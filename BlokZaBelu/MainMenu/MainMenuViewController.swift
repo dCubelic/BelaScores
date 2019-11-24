@@ -16,9 +16,9 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak private var settingsButton: UIButton!
     @IBOutlet weak private var logoImageView: UIImageView!
     
-    private var continueScores: [BelaScore]? {
+    private var continueScores: BelaMatchScore? {
         guard let encodedScores = UserDefaults.standard.data(forKey: "scores") else { return nil }
-        return try? JSONDecoder().decode([BelaScore].self, from: encodedScores)
+        return try? JSONDecoder().decode(BelaMatchScore.self, from: encodedScores)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
