@@ -14,6 +14,7 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak private var continueButton: UIButton!
     @IBOutlet weak private var newGameButton: UIButton!
     @IBOutlet weak private var settingsButton: UIButton!
+    @IBOutlet weak private var historyButton: UIButton!
     @IBOutlet weak private var logoImageView: UIImageView!
     
     private var continueScores: BelaMatchScore? {
@@ -54,20 +55,17 @@ class MainMenuViewController: UIViewController {
     }
     
     private func setupButtons() {
-        continueButton.setTitleColor(BelaTheme.shared.backgroundColor, for: .normal)
-        newGameButton.setTitleColor(BelaTheme.shared.backgroundColor, for: .normal)
-        settingsButton.setTitleColor(BelaTheme.shared.backgroundColor, for: .normal)
-        
-        continueButton.backgroundColor = BelaTheme.shared.textColor
-        newGameButton.backgroundColor = BelaTheme.shared.textColor
-        settingsButton.backgroundColor = BelaTheme.shared.textColor
+        continueButton.tintColor = BelaTheme.shared.textColor
+        newGameButton.tintColor = BelaTheme.shared.textColor
+        historyButton.tintColor = BelaTheme.shared.textColor
+        settingsButton.tintColor = BelaTheme.shared.textColor
         
         if continueScores == nil {
             continueButton.isEnabled = false
-            continueButton.backgroundColor = BelaTheme.shared.backgroundColor2
+            continueButton.alpha = 0.5
         } else {
             continueButton.isEnabled = true
-            continueButton.backgroundColor = BelaTheme.shared.textColor
+            continueButton.alpha = 1.0
         }
     }
     
