@@ -14,8 +14,9 @@ class ScoreViewController: UIViewController {
     @IBOutlet weak private var score1Label: UILabel!
     @IBOutlet weak private var score2Label: UILabel!
     @IBOutlet weak private var addButton: UIBarButtonItem!
-    @IBOutlet weak private var weLabel: UILabel!
-    @IBOutlet weak private var theyLabel: UILabel!
+    @IBOutlet weak private var editButton: UIBarButtonItem!
+    @IBOutlet weak private var weTextField: UITextField!
+    @IBOutlet weak private var theyTextField: UITextField!
     @IBOutlet weak private var separatorView: UIView!
         
     private var matchScore: BelaMatchScore = BelaMatchScore.newMatch {
@@ -42,11 +43,12 @@ class ScoreViewController: UIViewController {
         matchScore = BelaMatchScore.dummyMatch
         #endif
         
-        setupNavigationBar()
-        
         if let previousScores = previousScores {
             matchScore = previousScores
         }
+        
+        setupNavigationBar()
+        setupTextFields()
         
         tableView.register(UINib(nibName: "ScoreTableViewCell", bundle: nil), forCellReuseIdentifier: "ScoreTableViewCell")
     }
@@ -62,14 +64,25 @@ class ScoreViewController: UIViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
     }
     
+    private func setupTextFields() {
+        weTextField.delegate = self
+        theyTextField.delegate = self
+        
+        weTextField.text = matchScore.team1Name.string
+        theyTextField.text = matchScore.team2Name.string
+    }
+    
     private func setupColors() {
         view.backgroundColor = BelaTheme.shared.backgroundColor
         tableView.backgroundColor = BelaTheme.shared.backgroundColor
         addButton.tintColor = BelaTheme.shared.textColor
+        editButton.tintColor = BelaTheme.shared.textColor
         score1Label.textColor = BelaTheme.shared.themeColor
         score2Label.textColor = BelaTheme.shared.themeColor
-        weLabel.textColor = BelaTheme.shared.textColor
-        theyLabel.textColor = BelaTheme.shared.textColor
+        weTextField.textColor = BelaTheme.shared.textColor
+        theyTextField.textColor = BelaTheme.shared.textColor
+        weTextField.tintColor = BelaTheme.shared.textColor
+        theyTextField.tintColor = BelaTheme.shared.textColor
         separatorView.backgroundColor = BelaTheme.shared.themeColor
     }
     
@@ -117,11 +130,50 @@ class ScoreViewController: UIViewController {
     private func scoresIndexFor(_ indexPath: IndexPath) -> Int {
         return BelaSettings.shared.invertScores ? matchScore.scores.count - indexPath.row - 1 : indexPath.row
     }
+    
+    private func endEditing() {
+        weTextField.isEnabled = false
+        theyTextField.isEnabled = false
+        view.endEditing(true)
+        
+        if weTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == true {
+            weTextField.text = matchScore.team1Name.string
+        }
+        
+        if theyTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == true {
+            theyTextField.text = matchScore.team2Name.string
+        }
+        
+        if weTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() == BelaTeamName.us.string.lowercased() {
+            matchScore.team1Name = .us
+        } else {
+            matchScore.team1Name = .custom(weTextField.text ?? "")
+        }
+        
+        if theyTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() == BelaTeamName.them.string.lowercased() {
+            matchScore.team2Name = .them
+        } else {
+            matchScore.team2Name = .custom(theyTextField.text ?? "")
+        }
+    }
+    
+    private func startEditing() {
+        weTextField.isEnabled = true
+        theyTextField.isEnabled = true
+        weTextField.becomeFirstResponder()
+    }
 
     @IBAction private func addAction(_ sender: Any) {
         presentAddScoreViewController()
     }
     
+    @IBAction private func editAction(_ sender: Any) {
+        if weTextField.isEnabled {
+            endEditing()
+            return
+        }
+        startEditing()
+    }
 }
 
 extension ScoreViewController: UITableViewDataSource, UITableViewDelegate {
@@ -195,4 +247,16 @@ extension ScoreViewController: CardPresentationControllerDelegate {
         dismiss(animated: true, completion: nil)
     }
     
+}
+
+extension ScoreViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == weTextField {
+            theyTextField.becomeFirstResponder()
+        } else if textField == theyTextField {
+            endEditing()
+        }
+        
+        return true
+    }
 }

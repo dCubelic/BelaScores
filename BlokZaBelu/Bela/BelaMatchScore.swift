@@ -11,8 +11,8 @@ import Foundation
 struct BelaMatchScore: Codable {
     
     var scores: [BelaScore]
-    var team1Name: String = "mi".localized
-    var team2Name: String = "vi".localized
+    var team1Name: BelaTeamName = .us
+    var team2Name: BelaTeamName = .them
     var date: Date
     var maxGameScore = 1001
     

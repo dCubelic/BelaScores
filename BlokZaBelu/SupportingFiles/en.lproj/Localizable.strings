@@ -15,6 +15,6 @@
 "invert.title" = "Invert Scores";
 "invert.description" = "Invert the direction of scores.";
 "change_theme.description" = "Change a color theme.";
-"mi" = "Us";
-"vi" = "Them";
+"us" = "US";
+"them" = "THEM";
 "app.title" = "Bela Scores";
