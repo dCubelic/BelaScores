@@ -70,6 +70,7 @@ class MainMenuViewController: UIViewController {
     }
     
     private func setupViews() {
+        appTitleLabel.text = "app.title".localized
         continueButton.layer.cornerRadius = continueButton.frame.height / 2
         newGameButton.layer.cornerRadius = newGameButton.frame.height / 2
         settingsButton.layer.cornerRadius = settingsButton.frame.height / 2
@@ -95,6 +96,9 @@ class MainMenuViewController: UIViewController {
         navigationController?.pushViewController(settingsViewControler, animated: true)
     }
     
+    @IBAction func historyAction(_ sender: Any) {
+        
+    }
 }
 
 extension UINavigationController {
