@@ -43,6 +43,40 @@
             </objects>
             <point key="canvasLocation" x="835" y="708"/>
         </scene>
+        <!--History View Controller-->
+        <scene sceneID="UqB-9W-ZPC">
+            <objects>
+                <viewController storyboardIdentifier="HistoryViewController" id="x95-cP-85K" customClass="HistoryViewController" customModule="BlokZaBelu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2xm-Jg-Tx2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2X1-fE-lOb">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="x95-cP-85K" id="VJi-wJ-bvB"/>
+                                    <outlet property="delegate" destination="x95-cP-85K" id="25W-lT-fFz"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2X1-fE-lOb" firstAttribute="top" secondItem="2xm-Jg-Tx2" secondAttribute="top" id="GAk-Cy-SMm"/>
+                            <constraint firstAttribute="bottom" secondItem="2X1-fE-lOb" secondAttribute="bottom" id="cWo-nh-9GS"/>
+                            <constraint firstItem="2X1-fE-lOb" firstAttribute="leading" secondItem="oeM-km-RsC" secondAttribute="leading" id="dON-js-iym"/>
+                            <constraint firstItem="2X1-fE-lOb" firstAttribute="trailing" secondItem="oeM-km-RsC" secondAttribute="trailing" id="q3E-uK-TlR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oeM-km-RsC"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="2X1-fE-lOb" id="cGy-nl-wIy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ls-en-ZWO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1634.7826086956522" y="715.84821428571422"/>
+        </scene>
         <!--Score View Controller-->
         <scene sceneID="2ft-Qa-69V">
             <objects>
@@ -638,7 +672,7 @@
         <image name="history" width="100" height="100"/>
         <image name="logo" width="200" height="225.5"/>
         <image name="new_game" width="100" height="100"/>
-        <image name="pencil" width="26" height="26"/>
+        <image name="pencil" width="27.5" height="27.5"/>
         <image name="settings0" width="96" height="96"/>
         <namedColor name="blue">
             <color red="0.27450980392156865" green="0.63529411764705879" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

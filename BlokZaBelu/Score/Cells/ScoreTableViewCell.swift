@@ -23,10 +23,6 @@ class ScoreTableViewCell: UITableViewCell {
         contentView.addSubview(team1BidView)
         contentView.addSubview(team2BidView)
         
-        contentView.backgroundColor = BelaTheme.shared.backgroundColor
-        score1Label.textColor = BelaTheme.shared.textColor
-        score2Label.textColor = BelaTheme.shared.textColor
-        
         //Xib is drunk
         team1BidView.translatesAutoresizingMaskIntoConstraints = false
         team1BidView.widthAnchor.constraint(equalToConstant: 8).isActive = true
@@ -46,10 +42,7 @@ class ScoreTableViewCell: UITableViewCell {
     }
     
     override func layoutSubviews() {
-        backgroundColor = BelaTheme.shared.backgroundColor
-        contentView.backgroundColor = BelaTheme.shared.backgroundColor
-        score1Label.textColor = BelaTheme.shared.textColor
-        score2Label.textColor = BelaTheme.shared.textColor
+        setupColors()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -62,6 +55,13 @@ class ScoreTableViewCell: UITableViewCell {
         super.setHighlighted(highlighted, animated: animated)
         
         contentView.backgroundColor = highlighted ? BelaTheme.shared.backgroundColor2 : BelaTheme.shared.backgroundColor
+    }
+    
+    private func setupColors() {
+        backgroundColor = BelaTheme.shared.backgroundColor
+        contentView.backgroundColor = BelaTheme.shared.backgroundColor
+        score1Label.textColor = BelaTheme.shared.textColor
+        score2Label.textColor = BelaTheme.shared.textColor
     }
     
     func setup(for score: BelaScore) {

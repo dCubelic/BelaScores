@@ -96,8 +96,9 @@ class MainMenuViewController: UIViewController {
         navigationController?.pushViewController(settingsViewControler, animated: true)
     }
     
-    @IBAction func historyAction(_ sender: Any) {
-        
+    @IBAction private func historyAction(_ sender: Any) {
+        let historyViewController = UIStoryboard.main.instantiateViewController(ofType: HistoryViewController.self)
+        navigationController?.pushViewController(historyViewController, animated: true)
     }
 }
 

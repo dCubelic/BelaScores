@@ -24,6 +24,15 @@ struct BelaMatchScore: Codable {
         return scores.reduce(0) { $0 + $1.totalScoreTeam2 }
     }
     
+    var winningTeam: BelaTeam? {
+        if team1Score > team2Score {
+            return .team1
+        } else if team2Score > team1Score {
+            return .team2
+        }
+        return nil
+    }
+    
     static var newMatch = BelaMatchScore(scores: [], date: Date())
     
     static var dummyMatch = BelaMatchScore(scores: [
@@ -32,5 +41,5 @@ struct BelaMatchScore: Codable {
         BelaScore(biddingTeam: .team2, gameScore: BelaGameScore(score1: 120), declarationsTeam1: [], declarationsTeam2: []),
         BelaScore(biddingTeam: .team1, gameScore: BelaGameScore(score1: 82), declarationsTeam1: [], declarationsTeam2: []),
         BelaScore(biddingTeam: .team2, gameScore: BelaGameScore(score1: 100), declarationsTeam1: [], declarationsTeam2: [50])
-    ], date: Date())
+    ], team1Name: BelaTeamName.custom("Cubi Ante"), team2Name: BelaTeamName.custom("Greba Vito"), date: Date())
 }
