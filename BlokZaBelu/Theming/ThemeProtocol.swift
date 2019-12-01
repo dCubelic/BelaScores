@@ -19,9 +19,4 @@ protocol ThemeProtocol {
     var textColor: UIColor { get }
     var textColor2: UIColor { get }
     var statusBarStyle: UIStatusBarStyle { get }
-    var logoName: String { get }
-}
-
-extension ThemeProtocol {
-    var logoName: String { return "logo" }
 }

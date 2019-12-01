@@ -34,8 +34,4 @@ struct LightTheme: ThemeProtocol {
             return .default
         }
     }
-    
-    var logoName: String {
-        return "logo_black"
-    }
 }

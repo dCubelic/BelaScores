@@ -11,6 +11,7 @@ import UIKit
 class HistoryViewController: UIViewController {
     
     @IBOutlet weak private var tableView: UITableView!
+    @IBOutlet weak private var noScoresLabel: UILabel!
     
     var matchScores: [BelaMatchScore] = []
     
@@ -22,16 +23,29 @@ class HistoryViewController: UIViewController {
         super.viewDidLoad()
 
         setupNavigationBar()
-        
-        matchScores.sort { $0.date > $1.date }
-        
+        setupViews()
+                
         tableView.register(UINib(nibName: "HistoryTableViewCell", bundle: nil), forCellReuseIdentifier: "HistoryTableViewCell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        matchScores = loadMatchScores().sorted { $0.dateCreated > $1.dateCreated }
+        noScoresLabel.isHidden = !matchScores.isEmpty
+        tableView.reloadData()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
         setupColors()
+    }
+    
+    private func loadMatchScores() -> [BelaMatchScore] {
+        guard let encodedMatches = UserDefaults.standard.data(forKey: "matches"),
+            let matches = try? JSONDecoder().decode([BelaMatchScore].self, from: encodedMatches) else { return [] }
+        return matches
     }
     
     private func setupNavigationBar() {
@@ -42,11 +56,16 @@ class HistoryViewController: UIViewController {
     private func setupColors() {
         view.backgroundColor = BelaTheme.shared.backgroundColor
         tableView.backgroundColor = BelaTheme.shared.backgroundColor
+        noScoresLabel.textColor = BelaTheme.shared.textColor
+    }
+    
+    private func setupViews() {
+        noScoresLabel.text = "no.scores".localized
     }
 
 }
 
-extension HistoryViewController: UITableViewDataSource {
+extension HistoryViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return matchScores.count
     }
@@ -56,5 +75,14 @@ extension HistoryViewController: UITableViewDataSource {
         cell.setup(with: matchScores[indexPath.row])
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let scoreViewController = UIStoryboard.main.instantiateViewController(ofType: ScoreViewController.self)
+        scoreViewController.previousScores = matchScores[indexPath.row]
+        
+        navigationController?.pushViewController(scoreViewController, animated: true)
     }
 }

@@ -30,6 +30,4 @@ struct DarkWhiteTheme: ThemeProtocol {
     var textColor2: UIColor { return .white }
     
     var statusBarStyle: UIStatusBarStyle { return .lightContent }
-    
-    var logoName: String { return "logo_white" }
 }

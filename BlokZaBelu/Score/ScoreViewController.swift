@@ -19,7 +19,7 @@ class ScoreViewController: UIViewController {
     @IBOutlet weak private var theyTextField: UITextField!
     @IBOutlet weak private var separatorView: UIView!
     
-    private var matchScore: BelaMatchScore = BelaMatchScore(scores: [], date: Date()) {
+    private var matchScore: BelaMatchScore = BelaMatchScore(scores: [], dateCreated: Date()) {
         didSet {
             score1Label.text = String(matchScore.team1Score)
             score2Label.text = String(matchScore.team2Score)
@@ -40,7 +40,7 @@ class ScoreViewController: UIViewController {
         
         //For Fastlane screenshots
         #if targetEnvironment(simulator)
-        matchScore = BelaMatchScore.dummyMatch
+//        matchScore = BelaMatchScore.dummyMatch
         #endif
         
         if let previousScores = previousScores {
@@ -107,7 +107,6 @@ class ScoreViewController: UIViewController {
     
     private func save(matchScore: BelaMatchScore?) {
         var newEncodedMatches: Data?
-        
         if let encodedMatches = UserDefaults.standard.data(forKey: "matches"), var matches = try? JSONDecoder().decode([BelaMatchScore?].self, from: encodedMatches) {
             
             if let matchScore = matchScore, let matchIndex = matches.firstIndex(of: matchScore) {

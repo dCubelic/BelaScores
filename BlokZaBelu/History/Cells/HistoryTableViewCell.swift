@@ -19,7 +19,7 @@ class HistoryTableViewCell: UITableViewCell {
     
     private final let dateFormatter: DateFormatter = {
         let df = DateFormatter()
-        df.dateFormat = "dd.MM."
+        df.dateFormat = "dd.MM. HH:mm"
         return df
     }()
     
@@ -28,6 +28,18 @@ class HistoryTableViewCell: UITableViewCell {
 
         selectionStyle = .none
         setupColors()
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        contentView.backgroundColor = selected ? BelaTheme.shared.backgroundColor2 : BelaTheme.shared.backgroundColor
+    }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+        
+        contentView.backgroundColor = highlighted ? BelaTheme.shared.backgroundColor2 : BelaTheme.shared.backgroundColor
     }
     
     private func setupColors() {
@@ -47,13 +59,25 @@ class HistoryTableViewCell: UITableViewCell {
         team2NameLabel.text = matchScore.team2Name.string
         team1PointsLabel.text = String(matchScore.team1Score)
         team2PointsLabel.text = String(matchScore.team2Score)
-        dateLabel.text = dateFormatter.string(from: matchScore.date)
+        dateLabel.text = dateFormatter.string(from: matchScore.dateCreated)
         
+        if matchScore.team1Name.string.split(separator: " ").count > 1 {
+            team1NameLabel.numberOfLines = 2
+        } else {
+            team1NameLabel.numberOfLines = 1
+        }
+        
+        if matchScore.team2Name.string.split(separator: " ").count > 1 {
+            team2NameLabel.numberOfLines = 2
+        } else {
+            team2NameLabel.numberOfLines = 1
+        }
+        
+        team1PointsLabel.textColor = BelaTheme.shared.textColor
+        team2PointsLabel.textColor = BelaTheme.shared.textColor
         if matchScore.winningTeam == .team1 {
             team1PointsLabel.textColor = BelaTheme.shared.themeColor
-            team2PointsLabel.textColor = BelaTheme.shared.textColor
         } else if matchScore.winningTeam == .team2 {
-            team1PointsLabel.textColor = BelaTheme.shared.textColor
             team2PointsLabel.textColor = BelaTheme.shared.themeColor
         }
     }

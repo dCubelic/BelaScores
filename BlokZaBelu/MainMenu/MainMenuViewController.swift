@@ -11,15 +11,10 @@ import UIKit
 class MainMenuViewController: UIViewController {
 
     @IBOutlet weak private var appTitleLabel: UILabel!
-    @IBOutlet weak private var continueButton: UIButton!
     @IBOutlet weak private var newGameButton: UIButton!
     @IBOutlet weak private var settingsButton: UIButton!
     @IBOutlet weak private var historyButton: UIButton!
     @IBOutlet weak private var logoImageView: UIImageView!
-    
-    private var continueScores: BelaMatchScore? {
-        return historyMatches?.min { $0.date > $1.date }
-    }
     
     private var historyMatches: [BelaMatchScore]? {
         guard let encodedMatches = UserDefaults.standard.data(forKey: "matches") else { return nil }
@@ -53,41 +48,21 @@ class MainMenuViewController: UIViewController {
     private func setupColors() {
         view.backgroundColor = BelaTheme.shared.backgroundColor
         appTitleLabel.textColor = BelaTheme.shared.textColor
-        logoImageView.image = UIImage(named: BelaTheme.shared.logoName)
+        logoImageView.tintColor = BelaTheme.shared.themeColor
         
         setupButtons()
     }
     
     private func setupButtons() {
-        continueButton.tintColor = BelaTheme.shared.textColor
         newGameButton.tintColor = BelaTheme.shared.textColor
         historyButton.tintColor = BelaTheme.shared.textColor
         settingsButton.tintColor = BelaTheme.shared.textColor
-        
-        if continueScores == nil {
-            continueButton.isEnabled = false
-            continueButton.alpha = 0.5
-        } else {
-            continueButton.isEnabled = true
-            continueButton.alpha = 1.0
-        }
     }
     
     private func setupViews() {
         appTitleLabel.text = "app.title".localized
-        continueButton.layer.cornerRadius = continueButton.frame.height / 2
         newGameButton.layer.cornerRadius = newGameButton.frame.height / 2
         settingsButton.layer.cornerRadius = settingsButton.frame.height / 2
-    }
-
-    @IBAction private func continueAction(_ sender: Any) {
-        if let scores = continueScores {
-            
-            let scoreViewController = UIStoryboard.main.instantiateViewController(ofType: ScoreViewController.self)
-            scoreViewController.previousScores = scores
-            
-            navigationController?.pushViewController(scoreViewController, animated: true)
-        }
     }
     
     @IBAction private func newGameAction(_ sender: Any) {
@@ -102,11 +77,6 @@ class MainMenuViewController: UIViewController {
     
     @IBAction private func historyAction(_ sender: Any) {
         let historyViewController = UIStoryboard.main.instantiateViewController(ofType: HistoryViewController.self)
-        
-        if let historyMatches = historyMatches {
-            historyViewController.matchScores = historyMatches
-        }
-        
         navigationController?.pushViewController(historyViewController, animated: true)
     }
 }

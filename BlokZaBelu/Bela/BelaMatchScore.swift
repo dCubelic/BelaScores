@@ -13,7 +13,7 @@ struct BelaMatchScore: Codable, Equatable {
     var scores: [BelaScore]
     var team1Name: BelaTeamName = .us
     var team2Name: BelaTeamName = .them
-    var date: Date
+    var dateCreated: Date
     var maxGameScore = 1001
     
     var team1Score: Int {
@@ -25,15 +25,15 @@ struct BelaMatchScore: Codable, Equatable {
     }
     
     var winningTeam: BelaTeam? {
-        if team1Score > team2Score {
+        if team1Score >= maxGameScore && team1Score > team2Score {
             return .team1
-        } else if team2Score > team1Score {
+        } else if team2Score >= maxGameScore && team2Score > team1Score {
             return .team2
         }
         return nil
     }
     
-    static var newMatch = BelaMatchScore(scores: [], date: Date())
+    static var newMatch = BelaMatchScore(scores: [], dateCreated: Date())
     
     static var dummyMatch = BelaMatchScore(scores: [
         BelaScore(biddingTeam: .team2, gameScore: BelaGameScore(score1: 32), declarationsTeam1: [], declarationsTeam2: [20]),
@@ -41,10 +41,10 @@ struct BelaMatchScore: Codable, Equatable {
         BelaScore(biddingTeam: .team2, gameScore: BelaGameScore(score1: 120), declarationsTeam1: [], declarationsTeam2: []),
         BelaScore(biddingTeam: .team1, gameScore: BelaGameScore(score1: 82), declarationsTeam1: [], declarationsTeam2: []),
         BelaScore(biddingTeam: .team2, gameScore: BelaGameScore(score1: 100), declarationsTeam1: [], declarationsTeam2: [50])
-    ], team1Name: BelaTeamName.custom("Cubi Ante"), team2Name: BelaTeamName.custom("Greba Vito"), date: Date())
+    ], team1Name: BelaTeamName.custom("Cubi Ante"), team2Name: BelaTeamName.custom("Greba Vito"), dateCreated: Date())
     
     static func == (lhs: BelaMatchScore, rhs: BelaMatchScore) -> Bool {
-        return lhs.date == rhs.date
+        return lhs.dateCreated == rhs.dateCreated
     }
     
 }

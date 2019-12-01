@@ -70,5 +70,4 @@ enum Theme: String, CaseIterable {
     var textColor: UIColor { return themeImplementation.textColor }
     var textColor2: UIColor { return themeImplementation.textColor2 }
     var statusBarStyle: UIStatusBarStyle { return themeImplementation.statusBarStyle }
-    var logoName: String { return themeImplementation.logoName }
 }
