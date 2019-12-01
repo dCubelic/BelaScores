@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct BelaMatchScore: Codable {
+struct BelaMatchScore: Codable, Equatable {
     
     var scores: [BelaScore]
     var team1Name: BelaTeamName = .us
@@ -42,4 +42,9 @@ struct BelaMatchScore: Codable {
         BelaScore(biddingTeam: .team1, gameScore: BelaGameScore(score1: 82), declarationsTeam1: [], declarationsTeam2: []),
         BelaScore(biddingTeam: .team2, gameScore: BelaGameScore(score1: 100), declarationsTeam1: [], declarationsTeam2: [50])
     ], team1Name: BelaTeamName.custom("Cubi Ante"), team2Name: BelaTeamName.custom("Greba Vito"), date: Date())
+    
+    static func == (lhs: BelaMatchScore, rhs: BelaMatchScore) -> Bool {
+        return lhs.date == rhs.date
+    }
+    
 }

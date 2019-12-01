@@ -9,7 +9,7 @@
 import UIKit
 
 class ScoreViewController: UIViewController {
-
+    
     @IBOutlet weak private var tableView: UITableView!
     @IBOutlet weak private var score1Label: UILabel!
     @IBOutlet weak private var score2Label: UILabel!
@@ -18,8 +18,8 @@ class ScoreViewController: UIViewController {
     @IBOutlet weak private var weTextField: UITextField!
     @IBOutlet weak private var theyTextField: UITextField!
     @IBOutlet weak private var separatorView: UIView!
-        
-    private var matchScore: BelaMatchScore = BelaMatchScore.newMatch {
+    
+    private var matchScore: BelaMatchScore = BelaMatchScore(scores: [], date: Date()) {
         didSet {
             score1Label.text = String(matchScore.team1Score)
             score2Label.text = String(matchScore.team2Score)
@@ -106,8 +106,22 @@ class ScoreViewController: UIViewController {
     }
     
     private func save(matchScore: BelaMatchScore?) {
-        let encodedScores = try? JSONEncoder().encode(matchScore)
-        UserDefaults.standard.set(encodedScores, forKey: "scores")
+        var newEncodedMatches: Data?
+        
+        if let encodedMatches = UserDefaults.standard.data(forKey: "matches"), var matches = try? JSONDecoder().decode([BelaMatchScore?].self, from: encodedMatches) {
+            
+            if let matchScore = matchScore, let matchIndex = matches.firstIndex(of: matchScore) {
+                matches[matchIndex] = matchScore
+            } else {
+                matches.append(matchScore)
+            }
+            
+            newEncodedMatches = try? JSONEncoder().encode(matches)
+        } else {
+            newEncodedMatches = try? JSONEncoder().encode([matchScore])
+        }
+        
+        UserDefaults.standard.set(newEncodedMatches, forKey: "matches")
     }
     
     private func presentAddScoreViewController(score: BelaScore? = nil, scoreTableViewCell: UITableViewCell? = nil) {
@@ -162,7 +176,7 @@ class ScoreViewController: UIViewController {
         theyTextField.isEnabled = true
         weTextField.becomeFirstResponder()
     }
-
+    
     @IBAction private func addAction(_ sender: Any) {
         presentAddScoreViewController()
     }
@@ -200,7 +214,7 @@ extension ScoreViewController: UITableViewDataSource, UITableViewDelegate {
             self.presentAddScoreViewController(score: score, scoreTableViewCell: cell)
         }
     }
-
+    
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let delete = UIContextualAction(style: .destructive, title: "delete".localized) { _, _, completionHandler in

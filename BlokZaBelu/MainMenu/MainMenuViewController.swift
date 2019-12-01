@@ -18,8 +18,12 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak private var logoImageView: UIImageView!
     
     private var continueScores: BelaMatchScore? {
-        guard let encodedScores = UserDefaults.standard.data(forKey: "scores") else { return nil }
-        return try? JSONDecoder().decode(BelaMatchScore.self, from: encodedScores)
+        return historyMatches?.min { $0.date > $1.date }
+    }
+    
+    private var historyMatches: [BelaMatchScore]? {
+        guard let encodedMatches = UserDefaults.standard.data(forKey: "matches") else { return nil }
+        return try? JSONDecoder().decode([BelaMatchScore].self, from: encodedMatches)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -98,6 +102,11 @@ class MainMenuViewController: UIViewController {
     
     @IBAction private func historyAction(_ sender: Any) {
         let historyViewController = UIStoryboard.main.instantiateViewController(ofType: HistoryViewController.self)
+        
+        if let historyMatches = historyMatches {
+            historyViewController.matchScores = historyMatches
+        }
+        
         navigationController?.pushViewController(historyViewController, animated: true)
     }
 }

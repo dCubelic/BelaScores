@@ -12,7 +12,7 @@ class HistoryViewController: UIViewController {
     
     @IBOutlet weak private var tableView: UITableView!
     
-    var matchScores: [BelaMatchScore] = [BelaMatchScore.newMatch, BelaMatchScore.dummyMatch]
+    var matchScores: [BelaMatchScore] = []
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return BelaTheme.shared.statusBarStyle

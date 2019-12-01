@@ -33,7 +33,6 @@
 		B445AA512301F81800A097B7 /* UICollectionView+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B445AA502301F81800A097B7 /* UICollectionView+Bela.swift */; };
 		B448B4BB2302E67C00288BF1 /* BelaScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B448B4BA2302E67C00288BF1 /* BelaScore.swift */; };
 		B449D2BA22FF151900EA22BB /* AddScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B449D2B922FF151900EA22BB /* AddScoreViewController.swift */; };
-		B44F56D6235E41A400FC4FCC /* UserDefaults+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F56D5235E41A400FC4FCC /* UserDefaults+Bela.swift */; };
 		B461A8772301E93100DF5DE0 /* DeclarationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461A8762301E93100DF5DE0 /* DeclarationsViewController.swift */; };
 		B461A87B2301E96100DF5DE0 /* NewDeclarationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461A8792301E96100DF5DE0 /* NewDeclarationTableViewCell.swift */; };
 		B461A87C2301E96100DF5DE0 /* NewDeclarationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B461A87A2301E96100DF5DE0 /* NewDeclarationTableViewCell.xib */; };
@@ -152,7 +151,6 @@
 		B445AA502301F81800A097B7 /* UICollectionView+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Bela.swift"; sourceTree = "<group>"; };
 		B448B4BA2302E67C00288BF1 /* BelaScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelaScore.swift; sourceTree = "<group>"; };
 		B449D2B922FF151900EA22BB /* AddScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScoreViewController.swift; sourceTree = "<group>"; };
-		B44F56D5235E41A400FC4FCC /* UserDefaults+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Bela.swift"; sourceTree = "<group>"; };
 		B461A8762301E93100DF5DE0 /* DeclarationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclarationsViewController.swift; sourceTree = "<group>"; };
 		B461A8792301E96100DF5DE0 /* NewDeclarationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeclarationTableViewCell.swift; sourceTree = "<group>"; };
 		B461A87A2301E96100DF5DE0 /* NewDeclarationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewDeclarationTableViewCell.xib; sourceTree = "<group>"; };
@@ -345,7 +343,6 @@
 				B4741ECF22FF09F10058BC00 /* UITableView+Bela.swift */,
 				B439BE5623008BB3000C2CA8 /* UIView+Bela.swift */,
 				B445AA502301F81800A097B7 /* UICollectionView+Bela.swift */,
-				B44F56D5235E41A400FC4FCC /* UserDefaults+Bela.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -716,7 +713,6 @@
 				B4FF9ADB237DEC2800C4970B /* DarkWhiteTheme.swift in Sources */,
 				B4741EBD22FF05E30058BC00 /* UIStoryboard+Bela.swift in Sources */,
 				B4759E842360D53700A8A5C1 /* LightTheme.swift in Sources */,
-				B44F56D6235E41A400FC4FCC /* UserDefaults+Bela.swift in Sources */,
 				B4A80DAF2305841800F53884 /* DimmingView.swift in Sources */,
 				B4759E7D2360D32C00A8A5C1 /* ThemeProtocol.swift in Sources */,
 				B4F30D1222FEFFD3003F13C8 /* MainMenuViewController.swift in Sources */,
