@@ -17,7 +17,7 @@ class BlokZaBeluUITests: XCTestCase {
 
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
+        
         // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
         XCUIApplication().launch()
 
@@ -39,24 +39,26 @@ class BlokZaBeluUITests: XCTestCase {
     }
     
     func testScreenshots() {
-        
         let app = XCUIApplication()
         snapshot("01MainMenu")
-        app.buttons[localizedString(key: "3sS-l5-5qw.normalTitle", tableName: "Main")].tap()
+        app.buttons["new game"].tap()
         
-        let addButton = app.navigationBars["BlokZaBelu.ScoreView"].buttons[localizedString(key: "add")]
-        addButton.tap()
-        
-        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element(boundBy: 1).children(matching: .other).element(boundBy: 1).children(matching: .other).element(boundBy: 2).children(matching: .other).element.children(matching: .button).matching(identifier: "camera").element(boundBy: 1).tap()
+        app.navigationBars["BlokZaBelu.ScoreView"].buttons[localizedString(key: "add")].tap()
+        app.buttons["camera"].firstMatch.tap()
         snapshot("02Detector")
-        app.buttons[localizedString(key: "2PL-a6-W6C.normalTitle", tableName: "Main")].tap()
-        let app2 = app
-        app2.children(matching: .window).element(boundBy: 0).children(matching: .other).element(boundBy: 1).children(matching: .other).element(boundBy: 1).children(matching: .other).element(boundBy: 3).tables/*@START_MENU_TOKEN@*/.buttons["plus"]/*[[".cells.buttons[\"plus\"]",".buttons[\"plus\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        app2.tables/*@START_MENU_TOKEN@*/.staticTexts["20"]/*[[".cells.staticTexts[\"20\"]",".staticTexts[\"20\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.buttons[localizedString(key: "uitest.done")].tap()
+        app.buttons[localizedString(key: "them")].tap()
+        app.buttons["plus"].firstMatch.tap()
+        app.cells.firstMatch.tap()
         snapshot("03AddScore")
         app.buttons[localizedString(key: "button.add").uppercased()].tap()
         snapshot("04Scores")
-
+        app.navigationBars["BlokZaBelu.ScoreView"].buttons[localizedString(key: "uitest.back")].tap()
+        app.buttons["history"].tap()
+        snapshot("05History")
+        app.navigationBars["BlokZaBelu.HistoryView"].buttons[localizedString(key: "uitest.back")].tap()
+        app.buttons["settings0"].tap()
+        snapshot("06Settings")
     }
-
+    
 }

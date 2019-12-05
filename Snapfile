@@ -2,11 +2,12 @@
 
 # A list of devices you want to take the screenshots from
 devices([
- "iPhone Xs Max",
+ "iPhone 11",
+ "iPhone 11 Pro",
+ "iPhone 11 Pro Max",
  "iPhone 8",
  "iPhone 8 Plus",
- "iPhone SE",
- "iPhone Xs"
+ "iPhone SE"
 ])
 
 languages([

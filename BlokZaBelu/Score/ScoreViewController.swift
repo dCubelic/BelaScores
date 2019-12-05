@@ -40,7 +40,7 @@ class ScoreViewController: UIViewController {
         
         //For Fastlane screenshots
         #if targetEnvironment(simulator)
-//        matchScore = BelaMatchScore.dummyMatch
+        matchScore = BelaMatchScore.dummyMatch
         #endif
         
         if let previousScores = previousScores {

@@ -12,8 +12,6 @@
 //            the new SnapshotHelper.swift
 // -----------------------------------------------------
 
-//swiftlint:disable all
-
 import Foundation
 import XCTest
 
@@ -268,7 +266,7 @@ private extension XCUIElementAttributes {
 
 private extension XCUIElementQuery {
     var networkLoadingIndicators: XCUIElementQuery {
-        let isNetworkLoadingIndicator = NSPredicate { evaluatedObject, _ in
+        let isNetworkLoadingIndicator = NSPredicate { (evaluatedObject, _) in
             guard let element = evaluatedObject as? XCUIElementAttributes else { return false }
 
             return element.isNetworkLoadingIndicator

@@ -43,6 +43,17 @@ class HistoryViewController: UIViewController {
     }
     
     private func loadMatchScores() -> [BelaMatchScore] {
+        //For Fastlane screenshots
+        #if targetEnvironment(simulator)
+        return [
+            BelaMatchScore.randomDummyMatch(team1Name: .custom("Ted Joey"), team2Name: .custom("Russ Michael")),
+            BelaMatchScore.randomDummyMatch(team1Name: .custom("Mike Gina"), team2Name: .custom("Monica Robin")),
+            BelaMatchScore.randomDummyMatch(team1Name: .custom("Phoebe Harvey"), team2Name: .custom("Elliot Chandler")),
+            BelaMatchScore.randomDummyMatch(team1Name: .custom("Darlene Richard"), team2Name: .custom("Jake Angela")),
+            BelaMatchScore.randomDummyMatch()
+        ]
+        #endif
+        
         guard let encodedMatches = UserDefaults.standard.data(forKey: "matches"),
             let matches = try? JSONDecoder().decode([BelaMatchScore].self, from: encodedMatches) else { return [] }
         return matches
