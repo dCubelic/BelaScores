@@ -175,8 +175,13 @@ class AddScoreViewController: UIViewController {
     }
     
     @IBAction private func addAction(_ sender: Any) {
-        guard let belaScore = belaScore, belaScore.isValidScore else {
+        if biddingTeamViewController?.biddingTeam == nil {
+            biddingTeamViewController?.view.shake()
+        }
+        if scoreInputViewController?.score == nil {
             scoreInputViewController?.shakeInputs()
+        }
+        guard let belaScore = belaScore, belaScore.isValidScore else {
             return
         }
         

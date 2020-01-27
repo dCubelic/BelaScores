@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rTL-L9-aBY">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -320,6 +320,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iad-nT-eBn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2802.898550724638" y="12.723214285714285"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="rr2-cU-cA4">
+            <objects>
+                <viewController id="H1K-aF-JzR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hVf-X9-gxV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="od9-pA-dXg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gdM-u3-v8f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2803" y="708"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tCw-f2-wkI">
@@ -672,8 +687,8 @@
     <resources>
         <image name="camera" width="32" height="32"/>
         <image name="history" width="100" height="100"/>
-        <image name="logo_background" width="200" height="225.5"/>
-        <image name="logo_suits" width="200" height="225.5"/>
+        <image name="logo_background" width="200" height="229"/>
+        <image name="logo_suits" width="200" height="229"/>
         <image name="new_game" width="100" height="100"/>
         <image name="pencil" width="27.5" height="27.5"/>
         <image name="settings0" width="96" height="96"/>

@@ -21,7 +21,7 @@ class BiddingTeamViewController: UIViewController {
     
     weak var delegate: BiddingTeamViewControllerDelegate?
     
-    var biddingTeam: BelaTeam? = .team1 {
+    var biddingTeam: BelaTeam? {
         didSet {
             guard let biddingTeam = biddingTeam else { return }
             
@@ -71,6 +71,8 @@ class BiddingTeamViewController: UIViewController {
     }
     
     private func setupColors() {
+        team1Button.setTitleColor(BelaTheme.shared.placeholderColor, for: .normal)
+        team2Button.setTitleColor(BelaTheme.shared.placeholderColor, for: .normal)
         team1DidntPassView.backgroundColor = BelaTheme.shared.themeContrastColor
         team2DidntPassView.backgroundColor = BelaTheme.shared.themeContrastColor
 
@@ -84,6 +86,11 @@ class BiddingTeamViewController: UIViewController {
             team1Button.setTitleColor(BelaTheme.shared.placeholderColor, for: .normal)
             team2Button.setTitleColor(BelaTheme.shared.themeColor, for: .normal)
         }
+    }
+    
+    public func shake() {
+        team1Button.shake()
+        team2Button.shake()
     }
     
     @IBAction private func team1Action(_ sender: Any) {

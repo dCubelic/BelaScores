@@ -176,11 +176,12 @@ class ScoreViewController: UIViewController {
     }
     
     @IBAction private func editAction(_ sender: Any) {
-        if weTextField.isEnabled {
-            endEditing()
-            return
-        }
-        startEditing()
+        
+//        if weTextField.isEnabled {
+//            endEditing()
+//            return
+//        }
+//        startEditing()
     }
 }
 
