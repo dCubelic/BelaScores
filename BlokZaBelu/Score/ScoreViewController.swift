@@ -132,12 +132,7 @@ class ScoreViewController: UIViewController {
             addScoreViewController.scoreTableViewCell = scoreTableViewCell
         }
         
-        let presentationController = CardPresentationController(presentedViewController: addScoreViewController, presenting: self)
-        presentationController.presentationDelegate = self
-        addScoreViewController.modalPresentationStyle = .custom
-        addScoreViewController.transitioningDelegate = presentationController
-        
-        present(addScoreViewController, animated: true, completion: nil)
+        presentCard(viewController: addScoreViewController, cardPresentationControllerDelegate: self)
     }
     
     private func scoresIndexFor(_ indexPath: IndexPath) -> Int {
