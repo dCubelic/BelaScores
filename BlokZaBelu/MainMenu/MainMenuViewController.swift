@@ -16,9 +16,9 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak private var historyButton: UIButton!
     @IBOutlet weak private var logoImageView: UIImageView!
     
-    private var historyMatches: [BelaMatchScore]? {
+    private var historyMatches: [BelaMatch]? {
         guard let encodedMatches = UserDefaults.standard.data(forKey: "matches") else { return nil }
-        return try? JSONDecoder().decode([BelaMatchScore].self, from: encodedMatches)
+        return try? JSONDecoder().decode([BelaMatch].self, from: encodedMatches)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

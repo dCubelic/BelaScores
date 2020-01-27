@@ -1,5 +1,5 @@
 //
-//  BelaMatchScore.swift
+//  BelaMatch.swift
 //  BlokZaBelu
 //
 //  Created by dominik on 24/11/2019.
@@ -8,13 +8,11 @@
 
 import Foundation
 
-struct BelaMatchScore: Codable, Equatable {
+struct BelaMatch: Codable, Equatable {
     
     var scores: [BelaScore]
-    var team1Name: BelaTeamName = .us
-    var team2Name: BelaTeamName = .them
     var dateCreated: Date
-    var maxGameScore = 1001
+    var matchSettings: BelaMatchSettings = .lastConfiguration
     
     var team1Score: Int {
         return scores.reduce(0) { $0 + $1.totalScoreTeam1 }
@@ -25,17 +23,17 @@ struct BelaMatchScore: Codable, Equatable {
     }
     
     var winningTeam: BelaTeam? {
-        if team1Score >= maxGameScore && team1Score > team2Score {
+        if team1Score >= matchSettings.maxGameScore.rawValue && team1Score > team2Score {
             return .team1
-        } else if team2Score >= maxGameScore && team2Score > team1Score {
+        } else if team2Score >= matchSettings.maxGameScore.rawValue && team2Score > team1Score {
             return .team2
         }
         return nil
     }
     
-    static var newMatch = BelaMatchScore(scores: [], dateCreated: Date())
+    static var newMatch = BelaMatch(scores: [], dateCreated: Date())
     
-    static var dummyMatch = BelaMatchScore(scores: [
+    static var dummyMatch = BelaMatch(scores: [
         BelaScore(biddingTeam: .team2, gameScore: BelaGameScore(score1: 32), declarationsTeam1: [], declarationsTeam2: [20]),
         BelaScore(biddingTeam: .team1, gameScore: BelaGameScore(score1: 110), declarationsTeam1: [], declarationsTeam2: [50]),
         BelaScore(biddingTeam: .team2, gameScore: BelaGameScore(score1: 120), declarationsTeam1: [], declarationsTeam2: []),
@@ -43,7 +41,7 @@ struct BelaMatchScore: Codable, Equatable {
         BelaScore(biddingTeam: .team2, gameScore: BelaGameScore(score1: 100), declarationsTeam1: [], declarationsTeam2: [50])
     ], dateCreated: Date())
     
-    static func randomDummyMatch(team1Name: BelaTeamName = .us, team2Name: BelaTeamName = .them) -> BelaMatchScore {
+    static func randomDummyMatch(team1Name: BelaTeamName = .us, team2Name: BelaTeamName = .them) -> BelaMatch {
         var scores: [BelaScore] = []
         var sumTeam1 = 0
         var sumTeam2 = 0
@@ -54,10 +52,11 @@ struct BelaMatchScore: Codable, Equatable {
             sumTeam2 += score.totalScoreTeam2
             scores.append(score)
         }
-        return BelaMatchScore(scores: scores, team1Name: team1Name, team2Name: team2Name, dateCreated: Date(timeIntervalSince1970: TimeInterval(Int.random(in: 1574290938...1575327738))))
+//        return BelaMatch()
+        return BelaMatch(scores: scores, dateCreated: Date(timeIntervalSince1970: TimeInterval(Int.random(in: 1574290938...1575327738))))
     }
     
-    static func == (lhs: BelaMatchScore, rhs: BelaMatchScore) -> Bool {
+    static func == (lhs: BelaMatch, rhs: BelaMatch) -> Bool {
         return lhs.dateCreated == rhs.dateCreated
     }
     

@@ -98,7 +98,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         switch settings[indexPath.section].settings[indexPath.row] {
         case .deleteHistory:
             let alert = UIAlertController(title: "are_you_sure".localized, message: "remove_all_data".localized, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "yes".localized, style: .destructive, handler: { (_) in
+            alert.addAction(UIAlertAction(title: "yes".localized, style: .destructive, handler: { _ in
                 UserDefaults.standard.removeObject(forKey: "matches")
             }))
             alert.addAction(UIAlertAction(title: "no".localized, style: .cancel, handler: nil))

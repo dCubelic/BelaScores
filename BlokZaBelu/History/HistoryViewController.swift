@@ -13,7 +13,7 @@ class HistoryViewController: UIViewController {
     @IBOutlet weak private var tableView: UITableView!
     @IBOutlet weak private var noScoresLabel: UILabel!
     
-    var matchScores: [BelaMatchScore] = []
+    var matches: [BelaMatch] = []
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return BelaTheme.shared.statusBarStyle
@@ -31,8 +31,8 @@ class HistoryViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        matchScores = loadMatchScores().sorted { $0.dateCreated > $1.dateCreated }
-        noScoresLabel.isHidden = !matchScores.isEmpty
+        matches = loadMatches().sorted { $0.dateCreated > $1.dateCreated }
+        noScoresLabel.isHidden = !matches.isEmpty
         tableView.reloadData()
     }
     
@@ -42,20 +42,20 @@ class HistoryViewController: UIViewController {
         setupColors()
     }
     
-    private func loadMatchScores() -> [BelaMatchScore] {
+    private func loadMatches() -> [BelaMatch] {
         //For Fastlane screenshots
         #if targetEnvironment(simulator)
         return [
-            BelaMatchScore.randomDummyMatch(team1Name: .custom("Ted Joey"), team2Name: .custom("Russ Michael")),
-            BelaMatchScore.randomDummyMatch(team1Name: .custom("Mike Gina"), team2Name: .custom("Monica Robin")),
-            BelaMatchScore.randomDummyMatch(team1Name: .custom("Phoebe Harvey"), team2Name: .custom("Elliot Chandler")),
-            BelaMatchScore.randomDummyMatch(team1Name: .custom("Darlene Richard"), team2Name: .custom("Jake Angela")),
-            BelaMatchScore.randomDummyMatch()
+            BelaMatch.randomDummyMatch(team1Name: .custom("Ted Joey"), team2Name: .custom("Russ Michael")),
+            BelaMatch.randomDummyMatch(team1Name: .custom("Mike Gina"), team2Name: .custom("Monica Robin")),
+            BelaMatch.randomDummyMatch(team1Name: .custom("Phoebe Harvey"), team2Name: .custom("Elliot Chandler")),
+            BelaMatch.randomDummyMatch(team1Name: .custom("Darlene Richard"), team2Name: .custom("Jake Angela")),
+            BelaMatch.randomDummyMatch()
         ]
         #endif
         
         guard let encodedMatches = UserDefaults.standard.data(forKey: "matches"),
-            let matches = try? JSONDecoder().decode([BelaMatchScore].self, from: encodedMatches) else { return [] }
+            let matches = try? JSONDecoder().decode([BelaMatch].self, from: encodedMatches) else { return [] }
         return matches
     }
     
@@ -78,12 +78,12 @@ class HistoryViewController: UIViewController {
 
 extension HistoryViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return matchScores.count
+        return matches.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(ofType: HistoryTableViewCell.self, for: indexPath)
-        cell.setup(with: matchScores[indexPath.row])
+        cell.setup(with: matches[indexPath.row])
         
         return cell
     }
@@ -92,7 +92,7 @@ extension HistoryViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let scoreViewController = UIStoryboard.main.instantiateViewController(ofType: ScoreViewController.self)
-        scoreViewController.previousScores = matchScores[indexPath.row]
+        scoreViewController.previousScores = matches[indexPath.row]
         
         navigationController?.pushViewController(scoreViewController, animated: true)
     }

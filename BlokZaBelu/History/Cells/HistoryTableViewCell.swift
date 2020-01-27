@@ -54,20 +54,20 @@ class HistoryTableViewCell: UITableViewCell {
         team2PointsLabel.textColor = BelaTheme.shared.textColor
     }
     
-    func setup(with matchScore: BelaMatchScore) {
-        team1NameLabel.text = matchScore.team1Name.string
-        team2NameLabel.text = matchScore.team2Name.string
+    func setup(with matchScore: BelaMatch) {
+        team1NameLabel.text = matchScore.matchSettings.team1Name.string
+        team2NameLabel.text = matchScore.matchSettings.team2Name.string
         team1PointsLabel.text = String(matchScore.team1Score)
         team2PointsLabel.text = String(matchScore.team2Score)
         dateLabel.text = dateFormatter.string(from: matchScore.dateCreated)
         
-        if matchScore.team1Name.string.split(separator: " ").count > 1 {
+        if matchScore.matchSettings.team1Name.string.split(separator: " ").count > 1 {
             team1NameLabel.numberOfLines = 2
         } else {
             team1NameLabel.numberOfLines = 1
         }
         
-        if matchScore.team2Name.string.split(separator: " ").count > 1 {
+        if matchScore.matchSettings.team2Name.string.split(separator: " ").count > 1 {
             team2NameLabel.numberOfLines = 2
         } else {
             team2NameLabel.numberOfLines = 1

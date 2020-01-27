@@ -13,6 +13,7 @@ import XCTest
 class BlokZaBeluUITests: XCTestCase {
 
     override func setUp() {
+        super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
         // In UI tests it is usually best to stop immediately when a failure occurs.
@@ -29,6 +30,7 @@ class BlokZaBeluUITests: XCTestCase {
     }
 
     override func tearDown() {
+        super.tearDown()
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 

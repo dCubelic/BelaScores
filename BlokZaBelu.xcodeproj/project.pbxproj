@@ -26,7 +26,8 @@
 		B43EFC16235CFC98005DB07F /* BelaTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43EFC15235CFC98005DB07F /* BelaTheme.swift */; };
 		B43EFC19235E27DF005DB07F /* ThemePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43EFC17235E27DF005DB07F /* ThemePickerTableViewCell.swift */; };
 		B43EFC1A235E27DF005DB07F /* ThemePickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B43EFC18235E27DF005DB07F /* ThemePickerTableViewCell.xib */; };
-		B4444C89238ACA0900CE9FE1 /* BelaMatchScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4444C88238ACA0900CE9FE1 /* BelaMatchScore.swift */; };
+		B443D41A23DF86BD001C19F8 /* BelaMatchSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B443D41923DF86BC001C19F8 /* BelaMatchSettings.swift */; };
+		B4444C89238ACA0900CE9FE1 /* BelaMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4444C88238ACA0900CE9FE1 /* BelaMatch.swift */; };
 		B4444C8F23907E4100CE9FE1 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4444C8E23907E4100CE9FE1 /* HistoryViewController.swift */; };
 		B4444C9323907FE700CE9FE1 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4444C9123907FE700CE9FE1 /* HistoryTableViewCell.swift */; };
 		B4444C9423907FE700CE9FE1 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4444C9223907FE700CE9FE1 /* HistoryTableViewCell.xib */; };
@@ -148,7 +149,8 @@
 		B43EFC15235CFC98005DB07F /* BelaTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelaTheme.swift; sourceTree = "<group>"; };
 		B43EFC17235E27DF005DB07F /* ThemePickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePickerTableViewCell.swift; sourceTree = "<group>"; };
 		B43EFC18235E27DF005DB07F /* ThemePickerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemePickerTableViewCell.xib; sourceTree = "<group>"; };
-		B4444C88238ACA0900CE9FE1 /* BelaMatchScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelaMatchScore.swift; sourceTree = "<group>"; };
+		B443D41923DF86BC001C19F8 /* BelaMatchSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelaMatchSettings.swift; sourceTree = "<group>"; };
+		B4444C88238ACA0900CE9FE1 /* BelaMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelaMatch.swift; sourceTree = "<group>"; };
 		B4444C8E23907E4100CE9FE1 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		B4444C9123907FE700CE9FE1 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		B4444C9223907FE700CE9FE1 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
@@ -371,7 +373,8 @@
 			children = (
 				B4741EC622FF08640058BC00 /* BelaGameScore.swift */,
 				B448B4BA2302E67C00288BF1 /* BelaScore.swift */,
-				B4444C88238ACA0900CE9FE1 /* BelaMatchScore.swift */,
+				B4444C88238ACA0900CE9FE1 /* BelaMatch.swift */,
+				B443D41923DF86BC001C19F8 /* BelaMatchSettings.swift */,
 				B439BE5A2300A6ED000C2CA8 /* BelaTeam.swift */,
 			);
 			path = Bela;
@@ -721,7 +724,7 @@
 				B40BB7872389DD3E001A478B /* OrangeTheme.swift in Sources */,
 				B4F4D9D82389D30A00B310F0 /* WhiteTheme.swift in Sources */,
 				B4A80DBC2305F50900F53884 /* String+Bela.swift in Sources */,
-				B4444C89238ACA0900CE9FE1 /* BelaMatchScore.swift in Sources */,
+				B4444C89238ACA0900CE9FE1 /* BelaMatch.swift in Sources */,
 				B43EFC02235A51D6005DB07F /* BelaSettings.swift in Sources */,
 				B4F4D9D42389D0D400B310F0 /* DarkGreenTheme.swift in Sources */,
 				B4741EC022FF06980058BC00 /* ScoreTableViewCell.swift in Sources */,
@@ -754,6 +757,7 @@
 				B4A80DA52305563400F53884 /* KeyboardToolbarButton.swift in Sources */,
 				B48DA45E23DF674300A4347E /* DeleteHistoryTableViewCell.swift in Sources */,
 				B48DA45B23DF5E8C00A4347E /* BelaConstants.swift in Sources */,
+				B443D41A23DF86BD001C19F8 /* BelaMatchSettings.swift in Sources */,
 				B439BE5723008BB3000C2CA8 /* UIView+Bela.swift in Sources */,
 				B461A8832301E99300DF5DE0 /* DeclaredValueTableViewCell.swift in Sources */,
 				B461A8872301F0B500DF5DE0 /* ValueCollectionViewCell.swift in Sources */,

@@ -19,7 +19,7 @@ class ScoreViewController: UIViewController {
     @IBOutlet weak private var theyTextField: UITextField!
     @IBOutlet weak private var separatorView: UIView!
     
-    private var matchScore: BelaMatchScore = BelaMatchScore(scores: [], dateCreated: Date()) {
+    private var matchScore: BelaMatch = BelaMatch(scores: [], dateCreated: Date()) {
         didSet {
             score1Label.text = String(matchScore.team1Score)
             score2Label.text = String(matchScore.team2Score)
@@ -29,7 +29,7 @@ class ScoreViewController: UIViewController {
         }
     }
     
-    var previousScores: BelaMatchScore?
+    var previousScores: BelaMatch?
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return BelaTheme.shared.statusBarStyle
@@ -40,7 +40,7 @@ class ScoreViewController: UIViewController {
         
         //For Fastlane screenshots
         #if targetEnvironment(simulator)
-        matchScore = BelaMatchScore.dummyMatch
+        matchScore = BelaMatch.dummyMatch
         #endif
         
         if let previousScores = previousScores {
@@ -68,8 +68,8 @@ class ScoreViewController: UIViewController {
         weTextField.delegate = self
         theyTextField.delegate = self
         
-        weTextField.text = matchScore.team1Name.string
-        theyTextField.text = matchScore.team2Name.string
+        weTextField.text = matchScore.matchSettings.team1Name.string
+        theyTextField.text = matchScore.matchSettings.team2Name.string
     }
     
     private func setupColors() {
@@ -90,11 +90,11 @@ class ScoreViewController: UIViewController {
         let team1Score = matchScore.team1Score
         let team2Score = matchScore.team2Score
         
-        if team1Score >= matchScore.maxGameScore && team1Score > team2Score {
+        if team1Score >= matchScore.matchSettings.maxGameScore.rawValue && team1Score > team2Score {
             score1Label.flash()
             score2Label.stopFlash()
             addButton.isEnabled = false
-        } else if team2Score >= matchScore.maxGameScore && team2Score > team1Score {
+        } else if team2Score >= matchScore.matchSettings.maxGameScore.rawValue && team2Score > team1Score {
             score1Label.stopFlash()
             score2Label.flash()
             addButton.isEnabled = false
@@ -105,9 +105,9 @@ class ScoreViewController: UIViewController {
         }
     }
     
-    private func save(matchScore: BelaMatchScore?) {
+    private func save(matchScore: BelaMatch?) {
         var newEncodedMatches: Data?
-        if let encodedMatches = UserDefaults.standard.data(forKey: "matches"), var matches = try? JSONDecoder().decode([BelaMatchScore?].self, from: encodedMatches) {
+        if let encodedMatches = UserDefaults.standard.data(forKey: "matches"), var matches = try? JSONDecoder().decode([BelaMatch?].self, from: encodedMatches) {
             
             if let matchScore = matchScore, let matchIndex = matches.firstIndex(of: matchScore) {
                 matches[matchIndex] = matchScore
@@ -145,23 +145,23 @@ class ScoreViewController: UIViewController {
         view.endEditing(true)
         
         if weTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == true {
-            weTextField.text = matchScore.team1Name.string
+            weTextField.text = matchScore.matchSettings.team1Name.string
         }
         
         if theyTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == true {
-            theyTextField.text = matchScore.team2Name.string
+            theyTextField.text = matchScore.matchSettings.team2Name.string
         }
         
         if weTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() == BelaTeamName.us.string.lowercased() {
-            matchScore.team1Name = .us
+            matchScore.matchSettings.team1Name = .us
         } else {
-            matchScore.team1Name = .custom(weTextField.text ?? "")
+            matchScore.matchSettings.team1Name = .custom(weTextField.text ?? "")
         }
         
         if theyTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() == BelaTeamName.them.string.lowercased() {
-            matchScore.team2Name = .them
+            matchScore.matchSettings.team2Name = .them
         } else {
-            matchScore.team2Name = .custom(theyTextField.text ?? "")
+            matchScore.matchSettings.team2Name = .custom(theyTextField.text ?? "")
         }
     }
     
@@ -176,12 +176,11 @@ class ScoreViewController: UIViewController {
     }
     
     @IBAction private func editAction(_ sender: Any) {
-        
-//        if weTextField.isEnabled {
-//            endEditing()
-//            return
-//        }
-//        startEditing()
+        if weTextField.isEnabled {
+            endEditing()
+            return
+        }
+        startEditing()
     }
 }
 
