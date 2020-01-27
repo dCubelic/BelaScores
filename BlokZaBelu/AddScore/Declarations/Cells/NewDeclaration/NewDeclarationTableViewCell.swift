@@ -10,11 +10,12 @@ import UIKit
 
 protocol NewDeclarationTableViewCellDelegate: class {
     func newDeclarationTableViewCellDidAddNewDeclarationPoints(newDeclarationTableViewCell: NewDeclarationTableViewCell, declarationPoints: Int)
+    
+    var declarationValues: [Int] { get }
 }
 
 class NewDeclarationTableViewCell: UITableViewCell {
 
-    static var declarationValues = [20, 50, 100, 150, 200]
     private var plusButton: UIButton?
     private var collectionView: UICollectionView?
     
@@ -64,6 +65,7 @@ class NewDeclarationTableViewCell: UITableViewCell {
         if collectionView == nil {
             setupCollectionView()
         }
+        collectionView?.reloadData()
         collectionView?.isHidden = false
     }
     
@@ -100,7 +102,8 @@ class NewDeclarationTableViewCell: UITableViewCell {
 extension NewDeclarationTableViewCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return NewDeclarationTableViewCell.declarationValues.count
+        guard let delegate = delegate else { fatalError("Delegate needs to be implemented.") }
+        return delegate.declarationValues.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -108,14 +111,18 @@ extension NewDeclarationTableViewCell: UICollectionViewDataSource, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let delegate = delegate else { fatalError("Delegate needs to be implemented.") }
+
         let cell = collectionView.dequeueReusableCell(ofType: ValueCollectionViewCell.self, for: indexPath)
-        cell.setup(for: String(NewDeclarationTableViewCell.declarationValues[indexPath.row]))
+        cell.setup(for: String(delegate.declarationValues[indexPath.row]))
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.newDeclarationTableViewCellDidAddNewDeclarationPoints(newDeclarationTableViewCell: self, declarationPoints: NewDeclarationTableViewCell.declarationValues[indexPath.row])
+        guard let delegate = delegate else { fatalError("Delegate needs to be implemented.") }
+
+        delegate.newDeclarationTableViewCellDidAddNewDeclarationPoints(newDeclarationTableViewCell: self, declarationPoints: delegate.declarationValues[indexPath.row])
         
         collectionView.isHidden = true
         plusButton?.isHidden = false

@@ -55,6 +55,7 @@
 		B478C603230897C900CA553A /* BlokZaBeluUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B478C602230897C900CA553A /* BlokZaBeluUITests.swift */; };
 		B478C60D2308981500CA553A /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B478C60B2308981200CA553A /* SnapshotHelper.swift */; };
 		B48DA45823DE487D00A4347E /* UIViewController+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48DA45723DE487D00A4347E /* UIViewController+Swift.swift */; };
+		B48DA45B23DF5E8C00A4347E /* BelaConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48DA45A23DF5E8C00A4347E /* BelaConstants.swift */; };
 		B49945892309583D00DBA743 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B4A80DB92305F43A00F53884 /* Localizable.strings */; };
 		B499458C2309587100DBA743 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4F30D0322FEFC46003F13C8 /* Main.storyboard */; };
 		B4A80DA52305563400F53884 /* KeyboardToolbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A80DA42305563400F53884 /* KeyboardToolbarButton.swift */; };
@@ -176,6 +177,7 @@
 		B478C604230897C900CA553A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B478C60B2308981200CA553A /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = BlokZaBelu/SupportingFiles/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		B48DA45723DE487D00A4347E /* UIViewController+Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Swift.swift"; sourceTree = "<group>"; };
+		B48DA45A23DF5E8C00A4347E /* BelaConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelaConstants.swift; sourceTree = "<group>"; };
 		B4A80DA42305563400F53884 /* KeyboardToolbarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolbarButton.swift; sourceTree = "<group>"; };
 		B4A80DA72305565B00F53884 /* KeyboardToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolbar.swift; sourceTree = "<group>"; };
 		B4A80DAC230583B900F53884 /* CardPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPresentationController.swift; sourceTree = "<group>"; };
@@ -482,6 +484,7 @@
 			isa = PBXGroup;
 			children = (
 				B4F30CFF22FEFC46003F13C8 /* AppDelegate.swift */,
+				B48DA45A23DF5E8C00A4347E /* BelaConstants.swift */,
 				B4F30D0322FEFC46003F13C8 /* Main.storyboard */,
 				B4D5A8512301DF0B00396103 /* AddScore */,
 				B4741ECE22FF089E0058BC00 /* Bela */,
@@ -734,6 +737,7 @@
 				B4741ED022FF09F10058BC00 /* UITableView+Bela.swift in Sources */,
 				B43EFC0D235A586E005DB07F /* SettingsToggleTableViewCell.swift in Sources */,
 				B4A80DA52305563400F53884 /* KeyboardToolbarButton.swift in Sources */,
+				B48DA45B23DF5E8C00A4347E /* BelaConstants.swift in Sources */,
 				B439BE5723008BB3000C2CA8 /* UIView+Bela.swift in Sources */,
 				B461A8832301E99300DF5DE0 /* DeclaredValueTableViewCell.swift in Sources */,
 				B461A8872301F0B500DF5DE0 /* ValueCollectionViewCell.swift in Sources */,

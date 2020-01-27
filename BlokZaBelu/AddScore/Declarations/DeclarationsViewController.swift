@@ -10,11 +10,15 @@ import UIKit
 
 protocol DeclarationsViewControllerDelegate: class {
     func declarationsViewControllerDidUpdateDeclarationPoints(_ declarationsViewController: DeclarationsViewController, declarationPoints: [Int])
+    
+    func shouldAllPointsBonusBeVisible(_ declarationsViewController: DeclarationsViewController) -> Bool
 }
 
 class DeclarationsViewController: UIViewController {
 
     @IBOutlet weak private var tableView: UITableView!
+    
+    var allPointsBonusAvailable = false
     
     private(set) var declarationPoints: [Int] = [] {
         didSet {
@@ -26,8 +30,10 @@ class DeclarationsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        allPointsBonusAvailable = allPointsBonusAvailable && declarationPoints.contains(Constants.allPointsBonus)
 
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapAction))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissView))
         tableView.backgroundView = UIView()
         tableView.backgroundView?.addGestureRecognizer(tapGesture)
         
@@ -48,14 +54,8 @@ class DeclarationsViewController: UIViewController {
         tableView.reloadData()
     }
     
-    func addAllPointsBonus() {
-        if !declarationPoints.contains(90) {
-            insertDeclarationPoints(90)
-        }
-    }
-    
     func removeAllPointsBonus() {
-        guard let index = declarationPoints.firstIndex(of: 90) else { return }
+        guard let index = declarationPoints.firstIndex(of: Constants.allPointsBonus) else { return }
         
         declarationPoints.remove(at: index)
         
@@ -71,7 +71,7 @@ class DeclarationsViewController: UIViewController {
         tableView.scrollToRow(at: indexPath, at: .top, animated: true)
     }
     
-    @objc private func tapAction() {
+    @objc func dismissView() {
         let lastIndexPath = IndexPath(row: declarationPoints.count, section: 0)
         if let cell = tableView.cellForRow(at: lastIndexPath) as? NewDeclarationTableViewCell {
             cell.reset()
@@ -112,6 +112,12 @@ extension DeclarationsViewController: NewDeclarationTableViewCellDelegate {
         insertDeclarationPoints(declarationPoints)
     }
     
+    var declarationValues: [Int] {
+        if delegate?.shouldAllPointsBonusBeVisible(self) == true {
+            return [20, 50, 90, 100, 150, 200]
+        }
+        return [20, 50, 100, 150, 200]
+    }
 }
 
 extension DeclarationsViewController: DeclaredValueTableViewCellDelegate {

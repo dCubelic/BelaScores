@@ -216,15 +216,13 @@ extension AddScoreViewController: ScoreInputViewControllerDelegate {
     func scoreInputViewControllerDidUpdateScore(_ scoreInputViewController: ScoreInputViewController, score: BelaGameScore) {
         updateDidntPassViews()
         
-        if score.score1 == 162 {
-            declarationsViewController?.addAllPointsBonus()
-        } else {
+        declarationsViewController?.dismissView()
+        declarationsViewController2?.dismissView()
+        
+        if score.score1 != Constants.maximumPoints {
             declarationsViewController?.removeAllPointsBonus()
         }
-        
-        if score.score2 == 162 {
-            declarationsViewController2?.addAllPointsBonus()
-        } else {
+        if score.score2 != Constants.maximumPoints {
             declarationsViewController2?.removeAllPointsBonus()
         }
     }
@@ -235,6 +233,15 @@ extension AddScoreViewController: DeclarationsViewControllerDelegate {
     
     func declarationsViewControllerDidUpdateDeclarationPoints(_ declarationsViewController: DeclarationsViewController, declarationPoints: [Int]) {
         updateDidntPassViews()
+    }
+    
+    func shouldAllPointsBonusBeVisible(_ declarationsViewController: DeclarationsViewController) -> Bool {
+        if declarationsViewController == self.declarationsViewController {
+            return scoreInputViewController?.score?.score1 == Constants.maximumPoints && !(self.declarationsViewController?.declarationPoints.contains(Constants.allPointsBonus) == true)
+        } else if declarationsViewController == self.declarationsViewController2 {
+            return scoreInputViewController?.score?.score2 == Constants.maximumPoints && !(self.declarationsViewController2?.declarationPoints.contains(Constants.allPointsBonus) == true)
+        }
+        return false
     }
     
 }
