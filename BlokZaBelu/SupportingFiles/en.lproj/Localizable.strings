@@ -21,3 +21,9 @@
 "no.scores" = "There are no scores yet.";
 "uitest.done" = "Done";
 "uitest.back" = "Back";
+"delete_history.title" = "Delete History";
+"delete_history.description" = "Remove all saved history data.";
+"are_you_sure" = "Are you sure?";
+"remove_all_data" = "All game data will be lost.";
+"yes" = "Yes";
+"no" = "No";

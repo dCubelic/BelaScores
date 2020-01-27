@@ -21,3 +21,9 @@
 "no.scores" = "Zasad nema zapisa.";
 "uitest.done" = "Unesi";
 "uitest.back" = "Natrag";
+"delete_history.title" = "Obriši Povijest";
+"delete_history.description" = "Obriši svu povijest igara.";
+"are_you_sure" = "Jeste li sigurni?";
+"remove_all_data" = "Svi podaci o igrama će biti obrisani.";
+"yes" = "Da";
+"no" = "Ne";

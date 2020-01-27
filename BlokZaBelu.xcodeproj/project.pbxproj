@@ -56,6 +56,8 @@
 		B478C60D2308981500CA553A /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B478C60B2308981200CA553A /* SnapshotHelper.swift */; };
 		B48DA45823DE487D00A4347E /* UIViewController+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48DA45723DE487D00A4347E /* UIViewController+Swift.swift */; };
 		B48DA45B23DF5E8C00A4347E /* BelaConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48DA45A23DF5E8C00A4347E /* BelaConstants.swift */; };
+		B48DA45E23DF674300A4347E /* DeleteHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48DA45C23DF674300A4347E /* DeleteHistoryTableViewCell.swift */; };
+		B48DA45F23DF674300A4347E /* DeleteHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B48DA45D23DF674300A4347E /* DeleteHistoryTableViewCell.xib */; };
 		B49945892309583D00DBA743 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B4A80DB92305F43A00F53884 /* Localizable.strings */; };
 		B499458C2309587100DBA743 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4F30D0322FEFC46003F13C8 /* Main.storyboard */; };
 		B4A80DA52305563400F53884 /* KeyboardToolbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A80DA42305563400F53884 /* KeyboardToolbarButton.swift */; };
@@ -178,6 +180,8 @@
 		B478C60B2308981200CA553A /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = BlokZaBelu/SupportingFiles/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		B48DA45723DE487D00A4347E /* UIViewController+Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Swift.swift"; sourceTree = "<group>"; };
 		B48DA45A23DF5E8C00A4347E /* BelaConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelaConstants.swift; sourceTree = "<group>"; };
+		B48DA45C23DF674300A4347E /* DeleteHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		B48DA45D23DF674300A4347E /* DeleteHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteHistoryTableViewCell.xib; sourceTree = "<group>"; };
 		B4A80DA42305563400F53884 /* KeyboardToolbarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolbarButton.swift; sourceTree = "<group>"; };
 		B4A80DA72305565B00F53884 /* KeyboardToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolbar.swift; sourceTree = "<group>"; };
 		B4A80DAC230583B900F53884 /* CardPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPresentationController.swift; sourceTree = "<group>"; };
@@ -248,6 +252,7 @@
 		B43EFC0F235A59AB005DB07F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				B48DA46023DF68FF00A4347E /* DeleteHistory */,
 				B43EFC1B235E2820005DB07F /* Toggle */,
 				B43EFC1C235E2827005DB07F /* ThemePicker */,
 			);
@@ -412,6 +417,15 @@
 				B478C604230897C900CA553A /* Info.plist */,
 			);
 			path = BlokZaBeluUITests;
+			sourceTree = "<group>";
+		};
+		B48DA46023DF68FF00A4347E /* DeleteHistory */ = {
+			isa = PBXGroup;
+			children = (
+				B48DA45C23DF674300A4347E /* DeleteHistoryTableViewCell.swift */,
+				B48DA45D23DF674300A4347E /* DeleteHistoryTableViewCell.xib */,
+			);
+			path = DeleteHistory;
 			sourceTree = "<group>";
 		};
 		B4A80DA92305571E00F53884 /* KeyboardToolbar */ = {
@@ -656,6 +670,7 @@
 				B461A87C2301E96100DF5DE0 /* NewDeclarationTableViewCell.xib in Resources */,
 				B43EFC1A235E27DF005DB07F /* ThemePickerTableViewCell.xib in Resources */,
 				B4444C9423907FE700CE9FE1 /* HistoryTableViewCell.xib in Resources */,
+				B48DA45F23DF674300A4347E /* DeleteHistoryTableViewCell.xib in Resources */,
 				B4A80DB72305F43A00F53884 /* Localizable.strings in Resources */,
 				B4741EC122FF06980058BC00 /* ScoreTableViewCell.xib in Resources */,
 				B4A80DC32305F91B00F53884 /* InfoPlist.strings in Resources */,
@@ -737,6 +752,7 @@
 				B4741ED022FF09F10058BC00 /* UITableView+Bela.swift in Sources */,
 				B43EFC0D235A586E005DB07F /* SettingsToggleTableViewCell.swift in Sources */,
 				B4A80DA52305563400F53884 /* KeyboardToolbarButton.swift in Sources */,
+				B48DA45E23DF674300A4347E /* DeleteHistoryTableViewCell.swift in Sources */,
 				B48DA45B23DF5E8C00A4347E /* BelaConstants.swift in Sources */,
 				B439BE5723008BB3000C2CA8 /* UIView+Bela.swift in Sources */,
 				B461A8832301E99300DF5DE0 /* DeclaredValueTableViewCell.swift in Sources */,

@@ -16,7 +16,8 @@ class SettingsViewController: UIViewController {
     
     private let settings: [SettingSection] = [
         SettingSection(description: "invert.description".localized, settings: [.invertScores("invert.title".localized)]),
-        SettingSection(description: "change_theme.description".localized, settings: [.themes])
+        SettingSection(description: "change_theme.description".localized, settings: [.themes]),
+        SettingSection(description: "delete_history.description".localized, settings: [.deleteHistory])
     ]
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -31,6 +32,7 @@ class SettingsViewController: UIViewController {
         
         tableView.register(UINib(nibName: "SettingsToggleTableViewCell", bundle: nil), forCellReuseIdentifier: "SettingsToggleTableViewCell")
         tableView.register(UINib(nibName: "ThemePickerTableViewCell", bundle: nil), forCellReuseIdentifier: "ThemePickerTableViewCell")
+        tableView.register(UINib(nibName: "DeleteHistoryTableViewCell", bundle: nil), forCellReuseIdentifier: "DeleteHistoryTableViewCell")
     }
 
     private func setupNavigationBar() {
@@ -67,6 +69,8 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
             return 44
         case .themes:
             return 66
+        case .deleteHistory:
+            return 44
         }
     }
     
@@ -81,6 +85,27 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(ofType: ThemePickerTableViewCell.self, for: indexPath)
             cell.delegate = self
             return cell
+        case .deleteHistory:
+            let cell = tableView.dequeueReusableCell(ofType: DeleteHistoryTableViewCell.self, for: indexPath)
+            cell.setup()
+            return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        switch settings[indexPath.section].settings[indexPath.row] {
+        case .deleteHistory:
+            let alert = UIAlertController(title: "are_you_sure".localized, message: "remove_all_data".localized, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "yes".localized, style: .destructive, handler: { (_) in
+                UserDefaults.standard.removeObject(forKey: "matches")
+            }))
+            alert.addAction(UIAlertAction(title: "no".localized, style: .cancel, handler: nil))
+            
+            present(alert, animated: true, completion: nil)
+        default:
+            break
         }
     }
     
@@ -119,7 +144,7 @@ extension SettingsViewController: SettingsToggleTableViewCellDelegate {
         switch setting {
         case .invertScores:
             BelaSettings.shared.invertScores = isOn
-        case .themes:
+        default:
             break
         }
     }

@@ -11,6 +11,7 @@ import Foundation
 enum SettingType {
     case invertScores(String)
     case themes
+    case deleteHistory
 }
 
 struct SettingSection {
