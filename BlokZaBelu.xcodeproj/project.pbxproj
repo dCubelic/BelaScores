@@ -34,6 +34,7 @@
 		B445AA512301F81800A097B7 /* UICollectionView+Bela.swift in Sources */ = {isa = PBXBuildFile; fileRef = B445AA502301F81800A097B7 /* UICollectionView+Bela.swift */; };
 		B448B4BB2302E67C00288BF1 /* BelaScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B448B4BA2302E67C00288BF1 /* BelaScore.swift */; };
 		B449D2BA22FF151900EA22BB /* AddScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B449D2B922FF151900EA22BB /* AddScoreViewController.swift */; };
+		B454C95923E4B06F008CABDD /* MatchSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B454C95823E4B06F008CABDD /* MatchSettingsViewController.swift */; };
 		B461A8772301E93100DF5DE0 /* DeclarationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461A8762301E93100DF5DE0 /* DeclarationsViewController.swift */; };
 		B461A87B2301E96100DF5DE0 /* NewDeclarationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461A8792301E96100DF5DE0 /* NewDeclarationTableViewCell.swift */; };
 		B461A87C2301E96100DF5DE0 /* NewDeclarationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B461A87A2301E96100DF5DE0 /* NewDeclarationTableViewCell.xib */; };
@@ -157,6 +158,7 @@
 		B445AA502301F81800A097B7 /* UICollectionView+Bela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Bela.swift"; sourceTree = "<group>"; };
 		B448B4BA2302E67C00288BF1 /* BelaScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelaScore.swift; sourceTree = "<group>"; };
 		B449D2B922FF151900EA22BB /* AddScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScoreViewController.swift; sourceTree = "<group>"; };
+		B454C95823E4B06F008CABDD /* MatchSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchSettingsViewController.swift; sourceTree = "<group>"; };
 		B461A8762301E93100DF5DE0 /* DeclarationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclarationsViewController.swift; sourceTree = "<group>"; };
 		B461A8792301E96100DF5DE0 /* NewDeclarationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeclarationTableViewCell.swift; sourceTree = "<group>"; };
 		B461A87A2301E96100DF5DE0 /* NewDeclarationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewDeclarationTableViewCell.xib; sourceTree = "<group>"; };
@@ -542,6 +544,7 @@
 			isa = PBXGroup;
 			children = (
 				B4F30D1622FF04E9003F13C8 /* ScoreViewController.swift */,
+				B454C95823E4B06F008CABDD /* MatchSettingsViewController.swift */,
 				B4741EC522FF080E0058BC00 /* Cells */,
 			);
 			path = Score;
@@ -720,6 +723,7 @@
 				B4741EC722FF08640058BC00 /* BelaGameScore.swift in Sources */,
 				B461A8772301E93100DF5DE0 /* DeclarationsViewController.swift in Sources */,
 				B4444C9323907FE700CE9FE1 /* HistoryTableViewCell.swift in Sources */,
+				B454C95923E4B06F008CABDD /* MatchSettingsViewController.swift in Sources */,
 				B4F4D9D12389CE0B00B310F0 /* DarkBlueTheme.swift in Sources */,
 				B40BB7872389DD3E001A478B /* OrangeTheme.swift in Sources */,
 				B4F4D9D82389D30A00B310F0 /* WhiteTheme.swift in Sources */,

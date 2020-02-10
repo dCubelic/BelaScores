@@ -15,8 +15,8 @@
 "invert.title" = "Obrni rezultate";
 "invert.description" = "Zamijeni smjer rezultata.";
 "change_theme.description" = "Promijeni paletu boja.";
-"us" = "MI";
-"them" = "VI";
+"team1_default_name" = "MI";
+"team2_default_name" = "VI";
 "app.title" = "Blok za Belu";
 "no.scores" = "Zasad nema zapisa.";
 "uitest.done" = "Unesi";

@@ -43,16 +43,16 @@ class HistoryViewController: UIViewController {
     }
     
     private func loadMatches() -> [BelaMatch] {
-        //For Fastlane screenshots
-        #if targetEnvironment(simulator)
-        return [
-            BelaMatch.randomDummyMatch(team1Name: .custom("Ted Joey"), team2Name: .custom("Russ Michael")),
-            BelaMatch.randomDummyMatch(team1Name: .custom("Mike Gina"), team2Name: .custom("Monica Robin")),
-            BelaMatch.randomDummyMatch(team1Name: .custom("Phoebe Harvey"), team2Name: .custom("Elliot Chandler")),
-            BelaMatch.randomDummyMatch(team1Name: .custom("Darlene Richard"), team2Name: .custom("Jake Angela")),
-            BelaMatch.randomDummyMatch()
-        ]
-        #endif
+//        //For Fastlane screenshots
+//        #if targetEnvironment(simulator)
+//        return [
+//            BelaMatch.randomDummyMatch(team1Name: .custom("Ted Joey"), team2Name: .custom("Russ Michael")),
+//            BelaMatch.randomDummyMatch(team1Name: .custom("Mike Gina"), team2Name: .custom("Monica Robin")),
+//            BelaMatch.randomDummyMatch(team1Name: .custom("Phoebe Harvey"), team2Name: .custom("Elliot Chandler")),
+//            BelaMatch.randomDummyMatch(team1Name: .custom("Darlene Richard"), team2Name: .custom("Jake Angela")),
+//            BelaMatch.randomDummyMatch()
+//        ]
+//        #endif
         
         guard let encodedMatches = UserDefaults.standard.data(forKey: "matches"),
             let matches = try? JSONDecoder().decode([BelaMatch].self, from: encodedMatches) else { return [] }

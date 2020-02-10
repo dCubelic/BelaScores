@@ -55,19 +55,19 @@ class HistoryTableViewCell: UITableViewCell {
     }
     
     func setup(with matchScore: BelaMatch) {
-        team1NameLabel.text = matchScore.matchSettings.team1Name.string
-        team2NameLabel.text = matchScore.matchSettings.team2Name.string
+        team1NameLabel.text = matchScore.matchSettings.team1Name.belaName
+        team2NameLabel.text = matchScore.matchSettings.team2Name.belaName
         team1PointsLabel.text = String(matchScore.team1Score)
         team2PointsLabel.text = String(matchScore.team2Score)
         dateLabel.text = dateFormatter.string(from: matchScore.dateCreated)
         
-        if matchScore.matchSettings.team1Name.string.split(separator: " ").count > 1 {
+        if matchScore.matchSettings.team1Name.belaName.split(separator: " ").count > 1 {
             team1NameLabel.numberOfLines = 2
         } else {
             team1NameLabel.numberOfLines = 1
         }
         
-        if matchScore.matchSettings.team2Name.string.split(separator: " ").count > 1 {
+        if matchScore.matchSettings.team2Name.belaName.split(separator: " ").count > 1 {
             team2NameLabel.numberOfLines = 2
         } else {
             team2NameLabel.numberOfLines = 1

@@ -312,6 +312,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="addButton" destination="U8H-Ok-euS" id="a3N-eR-gC9"/>
                         <outlet property="touchView" destination="k4T-Kb-pde" id="3BF-s4-dIT"/>
@@ -321,20 +322,105 @@
             </objects>
             <point key="canvasLocation" x="2802.898550724638" y="12.723214285714285"/>
         </scene>
-        <!--View Controller-->
+        <!--Match Settings View Controller-->
         <scene sceneID="rr2-cU-cA4">
             <objects>
-                <viewController id="H1K-aF-JzR" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MatchSettingsViewController" id="H1K-aF-JzR" customClass="MatchSettingsViewController" customModule="BlokZaBelu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hVf-X9-gxV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="5QO-3V-B3s">
+                                <rect key="frame" x="30" y="145" width="354" height="110"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eqR-9Q-Iak">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="ozl-yS-qxa"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="501"/>
+                                            <segment title="1001"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="maxPointsChanged:" destination="H1K-aF-JzR" eventType="valueChanged" id="xYA-78-Om8"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Yey-zO-rNy">
+                                        <rect key="frame" x="0.0" y="70" width="354" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="h1J-ZA-aI7"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="VIS"/>
+                                            <segment title="PAD"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="tieBreakerChanged:" destination="H1K-aF-JzR" eventType="valueChanged" id="u4P-qv-p9M"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="MI" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DYz-8B-J3Z">
+                                <rect key="frame" x="30" y="79" width="176.33333333333334" height="36"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="VI" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mHT-7Y-sfH">
+                                <rect key="frame" x="236.33333333333337" y="79" width="147.66666666666663" height="46"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIA-Wq-lei">
+                                <rect key="frame" x="157" y="325" width="100" height="45"/>
+                                <color key="backgroundColor" name="transparentBlack"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="A6U-dh-tcd"/>
+                                    <constraint firstAttribute="height" constant="45" id="Ywc-hZ-nrD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
+                                <state key="normal" title="SAVE">
+                                    <color key="titleColor" name="lightGray"/>
+                                </state>
+                                <connections>
+                                    <action selector="addAction:" destination="38T-9d-EPa" eventType="touchUpInside" id="Vgn-X5-0KH"/>
+                                    <action selector="saveAction:" destination="H1K-aF-JzR" eventType="touchUpInside" id="vxK-b4-3Fx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="darkGray2"/>
+                        <constraints>
+                            <constraint firstItem="od9-pA-dXg" firstAttribute="trailing" secondItem="5QO-3V-B3s" secondAttribute="trailing" constant="30" id="0ug-sV-lir"/>
+                            <constraint firstItem="DYz-8B-J3Z" firstAttribute="leading" secondItem="od9-pA-dXg" secondAttribute="leading" constant="30" id="2Gm-W7-95q"/>
+                            <constraint firstItem="5QO-3V-B3s" firstAttribute="top" relation="greaterThanOrEqual" secondItem="DYz-8B-J3Z" secondAttribute="bottom" constant="30" id="8Yc-Nq-oox"/>
+                            <constraint firstItem="mHT-7Y-sfH" firstAttribute="leading" secondItem="DYz-8B-J3Z" secondAttribute="trailing" constant="30" id="9hT-ld-Ztq"/>
+                            <constraint firstItem="mHT-7Y-sfH" firstAttribute="top" secondItem="od9-pA-dXg" secondAttribute="top" constant="35" id="OgW-I7-Rhe"/>
+                            <constraint firstItem="mHT-7Y-sfH" firstAttribute="width" secondItem="DYz-8B-J3Z" secondAttribute="width" multiplier="0.837209" id="R6i-MU-Vre"/>
+                            <constraint firstItem="EIA-Wq-lei" firstAttribute="top" relation="greaterThanOrEqual" secondItem="5QO-3V-B3s" secondAttribute="bottom" constant="30" id="XI6-ny-vLh"/>
+                            <constraint firstItem="od9-pA-dXg" firstAttribute="trailing" secondItem="mHT-7Y-sfH" secondAttribute="trailing" constant="30" id="aOF-fw-Ia3"/>
+                            <constraint firstItem="od9-pA-dXg" firstAttribute="bottom" secondItem="EIA-Wq-lei" secondAttribute="bottom" constant="30" id="dHz-3I-edl"/>
+                            <constraint firstItem="DYz-8B-J3Z" firstAttribute="top" secondItem="od9-pA-dXg" secondAttribute="top" constant="35" id="fai-VD-Xnw"/>
+                            <constraint firstItem="EIA-Wq-lei" firstAttribute="centerX" secondItem="hVf-X9-gxV" secondAttribute="centerX" id="gvr-kK-rSS"/>
+                            <constraint firstItem="5QO-3V-B3s" firstAttribute="centerY" secondItem="hVf-X9-gxV" secondAttribute="centerY" id="sjI-J7-kjO"/>
+                            <constraint firstItem="5QO-3V-B3s" firstAttribute="leading" secondItem="od9-pA-dXg" secondAttribute="leading" constant="30" id="zix-hX-Cha"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="od9-pA-dXg"/>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="414" height="400"/>
+                    <connections>
+                        <outlet property="maxPointsSegmentedControl" destination="eqR-9Q-Iak" id="wO3-QH-Cfu"/>
+                        <outlet property="saveButton" destination="EIA-Wq-lei" id="Dn3-zR-wSq"/>
+                        <outlet property="team1TextField" destination="DYz-8B-J3Z" id="5Dj-jp-tuL"/>
+                        <outlet property="team2TextField" destination="mHT-7Y-sfH" id="lMZ-iW-V6q"/>
+                        <outlet property="tieBreakerSegmentedControl" destination="Yey-zO-rNy" id="aAi-1a-6Jp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gdM-u3-v8f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2803" y="708"/>
+            <point key="canvasLocation" x="2802.898550724638" y="707.8125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tCw-f2-wkI">

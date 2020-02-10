@@ -53,6 +53,7 @@ class AddScoreViewController: UIViewController {
     
     var scoreTableViewCell: UITableViewCell?
     var updateBelaScore: BelaScore?
+    var matchSettings: BelaMatchSettings?
     
     weak var delegate: AddScoreViewControllerDelegate?
     
@@ -165,9 +166,10 @@ class AddScoreViewController: UIViewController {
     }
     
     private func updateDidntPassViews() {
-        if belaScore?.team1Passed == false {
+        guard let matchSettings = matchSettings else { return }
+        if belaScore?.team1Passed(tieBreaker: matchSettings.tieBreaker) == false {
             biddingTeamViewController?.setDidntPass(team: .team1)
-        } else if belaScore?.team2Passed == false {
+        } else if belaScore?.team2Passed(tieBreaker: matchSettings.tieBreaker) == false {
             biddingTeamViewController?.setDidntPass(team: .team2)
         } else {
             biddingTeamViewController?.setDidntPass(team: nil)

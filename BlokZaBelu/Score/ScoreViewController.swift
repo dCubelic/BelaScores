@@ -68,8 +68,8 @@ class ScoreViewController: UIViewController {
         weTextField.delegate = self
         theyTextField.delegate = self
         
-        weTextField.text = matchScore.matchSettings.team1Name.string
-        theyTextField.text = matchScore.matchSettings.team2Name.string
+        weTextField.text = matchScore.matchSettings.team1Name.belaName
+        theyTextField.text = matchScore.matchSettings.team2Name.belaName
     }
     
     private func setupColors() {
@@ -126,6 +126,7 @@ class ScoreViewController: UIViewController {
     private func presentAddScoreViewController(score: BelaScore? = nil, scoreTableViewCell: UITableViewCell? = nil) {
         let addScoreViewController = UIStoryboard.main.instantiateViewController(ofType: AddScoreViewController.self)
         addScoreViewController.delegate = self
+        addScoreViewController.matchSettings = matchScore.matchSettings
         
         if let score = score, let scoreTableViewCell = scoreTableViewCell {
             addScoreViewController.updateBelaScore = score
@@ -139,48 +140,54 @@ class ScoreViewController: UIViewController {
         return BelaSettings.shared.invertScores ? matchScore.scores.count - indexPath.row - 1 : indexPath.row
     }
     
-    private func endEditing() {
-        weTextField.isEnabled = false
-        theyTextField.isEnabled = false
-        view.endEditing(true)
-        
-        if weTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == true {
-            weTextField.text = matchScore.matchSettings.team1Name.string
-        }
-        
-        if theyTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == true {
-            theyTextField.text = matchScore.matchSettings.team2Name.string
-        }
-        
-        if weTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() == BelaTeamName.us.string.lowercased() {
-            matchScore.matchSettings.team1Name = .us
-        } else {
-            matchScore.matchSettings.team1Name = .custom(weTextField.text ?? "")
-        }
-        
-        if theyTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() == BelaTeamName.them.string.lowercased() {
-            matchScore.matchSettings.team2Name = .them
-        } else {
-            matchScore.matchSettings.team2Name = .custom(theyTextField.text ?? "")
-        }
-    }
+//    private func endEditing() {
+//        weTextField.isEnabled = false
+//        theyTextField.isEnabled = false
+//        view.endEditing(true)
+//
+//        if weTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == true {
+//            weTextField.text = matchScore.matchSettings.team1Name
+//        }
+//
+//        if theyTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == true {
+//            theyTextField.text = matchScore.matchSettings.team2Name
+//        }
+//
+//        if weTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() == BelaTeamName.us.string.lowercased() {
+//            matchScore.matchSettings.team1Name = .us
+//        } else {
+//            matchScore.matchSettings.team1Name = .custom(weTextField.text ?? "")
+//        }
+//
+//        if theyTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() == BelaTeamName.them.string.lowercased() {
+//            matchScore.matchSettings.team2Name = .them
+//        } else {
+//            matchScore.matchSettings.team2Name = .custom(theyTextField.text ?? "")
+//        }
+//    }
     
-    private func startEditing() {
-        weTextField.isEnabled = true
-        theyTextField.isEnabled = true
-        weTextField.becomeFirstResponder()
-    }
+//    private func startEditing() {
+//        weTextField.isEnabled = true
+//        theyTextField.isEnabled = true
+//        weTextField.becomeFirstResponder()
+//    }
     
     @IBAction private func addAction(_ sender: Any) {
         presentAddScoreViewController()
     }
     
     @IBAction private func editAction(_ sender: Any) {
-        if weTextField.isEnabled {
-            endEditing()
-            return
-        }
-        startEditing()
+        let matchSettingsViewController = UIStoryboard.main.instantiateViewController(ofType: MatchSettingsViewController.self)
+        matchSettingsViewController.matchSettings = matchScore.matchSettings
+        matchSettingsViewController.delegate = self
+        
+        presentCard(viewController: matchSettingsViewController, cardPresentationControllerDelegate: self)
+
+//        if weTextField.isEnabled {
+//            endEditing()
+//            return
+//        }
+//        startEditing()
     }
 }
 
@@ -192,7 +199,7 @@ extension ScoreViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(ofType: ScoreTableViewCell.self, for: indexPath)
-        cell.setup(for: matchScore.scores[scoresIndexFor(indexPath)])
+        cell.setup(for: matchScore.scores[scoresIndexFor(indexPath)], matchSettings: matchScore.matchSettings)
         
         return cell
     }
@@ -249,6 +256,15 @@ extension ScoreViewController: AddScoreViewControllerDelegate {
     
 }
 
+extension ScoreViewController: MatchSettingsViewControllerDelegate {
+    
+    func matchSettingsViewControllerDidSave(_ matchSettingsViewController: MatchSettingsViewController, matchSettings: BelaMatchSettings) {
+        matchScore.matchSettings = matchSettings
+        tableView.reloadData()
+    }
+    
+}
+
 extension ScoreViewController: CardPresentationControllerDelegate {
     
     func cardPresentationControllerDidReceiveTapOnDimmingView(_ cardPresentationController: CardPresentationController, dimmingView: DimmingView) {
@@ -259,11 +275,11 @@ extension ScoreViewController: CardPresentationControllerDelegate {
 
 extension ScoreViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == weTextField {
-            theyTextField.becomeFirstResponder()
-        } else if textField == theyTextField {
-            endEditing()
-        }
+//        if textField == weTextField {
+//            theyTextField.becomeFirstResponder()
+//        } else if textField == theyTextField {
+//            endEditing()
+//        }
         
         return true
     }

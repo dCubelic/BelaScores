@@ -49,7 +49,7 @@ class BlokZaBeluUITests: XCTestCase {
         app.buttons["camera"].firstMatch.tap()
         snapshot("02Detector")
         app.buttons[localizedString(key: "uitest.done")].tap()
-        app.buttons[localizedString(key: "them")].tap()
+        app.buttons[localizedString(key: "team2_default_name")].tap()
         app.buttons["plus"].firstMatch.tap()
         app.cells.firstMatch.tap()
         snapshot("03AddScore")

@@ -28,15 +28,13 @@ struct BelaMatchSettings: Codable {
     var maxGameScore: BelaMaxMatchScore
     var tieBreaker: BelaTieBreaker
     var endType: BelaEndType
-    var team1Name: BelaTeamName
-    var team2Name: BelaTeamName
+    var team1Name: String
+    var team2Name: String
     
     static var lastConfiguration: BelaMatchSettings {
-        // bolje slozit ovo s imenima. mozda bi fora bilo da su u novoj rundi ista imena ko u prosloj,
-        // al samo ak je runda u nekom manjem razdoblju nakon zadnje. inace mi / vi
-        let team1Name: BelaTeamName = .us
-        let team2Name: BelaTeamName = .them
-        let maxGameScore = BelaMaxMatchScore(rawValue: UserDefaults.standard.integer(forKey: "maxMatchScore")) ?? .fiveHundredOne
+        let team1Name: String = "team1_default_name"
+        let team2Name: String = "team2_default_name"
+        let maxGameScore = BelaMaxMatchScore(rawValue: UserDefaults.standard.integer(forKey: "maxMatchScore")) ?? .thousandOne
         let tieBreaker = BelaTieBreaker(rawValue: UserDefaults.standard.string(forKey: "tieBreaker") ?? "") ?? .moreThan
         let endType = BelaEndType(rawValue: UserDefaults.standard.string(forKey: "endType") ?? "") ?? .afterGame
         

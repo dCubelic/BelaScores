@@ -64,15 +64,14 @@ class ScoreTableViewCell: UITableViewCell {
         score2Label.textColor = BelaTheme.shared.textColor
     }
     
-    func setup(for score: BelaScore) {
-        score1Label.text = String(score.totalScoreTeam1)
-        score2Label.text = String(score.totalScoreTeam2)
+    func setup(for score: BelaScore, matchSettings: BelaMatchSettings) {
+        score1Label.text = String(score.totalScoreTeam1(tieBreaker: matchSettings.tieBreaker))
+        score2Label.text = String(score.totalScoreTeam2(tieBreaker: matchSettings.tieBreaker))
         team1BidView.isHidden = !(score.biddingTeam == .team1)
         team2BidView.isHidden = !(score.biddingTeam == .team2)
         
-        team1BidView.backgroundColor = score.team1Passed ? BelaTheme.shared.themeColor : BelaTheme.shared.themeContrastColor
-        team2BidView.backgroundColor = score.team2Passed ? BelaTheme.shared.themeColor : BelaTheme.shared.themeContrastColor
-        
+        team1BidView.backgroundColor = score.team1Passed(tieBreaker: matchSettings.tieBreaker) ? BelaTheme.shared.themeColor : BelaTheme.shared.themeContrastColor
+        team2BidView.backgroundColor = score.team2Passed(tieBreaker: matchSettings.tieBreaker) ? BelaTheme.shared.themeColor : BelaTheme.shared.themeContrastColor
     }
     
 }
